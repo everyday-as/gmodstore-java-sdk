@@ -25,7 +25,7 @@ import java.io.IOException;
  * UserBadgeLegend
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T17:10:03.626639Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T18:09:18.287471Z[Etc/UTC]")
 public class UserBadgeLegend {
   @SerializedName("id")
   private String id = null;

@@ -26,7 +26,7 @@ import no.everyday.gmodstore_sdk.model.AddonPriceOriginal;
  * AddonPrice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T17:10:03.626639Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T18:09:18.287471Z[Etc/UTC]")
 public class AddonPrice {
   @SerializedName("original")
   private AddonPriceOriginal original = null;
