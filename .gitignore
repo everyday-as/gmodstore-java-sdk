@@ -1,0 +1,5 @@
+.idea/
+git_push.sh
+.travis.yml
+.swagger-codegen-ignore
+.swagger-codegen/
