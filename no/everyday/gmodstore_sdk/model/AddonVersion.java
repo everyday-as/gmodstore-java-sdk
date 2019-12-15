@@ -27,7 +27,7 @@ import org.threeten.bp.OffsetDateTime;
  * AddonVersion
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T18:09:18.287471Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T18:22:16.480775Z[Etc/UTC]")
 public class AddonVersion {
   @SerializedName("id")
   private Integer id = null;
