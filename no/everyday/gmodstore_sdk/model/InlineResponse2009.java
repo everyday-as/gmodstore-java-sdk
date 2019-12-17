@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.TeamUser;
  * InlineResponse2009
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-15T18:22:16.480775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
 public class InlineResponse2009 {
   @SerializedName("data")
   private List<TeamUser> data = null;
