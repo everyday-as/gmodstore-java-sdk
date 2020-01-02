@@ -14,7 +14,7 @@ package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse20013;
+import no.everyday.gmodstore_sdk.model.InlineResponse20014;
 import no.everyday.gmodstore_sdk.model.InlineResponse2013;
 import no.everyday.gmodstore_sdk.model.InlineResponseDefault;
 import org.junit.Test;
@@ -60,7 +60,7 @@ public class UserBadgesApiTest {
     @Test
     public void usersUserIdBadgesGetTest() throws ApiException {
         String userId = null;
-        InlineResponse20013 response = api.usersUserIdBadgesGet(userId);
+        InlineResponse20014 response = api.usersUserIdBadgesGet(userId);
 
         // TODO: test validations
     }

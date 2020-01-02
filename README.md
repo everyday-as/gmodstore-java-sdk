@@ -2,7 +2,7 @@
 
 GmodStore
 - API version: 1.0.1
-  - Build date: 2019-12-17T09:58:33.821364Z[Etc/UTC]
+  - Build date: 2020-01-02T00:18:02.785682Z[Etc/UTC]
 
 Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
 
@@ -189,7 +189,7 @@ public class AddonCouponsApiExample {
         Long addonId = 789L; // Long | Id of the addon
         List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
         try {
-            InlineResponse2002 result = apiInstance.addonsAddonIdCouponsGet(addonId, with);
+            InlineResponse2003 result = apiInstance.addonsAddonIdCouponsGet(addonId, with);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AddonCouponsApi#addonsAddonIdCouponsGet");
@@ -248,6 +248,7 @@ Class | Method | HTTP request | Description
 *AddonPurchasesApi* | [**addonsAddonIdPurchasesUserIdPut**](docs/AddonPurchasesApi.md#addonsAddonIdPurchasesUserIdPut) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
 *AddonReviewsApi* | [**addonsAddonIdReviewsGet**](docs/AddonReviewsApi.md#addonsAddonIdReviewsGet) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
 *AddonReviewsApi* | [**addonsAddonIdReviewsReviewIdGet**](docs/AddonReviewsApi.md#addonsAddonIdReviewsReviewIdGet) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
+*AddonStatsApi* | [**addonsAddonIdStatsGet**](docs/AddonStatsApi.md#addonsAddonIdStatsGet) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 *AddonVersionsApi* | [**addonsAddonIdVersionsGet**](docs/AddonVersionsApi.md#addonsAddonIdVersionsGet) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
 *AddonVersionsApi* | [**addonsAddonIdVersionsPost**](docs/AddonVersionsApi.md#addonsAddonIdVersionsPost) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
 *AddonVersionsApi* | [**addonsAddonIdVersionsVersionIdDownloadGet**](docs/AddonVersionsApi.md#addonsAddonIdVersionsVersionIdDownloadGet) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
@@ -274,9 +275,15 @@ Class | Method | HTTP request | Description
  - [AddonDownload](docs/AddonDownload.md)
  - [AddonImages](docs/AddonImages.md)
  - [AddonPrice](docs/AddonPrice.md)
- - [AddonPriceOriginal](docs/AddonPriceOriginal.md)
  - [AddonPurchase](docs/AddonPurchase.md)
  - [AddonReview](docs/AddonReview.md)
+ - [AddonStats](docs/AddonStats.md)
+ - [AddonStatsRevenue](docs/AddonStatsRevenue.md)
+ - [AddonStatsRevenueCurrent](docs/AddonStatsRevenueCurrent.md)
+ - [AddonStatsSales](docs/AddonStatsSales.md)
+ - [AddonStatsSalesCurrent](docs/AddonStatsSalesCurrent.md)
+ - [AddonStatsViews](docs/AddonStatsViews.md)
+ - [AddonStatsViewsCurrent](docs/AddonStatsViewsCurrent.md)
  - [AddonVersion](docs/AddonVersion.md)
  - [Ban](docs/Ban.md)
  - [Error](docs/Error.md)
@@ -286,6 +293,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse20011](docs/InlineResponse20011.md)
  - [InlineResponse20012](docs/InlineResponse20012.md)
  - [InlineResponse20013](docs/InlineResponse20013.md)
+ - [InlineResponse20014](docs/InlineResponse20014.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -299,8 +307,8 @@ Class | Method | HTTP request | Description
  - [InlineResponse2012](docs/InlineResponse2012.md)
  - [InlineResponse2013](docs/InlineResponse2013.md)
  - [InlineResponseDefault](docs/InlineResponseDefault.md)
+ - [Money](docs/Money.md)
  - [OrderItem](docs/OrderItem.md)
- - [OrderItemPrice](docs/OrderItemPrice.md)
  - [PermissionGroup](docs/PermissionGroup.md)
  - [Team](docs/Team.md)
  - [TeamUser](docs/TeamUser.md)

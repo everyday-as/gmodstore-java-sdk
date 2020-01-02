@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="usersUserIdPurchasesGet"></a>
 # **usersUserIdPurchasesGet**
-> InlineResponse2003 usersUserIdPurchasesGet(userId, with)
+> InlineResponse2004 usersUserIdPurchasesGet(userId, with)
 
 Fetch all purchases a user has made
 
@@ -33,7 +33,7 @@ UserPurchasesApi apiInstance = new UserPurchasesApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2003 result = apiInstance.usersUserIdPurchasesGet(userId, with);
+    InlineResponse2004 result = apiInstance.usersUserIdPurchasesGet(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserPurchasesApi#usersUserIdPurchasesGet");
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

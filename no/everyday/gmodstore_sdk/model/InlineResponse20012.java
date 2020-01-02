@@ -23,24 +23,24 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import no.everyday.gmodstore_sdk.model.Ban;
+import no.everyday.gmodstore_sdk.model.Team;
 /**
  * InlineResponse20012
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class InlineResponse20012 {
   @SerializedName("data")
-  private List<Ban> data = null;
+  private List<Team> data = null;
 
-  public InlineResponse20012 data(List<Ban> data) {
+  public InlineResponse20012 data(List<Team> data) {
     this.data = data;
     return this;
   }
 
-  public InlineResponse20012 addDataItem(Ban dataItem) {
+  public InlineResponse20012 addDataItem(Team dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<Ban>();
+      this.data = new ArrayList<Team>();
     }
     this.data.add(dataItem);
     return this;
@@ -51,11 +51,11 @@ public class InlineResponse20012 {
    * @return data
   **/
   @Schema(description = "")
-  public List<Ban> getData() {
+  public List<Team> getData() {
     return data;
   }
 
-  public void setData(List<Ban> data) {
+  public void setData(List<Team> data) {
     this.data = data;
   }
 

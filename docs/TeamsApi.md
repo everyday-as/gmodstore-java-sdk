@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="teamsTeamIdGet"></a>
 # **teamsTeamIdGet**
-> InlineResponse2008 teamsTeamIdGet(teamId, with)
+> InlineResponse2009 teamsTeamIdGet(teamId, with)
 
 Fetch a single team
 
@@ -33,7 +33,7 @@ TeamsApi apiInstance = new TeamsApi();
 Long teamId = 789L; // Long | Id of the team
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Team schema
 try {
-    InlineResponse2008 result = apiInstance.teamsTeamIdGet(teamId, with);
+    InlineResponse2009 result = apiInstance.teamsTeamIdGet(teamId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamsApi#teamsTeamIdGet");
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 

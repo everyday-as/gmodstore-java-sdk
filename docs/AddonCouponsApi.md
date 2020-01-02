@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 <a name="addonsAddonIdCouponsGet"></a>
 # **addonsAddonIdCouponsGet**
-> InlineResponse2002 addonsAddonIdCouponsGet(addonId, with)
+> InlineResponse2003 addonsAddonIdCouponsGet(addonId, with)
 
 Fetch all the coupons for an addon
 
@@ -207,7 +207,7 @@ AddonCouponsApi apiInstance = new AddonCouponsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
 try {
-    InlineResponse2002 result = apiInstance.addonsAddonIdCouponsGet(addonId, with);
+    InlineResponse2003 result = apiInstance.addonsAddonIdCouponsGet(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonCouponsApi#addonsAddonIdCouponsGet");
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

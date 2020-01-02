@@ -3,4 +3,4 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List&lt;Ban&gt;**](Ban.md) |  |  [optional]
+**data** | [**List&lt;Team&gt;**](Team.md) |  |  [optional]

@@ -3,4 +3,4 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**User**](User.md) |  |  [optional]
+**data** | [**List&lt;TeamUser&gt;**](TeamUser.md) |  |  [optional]

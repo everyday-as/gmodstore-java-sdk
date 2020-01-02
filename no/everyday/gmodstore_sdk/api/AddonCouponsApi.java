@@ -27,7 +27,7 @@ import java.io.IOException;
 
 
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2002;
+import no.everyday.gmodstore_sdk.model.InlineResponse2003;
 import no.everyday.gmodstore_sdk.model.InlineResponse201;
 
 import java.lang.reflect.Type;
@@ -547,11 +547,11 @@ public class AddonCouponsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonCoupon schema (optional)
-     * @return InlineResponse2002
+     * @return InlineResponse2003
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 addonsAddonIdCouponsGet(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2002> resp = addonsAddonIdCouponsGetWithHttpInfo(addonId, with);
+    public InlineResponse2003 addonsAddonIdCouponsGet(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<InlineResponse2003> resp = addonsAddonIdCouponsGetWithHttpInfo(addonId, with);
         return resp.getData();
     }
 
@@ -560,12 +560,12 @@ public class AddonCouponsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonCoupon schema (optional)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;InlineResponse2003&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> addonsAddonIdCouponsGetWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<InlineResponse2003> addonsAddonIdCouponsGetWithHttpInfo(Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = addonsAddonIdCouponsGetValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -578,7 +578,7 @@ public class AddonCouponsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addonsAddonIdCouponsGetAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public com.squareup.okhttp.Call addonsAddonIdCouponsGetAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2003> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -600,7 +600,7 @@ public class AddonCouponsApi {
         }
 
         com.squareup.okhttp.Call call = addonsAddonIdCouponsGetValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

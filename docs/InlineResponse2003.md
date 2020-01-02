@@ -3,4 +3,4 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List&lt;AddonPurchase&gt;**](AddonPurchase.md) |  |  [optional]
+**data** | [**List&lt;AddonCoupon&gt;**](AddonCoupon.md) |  |  [optional]

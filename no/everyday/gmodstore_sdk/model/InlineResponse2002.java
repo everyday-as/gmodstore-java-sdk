@@ -23,24 +23,24 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import no.everyday.gmodstore_sdk.model.AddonCoupon;
+import no.everyday.gmodstore_sdk.model.AddonStats;
 /**
  * InlineResponse2002
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class InlineResponse2002 {
   @SerializedName("data")
-  private List<AddonCoupon> data = null;
+  private List<AddonStats> data = null;
 
-  public InlineResponse2002 data(List<AddonCoupon> data) {
+  public InlineResponse2002 data(List<AddonStats> data) {
     this.data = data;
     return this;
   }
 
-  public InlineResponse2002 addDataItem(AddonCoupon dataItem) {
+  public InlineResponse2002 addDataItem(AddonStats dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<AddonCoupon>();
+      this.data = new ArrayList<AddonStats>();
     }
     this.data.add(dataItem);
     return this;
@@ -51,11 +51,11 @@ public class InlineResponse2002 {
    * @return data
   **/
   @Schema(description = "")
-  public List<AddonCoupon> getData() {
+  public List<AddonStats> getData() {
     return data;
   }
 
-  public void setData(List<AddonCoupon> data) {
+  public void setData(List<AddonStats> data) {
     this.data = data;
   }
 

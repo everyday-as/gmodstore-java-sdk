@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="addonsAddonIdVersionsGet"></a>
 # **addonsAddonIdVersionsGet**
-> InlineResponse2006 addonsAddonIdVersionsGet(addonId, with)
+> InlineResponse2007 addonsAddonIdVersionsGet(addonId, with)
 
 Fetch all the versions of an addon
 
@@ -37,7 +37,7 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2006 result = apiInstance.addonsAddonIdVersionsGet(addonId, with);
+    InlineResponse2007 result = apiInstance.addonsAddonIdVersionsGet(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsGet");
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 <a name="addonsAddonIdVersionsVersionIdDownloadGet"></a>
 # **addonsAddonIdVersionsVersionIdDownloadGet**
-> InlineResponse2007 addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId)
+> InlineResponse2008 addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId)
 
 Generate a download token for a specific version of an addon
 
@@ -153,7 +153,7 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 try {
-    InlineResponse2007 result = apiInstance.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
+    InlineResponse2008 result = apiInstance.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsVersionIdDownloadGet");
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 

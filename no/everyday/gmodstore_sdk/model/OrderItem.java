@@ -22,19 +22,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.UUID;
-import no.everyday.gmodstore_sdk.model.OrderItemPrice;
+import no.everyday.gmodstore_sdk.model.Money;
 import org.threeten.bp.OffsetDateTime;
 /**
  * OrderItem
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class OrderItem {
   @SerializedName("id")
   private UUID id = null;
 
   @SerializedName("price")
-  private OrderItemPrice price = null;
+  private Money price = null;
 
   @SerializedName("reversed_at")
   private OffsetDateTime reversedAt = null;
@@ -57,7 +57,7 @@ public class OrderItem {
     this.id = id;
   }
 
-  public OrderItem price(OrderItemPrice price) {
+  public OrderItem price(Money price) {
     this.price = price;
     return this;
   }
@@ -67,11 +67,11 @@ public class OrderItem {
    * @return price
   **/
   @Schema(required = true, description = "")
-  public OrderItemPrice getPrice() {
+  public Money getPrice() {
     return price;
   }
 
-  public void setPrice(OrderItemPrice price) {
+  public void setPrice(Money price) {
     this.price = price;
   }
 

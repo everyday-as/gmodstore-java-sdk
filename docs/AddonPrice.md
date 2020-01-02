@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**original** | [**AddonPriceOriginal**](AddonPriceOriginal.md) |  |  [optional]
-**purchase** | [**AddonPriceOriginal**](AddonPriceOriginal.md) |  |  [optional]
+**original** | [**Money**](Money.md) |  |  [optional]
+**purchase** | [**Money**](Money.md) |  |  [optional]

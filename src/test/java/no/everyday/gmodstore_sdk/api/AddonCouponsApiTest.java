@@ -14,7 +14,7 @@ package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2002;
+import no.everyday.gmodstore_sdk.model.InlineResponse2003;
 import no.everyday.gmodstore_sdk.model.InlineResponse201;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -95,7 +95,7 @@ public class AddonCouponsApiTest {
     public void addonsAddonIdCouponsGetTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2002 response = api.addonsAddonIdCouponsGet(addonId, with);
+        InlineResponse2003 response = api.addonsAddonIdCouponsGet(addonId, with);
 
         // TODO: test validations
     }

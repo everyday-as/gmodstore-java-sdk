@@ -3,4 +3,4 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**AddonReview**](AddonReview.md) |  |  [optional]
+**data** | [**List&lt;AddonReview&gt;**](AddonReview.md) |  |  [optional]

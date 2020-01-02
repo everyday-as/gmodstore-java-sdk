@@ -64,7 +64,7 @@ null (empty response body)
 
 <a name="usersUserIdBadgesGet"></a>
 # **usersUserIdBadgesGet**
-> InlineResponse20013 usersUserIdBadgesGet(userId)
+> InlineResponse20014 usersUserIdBadgesGet(userId)
 
 Fetch all the badges a user has
 
@@ -88,7 +88,7 @@ ApiKeyAuth.setApiKey("YOUR API KEY");
 UserBadgesApi apiInstance = new UserBadgesApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20013 result = apiInstance.usersUserIdBadgesGet(userId);
+    InlineResponse20014 result = apiInstance.usersUserIdBadgesGet(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserBadgesApi#usersUserIdBadgesGet");
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

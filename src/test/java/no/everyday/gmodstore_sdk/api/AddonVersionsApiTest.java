@@ -15,8 +15,8 @@ package no.everyday.gmodstore_sdk.api;
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.Error;
 import java.io.File;
-import no.everyday.gmodstore_sdk.model.InlineResponse2006;
 import no.everyday.gmodstore_sdk.model.InlineResponse2007;
+import no.everyday.gmodstore_sdk.model.InlineResponse2008;
 import no.everyday.gmodstore_sdk.model.InlineResponse2012;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -46,7 +46,7 @@ public class AddonVersionsApiTest {
     public void addonsAddonIdVersionsGetTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2006 response = api.addonsAddonIdVersionsGet(addonId, with);
+        InlineResponse2007 response = api.addonsAddonIdVersionsGet(addonId, with);
 
         // TODO: test validations
     }
@@ -81,7 +81,7 @@ public class AddonVersionsApiTest {
     public void addonsAddonIdVersionsVersionIdDownloadGetTest() throws ApiException {
         Long addonId = null;
         Long versionId = null;
-        InlineResponse2007 response = api.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
+        InlineResponse2008 response = api.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
 
         // TODO: test validations
     }

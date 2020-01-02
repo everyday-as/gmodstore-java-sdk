@@ -12,7 +12,7 @@
 
 package no.everyday.gmodstore_sdk;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")public class StringUtil {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
    *

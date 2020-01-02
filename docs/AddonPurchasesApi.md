@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="addonsAddonIdPurchasesGet"></a>
 # **addonsAddonIdPurchasesGet**
-> InlineResponse2003 addonsAddonIdPurchasesGet(addonId, with)
+> InlineResponse2004 addonsAddonIdPurchasesGet(addonId, with)
 
 Fetch all purchases of an addon
 
@@ -36,7 +36,7 @@ AddonPurchasesApi apiInstance = new AddonPurchasesApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2003 result = apiInstance.addonsAddonIdPurchasesGet(addonId, with);
+    InlineResponse2004 result = apiInstance.addonsAddonIdPurchasesGet(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonPurchasesApi#addonsAddonIdPurchasesGet");
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

@@ -22,27 +22,27 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * OrderItemPrice
+ * Money
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
-public class OrderItemPrice {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
+public class Money {
   @SerializedName("amount")
   private String amount = null;
 
   @SerializedName("currency")
   private String currency = null;
 
-  public OrderItemPrice amount(String amount) {
+  public Money amount(String amount) {
     this.amount = amount;
     return this;
   }
 
    /**
-   * Get amount
+   * Amount as a string specified in cents
    * @return amount
   **/
-  @Schema(description = "")
+  @Schema(description = "Amount as a string specified in cents")
   public String getAmount() {
     return amount;
   }
@@ -51,7 +51,7 @@ public class OrderItemPrice {
     this.amount = amount;
   }
 
-  public OrderItemPrice currency(String currency) {
+  public Money currency(String currency) {
     this.currency = currency;
     return this;
   }
@@ -78,9 +78,9 @@ public class OrderItemPrice {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderItemPrice orderItemPrice = (OrderItemPrice) o;
-    return Objects.equals(this.amount, orderItemPrice.amount) &&
-        Objects.equals(this.currency, orderItemPrice.currency);
+    Money money = (Money) o;
+    return Objects.equals(this.amount, money.amount) &&
+        Objects.equals(this.currency, money.currency);
   }
 
   @Override
@@ -92,7 +92,7 @@ public class OrderItemPrice {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderItemPrice {\n");
+    sb.append("class Money {\n");
     
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");

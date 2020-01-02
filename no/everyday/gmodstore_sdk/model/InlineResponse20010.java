@@ -21,18 +21,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.User;
+import java.util.ArrayList;
+import java.util.List;
+import no.everyday.gmodstore_sdk.model.TeamUser;
 /**
  * InlineResponse20010
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class InlineResponse20010 {
   @SerializedName("data")
-  private User data = null;
+  private List<TeamUser> data = null;
 
-  public InlineResponse20010 data(User data) {
+  public InlineResponse20010 data(List<TeamUser> data) {
     this.data = data;
+    return this;
+  }
+
+  public InlineResponse20010 addDataItem(TeamUser dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<TeamUser>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -41,11 +51,11 @@ public class InlineResponse20010 {
    * @return data
   **/
   @Schema(description = "")
-  public User getData() {
+  public List<TeamUser> getData() {
     return data;
   }
 
-  public void setData(User data) {
+  public void setData(List<TeamUser> data) {
     this.data = data;
   }
 

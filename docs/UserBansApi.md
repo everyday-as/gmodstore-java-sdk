@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="usersUserIdBansGet"></a>
 # **usersUserIdBansGet**
-> InlineResponse20012 usersUserIdBansGet(userId)
+> InlineResponse20013 usersUserIdBansGet(userId)
 
 Fetch all active bans associated with this user
 
@@ -32,7 +32,7 @@ ApiKeyAuth.setApiKey("YOUR API KEY");
 UserBansApi apiInstance = new UserBansApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20012 result = apiInstance.usersUserIdBansGet(userId);
+    InlineResponse20013 result = apiInstance.usersUserIdBansGet(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserBansApi#usersUserIdBansGet");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

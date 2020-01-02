@@ -21,17 +21,17 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.Team;
+import no.everyday.gmodstore_sdk.model.AddonDownload;
 /**
  * InlineResponse2008
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class InlineResponse2008 {
   @SerializedName("data")
-  private Team data = null;
+  private AddonDownload data = null;
 
-  public InlineResponse2008 data(Team data) {
+  public InlineResponse2008 data(AddonDownload data) {
     this.data = data;
     return this;
   }
@@ -41,11 +41,11 @@ public class InlineResponse2008 {
    * @return data
   **/
   @Schema(description = "")
-  public Team getData() {
+  public AddonDownload getData() {
     return data;
   }
 
-  public void setData(Team data) {
+  public void setData(AddonDownload data) {
     this.data = data;
   }
 

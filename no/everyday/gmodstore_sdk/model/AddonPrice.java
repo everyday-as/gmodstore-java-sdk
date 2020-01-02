@@ -21,20 +21,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.AddonPriceOriginal;
+import no.everyday.gmodstore_sdk.model.Money;
 /**
  * AddonPrice
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class AddonPrice {
   @SerializedName("original")
-  private AddonPriceOriginal original = null;
+  private Money original = null;
 
   @SerializedName("purchase")
-  private AddonPriceOriginal purchase = null;
+  private Money purchase = null;
 
-  public AddonPrice original(AddonPriceOriginal original) {
+  public AddonPrice original(Money original) {
     this.original = original;
     return this;
   }
@@ -44,15 +44,15 @@ public class AddonPrice {
    * @return original
   **/
   @Schema(description = "")
-  public AddonPriceOriginal getOriginal() {
+  public Money getOriginal() {
     return original;
   }
 
-  public void setOriginal(AddonPriceOriginal original) {
+  public void setOriginal(Money original) {
     this.original = original;
   }
 
-  public AddonPrice purchase(AddonPriceOriginal purchase) {
+  public AddonPrice purchase(Money purchase) {
     this.purchase = purchase;
     return this;
   }
@@ -62,11 +62,11 @@ public class AddonPrice {
    * @return purchase
   **/
   @Schema(description = "")
-  public AddonPriceOriginal getPurchase() {
+  public Money getPurchase() {
     return purchase;
   }
 
-  public void setPurchase(AddonPriceOriginal purchase) {
+  public void setPurchase(Money purchase) {
     this.purchase = purchase;
   }
 

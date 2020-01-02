@@ -21,28 +21,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import no.everyday.gmodstore_sdk.model.AddonVersion;
+import no.everyday.gmodstore_sdk.model.AddonReview;
 /**
  * InlineResponse2006
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
 public class InlineResponse2006 {
   @SerializedName("data")
-  private List<AddonVersion> data = null;
+  private AddonReview data = null;
 
-  public InlineResponse2006 data(List<AddonVersion> data) {
+  public InlineResponse2006 data(AddonReview data) {
     this.data = data;
-    return this;
-  }
-
-  public InlineResponse2006 addDataItem(AddonVersion dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<AddonVersion>();
-    }
-    this.data.add(dataItem);
     return this;
   }
 
@@ -51,11 +41,11 @@ public class InlineResponse2006 {
    * @return data
   **/
   @Schema(description = "")
-  public List<AddonVersion> getData() {
+  public AddonReview getData() {
     return data;
   }
 
-  public void setData(List<AddonVersion> data) {
+  public void setData(AddonReview data) {
     this.data = data;
   }
 

@@ -4,5 +4,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**UUID**](UUID.md) |  | 
-**price** | [**OrderItemPrice**](OrderItemPrice.md) |  | 
+**price** | [**Money**](Money.md) |  | 
 **reversedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

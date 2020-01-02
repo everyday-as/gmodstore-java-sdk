@@ -21,53 +21,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import no.everyday.gmodstore_sdk.model.AddonStatsViewsCurrent;
 /**
- * AddonPriceOriginal
+ * AddonStatsViews
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-12-17T09:58:33.821364Z[Etc/UTC]")
-public class AddonPriceOriginal {
-  @SerializedName("amount")
-  private Integer amount = null;
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
+public class AddonStatsViews {
+  @SerializedName("current")
+  private AddonStatsViewsCurrent current = null;
 
-  @SerializedName("currency")
-  private String currency = null;
+  @SerializedName("previous")
+  private AddonStatsViewsCurrent previous = null;
 
-  public AddonPriceOriginal amount(Integer amount) {
-    this.amount = amount;
+  public AddonStatsViews current(AddonStatsViewsCurrent current) {
+    this.current = current;
     return this;
   }
 
    /**
-   * Get amount
-   * minimum: 0
-   * @return amount
+   * Get current
+   * @return current
   **/
   @Schema(description = "")
-  public Integer getAmount() {
-    return amount;
+  public AddonStatsViewsCurrent getCurrent() {
+    return current;
   }
 
-  public void setAmount(Integer amount) {
-    this.amount = amount;
+  public void setCurrent(AddonStatsViewsCurrent current) {
+    this.current = current;
   }
 
-  public AddonPriceOriginal currency(String currency) {
-    this.currency = currency;
+  public AddonStatsViews previous(AddonStatsViewsCurrent previous) {
+    this.previous = previous;
     return this;
   }
 
    /**
-   * Get currency
-   * @return currency
+   * Get previous
+   * @return previous
   **/
   @Schema(description = "")
-  public String getCurrency() {
-    return currency;
+  public AddonStatsViewsCurrent getPrevious() {
+    return previous;
   }
 
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setPrevious(AddonStatsViewsCurrent previous) {
+    this.previous = previous;
   }
 
 
@@ -79,24 +79,24 @@ public class AddonPriceOriginal {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddonPriceOriginal addonPriceOriginal = (AddonPriceOriginal) o;
-    return Objects.equals(this.amount, addonPriceOriginal.amount) &&
-        Objects.equals(this.currency, addonPriceOriginal.currency);
+    AddonStatsViews addonStatsViews = (AddonStatsViews) o;
+    return Objects.equals(this.current, addonStatsViews.current) &&
+        Objects.equals(this.previous, addonStatsViews.previous);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, currency);
+    return Objects.hash(current, previous);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AddonPriceOriginal {\n");
+    sb.append("class AddonStatsViews {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    current: ").append(toIndentedString(current)).append("\n");
+    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
     sb.append("}");
     return sb.toString();
   }

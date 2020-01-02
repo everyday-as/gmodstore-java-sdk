@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="addonsAddonIdReviewsGet"></a>
 # **addonsAddonIdReviewsGet**
-> InlineResponse2004 addonsAddonIdReviewsGet(addonId, with)
+> InlineResponse2005 addonsAddonIdReviewsGet(addonId, with)
 
 Fetch all the reviews of an addon
 
@@ -34,7 +34,7 @@ AddonReviewsApi apiInstance = new AddonReviewsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonReview schema
 try {
-    InlineResponse2004 result = apiInstance.addonsAddonIdReviewsGet(addonId, with);
+    InlineResponse2005 result = apiInstance.addonsAddonIdReviewsGet(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonReviewsApi#addonsAddonIdReviewsGet");
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 <a name="addonsAddonIdReviewsReviewIdGet"></a>
 # **addonsAddonIdReviewsReviewIdGet**
-> InlineResponse2005 addonsAddonIdReviewsReviewIdGet(addonId, reviewId, with)
+> InlineResponse2006 addonsAddonIdReviewsReviewIdGet(addonId, reviewId, with)
 
 Fetch a review of an addon
 
@@ -90,7 +90,7 @@ Long addonId = 789L; // Long | Id of the addon
 Long reviewId = 789L; // Long | Id of the review
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonReview schema
 try {
-    InlineResponse2005 result = apiInstance.addonsAddonIdReviewsReviewIdGet(addonId, reviewId, with);
+    InlineResponse2006 result = apiInstance.addonsAddonIdReviewsReviewIdGet(addonId, reviewId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonReviewsApi#addonsAddonIdReviewsReviewIdGet");
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
