@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.Ban;
  * InlineResponse20013
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:18:02.785682Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:20:11.670828Z[Etc/UTC]")
 public class InlineResponse20013 {
   @SerializedName("data")
   private List<Ban> data = null;
