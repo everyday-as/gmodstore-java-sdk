@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * AddonCoupon
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-02T00:20:11.670828Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-01-12T21:49:39.344069Z[Etc/UTC]")
 public class AddonCoupon {
   @SerializedName("id")
   private Integer id = null;
@@ -49,7 +49,7 @@ public class AddonCoupon {
   private OffsetDateTime createdAt = null;
 
   @SerializedName("updated_at")
-  private Integer updatedAt = null;
+  private OffsetDateTime updatedAt = null;
 
   @SerializedName("addon")
   private Addon addon = null;
@@ -166,7 +166,7 @@ public class AddonCoupon {
     this.createdAt = createdAt;
   }
 
-  public AddonCoupon updatedAt(Integer updatedAt) {
+  public AddonCoupon updatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -176,11 +176,11 @@ public class AddonCoupon {
    * @return updatedAt
   **/
   @Schema(required = true, description = "")
-  public Integer getUpdatedAt() {
+  public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Integer updatedAt) {
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

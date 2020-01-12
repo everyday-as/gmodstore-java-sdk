@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **maxUses** | **Integer** |  | 
 **expiresAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**updatedAt** | **Integer** |  | 
+**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **addon** | [**Addon**](Addon.md) |  |  [optional]
