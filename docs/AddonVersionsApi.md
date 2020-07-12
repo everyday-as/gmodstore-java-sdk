@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="addonsAddonIdVersionsPost"></a>
 # **addonsAddonIdVersionsPost**
-> InlineResponse2012 addonsAddonIdVersionsPost(name, changelog, file, addonId, with)
+> InlineResponse2012 addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with)
 
 Create a new version for an addon
 
@@ -92,10 +92,11 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 String name = "name_example"; // String | 
 String changelog = "changelog_example"; // String | 
 File file = new File("file_example"); // File | 
+String releaseType = "releaseType_example"; // String | 
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsPost(name, changelog, file, addonId, with);
+    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsPost");
@@ -110,6 +111,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **changelog** | **String**|  |
  **file** | **File**|  |
+ **releaseType** | **String**|  | [enum: stable, beta, alpha, private, demo]
  **addonId** | **Long**| Id of the addon |
  **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
 
@@ -240,7 +242,7 @@ Name | Type | Description  | Notes
 
 <a name="addonsAddonIdVersionsVersionIdPut"></a>
 # **addonsAddonIdVersionsVersionIdPut**
-> InlineResponse2012 addonsAddonIdVersionsVersionIdPut(name, changelog, file, addonId, versionId, with)
+> InlineResponse2012 addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with)
 
 Update a version of an addon
 
@@ -264,12 +266,12 @@ ApiKeyAuth.setApiKey("YOUR API KEY");
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 String name = "name_example"; // String | 
 String changelog = "changelog_example"; // String | 
-File file = new File("file_example"); // File | 
+String releaseType = "releaseType_example"; // String | 
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsVersionIdPut(name, changelog, file, addonId, versionId, with);
+    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsVersionIdPut");
@@ -283,7 +285,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**|  |
  **changelog** | **String**|  |
- **file** | **File**|  |
+ **releaseType** | **String**|  | [enum: stable, beta, alpha, private, demo]
  **addonId** | **Long**| Id of the addon |
  **versionId** | **Long**| Id of the version |
  **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]

@@ -63,9 +63,10 @@ public class AddonVersionsApiTest {
         String name = null;
         String changelog = null;
         File file = null;
+        String releaseType = null;
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.addonsAddonIdVersionsPost(name, changelog, file, addonId, with);
+        InlineResponse2012 response = api.addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with);
 
         // TODO: test validations
     }
@@ -114,11 +115,11 @@ public class AddonVersionsApiTest {
     public void addonsAddonIdVersionsVersionIdPutTest() throws ApiException {
         String name = null;
         String changelog = null;
-        File file = null;
+        String releaseType = null;
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.addonsAddonIdVersionsVersionIdPut(name, changelog, file, addonId, versionId, with);
+        InlineResponse2012 response = api.addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with);
 
         // TODO: test validations
     }

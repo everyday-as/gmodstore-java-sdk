@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.UserBadgeLegend;
  * InlineResponse20014
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-03-05T12:53:02.150694Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-07-12T14:11:45.410620Z[Etc/UTC]")
 public class InlineResponse20014 {
   @SerializedName("data")
   private List<UserBadgeLegend> data = null;
