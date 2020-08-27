@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewAddonPurchase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:47:16.295670Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:48:49.805305Z[Etc/UTC]")
 public class NewAddonPurchase {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
