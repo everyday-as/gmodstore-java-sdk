@@ -27,7 +27,7 @@ import java.util.List;
  * Ban
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:59.237339Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:49:59.885063Z[Etc/UTC]")
 public class Ban {
   @SerializedName("id")
   private Integer id = null;

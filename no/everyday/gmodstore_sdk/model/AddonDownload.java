@@ -25,7 +25,7 @@ import java.io.IOException;
  * **NOTE:** The url is valid for a single use within 24 hours **ONLY**!
  */
 @Schema(description = "**NOTE:** The url is valid for a single use within 24 hours **ONLY**!")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:59.237339Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:49:59.885063Z[Etc/UTC]")
 public class AddonDownload {
   @SerializedName("url")
   private String url = null;
