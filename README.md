@@ -2,7 +2,7 @@
 
 GmodStore
 - API version: 1.0.1
-  - Build date: 2020-08-27T03:41:38.297171Z[Etc/UTC]
+  - Build date: 2020-08-27T03:49:40.602050Z[Etc/UTC]
 
 Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
 
@@ -257,10 +257,12 @@ Class | Method | HTTP request | Description
  - [AddonPurchase](docs/AddonPurchase.md)
  - [AddonPurchaseListResponse](docs/AddonPurchaseListResponse.md)
  - [AddonPurchaseResponse](docs/AddonPurchaseResponse.md)
+ - [AddonResponse](docs/AddonResponse.md)
  - [AddonReview](docs/AddonReview.md)
  - [AddonReviewListResponse](docs/AddonReviewListResponse.md)
  - [AddonReviewResponse](docs/AddonReviewResponse.md)
  - [AddonStats](docs/AddonStats.md)
+ - [AddonStatsListResponse](docs/AddonStatsListResponse.md)
  - [AddonStatsRevenue](docs/AddonStatsRevenue.md)
  - [AddonStatsRevenueCurrent](docs/AddonStatsRevenueCurrent.md)
  - [AddonStatsSales](docs/AddonStatsSales.md)
@@ -275,9 +277,6 @@ Class | Method | HTTP request | Description
  - [Ban](docs/Ban.md)
  - [BanListResponse](docs/BanListResponse.md)
  - [Error](docs/Error.md)
- - [InlineResponse200](docs/InlineResponse200.md)
- - [InlineResponse2001](docs/InlineResponse2001.md)
- - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponseDefault](docs/InlineResponseDefault.md)
  - [Money](docs/Money.md)
  - [NewAddonCoupon](docs/NewAddonCoupon.md)

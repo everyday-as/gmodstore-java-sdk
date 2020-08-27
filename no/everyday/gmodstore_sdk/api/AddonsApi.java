@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import no.everyday.gmodstore_sdk.model.AddonListResponse;
+import no.everyday.gmodstore_sdk.model.AddonResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse200;
-import no.everyday.gmodstore_sdk.model.InlineResponse2001;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -129,11 +129,11 @@ public class AddonsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the Addon schema (optional)
-     * @return InlineResponse2001
+     * @return AddonResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 getAddon(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2001> resp = getAddonWithHttpInfo(addonId, with);
+    public AddonResponse getAddon(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonResponse> resp = getAddonWithHttpInfo(addonId, with);
         return resp.getData();
     }
 
@@ -142,12 +142,12 @@ public class AddonsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the Addon schema (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;AddonResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> getAddonWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonResponse> getAddonWithHttpInfo(Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getAddonValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -160,7 +160,7 @@ public class AddonsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAddonAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonAsync(Long addonId, List<String> with, final ApiCallback<AddonResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -182,7 +182,7 @@ public class AddonsApi {
         }
 
         com.squareup.okhttp.Call call = getAddonValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -253,11 +253,11 @@ public class AddonsApi {
      * Fetch all the addons that you have access to
      * 
      * @param with The relations you want to fetch with the Addon schema (optional)
-     * @return InlineResponse200
+     * @return AddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 listSelfAddons(List<String> with) throws ApiException {
-        ApiResponse<InlineResponse200> resp = listSelfAddonsWithHttpInfo(with);
+    public AddonListResponse listSelfAddons(List<String> with) throws ApiException {
+        ApiResponse<AddonListResponse> resp = listSelfAddonsWithHttpInfo(with);
         return resp.getData();
     }
 
@@ -265,12 +265,12 @@ public class AddonsApi {
      * Fetch all the addons that you have access to
      * 
      * @param with The relations you want to fetch with the Addon schema (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;AddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> listSelfAddonsWithHttpInfo(List<String> with) throws ApiException {
+    public ApiResponse<AddonListResponse> listSelfAddonsWithHttpInfo(List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listSelfAddonsValidateBeforeCall(with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -282,7 +282,7 @@ public class AddonsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listSelfAddonsAsync(List<String> with, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public com.squareup.okhttp.Call listSelfAddonsAsync(List<String> with, final ApiCallback<AddonListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -304,7 +304,7 @@ public class AddonsApi {
         }
 
         com.squareup.okhttp.Call call = listSelfAddonsValidateBeforeCall(with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import no.everyday.gmodstore_sdk.model.AddonStatsListResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2002;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -124,11 +124,11 @@ public class AddonStatsApi {
      * Fetch all the stats for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @return InlineResponse2002
+     * @return AddonStatsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 getAddonStats(Long addonId) throws ApiException {
-        ApiResponse<InlineResponse2002> resp = getAddonStatsWithHttpInfo(addonId);
+    public AddonStatsListResponse getAddonStats(Long addonId) throws ApiException {
+        ApiResponse<AddonStatsListResponse> resp = getAddonStatsWithHttpInfo(addonId);
         return resp.getData();
     }
 
@@ -136,12 +136,12 @@ public class AddonStatsApi {
      * Fetch all the stats for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;AddonStatsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> getAddonStatsWithHttpInfo(Long addonId) throws ApiException {
+    public ApiResponse<AddonStatsListResponse> getAddonStatsWithHttpInfo(Long addonId) throws ApiException {
         com.squareup.okhttp.Call call = getAddonStatsValidateBeforeCall(addonId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonStatsListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -153,7 +153,7 @@ public class AddonStatsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAddonStatsAsync(Long addonId, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonStatsAsync(Long addonId, final ApiCallback<AddonStatsListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,7 +175,7 @@ public class AddonStatsApi {
         }
 
         com.squareup.okhttp.Call call = getAddonStatsValidateBeforeCall(addonId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonStatsListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

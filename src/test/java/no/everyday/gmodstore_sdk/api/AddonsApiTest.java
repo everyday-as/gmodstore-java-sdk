@@ -13,9 +13,9 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonListResponse;
+import no.everyday.gmodstore_sdk.model.AddonResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse200;
-import no.everyday.gmodstore_sdk.model.InlineResponse2001;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,7 +44,7 @@ public class AddonsApiTest {
     public void getAddonTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2001 response = api.getAddon(addonId, with);
+        AddonResponse response = api.getAddon(addonId, with);
 
         // TODO: test validations
     }
@@ -59,7 +59,7 @@ public class AddonsApiTest {
     @Test
     public void listSelfAddonsTest() throws ApiException {
         List<String> with = null;
-        InlineResponse200 response = api.listSelfAddons(with);
+        AddonListResponse response = api.listSelfAddons(with);
 
         // TODO: test validations
     }

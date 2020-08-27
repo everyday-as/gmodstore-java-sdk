@@ -23,24 +23,24 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import no.everyday.gmodstore_sdk.model.Addon;
+import no.everyday.gmodstore_sdk.model.AddonStats;
 /**
- * InlineResponse200
+ * AddonStatsListResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:41:38.297171Z[Etc/UTC]")
-public class InlineResponse200 {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:49:40.602050Z[Etc/UTC]")
+public class AddonStatsListResponse {
   @SerializedName("data")
-  private List<Addon> data = null;
+  private List<AddonStats> data = null;
 
-  public InlineResponse200 data(List<Addon> data) {
+  public AddonStatsListResponse data(List<AddonStats> data) {
     this.data = data;
     return this;
   }
 
-  public InlineResponse200 addDataItem(Addon dataItem) {
+  public AddonStatsListResponse addDataItem(AddonStats dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<Addon>();
+      this.data = new ArrayList<AddonStats>();
     }
     this.data.add(dataItem);
     return this;
@@ -51,11 +51,11 @@ public class InlineResponse200 {
    * @return data
   **/
   @Schema(description = "")
-  public List<Addon> getData() {
+  public List<AddonStats> getData() {
     return data;
   }
 
-  public void setData(List<Addon> data) {
+  public void setData(List<AddonStats> data) {
     this.data = data;
   }
 
@@ -68,8 +68,8 @@ public class InlineResponse200 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return Objects.equals(this.data, inlineResponse200.data);
+    AddonStatsListResponse addonStatsListResponse = (AddonStatsListResponse) o;
+    return Objects.equals(this.data, addonStatsListResponse.data);
   }
 
   @Override
@@ -81,7 +81,7 @@ public class InlineResponse200 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse200 {\n");
+    sb.append("class AddonStatsListResponse {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

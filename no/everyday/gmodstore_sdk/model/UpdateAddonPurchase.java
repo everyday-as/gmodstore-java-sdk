@@ -25,7 +25,7 @@ import java.io.IOException;
  * UpdateAddonPurchase
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:41:38.297171Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:49:40.602050Z[Etc/UTC]")
 public class UpdateAddonPurchase {
   @SerializedName("revoked")
   private Boolean revoked = null;

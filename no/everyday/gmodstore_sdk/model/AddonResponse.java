@@ -23,15 +23,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.Addon;
 /**
- * InlineResponse2001
+ * AddonResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:41:38.297171Z[Etc/UTC]")
-public class InlineResponse2001 {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:49:40.602050Z[Etc/UTC]")
+public class AddonResponse {
   @SerializedName("data")
   private Addon data = null;
 
-  public InlineResponse2001 data(Addon data) {
+  public AddonResponse data(Addon data) {
     this.data = data;
     return this;
   }
@@ -58,8 +58,8 @@ public class InlineResponse2001 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2001 inlineResponse2001 = (InlineResponse2001) o;
-    return Objects.equals(this.data, inlineResponse2001.data);
+    AddonResponse addonResponse = (AddonResponse) o;
+    return Objects.equals(this.data, addonResponse.data);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class InlineResponse2001 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2001 {\n");
+    sb.append("class AddonResponse {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

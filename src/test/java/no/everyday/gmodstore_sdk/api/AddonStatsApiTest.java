@@ -13,8 +13,8 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonStatsListResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2002;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class AddonStatsApiTest {
     @Test
     public void getAddonStatsTest() throws ApiException {
         Long addonId = null;
-        InlineResponse2002 response = api.getAddonStats(addonId);
+        AddonStatsListResponse response = api.getAddonStats(addonId);
 
         // TODO: test validations
     }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAddon"></a>
 # **getAddon**
-> InlineResponse2001 getAddon(addonId, with)
+> AddonResponse getAddon(addonId, with)
 
 Fetch a single addon
 
@@ -29,7 +29,7 @@ AddonsApi apiInstance = new AddonsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse2001 result = apiInstance.getAddon(addonId, with);
+    AddonResponse result = apiInstance.getAddon(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonsApi#getAddon");
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**AddonResponse**](AddonResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 <a name="listSelfAddons"></a>
 # **listSelfAddons**
-> InlineResponse200 listSelfAddons(with)
+> AddonListResponse listSelfAddons(with)
 
 Fetch all the addons that you have access to
 
@@ -78,7 +78,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 AddonsApi apiInstance = new AddonsApi();
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse200 result = apiInstance.listSelfAddons(with);
+    AddonListResponse result = apiInstance.listSelfAddons(with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonsApi#listSelfAddons");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**AddonListResponse**](AddonListResponse.md)
 
 ### Authorization
 
