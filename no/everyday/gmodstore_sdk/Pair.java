@@ -13,7 +13,7 @@
 
 package no.everyday.gmodstore_sdk;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:48:49.805305Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:51:46.473028Z[Etc/UTC]")
 public class Pair {
     private String name = "";
     private String value = "";

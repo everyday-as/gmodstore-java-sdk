@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UserBadge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:48:49.805305Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:51:46.473028Z[Etc/UTC]")
 public class UserBadge {
   public static final String SERIALIZED_NAME_BADGE = "badge";
   @SerializedName(SERIALIZED_NAME_BADGE)
