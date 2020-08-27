@@ -28,7 +28,7 @@ import java.net.URI;
 /**
  * AddonImages
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:36:21.092499Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:45:31.481431Z[Etc/UTC]")
 public class AddonImages {
   public static final String SERIALIZED_NAME_BIGSPOT = "bigspot";
   @SerializedName(SERIALIZED_NAME_BIGSPOT)
