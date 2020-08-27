@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **avatar** | **String** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
 **slug** | **String** |  |  [optional]
+**reputation** | **Long** |  |  [optional]
+**teamReputation** | **Long** |  |  [optional]
 **banProperties** | [**UserBanProperties**](UserBanProperties.md) |  |  [optional]
 **group** | [**PermissionGroup**](PermissionGroup.md) |  |  [optional]

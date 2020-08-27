@@ -20,7 +20,7 @@ import java.util.List;
  * UserBanProperties
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T11:54:59.353958Z[Etc/UTC]")
 public class UserBanProperties extends ArrayList<String> {
 
   @Override

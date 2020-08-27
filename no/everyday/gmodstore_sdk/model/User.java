@@ -27,7 +27,7 @@ import no.everyday.gmodstore_sdk.model.UserBanProperties;
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T11:54:59.353958Z[Etc/UTC]")
 public class User {
   @SerializedName("id")
   private Long id = null;
@@ -43,6 +43,12 @@ public class User {
 
   @SerializedName("slug")
   private String slug = null;
+
+  @SerializedName("reputation")
+  private Long reputation = null;
+
+  @SerializedName("team_reputation")
+  private Long teamReputation = null;
 
   @SerializedName("ban_properties")
   private UserBanProperties banProperties = null;
@@ -140,6 +146,42 @@ public class User {
     this.slug = slug;
   }
 
+  public User reputation(Long reputation) {
+    this.reputation = reputation;
+    return this;
+  }
+
+   /**
+   * Get reputation
+   * @return reputation
+  **/
+  @Schema(description = "")
+  public Long getReputation() {
+    return reputation;
+  }
+
+  public void setReputation(Long reputation) {
+    this.reputation = reputation;
+  }
+
+  public User teamReputation(Long teamReputation) {
+    this.teamReputation = teamReputation;
+    return this;
+  }
+
+   /**
+   * Get teamReputation
+   * @return teamReputation
+  **/
+  @Schema(description = "")
+  public Long getTeamReputation() {
+    return teamReputation;
+  }
+
+  public void setTeamReputation(Long teamReputation) {
+    this.teamReputation = teamReputation;
+  }
+
   public User banProperties(UserBanProperties banProperties) {
     this.banProperties = banProperties;
     return this;
@@ -191,13 +233,15 @@ public class User {
         Objects.equals(this.avatar, user.avatar) &&
         Objects.equals(this.countryCode, user.countryCode) &&
         Objects.equals(this.slug, user.slug) &&
+        Objects.equals(this.reputation, user.reputation) &&
+        Objects.equals(this.teamReputation, user.teamReputation) &&
         Objects.equals(this.banProperties, user.banProperties) &&
         Objects.equals(this.group, user.group);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, avatar, countryCode, slug, banProperties, group);
+    return Objects.hash(id, name, avatar, countryCode, slug, reputation, teamReputation, banProperties, group);
   }
 
 
@@ -211,6 +255,8 @@ public class User {
     sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    reputation: ").append(toIndentedString(reputation)).append("\n");
+    sb.append("    teamReputation: ").append(toIndentedString(teamReputation)).append("\n");
     sb.append("    banProperties: ").append(toIndentedString(banProperties)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("}");
