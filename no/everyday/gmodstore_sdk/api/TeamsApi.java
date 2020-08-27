@@ -27,7 +27,7 @@ import java.io.IOException;
 
 
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2009;
+import no.everyday.gmodstore_sdk.model.TeamResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -128,11 +128,11 @@ public class TeamsApi {
      * 
      * @param teamId Id of the team (required)
      * @param with The relations you want to fetch with the Team schema (optional)
-     * @return InlineResponse2009
+     * @return TeamResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2009 getTeam(Long teamId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2009> resp = getTeamWithHttpInfo(teamId, with);
+    public TeamResponse getTeam(Long teamId, List<String> with) throws ApiException {
+        ApiResponse<TeamResponse> resp = getTeamWithHttpInfo(teamId, with);
         return resp.getData();
     }
 
@@ -141,12 +141,12 @@ public class TeamsApi {
      * 
      * @param teamId Id of the team (required)
      * @param with The relations you want to fetch with the Team schema (optional)
-     * @return ApiResponse&lt;InlineResponse2009&gt;
+     * @return ApiResponse&lt;TeamResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2009> getTeamWithHttpInfo(Long teamId, List<String> with) throws ApiException {
+    public ApiResponse<TeamResponse> getTeamWithHttpInfo(Long teamId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getTeamValidateBeforeCall(teamId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -159,7 +159,7 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTeamAsync(Long teamId, List<String> with, final ApiCallback<InlineResponse2009> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTeamAsync(Long teamId, List<String> with, final ApiCallback<TeamResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,7 +181,7 @@ public class TeamsApi {
         }
 
         com.squareup.okhttp.Call call = getTeamValidateBeforeCall(teamId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

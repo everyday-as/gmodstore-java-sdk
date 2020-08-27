@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createUserBadge"></a>
 # **createUserBadge**
-> InlineResponse2013 createUserBadge(body, userId)
+> BadgeResponse createUserBadge(body, userId)
 
 Give a user a badge
 
@@ -27,10 +27,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserBadgesApi apiInstance = new UserBadgesApi();
-BadgeCreateBody body = new BadgeCreateBody(); // BadgeCreateBody | 
+NewUserBadge body = new NewUserBadge(); // NewUserBadge | 
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse2013 result = apiInstance.createUserBadge(body, userId);
+    BadgeResponse result = apiInstance.createUserBadge(body, userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserBadgesApi#createUserBadge");
@@ -42,12 +42,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BadgeCreateBody**](BadgeCreateBody.md)|  |
+ **body** | [**NewUserBadge**](NewUserBadge.md)|  |
  **userId** | **String**| Id of the user |
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**BadgeResponse**](BadgeResponse.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ null (empty response body)
 
 <a name="listUserBadges"></a>
 # **listUserBadges**
-> InlineResponse20014 listUserBadges(userId)
+> BadgeListResponse listUserBadges(userId)
 
 Fetch all the badges a user has
 
@@ -128,7 +128,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 UserBadgesApi apiInstance = new UserBadgesApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20014 result = apiInstance.listUserBadges(userId);
+    BadgeListResponse result = apiInstance.listUserBadges(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserBadgesApi#listUserBadges");
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**BadgeListResponse**](BadgeListResponse.md)
 
 ### Authorization
 

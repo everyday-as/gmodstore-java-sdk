@@ -26,11 +26,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import no.everyday.gmodstore_sdk.model.AddonDownloadResponse;
+import no.everyday.gmodstore_sdk.model.AddonVersionListResponse;
+import no.everyday.gmodstore_sdk.model.AddonVersionResponse;
 import no.everyday.gmodstore_sdk.model.Error;
 import java.io.File;
-import no.everyday.gmodstore_sdk.model.InlineResponse2007;
-import no.everyday.gmodstore_sdk.model.InlineResponse2008;
-import no.everyday.gmodstore_sdk.model.InlineResponse2012;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -163,11 +163,11 @@ public class AddonVersionsApi {
      * @param releaseType  (required)
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return InlineResponse2012
+     * @return AddonVersionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 createAddonVersion(String name, String changelog, File file, String releaseType, Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2012> resp = createAddonVersionWithHttpInfo(name, changelog, file, releaseType, addonId, with);
+    public AddonVersionResponse createAddonVersion(String name, String changelog, File file, String releaseType, Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonVersionResponse> resp = createAddonVersionWithHttpInfo(name, changelog, file, releaseType, addonId, with);
         return resp.getData();
     }
 
@@ -180,12 +180,12 @@ public class AddonVersionsApi {
      * @param releaseType  (required)
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse&lt;AddonVersionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> createAddonVersionWithHttpInfo(String name, String changelog, File file, String releaseType, Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonVersionResponse> createAddonVersionWithHttpInfo(String name, String changelog, File file, String releaseType, Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = createAddonVersionValidateBeforeCall(name, changelog, file, releaseType, addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -202,7 +202,7 @@ public class AddonVersionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAddonVersionAsync(String name, String changelog, File file, String releaseType, Long addonId, List<String> with, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAddonVersionAsync(String name, String changelog, File file, String releaseType, Long addonId, List<String> with, final ApiCallback<AddonVersionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -224,7 +224,7 @@ public class AddonVersionsApi {
         }
 
         com.squareup.okhttp.Call call = createAddonVersionValidateBeforeCall(name, changelog, file, releaseType, addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -305,11 +305,11 @@ public class AddonVersionsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
-     * @return InlineResponse2008
+     * @return AddonDownloadResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2008 downloadAddonVersion(Long addonId, Long versionId) throws ApiException {
-        ApiResponse<InlineResponse2008> resp = downloadAddonVersionWithHttpInfo(addonId, versionId);
+    public AddonDownloadResponse downloadAddonVersion(Long addonId, Long versionId) throws ApiException {
+        ApiResponse<AddonDownloadResponse> resp = downloadAddonVersionWithHttpInfo(addonId, versionId);
         return resp.getData();
     }
 
@@ -318,12 +318,12 @@ public class AddonVersionsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse&lt;AddonDownloadResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2008> downloadAddonVersionWithHttpInfo(Long addonId, Long versionId) throws ApiException {
+    public ApiResponse<AddonDownloadResponse> downloadAddonVersionWithHttpInfo(Long addonId, Long versionId) throws ApiException {
         com.squareup.okhttp.Call call = downloadAddonVersionValidateBeforeCall(addonId, versionId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonDownloadResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -336,7 +336,7 @@ public class AddonVersionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call downloadAddonVersionAsync(Long addonId, Long versionId, final ApiCallback<InlineResponse2008> callback) throws ApiException {
+    public com.squareup.okhttp.Call downloadAddonVersionAsync(Long addonId, Long versionId, final ApiCallback<AddonDownloadResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -358,7 +358,7 @@ public class AddonVersionsApi {
         }
 
         com.squareup.okhttp.Call call = downloadAddonVersionValidateBeforeCall(addonId, versionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonDownloadResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -443,11 +443,11 @@ public class AddonVersionsApi {
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return InlineResponse2012
+     * @return AddonVersionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 getAddonVersion(Long addonId, Long versionId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2012> resp = getAddonVersionWithHttpInfo(addonId, versionId, with);
+    public AddonVersionResponse getAddonVersion(Long addonId, Long versionId, List<String> with) throws ApiException {
+        ApiResponse<AddonVersionResponse> resp = getAddonVersionWithHttpInfo(addonId, versionId, with);
         return resp.getData();
     }
 
@@ -457,12 +457,12 @@ public class AddonVersionsApi {
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse&lt;AddonVersionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> getAddonVersionWithHttpInfo(Long addonId, Long versionId, List<String> with) throws ApiException {
+    public ApiResponse<AddonVersionResponse> getAddonVersionWithHttpInfo(Long addonId, Long versionId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getAddonVersionValidateBeforeCall(addonId, versionId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -476,7 +476,7 @@ public class AddonVersionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAddonVersionAsync(Long addonId, Long versionId, List<String> with, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonVersionAsync(Long addonId, Long versionId, List<String> with, final ApiCallback<AddonVersionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -498,7 +498,7 @@ public class AddonVersionsApi {
         }
 
         com.squareup.okhttp.Call call = getAddonVersionValidateBeforeCall(addonId, versionId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -576,11 +576,11 @@ public class AddonVersionsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return InlineResponse2007
+     * @return AddonVersionListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2007 listAddonVersions(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2007> resp = listAddonVersionsWithHttpInfo(addonId, with);
+    public AddonVersionListResponse listAddonVersions(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonVersionListResponse> resp = listAddonVersionsWithHttpInfo(addonId, with);
         return resp.getData();
     }
 
@@ -589,12 +589,12 @@ public class AddonVersionsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;AddonVersionListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2007> listAddonVersionsWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonVersionListResponse> listAddonVersionsWithHttpInfo(Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listAddonVersionsValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -607,7 +607,7 @@ public class AddonVersionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAddonVersionsAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2007> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAddonVersionsAsync(Long addonId, List<String> with, final ApiCallback<AddonVersionListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -629,7 +629,7 @@ public class AddonVersionsApi {
         }
 
         com.squareup.okhttp.Call call = listAddonVersionsValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -738,11 +738,11 @@ public class AddonVersionsApi {
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return InlineResponse2012
+     * @return AddonVersionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 updateAddonVersion(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2012> resp = updateAddonVersionWithHttpInfo(name, changelog, releaseType, addonId, versionId, with);
+    public AddonVersionResponse updateAddonVersion(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with) throws ApiException {
+        ApiResponse<AddonVersionResponse> resp = updateAddonVersionWithHttpInfo(name, changelog, releaseType, addonId, versionId, with);
         return resp.getData();
     }
 
@@ -755,12 +755,12 @@ public class AddonVersionsApi {
      * @param addonId Id of the addon (required)
      * @param versionId Id of the version (required)
      * @param with The relations you want to fetch with the AddonVersion schema (optional)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse&lt;AddonVersionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> updateAddonVersionWithHttpInfo(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with) throws ApiException {
+    public ApiResponse<AddonVersionResponse> updateAddonVersionWithHttpInfo(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = updateAddonVersionValidateBeforeCall(name, changelog, releaseType, addonId, versionId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -777,7 +777,7 @@ public class AddonVersionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAddonVersionAsync(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAddonVersionAsync(String name, String changelog, String releaseType, Long addonId, Long versionId, List<String> with, final ApiCallback<AddonVersionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -799,7 +799,7 @@ public class AddonVersionsApi {
         }
 
         com.squareup.okhttp.Call call = updateAddonVersionValidateBeforeCall(name, changelog, releaseType, addonId, versionId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonVersionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -14,7 +14,7 @@ package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse20010;
+import no.everyday.gmodstore_sdk.model.TeamUserListResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,7 +43,7 @@ public class TeamUsersApiTest {
     public void listTeamUsersTest() throws ApiException {
         Long teamId = null;
         List<String> with = null;
-        InlineResponse20010 response = api.listTeamUsers(teamId, with);
+        TeamUserListResponse response = api.listTeamUsers(teamId, with);
 
         // TODO: test validations
     }

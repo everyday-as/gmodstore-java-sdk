@@ -26,11 +26,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.BadgeCreateBody;
+import no.everyday.gmodstore_sdk.model.BadgeListResponse;
+import no.everyday.gmodstore_sdk.model.BadgeResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse20014;
-import no.everyday.gmodstore_sdk.model.InlineResponse2013;
 import no.everyday.gmodstore_sdk.model.InlineResponseDefault;
+import no.everyday.gmodstore_sdk.model.NewUserBadge;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class UserBadgesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createUserBadgeCall(BadgeCreateBody body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createUserBadgeCall(NewUserBadge body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -109,7 +109,7 @@ public class UserBadgesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createUserBadgeValidateBeforeCall(BadgeCreateBody body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createUserBadgeValidateBeforeCall(NewUserBadge body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling createUserBadge(Async)");
@@ -133,11 +133,11 @@ public class UserBadgesApi {
      * 
      * @param body  (required)
      * @param userId Id of the user (required)
-     * @return InlineResponse2013
+     * @return BadgeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 createUserBadge(BadgeCreateBody body, String userId) throws ApiException {
-        ApiResponse<InlineResponse2013> resp = createUserBadgeWithHttpInfo(body, userId);
+    public BadgeResponse createUserBadge(NewUserBadge body, String userId) throws ApiException {
+        ApiResponse<BadgeResponse> resp = createUserBadgeWithHttpInfo(body, userId);
         return resp.getData();
     }
 
@@ -146,12 +146,12 @@ public class UserBadgesApi {
      * 
      * @param body  (required)
      * @param userId Id of the user (required)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;BadgeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> createUserBadgeWithHttpInfo(BadgeCreateBody body, String userId) throws ApiException {
+    public ApiResponse<BadgeResponse> createUserBadgeWithHttpInfo(NewUserBadge body, String userId) throws ApiException {
         com.squareup.okhttp.Call call = createUserBadgeValidateBeforeCall(body, userId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<BadgeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -164,7 +164,7 @@ public class UserBadgesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createUserBadgeAsync(BadgeCreateBody body, String userId, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public com.squareup.okhttp.Call createUserBadgeAsync(NewUserBadge body, String userId, final ApiCallback<BadgeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,7 +186,7 @@ public class UserBadgesApi {
         }
 
         com.squareup.okhttp.Call call = createUserBadgeValidateBeforeCall(body, userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<BadgeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -390,11 +390,11 @@ public class UserBadgesApi {
      * Fetch all the badges a user has
      * 
      * @param userId Id of the user (required)
-     * @return InlineResponse20014
+     * @return BadgeListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20014 listUserBadges(String userId) throws ApiException {
-        ApiResponse<InlineResponse20014> resp = listUserBadgesWithHttpInfo(userId);
+    public BadgeListResponse listUserBadges(String userId) throws ApiException {
+        ApiResponse<BadgeListResponse> resp = listUserBadgesWithHttpInfo(userId);
         return resp.getData();
     }
 
@@ -402,12 +402,12 @@ public class UserBadgesApi {
      * Fetch all the badges a user has
      * 
      * @param userId Id of the user (required)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;BadgeListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20014> listUserBadgesWithHttpInfo(String userId) throws ApiException {
+    public ApiResponse<BadgeListResponse> listUserBadgesWithHttpInfo(String userId) throws ApiException {
         com.squareup.okhttp.Call call = listUserBadgesValidateBeforeCall(userId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<BadgeListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -419,7 +419,7 @@ public class UserBadgesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserBadgesAsync(String userId, final ApiCallback<InlineResponse20014> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserBadgesAsync(String userId, final ApiCallback<BadgeListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -441,7 +441,7 @@ public class UserBadgesApi {
         }
 
         com.squareup.okhttp.Call call = listUserBadgesValidateBeforeCall(userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<BadgeListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

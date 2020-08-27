@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createAddonPurchase"></a>
 # **createAddonPurchase**
-> InlineResponse2011 createAddonPurchase(body, addonId, with)
+> AddonPurchaseResponse createAddonPurchase(body, addonId, with)
 
 Create a purchase for an addon
 
@@ -28,11 +28,11 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonPurchasesApi apiInstance = new AddonPurchasesApi();
-AddonPurchaseCreateBody body = new AddonPurchaseCreateBody(); // AddonPurchaseCreateBody | 
+NewAddonPurchase body = new NewAddonPurchase(); // NewAddonPurchase | 
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2011 result = apiInstance.createAddonPurchase(body, addonId, with);
+    AddonPurchaseResponse result = apiInstance.createAddonPurchase(body, addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonPurchasesApi#createAddonPurchase");
@@ -44,13 +44,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddonPurchaseCreateBody**](AddonPurchaseCreateBody.md)|  |
+ **body** | [**NewAddonPurchase**](NewAddonPurchase.md)|  |
  **addonId** | **Long**| Id of the addon |
  **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonPurchase schema | [optional] [enum: addon, order_item, user]
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**AddonPurchaseResponse**](AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 <a name="getAddonPurchase"></a>
 # **getAddonPurchase**
-> InlineResponse2011 getAddonPurchase(addonId, userId, with)
+> AddonPurchaseResponse getAddonPurchase(addonId, userId, with)
 
 Get a purchase of an addon by user
 
@@ -84,7 +84,7 @@ Long addonId = 789L; // Long | Id of the addon
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2011 result = apiInstance.getAddonPurchase(addonId, userId, with);
+    AddonPurchaseResponse result = apiInstance.getAddonPurchase(addonId, userId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonPurchasesApi#getAddonPurchase");
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**AddonPurchaseResponse**](AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 <a name="listAddonPurchases"></a>
 # **listAddonPurchases**
-> InlineResponse2004 listAddonPurchases(addonId, with)
+> AddonPurchaseListResponse listAddonPurchases(addonId, with)
 
 Fetch all purchases of an addon
 
@@ -135,7 +135,7 @@ AddonPurchasesApi apiInstance = new AddonPurchasesApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2004 result = apiInstance.listAddonPurchases(addonId, with);
+    AddonPurchaseListResponse result = apiInstance.listAddonPurchases(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonPurchasesApi#listAddonPurchases");
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**AddonPurchaseListResponse**](AddonPurchaseListResponse.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAddonPurchase"></a>
 # **updateAddonPurchase**
-> InlineResponse2011 updateAddonPurchase(body, addonId, userId, with)
+> AddonPurchaseResponse updateAddonPurchase(body, addonId, userId, with)
 
 Update a purchase for an addon
 
@@ -182,12 +182,12 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonPurchasesApi apiInstance = new AddonPurchasesApi();
-AddonPurchaseUpdateBody body = new AddonPurchaseUpdateBody(); // AddonPurchaseUpdateBody | 
+UpdateAddonPurchase body = new UpdateAddonPurchase(); // UpdateAddonPurchase | 
 Long addonId = 789L; // Long | Id of the addon
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2011 result = apiInstance.updateAddonPurchase(body, addonId, userId, with);
+    AddonPurchaseResponse result = apiInstance.updateAddonPurchase(body, addonId, userId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonPurchasesApi#updateAddonPurchase");
@@ -199,14 +199,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddonPurchaseUpdateBody**](AddonPurchaseUpdateBody.md)|  |
+ **body** | [**UpdateAddonPurchase**](UpdateAddonPurchase.md)|  |
  **addonId** | **Long**| Id of the addon |
  **userId** | **String**| Id of the user |
  **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonPurchase schema | [optional] [enum: addon, order_item, user]
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**AddonPurchaseResponse**](AddonPurchaseResponse.md)
 
 ### Authorization
 

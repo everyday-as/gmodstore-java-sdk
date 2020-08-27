@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import no.everyday.gmodstore_sdk.model.AddonReviewListResponse;
+import no.everyday.gmodstore_sdk.model.AddonReviewResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2005;
-import no.everyday.gmodstore_sdk.model.InlineResponse2006;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -136,11 +136,11 @@ public class AddonReviewsApi {
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
      * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return InlineResponse2006
+     * @return AddonReviewResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2006 getAddonReview(Long addonId, Long reviewId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2006> resp = getAddonReviewWithHttpInfo(addonId, reviewId, with);
+    public AddonReviewResponse getAddonReview(Long addonId, Long reviewId, List<String> with) throws ApiException {
+        ApiResponse<AddonReviewResponse> resp = getAddonReviewWithHttpInfo(addonId, reviewId, with);
         return resp.getData();
     }
 
@@ -150,12 +150,12 @@ public class AddonReviewsApi {
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
      * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;AddonReviewResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2006> getAddonReviewWithHttpInfo(Long addonId, Long reviewId, List<String> with) throws ApiException {
+    public ApiResponse<AddonReviewResponse> getAddonReviewWithHttpInfo(Long addonId, Long reviewId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getAddonReviewValidateBeforeCall(addonId, reviewId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonReviewResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -169,7 +169,7 @@ public class AddonReviewsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAddonReviewAsync(Long addonId, Long reviewId, List<String> with, final ApiCallback<InlineResponse2006> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonReviewAsync(Long addonId, Long reviewId, List<String> with, final ApiCallback<AddonReviewResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -191,7 +191,7 @@ public class AddonReviewsApi {
         }
 
         com.squareup.okhttp.Call call = getAddonReviewValidateBeforeCall(addonId, reviewId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonReviewResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -269,11 +269,11 @@ public class AddonReviewsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return InlineResponse2005
+     * @return AddonReviewListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 listAddonReviews(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2005> resp = listAddonReviewsWithHttpInfo(addonId, with);
+    public AddonReviewListResponse listAddonReviews(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonReviewListResponse> resp = listAddonReviewsWithHttpInfo(addonId, with);
         return resp.getData();
     }
 
@@ -282,12 +282,12 @@ public class AddonReviewsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;AddonReviewListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> listAddonReviewsWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonReviewListResponse> listAddonReviewsWithHttpInfo(Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listAddonReviewsValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonReviewListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -300,7 +300,7 @@ public class AddonReviewsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAddonReviewsAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAddonReviewsAsync(Long addonId, List<String> with, final ApiCallback<AddonReviewListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -322,7 +322,7 @@ public class AddonReviewsApi {
         }
 
         com.squareup.okhttp.Call call = listAddonReviewsValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonReviewListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

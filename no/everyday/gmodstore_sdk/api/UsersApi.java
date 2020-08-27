@@ -27,7 +27,7 @@ import java.io.IOException;
 
 
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse20011;
+import no.everyday.gmodstore_sdk.model.UserResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -121,11 +121,11 @@ public class UsersApi {
      * Fetches the current user (API Key Owner)
      * 
      * @param with The relations you want to fetch with the User schema (optional)
-     * @return InlineResponse20011
+     * @return UserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20011 getSelfUser(List<String> with) throws ApiException {
-        ApiResponse<InlineResponse20011> resp = getSelfUserWithHttpInfo(with);
+    public UserResponse getSelfUser(List<String> with) throws ApiException {
+        ApiResponse<UserResponse> resp = getSelfUserWithHttpInfo(with);
         return resp.getData();
     }
 
@@ -133,12 +133,12 @@ public class UsersApi {
      * Fetches the current user (API Key Owner)
      * 
      * @param with The relations you want to fetch with the User schema (optional)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;UserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20011> getSelfUserWithHttpInfo(List<String> with) throws ApiException {
+    public ApiResponse<UserResponse> getSelfUserWithHttpInfo(List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getSelfUserValidateBeforeCall(with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -150,7 +150,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSelfUserAsync(List<String> with, final ApiCallback<InlineResponse20011> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSelfUserAsync(List<String> with, final ApiCallback<UserResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -172,7 +172,7 @@ public class UsersApi {
         }
 
         com.squareup.okhttp.Call call = getSelfUserValidateBeforeCall(with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -250,11 +250,11 @@ public class UsersApi {
      * 
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the User schema (optional)
-     * @return InlineResponse20011
+     * @return UserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20011 getUser(String userId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse20011> resp = getUserWithHttpInfo(userId, with);
+    public UserResponse getUser(String userId, List<String> with) throws ApiException {
+        ApiResponse<UserResponse> resp = getUserWithHttpInfo(userId, with);
         return resp.getData();
     }
 
@@ -263,12 +263,12 @@ public class UsersApi {
      * 
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the User schema (optional)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;UserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20011> getUserWithHttpInfo(String userId, List<String> with) throws ApiException {
+    public ApiResponse<UserResponse> getUserWithHttpInfo(String userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getUserValidateBeforeCall(userId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -281,7 +281,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserAsync(String userId, List<String> with, final ApiCallback<InlineResponse20011> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserAsync(String userId, List<String> with, final ApiCallback<UserResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -303,7 +303,7 @@ public class UsersApi {
         }
 
         com.squareup.okhttp.Call call = getUserValidateBeforeCall(userId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

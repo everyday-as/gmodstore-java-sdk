@@ -13,11 +13,11 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonDownloadResponse;
+import no.everyday.gmodstore_sdk.model.AddonVersionListResponse;
+import no.everyday.gmodstore_sdk.model.AddonVersionResponse;
 import no.everyday.gmodstore_sdk.model.Error;
 import java.io.File;
-import no.everyday.gmodstore_sdk.model.InlineResponse2007;
-import no.everyday.gmodstore_sdk.model.InlineResponse2008;
-import no.everyday.gmodstore_sdk.model.InlineResponse2012;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -50,7 +50,7 @@ public class AddonVersionsApiTest {
         String releaseType = null;
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.createAddonVersion(name, changelog, file, releaseType, addonId, with);
+        AddonVersionResponse response = api.createAddonVersion(name, changelog, file, releaseType, addonId, with);
 
         // TODO: test validations
     }
@@ -66,7 +66,7 @@ public class AddonVersionsApiTest {
     public void downloadAddonVersionTest() throws ApiException {
         Long addonId = null;
         Long versionId = null;
-        InlineResponse2008 response = api.downloadAddonVersion(addonId, versionId);
+        AddonDownloadResponse response = api.downloadAddonVersion(addonId, versionId);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class AddonVersionsApiTest {
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.getAddonVersion(addonId, versionId, with);
+        AddonVersionResponse response = api.getAddonVersion(addonId, versionId, with);
 
         // TODO: test validations
     }
@@ -99,7 +99,7 @@ public class AddonVersionsApiTest {
     public void listAddonVersionsTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2007 response = api.listAddonVersions(addonId, with);
+        AddonVersionListResponse response = api.listAddonVersions(addonId, with);
 
         // TODO: test validations
     }
@@ -119,7 +119,7 @@ public class AddonVersionsApiTest {
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
+        AddonVersionResponse response = api.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
 
         // TODO: test validations
     }

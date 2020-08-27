@@ -2,7 +2,7 @@
 
 GmodStore
 - API version: 1.0.1
-  - Build date: 2020-08-27T02:49:59.885063Z[Etc/UTC]
+  - Build date: 2020-08-27T03:34:33.284228Z[Etc/UTC]
 
 Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
 
@@ -86,11 +86,11 @@ public class AddonCouponsApiExample {
 
 
         AddonCouponsApi apiInstance = new AddonCouponsApi();
-        AddonCouponBody body = new AddonCouponBody(); // AddonCouponBody | 
+        NewAddonCoupon body = new NewAddonCoupon(); // NewAddonCoupon | 
         Long addonId = 789L; // Long | Id of the addon
         List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
         try {
-            InlineResponse201 result = apiInstance.createAddonCoupon(body, addonId, with);
+            AddonCouponResponse result = apiInstance.createAddonCoupon(body, addonId, with);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AddonCouponsApi#createAddonCoupon");
@@ -142,7 +142,7 @@ public class AddonCouponsApiExample {
         Long couponId = 789L; // Long | Id of the coupon
         List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
         try {
-            InlineResponse201 result = apiInstance.getAddonCoupon(addonId, couponId, with);
+            AddonCouponResponse result = apiInstance.getAddonCoupon(addonId, couponId, with);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AddonCouponsApi#getAddonCoupon");
@@ -168,7 +168,7 @@ public class AddonCouponsApiExample {
         Long addonId = 789L; // Long | Id of the addon
         List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
         try {
-            InlineResponse2003 result = apiInstance.listAddonCoupons(addonId, with);
+            AddonCouponListResponse result = apiInstance.listAddonCoupons(addonId, with);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AddonCouponsApi#listAddonCoupons");
@@ -191,12 +191,12 @@ public class AddonCouponsApiExample {
 
 
         AddonCouponsApi apiInstance = new AddonCouponsApi();
-        AddonCouponBody body = new AddonCouponBody(); // AddonCouponBody | 
+        UpdateAddonCoupon body = new UpdateAddonCoupon(); // UpdateAddonCoupon | 
         Long addonId = 789L; // Long | Id of the addon
         Long couponId = 789L; // Long | Id of the coupon
         List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
         try {
-            InlineResponse201 result = apiInstance.updateAddonCoupon(body, addonId, couponId, with);
+            AddonCouponResponse result = apiInstance.updateAddonCoupon(body, addonId, couponId, with);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AddonCouponsApi#updateAddonCoupon");
@@ -247,14 +247,19 @@ Class | Method | HTTP request | Description
 
  - [Addon](docs/Addon.md)
  - [AddonCoupon](docs/AddonCoupon.md)
- - [AddonCouponBody](docs/AddonCouponBody.md)
+ - [AddonCouponListResponse](docs/AddonCouponListResponse.md)
+ - [AddonCouponResponse](docs/AddonCouponResponse.md)
  - [AddonDownload](docs/AddonDownload.md)
+ - [AddonDownloadResponse](docs/AddonDownloadResponse.md)
  - [AddonImages](docs/AddonImages.md)
+ - [AddonListResponse](docs/AddonListResponse.md)
  - [AddonPrice](docs/AddonPrice.md)
  - [AddonPurchase](docs/AddonPurchase.md)
- - [AddonPurchaseCreateBody](docs/AddonPurchaseCreateBody.md)
- - [AddonPurchaseUpdateBody](docs/AddonPurchaseUpdateBody.md)
+ - [AddonPurchaseListResponse](docs/AddonPurchaseListResponse.md)
+ - [AddonPurchaseResponse](docs/AddonPurchaseResponse.md)
  - [AddonReview](docs/AddonReview.md)
+ - [AddonReviewListResponse](docs/AddonReviewListResponse.md)
+ - [AddonReviewResponse](docs/AddonReviewResponse.md)
  - [AddonStats](docs/AddonStats.md)
  - [AddonStatsRevenue](docs/AddonStatsRevenue.md)
  - [AddonStatsRevenueCurrent](docs/AddonStatsRevenueCurrent.md)
@@ -263,38 +268,35 @@ Class | Method | HTTP request | Description
  - [AddonStatsViews](docs/AddonStatsViews.md)
  - [AddonStatsViewsCurrent](docs/AddonStatsViewsCurrent.md)
  - [AddonVersion](docs/AddonVersion.md)
- - [AddonVersionCreateBody](docs/AddonVersionCreateBody.md)
- - [AddonVersionUpdateBody](docs/AddonVersionUpdateBody.md)
- - [BadgeCreateBody](docs/BadgeCreateBody.md)
+ - [AddonVersionListResponse](docs/AddonVersionListResponse.md)
+ - [AddonVersionResponse](docs/AddonVersionResponse.md)
+ - [BadgeListResponse](docs/BadgeListResponse.md)
+ - [BadgeResponse](docs/BadgeResponse.md)
  - [Ban](docs/Ban.md)
+ - [BanListResponse](docs/BanListResponse.md)
  - [Error](docs/Error.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
- - [InlineResponse20010](docs/InlineResponse20010.md)
- - [InlineResponse20011](docs/InlineResponse20011.md)
- - [InlineResponse20012](docs/InlineResponse20012.md)
- - [InlineResponse20013](docs/InlineResponse20013.md)
- - [InlineResponse20014](docs/InlineResponse20014.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
- - [InlineResponse2003](docs/InlineResponse2003.md)
- - [InlineResponse2004](docs/InlineResponse2004.md)
- - [InlineResponse2005](docs/InlineResponse2005.md)
- - [InlineResponse2006](docs/InlineResponse2006.md)
- - [InlineResponse2007](docs/InlineResponse2007.md)
- - [InlineResponse2008](docs/InlineResponse2008.md)
- - [InlineResponse2009](docs/InlineResponse2009.md)
- - [InlineResponse201](docs/InlineResponse201.md)
- - [InlineResponse2011](docs/InlineResponse2011.md)
- - [InlineResponse2012](docs/InlineResponse2012.md)
- - [InlineResponse2013](docs/InlineResponse2013.md)
  - [InlineResponseDefault](docs/InlineResponseDefault.md)
  - [Money](docs/Money.md)
+ - [NewAddonCoupon](docs/NewAddonCoupon.md)
+ - [NewAddonPurchase](docs/NewAddonPurchase.md)
+ - [NewAddonVersion](docs/NewAddonVersion.md)
+ - [NewUserBadge](docs/NewUserBadge.md)
  - [OrderItem](docs/OrderItem.md)
  - [PermissionGroup](docs/PermissionGroup.md)
  - [Team](docs/Team.md)
+ - [TeamListResponse](docs/TeamListResponse.md)
+ - [TeamResponse](docs/TeamResponse.md)
  - [TeamUser](docs/TeamUser.md)
+ - [TeamUserListResponse](docs/TeamUserListResponse.md)
+ - [UpdateAddonCoupon](docs/UpdateAddonCoupon.md)
+ - [UpdateAddonPurchase](docs/UpdateAddonPurchase.md)
+ - [UpdateAddonVersion](docs/UpdateAddonVersion.md)
  - [User](docs/User.md)
  - [UserBadgeLegend](docs/UserBadgeLegend.md)
+ - [UserResponse](docs/UserResponse.md)
 
 ## Documentation for Authorization
 

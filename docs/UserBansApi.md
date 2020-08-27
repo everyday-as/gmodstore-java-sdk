@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="listUserBans"></a>
 # **listUserBans**
-> InlineResponse20013 listUserBans(userId)
+> BanListResponse listUserBans(userId)
 
 Fetch all active bans associated with this user
 
@@ -27,7 +27,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 UserBansApi apiInstance = new UserBansApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20013 result = apiInstance.listUserBans(userId);
+    BanListResponse result = apiInstance.listUserBans(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserBansApi#listUserBans");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**BanListResponse**](BanListResponse.md)
 
 ### Authorization
 

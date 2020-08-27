@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getSelfUser"></a>
 # **getSelfUser**
-> InlineResponse20011 getSelfUser(with)
+> UserResponse getSelfUser(with)
 
 Fetches the current user (API Key Owner)
 
@@ -28,7 +28,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 UsersApi apiInstance = new UsersApi();
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the User schema
 try {
-    InlineResponse20011 result = apiInstance.getSelfUser(with);
+    UserResponse result = apiInstance.getSelfUser(with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getSelfUser");
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 <a name="getUser"></a>
 # **getUser**
-> InlineResponse20011 getUser(userId, with)
+> UserResponse getUser(userId, with)
 
 Fetch a single user
 
@@ -77,7 +77,7 @@ UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the User schema
 try {
-    InlineResponse20011 result = apiInstance.getUser(userId, with);
+    UserResponse result = apiInstance.getUser(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUser");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

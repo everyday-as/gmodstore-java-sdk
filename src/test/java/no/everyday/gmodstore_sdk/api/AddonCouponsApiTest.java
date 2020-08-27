@@ -13,10 +13,11 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
-import no.everyday.gmodstore_sdk.model.AddonCouponBody;
+import no.everyday.gmodstore_sdk.model.AddonCouponListResponse;
+import no.everyday.gmodstore_sdk.model.AddonCouponResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2003;
-import no.everyday.gmodstore_sdk.model.InlineResponse201;
+import no.everyday.gmodstore_sdk.model.NewAddonCoupon;
+import no.everyday.gmodstore_sdk.model.UpdateAddonCoupon;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,10 +44,10 @@ public class AddonCouponsApiTest {
      */
     @Test
     public void createAddonCouponTest() throws ApiException {
-        AddonCouponBody body = null;
+        NewAddonCoupon body = null;
         Long addonId = null;
         List<String> with = null;
-        InlineResponse201 response = api.createAddonCoupon(body, addonId, with);
+        AddonCouponResponse response = api.createAddonCoupon(body, addonId, with);
 
         // TODO: test validations
     }
@@ -79,7 +80,7 @@ public class AddonCouponsApiTest {
         Long addonId = null;
         Long couponId = null;
         List<String> with = null;
-        InlineResponse201 response = api.getAddonCoupon(addonId, couponId, with);
+        AddonCouponResponse response = api.getAddonCoupon(addonId, couponId, with);
 
         // TODO: test validations
     }
@@ -95,7 +96,7 @@ public class AddonCouponsApiTest {
     public void listAddonCouponsTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2003 response = api.listAddonCoupons(addonId, with);
+        AddonCouponListResponse response = api.listAddonCoupons(addonId, with);
 
         // TODO: test validations
     }
@@ -109,11 +110,11 @@ public class AddonCouponsApiTest {
      */
     @Test
     public void updateAddonCouponTest() throws ApiException {
-        AddonCouponBody body = null;
+        UpdateAddonCoupon body = null;
         Long addonId = null;
         Long couponId = null;
         List<String> with = null;
-        InlineResponse201 response = api.updateAddonCoupon(body, addonId, couponId, with);
+        AddonCouponResponse response = api.updateAddonCoupon(body, addonId, couponId, with);
 
         // TODO: test validations
     }

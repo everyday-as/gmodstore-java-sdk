@@ -26,11 +26,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.AddonPurchaseCreateBody;
-import no.everyday.gmodstore_sdk.model.AddonPurchaseUpdateBody;
+import no.everyday.gmodstore_sdk.model.AddonPurchaseListResponse;
+import no.everyday.gmodstore_sdk.model.AddonPurchaseResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2004;
-import no.everyday.gmodstore_sdk.model.InlineResponse2011;
+import no.everyday.gmodstore_sdk.model.NewAddonPurchase;
+import no.everyday.gmodstore_sdk.model.UpdateAddonPurchase;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class AddonPurchasesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createAddonPurchaseCall(AddonPurchaseCreateBody body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createAddonPurchaseCall(NewAddonPurchase body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -112,7 +112,7 @@ public class AddonPurchasesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAddonPurchaseValidateBeforeCall(AddonPurchaseCreateBody body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createAddonPurchaseValidateBeforeCall(NewAddonPurchase body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling createAddonPurchase(Async)");
@@ -137,11 +137,11 @@ public class AddonPurchasesApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return InlineResponse2011
+     * @return AddonPurchaseResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 createAddonPurchase(AddonPurchaseCreateBody body, Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2011> resp = createAddonPurchaseWithHttpInfo(body, addonId, with);
+    public AddonPurchaseResponse createAddonPurchase(NewAddonPurchase body, Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonPurchaseResponse> resp = createAddonPurchaseWithHttpInfo(body, addonId, with);
         return resp.getData();
     }
 
@@ -151,12 +151,12 @@ public class AddonPurchasesApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;AddonPurchaseResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> createAddonPurchaseWithHttpInfo(AddonPurchaseCreateBody body, Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonPurchaseResponse> createAddonPurchaseWithHttpInfo(NewAddonPurchase body, Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = createAddonPurchaseValidateBeforeCall(body, addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -170,7 +170,7 @@ public class AddonPurchasesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAddonPurchaseAsync(AddonPurchaseCreateBody body, Long addonId, List<String> with, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAddonPurchaseAsync(NewAddonPurchase body, Long addonId, List<String> with, final ApiCallback<AddonPurchaseResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -192,7 +192,7 @@ public class AddonPurchasesApi {
         }
 
         com.squareup.okhttp.Call call = createAddonPurchaseValidateBeforeCall(body, addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -277,11 +277,11 @@ public class AddonPurchasesApi {
      * @param addonId Id of the addon (required)
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return InlineResponse2011
+     * @return AddonPurchaseResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 getAddonPurchase(Long addonId, String userId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2011> resp = getAddonPurchaseWithHttpInfo(addonId, userId, with);
+    public AddonPurchaseResponse getAddonPurchase(Long addonId, String userId, List<String> with) throws ApiException {
+        ApiResponse<AddonPurchaseResponse> resp = getAddonPurchaseWithHttpInfo(addonId, userId, with);
         return resp.getData();
     }
 
@@ -291,12 +291,12 @@ public class AddonPurchasesApi {
      * @param addonId Id of the addon (required)
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;AddonPurchaseResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> getAddonPurchaseWithHttpInfo(Long addonId, String userId, List<String> with) throws ApiException {
+    public ApiResponse<AddonPurchaseResponse> getAddonPurchaseWithHttpInfo(Long addonId, String userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = getAddonPurchaseValidateBeforeCall(addonId, userId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -310,7 +310,7 @@ public class AddonPurchasesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAddonPurchaseAsync(Long addonId, String userId, List<String> with, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonPurchaseAsync(Long addonId, String userId, List<String> with, final ApiCallback<AddonPurchaseResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -332,7 +332,7 @@ public class AddonPurchasesApi {
         }
 
         com.squareup.okhttp.Call call = getAddonPurchaseValidateBeforeCall(addonId, userId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -410,11 +410,11 @@ public class AddonPurchasesApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return InlineResponse2004
+     * @return AddonPurchaseListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 listAddonPurchases(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2004> resp = listAddonPurchasesWithHttpInfo(addonId, with);
+    public AddonPurchaseListResponse listAddonPurchases(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<AddonPurchaseListResponse> resp = listAddonPurchasesWithHttpInfo(addonId, with);
         return resp.getData();
     }
 
@@ -423,12 +423,12 @@ public class AddonPurchasesApi {
      * 
      * @param addonId Id of the addon (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;AddonPurchaseListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> listAddonPurchasesWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonPurchaseListResponse> listAddonPurchasesWithHttpInfo(Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listAddonPurchasesValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -441,7 +441,7 @@ public class AddonPurchasesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAddonPurchasesAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAddonPurchasesAsync(Long addonId, List<String> with, final ApiCallback<AddonPurchaseListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -463,7 +463,7 @@ public class AddonPurchasesApi {
         }
 
         com.squareup.okhttp.Call call = listAddonPurchasesValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -478,7 +478,7 @@ public class AddonPurchasesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAddonPurchaseCall(AddonPurchaseUpdateBody body, Long addonId, String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAddonPurchaseCall(UpdateAddonPurchase body, Long addonId, String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -524,7 +524,7 @@ public class AddonPurchasesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAddonPurchaseValidateBeforeCall(AddonPurchaseUpdateBody body, Long addonId, String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAddonPurchaseValidateBeforeCall(UpdateAddonPurchase body, Long addonId, String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling updateAddonPurchase(Async)");
@@ -554,11 +554,11 @@ public class AddonPurchasesApi {
      * @param addonId Id of the addon (required)
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return InlineResponse2011
+     * @return AddonPurchaseResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 updateAddonPurchase(AddonPurchaseUpdateBody body, Long addonId, String userId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2011> resp = updateAddonPurchaseWithHttpInfo(body, addonId, userId, with);
+    public AddonPurchaseResponse updateAddonPurchase(UpdateAddonPurchase body, Long addonId, String userId, List<String> with) throws ApiException {
+        ApiResponse<AddonPurchaseResponse> resp = updateAddonPurchaseWithHttpInfo(body, addonId, userId, with);
         return resp.getData();
     }
 
@@ -569,12 +569,12 @@ public class AddonPurchasesApi {
      * @param addonId Id of the addon (required)
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the AddonPurchase schema (optional)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;AddonPurchaseResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> updateAddonPurchaseWithHttpInfo(AddonPurchaseUpdateBody body, Long addonId, String userId, List<String> with) throws ApiException {
+    public ApiResponse<AddonPurchaseResponse> updateAddonPurchaseWithHttpInfo(UpdateAddonPurchase body, Long addonId, String userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = updateAddonPurchaseValidateBeforeCall(body, addonId, userId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -589,7 +589,7 @@ public class AddonPurchasesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAddonPurchaseAsync(AddonPurchaseUpdateBody body, Long addonId, String userId, List<String> with, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAddonPurchaseAsync(UpdateAddonPurchase body, Long addonId, String userId, List<String> with, final ApiCallback<AddonPurchaseResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -611,7 +611,7 @@ public class AddonPurchasesApi {
         }
 
         com.squareup.okhttp.Call call = updateAddonPurchaseValidateBeforeCall(body, addonId, userId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonPurchaseResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

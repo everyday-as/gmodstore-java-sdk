@@ -13,11 +13,11 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
-import no.everyday.gmodstore_sdk.model.BadgeCreateBody;
+import no.everyday.gmodstore_sdk.model.BadgeListResponse;
+import no.everyday.gmodstore_sdk.model.BadgeResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse20014;
-import no.everyday.gmodstore_sdk.model.InlineResponse2013;
 import no.everyday.gmodstore_sdk.model.InlineResponseDefault;
+import no.everyday.gmodstore_sdk.model.NewUserBadge;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,9 +44,9 @@ public class UserBadgesApiTest {
      */
     @Test
     public void createUserBadgeTest() throws ApiException {
-        BadgeCreateBody body = null;
+        NewUserBadge body = null;
         String userId = null;
-        InlineResponse2013 response = api.createUserBadge(body, userId);
+        BadgeResponse response = api.createUserBadge(body, userId);
 
         // TODO: test validations
     }
@@ -77,7 +77,7 @@ public class UserBadgesApiTest {
     @Test
     public void listUserBadgesTest() throws ApiException {
         String userId = null;
-        InlineResponse20014 response = api.listUserBadges(userId);
+        BadgeListResponse response = api.listUserBadges(userId);
 
         // TODO: test validations
     }

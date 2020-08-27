@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createAddonVersion"></a>
 # **createAddonVersion**
-> InlineResponse2012 createAddonVersion(name, changelog, file, releaseType, addonId, with)
+> AddonVersionResponse createAddonVersion(name, changelog, file, releaseType, addonId, with)
 
 Create a new version for an addon
 
@@ -36,7 +36,7 @@ String releaseType = "releaseType_example"; // String |
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.createAddonVersion(name, changelog, file, releaseType, addonId, with);
+    AddonVersionResponse result = apiInstance.createAddonVersion(name, changelog, file, releaseType, addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#createAddonVersion");
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**AddonVersionResponse**](AddonVersionResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="downloadAddonVersion"></a>
 # **downloadAddonVersion**
-> InlineResponse2008 downloadAddonVersion(addonId, versionId)
+> AddonDownloadResponse downloadAddonVersion(addonId, versionId)
 
 Generate a download token for a specific version of an addon
 
@@ -90,7 +90,7 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 try {
-    InlineResponse2008 result = apiInstance.downloadAddonVersion(addonId, versionId);
+    AddonDownloadResponse result = apiInstance.downloadAddonVersion(addonId, versionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#downloadAddonVersion");
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**AddonDownloadResponse**](AddonDownloadResponse.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 <a name="getAddonVersion"></a>
 # **getAddonVersion**
-> InlineResponse2012 getAddonVersion(addonId, versionId, with)
+> AddonVersionResponse getAddonVersion(addonId, versionId, with)
 
 Fetch a specific version of an addon
 
@@ -141,7 +141,7 @@ Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.getAddonVersion(addonId, versionId, with);
+    AddonVersionResponse result = apiInstance.getAddonVersion(addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#getAddonVersion");
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**AddonVersionResponse**](AddonVersionResponse.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="listAddonVersions"></a>
 # **listAddonVersions**
-> InlineResponse2007 listAddonVersions(addonId, with)
+> AddonVersionListResponse listAddonVersions(addonId, with)
 
 Fetch all the versions of an addon
 
@@ -192,7 +192,7 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2007 result = apiInstance.listAddonVersions(addonId, with);
+    AddonVersionListResponse result = apiInstance.listAddonVersions(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#listAddonVersions");
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**AddonVersionListResponse**](AddonVersionListResponse.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAddonVersion"></a>
 # **updateAddonVersion**
-> InlineResponse2012 updateAddonVersion(name, changelog, releaseType, addonId, versionId, with)
+> AddonVersionResponse updateAddonVersion(name, changelog, releaseType, addonId, versionId, with)
 
 Update a version of an addon
 
@@ -246,7 +246,7 @@ Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
+    AddonVersionResponse result = apiInstance.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#updateAddonVersion");
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**AddonVersionResponse**](AddonVersionResponse.md)
 
 ### Authorization
 

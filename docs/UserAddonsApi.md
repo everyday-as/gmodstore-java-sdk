@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="listUserAddons"></a>
 # **listUserAddons**
-> InlineResponse200 listUserAddons(userId, with)
+> AddonListResponse listUserAddons(userId, with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -28,7 +28,7 @@ UserAddonsApi apiInstance = new UserAddonsApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse200 result = apiInstance.listUserAddons(userId, with);
+    AddonListResponse result = apiInstance.listUserAddons(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserAddonsApi#listUserAddons");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**AddonListResponse**](AddonListResponse.md)
 
 ### Authorization
 

@@ -13,8 +13,8 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonPurchaseListResponse;
 import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponse2004;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,7 +43,7 @@ public class UserPurchasesApiTest {
     public void listUserPurchasesTest() throws ApiException {
         String userId = null;
         List<String> with = null;
-        InlineResponse2004 response = api.listUserPurchases(userId, with);
+        AddonPurchaseListResponse response = api.listUserPurchases(userId, with);
 
         // TODO: test validations
     }
