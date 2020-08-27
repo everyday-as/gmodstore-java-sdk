@@ -1,6 +1,6 @@
 /*
  * GmodStore
- * Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
+ * Welcome to the GmodStore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
  *
  * The version of the OpenAPI document: 1.0.1
  * 
@@ -28,7 +28,7 @@ import java.net.URI;
 /**
  * AddonImages
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T16:44:02.267387Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T17:25:44.759204Z[Etc/UTC]")
 public class AddonImages {
   public static final String SERIALIZED_NAME_BIGSPOT = "bigspot";
   @SerializedName(SERIALIZED_NAME_BIGSPOT)
