@@ -26,7 +26,7 @@ import no.everyday.gmodstore_sdk.model.Error;
  * InlineResponseDefault
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:35.293427Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:59.237339Z[Etc/UTC]")
 public class InlineResponseDefault {
   @SerializedName("data")
   private Error data = null;

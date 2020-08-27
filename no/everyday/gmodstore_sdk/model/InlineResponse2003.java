@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.AddonCoupon;
  * InlineResponse2003
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:35.293427Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:59.237339Z[Etc/UTC]")
 public class InlineResponse2003 {
   @SerializedName("data")
   private List<AddonCoupon> data = null;
