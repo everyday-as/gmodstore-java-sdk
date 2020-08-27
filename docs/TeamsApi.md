@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**teamsTeamIdGet**](TeamsApi.md#teamsTeamIdGet) | **GET** /teams/{team_id} | Fetch a single team
+[**getTeam**](TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
 
-<a name="teamsTeamIdGet"></a>
-# **teamsTeamIdGet**
-> InlineResponse2009 teamsTeamIdGet(teamId, with)
+<a name="getTeam"></a>
+# **getTeam**
+> InlineResponse2009 getTeam(teamId, with)
 
 Fetch a single team
 
@@ -23,20 +23,15 @@ Fetch a single team
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 TeamsApi apiInstance = new TeamsApi();
 Long teamId = 789L; // Long | Id of the team
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Team schema
 try {
-    InlineResponse2009 result = apiInstance.teamsTeamIdGet(teamId, with);
+    InlineResponse2009 result = apiInstance.getTeam(teamId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TeamsApi#teamsTeamIdGet");
+    System.err.println("Exception when calling TeamsApi#getTeam");
     e.printStackTrace();
 }
 ```
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

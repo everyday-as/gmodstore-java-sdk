@@ -40,9 +40,9 @@ public class AddonStatsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdStatsGetTest() throws ApiException {
+    public void getAddonStatsTest() throws ApiException {
         Long addonId = null;
-        InlineResponse2002 response = api.addonsAddonIdStatsGet(addonId);
+        InlineResponse2002 response = api.getAddonStats(addonId);
 
         // TODO: test validations
     }

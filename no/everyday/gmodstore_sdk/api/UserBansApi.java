@@ -55,14 +55,14 @@ public class UserBansApi {
     }
 
     /**
-     * Build call for usersUserIdBansGet
+     * Build call for listUserBans
      * @param userId Id of the user (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call usersUserIdBansGetCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserBansCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -100,18 +100,18 @@ public class UserBansApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call usersUserIdBansGetValidateBeforeCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserBansValidateBeforeCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling usersUserIdBansGet(Async)");
+            throw new ApiException("Missing the required parameter 'userId' when calling listUserBans(Async)");
         }
         
-        com.squareup.okhttp.Call call = usersUserIdBansGetCall(userId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listUserBansCall(userId, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,8 +127,8 @@ public class UserBansApi {
      * @return InlineResponse20013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20013 usersUserIdBansGet(String userId) throws ApiException {
-        ApiResponse<InlineResponse20013> resp = usersUserIdBansGetWithHttpInfo(userId);
+    public InlineResponse20013 listUserBans(String userId) throws ApiException {
+        ApiResponse<InlineResponse20013> resp = listUserBansWithHttpInfo(userId);
         return resp.getData();
     }
 
@@ -139,8 +139,8 @@ public class UserBansApi {
      * @return ApiResponse&lt;InlineResponse20013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20013> usersUserIdBansGetWithHttpInfo(String userId) throws ApiException {
-        com.squareup.okhttp.Call call = usersUserIdBansGetValidateBeforeCall(userId, null, null);
+    public ApiResponse<InlineResponse20013> listUserBansWithHttpInfo(String userId) throws ApiException {
+        com.squareup.okhttp.Call call = listUserBansValidateBeforeCall(userId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -153,7 +153,7 @@ public class UserBansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call usersUserIdBansGetAsync(String userId, final ApiCallback<InlineResponse20013> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserBansAsync(String userId, final ApiCallback<InlineResponse20013> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -174,7 +174,7 @@ public class UserBansApi {
             };
         }
 
-        com.squareup.okhttp.Call call = usersUserIdBansGetValidateBeforeCall(userId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listUserBansValidateBeforeCall(userId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

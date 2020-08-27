@@ -55,7 +55,7 @@ public class TeamsApi {
     }
 
     /**
-     * Build call for teamsTeamIdGet
+     * Build call for getTeam
      * @param teamId Id of the team (required)
      * @param with The relations you want to fetch with the Team schema (optional)
      * @param progressListener Progress listener
@@ -63,7 +63,7 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call teamsTeamIdGetCall(Long teamId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTeamCall(Long teamId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -103,18 +103,18 @@ public class TeamsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call teamsTeamIdGetValidateBeforeCall(Long teamId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTeamValidateBeforeCall(Long teamId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
-            throw new ApiException("Missing the required parameter 'teamId' when calling teamsTeamIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'teamId' when calling getTeam(Async)");
         }
         
-        com.squareup.okhttp.Call call = teamsTeamIdGetCall(teamId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTeamCall(teamId, with, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,8 +131,8 @@ public class TeamsApi {
      * @return InlineResponse2009
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2009 teamsTeamIdGet(Long teamId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2009> resp = teamsTeamIdGetWithHttpInfo(teamId, with);
+    public InlineResponse2009 getTeam(Long teamId, List<String> with) throws ApiException {
+        ApiResponse<InlineResponse2009> resp = getTeamWithHttpInfo(teamId, with);
         return resp.getData();
     }
 
@@ -144,8 +144,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;InlineResponse2009&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2009> teamsTeamIdGetWithHttpInfo(Long teamId, List<String> with) throws ApiException {
-        com.squareup.okhttp.Call call = teamsTeamIdGetValidateBeforeCall(teamId, with, null, null);
+    public ApiResponse<InlineResponse2009> getTeamWithHttpInfo(Long teamId, List<String> with) throws ApiException {
+        com.squareup.okhttp.Call call = getTeamValidateBeforeCall(teamId, with, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -159,7 +159,7 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call teamsTeamIdGetAsync(Long teamId, List<String> with, final ApiCallback<InlineResponse2009> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTeamAsync(Long teamId, List<String> with, final ApiCallback<InlineResponse2009> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -180,7 +180,7 @@ public class TeamsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = teamsTeamIdGetValidateBeforeCall(teamId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTeamValidateBeforeCall(teamId, with, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

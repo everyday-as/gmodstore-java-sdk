@@ -40,10 +40,10 @@ public class UserPurchasesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdPurchasesGetTest() throws ApiException {
+    public void listUserPurchasesTest() throws ApiException {
         String userId = null;
         List<String> with = null;
-        InlineResponse2004 response = api.usersUserIdPurchasesGet(userId, with);
+        InlineResponse2004 response = api.listUserPurchases(userId, with);
 
         // TODO: test validations
     }

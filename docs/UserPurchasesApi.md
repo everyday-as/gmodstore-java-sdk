@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdPurchasesGet**](UserPurchasesApi.md#usersUserIdPurchasesGet) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
+[**listUserPurchases**](UserPurchasesApi.md#listUserPurchases) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
 
-<a name="usersUserIdPurchasesGet"></a>
-# **usersUserIdPurchasesGet**
-> InlineResponse2004 usersUserIdPurchasesGet(userId, with)
+<a name="listUserPurchases"></a>
+# **listUserPurchases**
+> InlineResponse2004 listUserPurchases(userId, with)
 
 Fetch all purchases a user has made
 
@@ -23,20 +23,15 @@ Fetch all purchases a user has made
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UserPurchasesApi apiInstance = new UserPurchasesApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
 try {
-    InlineResponse2004 result = apiInstance.usersUserIdPurchasesGet(userId, with);
+    InlineResponse2004 result = apiInstance.listUserPurchases(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UserPurchasesApi#usersUserIdPurchasesGet");
+    System.err.println("Exception when calling UserPurchasesApi#listUserPurchases");
     e.printStackTrace();
 }
 ```
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

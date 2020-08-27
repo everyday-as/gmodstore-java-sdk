@@ -4,12 +4,12 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addonsAddonIdGet**](AddonsApi.md#addonsAddonIdGet) | **GET** /addons/{addon_id} | Fetch a single addon
-[**addonsGet**](AddonsApi.md#addonsGet) | **GET** /addons | Fetch all the addons that you have access to
+[**getAddon**](AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
+[**listSelfAddons**](AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
 
-<a name="addonsAddonIdGet"></a>
-# **addonsAddonIdGet**
-> InlineResponse2001 addonsAddonIdGet(addonId, with)
+<a name="getAddon"></a>
+# **getAddon**
+> InlineResponse2001 getAddon(addonId, with)
 
 Fetch a single addon
 
@@ -24,20 +24,15 @@ Fetch a single addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonsApi apiInstance = new AddonsApi();
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse2001 result = apiInstance.addonsAddonIdGet(addonId, with);
+    InlineResponse2001 result = apiInstance.getAddon(addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonsApi#addonsAddonIdGet");
+    System.err.println("Exception when calling AddonsApi#getAddon");
     e.printStackTrace();
 }
 ```
@@ -55,16 +50,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="addonsGet"></a>
-# **addonsGet**
-> InlineResponse200 addonsGet(with)
+<a name="listSelfAddons"></a>
+# **listSelfAddons**
+> InlineResponse200 listSelfAddons(with)
 
 Fetch all the addons that you have access to
 
@@ -79,19 +74,14 @@ Fetch all the addons that you have access to
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonsApi apiInstance = new AddonsApi();
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse200 result = apiInstance.addonsGet(with);
+    InlineResponse200 result = apiInstance.listSelfAddons(with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonsApi#addonsGet");
+    System.err.println("Exception when calling AddonsApi#listSelfAddons");
     e.printStackTrace();
 }
 ```
@@ -108,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

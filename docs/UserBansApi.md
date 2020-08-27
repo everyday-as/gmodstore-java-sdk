@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdBansGet**](UserBansApi.md#usersUserIdBansGet) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+[**listUserBans**](UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
-<a name="usersUserIdBansGet"></a>
-# **usersUserIdBansGet**
-> InlineResponse20013 usersUserIdBansGet(userId)
+<a name="listUserBans"></a>
+# **listUserBans**
+> InlineResponse20013 listUserBans(userId)
 
 Fetch all active bans associated with this user
 
@@ -23,19 +23,14 @@ Fetch all active bans associated with this user
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UserBansApi apiInstance = new UserBansApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20013 result = apiInstance.usersUserIdBansGet(userId);
+    InlineResponse20013 result = apiInstance.listUserBans(userId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UserBansApi#usersUserIdBansGet");
+    System.err.println("Exception when calling UserBansApi#listUserBans");
     e.printStackTrace();
 }
 ```
@@ -52,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

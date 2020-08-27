@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**teamsTeamIdUsersGet**](TeamUsersApi.md#teamsTeamIdUsersGet) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
+[**listTeamUsers**](TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
 
-<a name="teamsTeamIdUsersGet"></a>
-# **teamsTeamIdUsersGet**
-> InlineResponse20010 teamsTeamIdUsersGet(teamId, with)
+<a name="listTeamUsers"></a>
+# **listTeamUsers**
+> InlineResponse20010 listTeamUsers(teamId, with)
 
 Fetch all the users in the given team
 
@@ -23,20 +23,15 @@ Fetch all the users in the given team
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 TeamUsersApi apiInstance = new TeamUsersApi();
 Long teamId = 789L; // Long | Id of the team
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the TeamUser schema
 try {
-    InlineResponse20010 result = apiInstance.teamsTeamIdUsersGet(teamId, with);
+    InlineResponse20010 result = apiInstance.listTeamUsers(teamId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TeamUsersApi#teamsTeamIdUsersGet");
+    System.err.println("Exception when calling TeamUsersApi#listTeamUsers");
     e.printStackTrace();
 }
 ```
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

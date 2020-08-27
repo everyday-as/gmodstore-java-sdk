@@ -40,9 +40,9 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersMeGetTest() throws ApiException {
+    public void getSelfUserTest() throws ApiException {
         List<String> with = null;
-        InlineResponse20011 response = api.usersMeGet(with);
+        InlineResponse20011 response = api.getSelfUser(with);
 
         // TODO: test validations
     }
@@ -55,10 +55,10 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdGetTest() throws ApiException {
+    public void getUserTest() throws ApiException {
         String userId = null;
         List<String> with = null;
-        InlineResponse20011 response = api.usersUserIdGet(userId, with);
+        InlineResponse20011 response = api.getUser(userId, with);
 
         // TODO: test validations
     }

@@ -55,7 +55,7 @@ public class UserAddonsApi {
     }
 
     /**
-     * Build call for usersUserIdAddonsGet
+     * Build call for listUserAddons
      * @param userId Id of the user (required)
      * @param with The relations you want to fetch with the Addon schema (optional)
      * @param progressListener Progress listener
@@ -63,7 +63,7 @@ public class UserAddonsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call usersUserIdAddonsGetCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserAddonsCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -103,18 +103,18 @@ public class UserAddonsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call usersUserIdAddonsGetValidateBeforeCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserAddonsValidateBeforeCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling usersUserIdAddonsGet(Async)");
+            throw new ApiException("Missing the required parameter 'userId' when calling listUserAddons(Async)");
         }
         
-        com.squareup.okhttp.Call call = usersUserIdAddonsGetCall(userId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listUserAddonsCall(userId, with, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,8 +131,8 @@ public class UserAddonsApi {
      * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 usersUserIdAddonsGet(String userId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse200> resp = usersUserIdAddonsGetWithHttpInfo(userId, with);
+    public InlineResponse200 listUserAddons(String userId, List<String> with) throws ApiException {
+        ApiResponse<InlineResponse200> resp = listUserAddonsWithHttpInfo(userId, with);
         return resp.getData();
     }
 
@@ -144,8 +144,8 @@ public class UserAddonsApi {
      * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> usersUserIdAddonsGetWithHttpInfo(String userId, List<String> with) throws ApiException {
-        com.squareup.okhttp.Call call = usersUserIdAddonsGetValidateBeforeCall(userId, with, null, null);
+    public ApiResponse<InlineResponse200> listUserAddonsWithHttpInfo(String userId, List<String> with) throws ApiException {
+        com.squareup.okhttp.Call call = listUserAddonsValidateBeforeCall(userId, with, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -159,7 +159,7 @@ public class UserAddonsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call usersUserIdAddonsGetAsync(String userId, List<String> with, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserAddonsAsync(String userId, List<String> with, final ApiCallback<InlineResponse200> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -180,7 +180,7 @@ public class UserAddonsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = usersUserIdAddonsGetValidateBeforeCall(userId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listUserAddonsValidateBeforeCall(userId, with, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

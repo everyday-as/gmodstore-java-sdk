@@ -40,10 +40,10 @@ public class TeamsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void teamsTeamIdGetTest() throws ApiException {
+    public void getTeamTest() throws ApiException {
         Long teamId = null;
         List<String> with = null;
-        InlineResponse2009 response = api.teamsTeamIdGet(teamId, with);
+        InlineResponse2009 response = api.getTeam(teamId, with);
 
         // TODO: test validations
     }

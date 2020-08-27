@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdAddonsGet**](UserAddonsApi.md#usersUserIdAddonsGet) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
+[**listUserAddons**](UserAddonsApi.md#listUserAddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
 
-<a name="usersUserIdAddonsGet"></a>
-# **usersUserIdAddonsGet**
-> InlineResponse200 usersUserIdAddonsGet(userId, with)
+<a name="listUserAddons"></a>
+# **listUserAddons**
+> InlineResponse200 listUserAddons(userId, with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -23,20 +23,15 @@ Fetch all the addons authored / co-authored by a user
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UserAddonsApi apiInstance = new UserAddonsApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
 try {
-    InlineResponse200 result = apiInstance.usersUserIdAddonsGet(userId, with);
+    InlineResponse200 result = apiInstance.listUserAddons(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UserAddonsApi#usersUserIdAddonsGet");
+    System.err.println("Exception when calling UserAddonsApi#listUserAddons");
     e.printStackTrace();
 }
 ```
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

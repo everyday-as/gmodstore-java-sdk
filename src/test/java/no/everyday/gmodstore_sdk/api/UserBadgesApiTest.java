@@ -13,6 +13,7 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.BadgeCreateBody;
 import no.everyday.gmodstore_sdk.model.Error;
 import no.everyday.gmodstore_sdk.model.InlineResponse20014;
 import no.everyday.gmodstore_sdk.model.InlineResponse2013;
@@ -34,6 +35,22 @@ public class UserBadgesApiTest {
     private final UserBadgesApi api = new UserBadgesApi();
 
     /**
+     * Give a user a badge
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createUserBadgeTest() throws ApiException {
+        BadgeCreateBody body = null;
+        String userId = null;
+        InlineResponse2013 response = api.createUserBadge(body, userId);
+
+        // TODO: test validations
+    }
+    /**
      * Destroy a users&#x27;s badge
      *
      * 
@@ -42,10 +59,10 @@ public class UserBadgesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdBadgesBadgeIdDeleteTest() throws ApiException {
+    public void deleteUserBadgeTest() throws ApiException {
         String userId = null;
         Long badgeId = null;
-        api.usersUserIdBadgesBadgeIdDelete(userId, badgeId);
+        api.deleteUserBadge(userId, badgeId);
 
         // TODO: test validations
     }
@@ -58,25 +75,9 @@ public class UserBadgesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdBadgesGetTest() throws ApiException {
+    public void listUserBadgesTest() throws ApiException {
         String userId = null;
-        InlineResponse20014 response = api.usersUserIdBadgesGet(userId);
-
-        // TODO: test validations
-    }
-    /**
-     * Give a user a badge
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void usersUserIdBadgesPostTest() throws ApiException {
-        Object body = null;
-        String userId = null;
-        InlineResponse2013 response = api.usersUserIdBadgesPost(body, userId);
+        InlineResponse20014 response = api.listUserBadges(userId);
 
         // TODO: test validations
     }

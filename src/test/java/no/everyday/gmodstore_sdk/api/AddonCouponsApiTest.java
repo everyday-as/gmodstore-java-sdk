@@ -13,6 +13,7 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonCouponBody;
 import no.everyday.gmodstore_sdk.model.Error;
 import no.everyday.gmodstore_sdk.model.InlineResponse2003;
 import no.everyday.gmodstore_sdk.model.InlineResponse201;
@@ -33,6 +34,23 @@ public class AddonCouponsApiTest {
     private final AddonCouponsApi api = new AddonCouponsApi();
 
     /**
+     * Create an addon coupon
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createAddonCouponTest() throws ApiException {
+        AddonCouponBody body = null;
+        Long addonId = null;
+        List<String> with = null;
+        InlineResponse201 response = api.createAddonCoupon(body, addonId, with);
+
+        // TODO: test validations
+    }
+    /**
      * Destroy an addon&#x27;s coupon
      *
      * 
@@ -41,10 +59,10 @@ public class AddonCouponsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdCouponsCouponIdDeleteTest() throws ApiException {
+    public void deleteAddonCouponTest() throws ApiException {
         Long addonId = null;
         Long couponId = null;
-        api.addonsAddonIdCouponsCouponIdDelete(addonId, couponId);
+        api.deleteAddonCoupon(addonId, couponId);
 
         // TODO: test validations
     }
@@ -57,29 +75,11 @@ public class AddonCouponsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdCouponsCouponIdGetTest() throws ApiException {
+    public void getAddonCouponTest() throws ApiException {
         Long addonId = null;
         Long couponId = null;
         List<String> with = null;
-        InlineResponse201 response = api.addonsAddonIdCouponsCouponIdGet(addonId, couponId, with);
-
-        // TODO: test validations
-    }
-    /**
-     * Update an addon&#x27;s coupon
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void addonsAddonIdCouponsCouponIdPutTest() throws ApiException {
-        Object body = null;
-        Long addonId = null;
-        Long couponId = null;
-        List<String> with = null;
-        InlineResponse201 response = api.addonsAddonIdCouponsCouponIdPut(body, addonId, couponId, with);
+        InlineResponse201 response = api.getAddonCoupon(addonId, couponId, with);
 
         // TODO: test validations
     }
@@ -92,15 +92,15 @@ public class AddonCouponsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdCouponsGetTest() throws ApiException {
+    public void listAddonCouponsTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2003 response = api.addonsAddonIdCouponsGet(addonId, with);
+        InlineResponse2003 response = api.listAddonCoupons(addonId, with);
 
         // TODO: test validations
     }
     /**
-     * Create an addon coupon
+     * Update an addon&#x27;s coupon
      *
      * 
      *
@@ -108,11 +108,12 @@ public class AddonCouponsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdCouponsPostTest() throws ApiException {
-        Object body = null;
+    public void updateAddonCouponTest() throws ApiException {
+        AddonCouponBody body = null;
         Long addonId = null;
+        Long couponId = null;
         List<String> with = null;
-        InlineResponse201 response = api.addonsAddonIdCouponsPost(body, addonId, with);
+        InlineResponse201 response = api.updateAddonCoupon(body, addonId, couponId, with);
 
         // TODO: test validations
     }

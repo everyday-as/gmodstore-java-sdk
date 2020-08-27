@@ -33,22 +33,6 @@ public class AddonReviewsApiTest {
     private final AddonReviewsApi api = new AddonReviewsApi();
 
     /**
-     * Fetch all the reviews of an addon
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void addonsAddonIdReviewsGetTest() throws ApiException {
-        Long addonId = null;
-        List<String> with = null;
-        InlineResponse2005 response = api.addonsAddonIdReviewsGet(addonId, with);
-
-        // TODO: test validations
-    }
-    /**
      * Fetch a review of an addon
      *
      * 
@@ -57,11 +41,27 @@ public class AddonReviewsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdReviewsReviewIdGetTest() throws ApiException {
+    public void getAddonReviewTest() throws ApiException {
         Long addonId = null;
         Long reviewId = null;
         List<String> with = null;
-        InlineResponse2006 response = api.addonsAddonIdReviewsReviewIdGet(addonId, reviewId, with);
+        InlineResponse2006 response = api.getAddonReview(addonId, reviewId, with);
+
+        // TODO: test validations
+    }
+    /**
+     * Fetch all the reviews of an addon
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAddonReviewsTest() throws ApiException {
+        Long addonId = null;
+        List<String> with = null;
+        InlineResponse2005 response = api.listAddonReviews(addonId, with);
 
         // TODO: test validations
     }

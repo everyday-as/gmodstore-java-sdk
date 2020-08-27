@@ -40,9 +40,9 @@ public class UserBansApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdBansGetTest() throws ApiException {
+    public void listUserBansTest() throws ApiException {
         String userId = null;
-        InlineResponse20013 response = api.usersUserIdBansGet(userId);
+        InlineResponse20013 response = api.listUserBans(userId);
 
         // TODO: test validations
     }

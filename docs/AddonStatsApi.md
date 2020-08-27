@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addonsAddonIdStatsGet**](AddonStatsApi.md#addonsAddonIdStatsGet) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
+[**getAddonStats**](AddonStatsApi.md#getAddonStats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
-<a name="addonsAddonIdStatsGet"></a>
-# **addonsAddonIdStatsGet**
-> InlineResponse2002 addonsAddonIdStatsGet(addonId)
+<a name="getAddonStats"></a>
+# **getAddonStats**
+> InlineResponse2002 getAddonStats(addonId)
 
 Fetch all the stats for an addon
 
@@ -23,19 +23,14 @@ Fetch all the stats for an addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonStatsApi apiInstance = new AddonStatsApi();
 Long addonId = 789L; // Long | Id of the addon
 try {
-    InlineResponse2002 result = apiInstance.addonsAddonIdStatsGet(addonId);
+    InlineResponse2002 result = apiInstance.getAddonStats(addonId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonStatsApi#addonsAddonIdStatsGet");
+    System.err.println("Exception when calling AddonStatsApi#getAddonStats");
     e.printStackTrace();
 }
 ```
@@ -52,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

@@ -40,10 +40,10 @@ public class UserAddonsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void usersUserIdAddonsGetTest() throws ApiException {
+    public void listUserAddonsTest() throws ApiException {
         String userId = null;
         List<String> with = null;
-        InlineResponse200 response = api.usersUserIdAddonsGet(userId, with);
+        InlineResponse200 response = api.listUserAddons(userId, with);
 
         // TODO: test validations
     }

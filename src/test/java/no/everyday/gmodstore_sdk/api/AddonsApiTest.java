@@ -41,10 +41,10 @@ public class AddonsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdGetTest() throws ApiException {
+    public void getAddonTest() throws ApiException {
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2001 response = api.addonsAddonIdGet(addonId, with);
+        InlineResponse2001 response = api.getAddon(addonId, with);
 
         // TODO: test validations
     }
@@ -57,9 +57,9 @@ public class AddonsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsGetTest() throws ApiException {
+    public void listSelfAddonsTest() throws ApiException {
         List<String> with = null;
-        InlineResponse200 response = api.addonsGet(with);
+        InlineResponse200 response = api.listSelfAddons(with);
 
         // TODO: test validations
     }

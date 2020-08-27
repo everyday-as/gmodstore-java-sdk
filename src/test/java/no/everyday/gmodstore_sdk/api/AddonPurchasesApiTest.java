@@ -13,6 +13,8 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonPurchaseCreateBody;
+import no.everyday.gmodstore_sdk.model.AddonPurchaseUpdateBody;
 import no.everyday.gmodstore_sdk.model.Error;
 import no.everyday.gmodstore_sdk.model.InlineResponse2004;
 import no.everyday.gmodstore_sdk.model.InlineResponse2011;
@@ -33,22 +35,6 @@ public class AddonPurchasesApiTest {
     private final AddonPurchasesApi api = new AddonPurchasesApi();
 
     /**
-     * Fetch all purchases of an addon
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void addonsAddonIdPurchasesGetTest() throws ApiException {
-        Long addonId = null;
-        List<String> with = null;
-        InlineResponse2004 response = api.addonsAddonIdPurchasesGet(addonId, with);
-
-        // TODO: test validations
-    }
-    /**
      * Create a purchase for an addon
      *
      * 
@@ -57,11 +43,11 @@ public class AddonPurchasesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdPurchasesPostTest() throws ApiException {
-        Object body = null;
+    public void createAddonPurchaseTest() throws ApiException {
+        AddonPurchaseCreateBody body = null;
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2011 response = api.addonsAddonIdPurchasesPost(body, addonId, with);
+        InlineResponse2011 response = api.createAddonPurchase(body, addonId, with);
 
         // TODO: test validations
     }
@@ -74,11 +60,27 @@ public class AddonPurchasesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdPurchasesUserIdGetTest() throws ApiException {
+    public void getAddonPurchaseTest() throws ApiException {
         Long addonId = null;
         String userId = null;
         List<String> with = null;
-        InlineResponse2011 response = api.addonsAddonIdPurchasesUserIdGet(addonId, userId, with);
+        InlineResponse2011 response = api.getAddonPurchase(addonId, userId, with);
+
+        // TODO: test validations
+    }
+    /**
+     * Fetch all purchases of an addon
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAddonPurchasesTest() throws ApiException {
+        Long addonId = null;
+        List<String> with = null;
+        InlineResponse2004 response = api.listAddonPurchases(addonId, with);
 
         // TODO: test validations
     }
@@ -91,12 +93,12 @@ public class AddonPurchasesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdPurchasesUserIdPutTest() throws ApiException {
-        Object body = null;
+    public void updateAddonPurchaseTest() throws ApiException {
+        AddonPurchaseUpdateBody body = null;
         Long addonId = null;
         String userId = null;
         List<String> with = null;
-        InlineResponse2011 response = api.addonsAddonIdPurchasesUserIdPut(body, addonId, userId, with);
+        InlineResponse2011 response = api.updateAddonPurchase(body, addonId, userId, with);
 
         // TODO: test validations
     }

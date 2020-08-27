@@ -4,70 +4,15 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addonsAddonIdVersionsGet**](AddonVersionsApi.md#addonsAddonIdVersionsGet) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
-[**addonsAddonIdVersionsPost**](AddonVersionsApi.md#addonsAddonIdVersionsPost) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
-[**addonsAddonIdVersionsVersionIdDownloadGet**](AddonVersionsApi.md#addonsAddonIdVersionsVersionIdDownloadGet) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
-[**addonsAddonIdVersionsVersionIdGet**](AddonVersionsApi.md#addonsAddonIdVersionsVersionIdGet) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
-[**addonsAddonIdVersionsVersionIdPut**](AddonVersionsApi.md#addonsAddonIdVersionsVersionIdPut) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
+[**createAddonVersion**](AddonVersionsApi.md#createAddonVersion) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
+[**downloadAddonVersion**](AddonVersionsApi.md#downloadAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
+[**getAddonVersion**](AddonVersionsApi.md#getAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
+[**listAddonVersions**](AddonVersionsApi.md#listAddonVersions) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
+[**updateAddonVersion**](AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 
-<a name="addonsAddonIdVersionsGet"></a>
-# **addonsAddonIdVersionsGet**
-> InlineResponse2007 addonsAddonIdVersionsGet(addonId, with)
-
-Fetch all the versions of an addon
-
-### Example
-```java
-// Import classes:
-//import no.everyday.gmodstore_sdk.ApiClient;
-//import no.everyday.gmodstore_sdk.ApiException;
-//import no.everyday.gmodstore_sdk.Configuration;
-//import no.everyday.gmodstore_sdk.auth.*;
-//import no.everyday.gmodstore_sdk.api.AddonVersionsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
-
-AddonVersionsApi apiInstance = new AddonVersionsApi();
-Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
-try {
-    InlineResponse2007 result = apiInstance.addonsAddonIdVersionsGet(addonId, with);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
-
-### Return type
-
-[**InlineResponse2007**](InlineResponse2007.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="addonsAddonIdVersionsPost"></a>
-# **addonsAddonIdVersionsPost**
-> InlineResponse2012 addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with)
+<a name="createAddonVersion"></a>
+# **createAddonVersion**
+> InlineResponse2012 createAddonVersion(name, changelog, file, releaseType, addonId, with)
 
 Create a new version for an addon
 
@@ -82,11 +27,6 @@ Create a new version for an addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 String name = "name_example"; // String | 
@@ -96,10 +36,10 @@ String releaseType = "releaseType_example"; // String |
 Long addonId = 789L; // Long | Id of the addon
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with);
+    InlineResponse2012 result = apiInstance.createAddonVersion(name, changelog, file, releaseType, addonId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsPost");
+    System.err.println("Exception when calling AddonVersionsApi#createAddonVersion");
     e.printStackTrace();
 }
 ```
@@ -121,16 +61,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
-<a name="addonsAddonIdVersionsVersionIdDownloadGet"></a>
-# **addonsAddonIdVersionsVersionIdDownloadGet**
-> InlineResponse2008 addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId)
+<a name="downloadAddonVersion"></a>
+# **downloadAddonVersion**
+> InlineResponse2008 downloadAddonVersion(addonId, versionId)
 
 Generate a download token for a specific version of an addon
 
@@ -145,20 +85,15 @@ Generate a download token for a specific version of an addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 try {
-    InlineResponse2008 result = apiInstance.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
+    InlineResponse2008 result = apiInstance.downloadAddonVersion(addonId, versionId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsVersionIdDownloadGet");
+    System.err.println("Exception when calling AddonVersionsApi#downloadAddonVersion");
     e.printStackTrace();
 }
 ```
@@ -176,16 +111,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="addonsAddonIdVersionsVersionIdGet"></a>
-# **addonsAddonIdVersionsVersionIdGet**
-> InlineResponse2012 addonsAddonIdVersionsVersionIdGet(addonId, versionId, with)
+<a name="getAddonVersion"></a>
+# **getAddonVersion**
+> InlineResponse2012 getAddonVersion(addonId, versionId, with)
 
 Fetch a specific version of an addon
 
@@ -200,21 +135,16 @@ Fetch a specific version of an addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsVersionIdGet(addonId, versionId, with);
+    InlineResponse2012 result = apiInstance.getAddonVersion(addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsVersionIdGet");
+    System.err.println("Exception when calling AddonVersionsApi#getAddonVersion");
     e.printStackTrace();
 }
 ```
@@ -233,16 +163,66 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="addonsAddonIdVersionsVersionIdPut"></a>
-# **addonsAddonIdVersionsVersionIdPut**
-> InlineResponse2012 addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with)
+<a name="listAddonVersions"></a>
+# **listAddonVersions**
+> InlineResponse2007 listAddonVersions(addonId, with)
+
+Fetch all the versions of an addon
+
+### Example
+```java
+// Import classes:
+//import no.everyday.gmodstore_sdk.ApiClient;
+//import no.everyday.gmodstore_sdk.ApiException;
+//import no.everyday.gmodstore_sdk.Configuration;
+//import no.everyday.gmodstore_sdk.auth.*;
+//import no.everyday.gmodstore_sdk.api.AddonVersionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+AddonVersionsApi apiInstance = new AddonVersionsApi();
+Long addonId = 789L; // Long | Id of the addon
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
+try {
+    InlineResponse2007 result = apiInstance.listAddonVersions(addonId, with);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AddonVersionsApi#listAddonVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **addonId** | **Long**| Id of the addon |
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
+
+### Return type
+
+[**InlineResponse2007**](InlineResponse2007.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateAddonVersion"></a>
+# **updateAddonVersion**
+> InlineResponse2012 updateAddonVersion(name, changelog, releaseType, addonId, versionId, with)
 
 Update a version of an addon
 
@@ -257,11 +237,6 @@ Update a version of an addon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 String name = "name_example"; // String | 
@@ -271,10 +246,10 @@ Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
 try {
-    InlineResponse2012 result = apiInstance.addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with);
+    InlineResponse2012 result = apiInstance.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AddonVersionsApi#addonsAddonIdVersionsVersionIdPut");
+    System.err.println("Exception when calling AddonVersionsApi#updateAddonVersion");
     e.printStackTrace();
 }
 ```
@@ -296,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

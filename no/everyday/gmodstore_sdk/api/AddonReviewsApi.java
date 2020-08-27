@@ -56,138 +56,7 @@ public class AddonReviewsApi {
     }
 
     /**
-     * Build call for addonsAddonIdReviewsGet
-     * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call addonsAddonIdReviewsGetCall(Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/addons/{addon_id}/reviews"
-            .replaceAll("\\{" + "addon_id" + "\\}", apiClient.escapeString(addonId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (with != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("csv", "with", with));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addonsAddonIdReviewsGetValidateBeforeCall(Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'addonId' is set
-        if (addonId == null) {
-            throw new ApiException("Missing the required parameter 'addonId' when calling addonsAddonIdReviewsGet(Async)");
-        }
-        
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsGetCall(addonId, with, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Fetch all the reviews of an addon
-     * 
-     * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return InlineResponse2005
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public InlineResponse2005 addonsAddonIdReviewsGet(Long addonId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2005> resp = addonsAddonIdReviewsGetWithHttpInfo(addonId, with);
-        return resp.getData();
-    }
-
-    /**
-     * Fetch all the reviews of an addon
-     * 
-     * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<InlineResponse2005> addonsAddonIdReviewsGetWithHttpInfo(Long addonId, List<String> with) throws ApiException {
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsGetValidateBeforeCall(addonId, with, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Fetch all the reviews of an addon (asynchronously)
-     * 
-     * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call addonsAddonIdReviewsGetAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2005> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsGetValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for addonsAddonIdReviewsReviewIdGet
+     * Build call for getAddonReview
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
      * @param with The relations you want to fetch with the AddonReview schema (optional)
@@ -196,7 +65,7 @@ public class AddonReviewsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addonsAddonIdReviewsReviewIdGetCall(Long addonId, Long reviewId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAddonReviewCall(Long addonId, Long reviewId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -237,22 +106,22 @@ public class AddonReviewsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addonsAddonIdReviewsReviewIdGetValidateBeforeCall(Long addonId, Long reviewId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAddonReviewValidateBeforeCall(Long addonId, Long reviewId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'addonId' is set
         if (addonId == null) {
-            throw new ApiException("Missing the required parameter 'addonId' when calling addonsAddonIdReviewsReviewIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'addonId' when calling getAddonReview(Async)");
         }
         // verify the required parameter 'reviewId' is set
         if (reviewId == null) {
-            throw new ApiException("Missing the required parameter 'reviewId' when calling addonsAddonIdReviewsReviewIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'reviewId' when calling getAddonReview(Async)");
         }
         
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsReviewIdGetCall(addonId, reviewId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAddonReviewCall(addonId, reviewId, with, progressListener, progressRequestListener);
         return call;
 
         
@@ -270,8 +139,8 @@ public class AddonReviewsApi {
      * @return InlineResponse2006
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2006 addonsAddonIdReviewsReviewIdGet(Long addonId, Long reviewId, List<String> with) throws ApiException {
-        ApiResponse<InlineResponse2006> resp = addonsAddonIdReviewsReviewIdGetWithHttpInfo(addonId, reviewId, with);
+    public InlineResponse2006 getAddonReview(Long addonId, Long reviewId, List<String> with) throws ApiException {
+        ApiResponse<InlineResponse2006> resp = getAddonReviewWithHttpInfo(addonId, reviewId, with);
         return resp.getData();
     }
 
@@ -284,8 +153,8 @@ public class AddonReviewsApi {
      * @return ApiResponse&lt;InlineResponse2006&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2006> addonsAddonIdReviewsReviewIdGetWithHttpInfo(Long addonId, Long reviewId, List<String> with) throws ApiException {
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsReviewIdGetValidateBeforeCall(addonId, reviewId, with, null, null);
+    public ApiResponse<InlineResponse2006> getAddonReviewWithHttpInfo(Long addonId, Long reviewId, List<String> with) throws ApiException {
+        com.squareup.okhttp.Call call = getAddonReviewValidateBeforeCall(addonId, reviewId, with, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -300,7 +169,7 @@ public class AddonReviewsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addonsAddonIdReviewsReviewIdGetAsync(Long addonId, Long reviewId, List<String> with, final ApiCallback<InlineResponse2006> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAddonReviewAsync(Long addonId, Long reviewId, List<String> with, final ApiCallback<InlineResponse2006> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -321,8 +190,139 @@ public class AddonReviewsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addonsAddonIdReviewsReviewIdGetValidateBeforeCall(addonId, reviewId, with, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAddonReviewValidateBeforeCall(addonId, reviewId, with, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listAddonReviews
+     * @param addonId Id of the addon (required)
+     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listAddonReviewsCall(Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/addons/{addon_id}/reviews"
+            .replaceAll("\\{" + "addon_id" + "\\}", apiClient.escapeString(addonId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (with != null)
+        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("csv", "with", with));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listAddonReviewsValidateBeforeCall(Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'addonId' is set
+        if (addonId == null) {
+            throw new ApiException("Missing the required parameter 'addonId' when calling listAddonReviews(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = listAddonReviewsCall(addonId, with, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Fetch all the reviews of an addon
+     * 
+     * @param addonId Id of the addon (required)
+     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @return InlineResponse2005
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public InlineResponse2005 listAddonReviews(Long addonId, List<String> with) throws ApiException {
+        ApiResponse<InlineResponse2005> resp = listAddonReviewsWithHttpInfo(addonId, with);
+        return resp.getData();
+    }
+
+    /**
+     * Fetch all the reviews of an addon
+     * 
+     * @param addonId Id of the addon (required)
+     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<InlineResponse2005> listAddonReviewsWithHttpInfo(Long addonId, List<String> with) throws ApiException {
+        com.squareup.okhttp.Call call = listAddonReviewsValidateBeforeCall(addonId, with, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Fetch all the reviews of an addon (asynchronously)
+     * 
+     * @param addonId Id of the addon (required)
+     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listAddonReviewsAsync(Long addonId, List<String> with, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listAddonReviewsValidateBeforeCall(addonId, with, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -4,13 +4,63 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdBadgesBadgeIdDelete**](UserBadgesApi.md#usersUserIdBadgesBadgeIdDelete) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#x27;s badge
-[**usersUserIdBadgesGet**](UserBadgesApi.md#usersUserIdBadgesGet) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
-[**usersUserIdBadgesPost**](UserBadgesApi.md#usersUserIdBadgesPost) | **POST** /users/{user_id}/badges | Give a user a badge
+[**createUserBadge**](UserBadgesApi.md#createUserBadge) | **POST** /users/{user_id}/badges | Give a user a badge
+[**deleteUserBadge**](UserBadgesApi.md#deleteUserBadge) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#x27;s badge
+[**listUserBadges**](UserBadgesApi.md#listUserBadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
-<a name="usersUserIdBadgesBadgeIdDelete"></a>
-# **usersUserIdBadgesBadgeIdDelete**
-> usersUserIdBadgesBadgeIdDelete(userId, badgeId)
+<a name="createUserBadge"></a>
+# **createUserBadge**
+> InlineResponse2013 createUserBadge(body, userId)
+
+Give a user a badge
+
+### Example
+```java
+// Import classes:
+//import no.everyday.gmodstore_sdk.ApiClient;
+//import no.everyday.gmodstore_sdk.ApiException;
+//import no.everyday.gmodstore_sdk.Configuration;
+//import no.everyday.gmodstore_sdk.auth.*;
+//import no.everyday.gmodstore_sdk.api.UserBadgesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+UserBadgesApi apiInstance = new UserBadgesApi();
+BadgeCreateBody body = new BadgeCreateBody(); // BadgeCreateBody | 
+String userId = "userId_example"; // String | Id of the user
+try {
+    InlineResponse2013 result = apiInstance.createUserBadge(body, userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UserBadgesApi#createUserBadge");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BadgeCreateBody**](BadgeCreateBody.md)|  |
+ **userId** | **String**| Id of the user |
+
+### Return type
+
+[**InlineResponse2013**](InlineResponse2013.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteUserBadge"></a>
+# **deleteUserBadge**
+> deleteUserBadge(userId, badgeId)
 
 Destroy a users&#x27;s badge
 
@@ -25,19 +75,14 @@ Destroy a users&#x27;s badge
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UserBadgesApi apiInstance = new UserBadgesApi();
 String userId = "userId_example"; // String | Id of the user
 Long badgeId = 789L; // Long | Id of the badge
 try {
-    apiInstance.usersUserIdBadgesBadgeIdDelete(userId, badgeId);
+    apiInstance.deleteUserBadge(userId, badgeId);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UserBadgesApi#usersUserIdBadgesBadgeIdDelete");
+    System.err.println("Exception when calling UserBadgesApi#deleteUserBadge");
     e.printStackTrace();
 }
 ```
@@ -55,16 +100,16 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="usersUserIdBadgesGet"></a>
-# **usersUserIdBadgesGet**
-> InlineResponse20014 usersUserIdBadgesGet(userId)
+<a name="listUserBadges"></a>
+# **listUserBadges**
+> InlineResponse20014 listUserBadges(userId)
 
 Fetch all the badges a user has
 
@@ -79,19 +124,14 @@ Fetch all the badges a user has
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UserBadgesApi apiInstance = new UserBadgesApi();
 String userId = "userId_example"; // String | Id of the user
 try {
-    InlineResponse20014 result = apiInstance.usersUserIdBadgesGet(userId);
+    InlineResponse20014 result = apiInstance.listUserBadges(userId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UserBadgesApi#usersUserIdBadgesGet");
+    System.err.println("Exception when calling UserBadgesApi#listUserBadges");
     e.printStackTrace();
 }
 ```
@@ -108,65 +148,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="usersUserIdBadgesPost"></a>
-# **usersUserIdBadgesPost**
-> InlineResponse2013 usersUserIdBadgesPost(body, userId)
-
-Give a user a badge
-
-### Example
-```java
-// Import classes:
-//import no.everyday.gmodstore_sdk.ApiClient;
-//import no.everyday.gmodstore_sdk.ApiException;
-//import no.everyday.gmodstore_sdk.Configuration;
-//import no.everyday.gmodstore_sdk.auth.*;
-//import no.everyday.gmodstore_sdk.api.UserBadgesApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
-
-UserBadgesApi apiInstance = new UserBadgesApi();
-Object body = null; // Object | 
-String userId = "userId_example"; // String | Id of the user
-try {
-    InlineResponse2013 result = apiInstance.usersUserIdBadgesPost(body, userId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserBadgesApi#usersUserIdBadgesPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)|  |
- **userId** | **String**| Id of the user |
-
-### Return type
-
-[**InlineResponse2013**](InlineResponse2013.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 

@@ -35,22 +35,6 @@ public class AddonVersionsApiTest {
     private final AddonVersionsApi api = new AddonVersionsApi();
 
     /**
-     * Fetch all the versions of an addon
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void addonsAddonIdVersionsGetTest() throws ApiException {
-        Long addonId = null;
-        List<String> with = null;
-        InlineResponse2007 response = api.addonsAddonIdVersionsGet(addonId, with);
-
-        // TODO: test validations
-    }
-    /**
      * Create a new version for an addon
      *
      * 
@@ -59,14 +43,14 @@ public class AddonVersionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdVersionsPostTest() throws ApiException {
+    public void createAddonVersionTest() throws ApiException {
         String name = null;
         String changelog = null;
         File file = null;
         String releaseType = null;
         Long addonId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.addonsAddonIdVersionsPost(name, changelog, file, releaseType, addonId, with);
+        InlineResponse2012 response = api.createAddonVersion(name, changelog, file, releaseType, addonId, with);
 
         // TODO: test validations
     }
@@ -79,10 +63,10 @@ public class AddonVersionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdVersionsVersionIdDownloadGetTest() throws ApiException {
+    public void downloadAddonVersionTest() throws ApiException {
         Long addonId = null;
         Long versionId = null;
-        InlineResponse2008 response = api.addonsAddonIdVersionsVersionIdDownloadGet(addonId, versionId);
+        InlineResponse2008 response = api.downloadAddonVersion(addonId, versionId);
 
         // TODO: test validations
     }
@@ -95,11 +79,27 @@ public class AddonVersionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdVersionsVersionIdGetTest() throws ApiException {
+    public void getAddonVersionTest() throws ApiException {
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.addonsAddonIdVersionsVersionIdGet(addonId, versionId, with);
+        InlineResponse2012 response = api.getAddonVersion(addonId, versionId, with);
+
+        // TODO: test validations
+    }
+    /**
+     * Fetch all the versions of an addon
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAddonVersionsTest() throws ApiException {
+        Long addonId = null;
+        List<String> with = null;
+        InlineResponse2007 response = api.listAddonVersions(addonId, with);
 
         // TODO: test validations
     }
@@ -112,14 +112,14 @@ public class AddonVersionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addonsAddonIdVersionsVersionIdPutTest() throws ApiException {
+    public void updateAddonVersionTest() throws ApiException {
         String name = null;
         String changelog = null;
         String releaseType = null;
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        InlineResponse2012 response = api.addonsAddonIdVersionsVersionIdPut(name, changelog, releaseType, addonId, versionId, with);
+        InlineResponse2012 response = api.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
 
         // TODO: test validations
     }

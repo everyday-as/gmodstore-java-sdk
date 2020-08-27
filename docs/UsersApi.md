@@ -4,12 +4,12 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersMeGet**](UsersApi.md#usersMeGet) | **GET** /users/me | Fetches the current user (API Key Owner)
-[**usersUserIdGet**](UsersApi.md#usersUserIdGet) | **GET** /users/{user_id} | Fetch a single user
+[**getSelfUser**](UsersApi.md#getSelfUser) | **GET** /users/me | Fetches the current user (API Key Owner)
+[**getUser**](UsersApi.md#getUser) | **GET** /users/{user_id} | Fetch a single user
 
-<a name="usersMeGet"></a>
-# **usersMeGet**
-> InlineResponse20011 usersMeGet(with)
+<a name="getSelfUser"></a>
+# **getSelfUser**
+> InlineResponse20011 getSelfUser(with)
 
 Fetches the current user (API Key Owner)
 
@@ -24,19 +24,14 @@ Fetches the current user (API Key Owner)
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the User schema
 try {
-    InlineResponse20011 result = apiInstance.usersMeGet(with);
+    InlineResponse20011 result = apiInstance.getSelfUser(with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#usersMeGet");
+    System.err.println("Exception when calling UsersApi#getSelfUser");
     e.printStackTrace();
 }
 ```
@@ -53,16 +48,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="usersUserIdGet"></a>
-# **usersUserIdGet**
-> InlineResponse20011 usersUserIdGet(userId, with)
+<a name="getUser"></a>
+# **getUser**
+> InlineResponse20011 getUser(userId, with)
 
 Fetch a single user
 
@@ -77,20 +72,15 @@ Fetch a single user
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: ApiKeyAuth
-ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-ApiKeyAuth.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | Id of the user
 List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the User schema
 try {
-    InlineResponse20011 result = apiInstance.usersUserIdGet(userId, with);
+    InlineResponse20011 result = apiInstance.getUser(userId, with);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#usersUserIdGet");
+    System.err.println("Exception when calling UsersApi#getUser");
     e.printStackTrace();
 }
 ```
@@ -108,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
