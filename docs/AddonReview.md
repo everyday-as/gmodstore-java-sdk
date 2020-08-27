@@ -1,6 +1,9 @@
+
+
 # AddonReview
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -10,3 +13,6 @@ Name | Type | Description | Notes
 **rating** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **addon** | [**Addon**](Addon.md) |  |  [optional]
 **author** | [**User**](User.md) |  |  [optional]
+
+
+

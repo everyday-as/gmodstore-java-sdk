@@ -1,6 +1,9 @@
+
+
 # Team
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -8,3 +11,6 @@ Name | Type | Description | Notes
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **primaryAuthor** | [**TeamUser**](TeamUser.md) |  |  [optional]
+
+
+
