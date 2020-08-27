@@ -25,7 +25,7 @@ import java.io.IOException;
  * UserBadgeLegend
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class UserBadgeLegend {
   @SerializedName("id")
   private String id = null;
@@ -48,7 +48,7 @@ public class UserBadgeLegend {
    * Get id
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getId() {
     return id;
   }
@@ -66,7 +66,7 @@ public class UserBadgeLegend {
    * Get name
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -84,7 +84,7 @@ public class UserBadgeLegend {
    * Get description
    * @return description
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getDescription() {
     return description;
   }

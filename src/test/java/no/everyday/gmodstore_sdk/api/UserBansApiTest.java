@@ -13,8 +13,8 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
-import no.everyday.gmodstore_sdk.model.BanListResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
+import no.everyday.gmodstore_sdk.model.UserBanListResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -41,8 +41,8 @@ public class UserBansApiTest {
      */
     @Test
     public void listUserBansTest() throws ApiException {
-        String userId = null;
-        BanListResponse response = api.listUserBans(userId);
+        Long userId = null;
+        UserBanListResponse response = api.listUserBans(userId);
 
         // TODO: test validations
     }

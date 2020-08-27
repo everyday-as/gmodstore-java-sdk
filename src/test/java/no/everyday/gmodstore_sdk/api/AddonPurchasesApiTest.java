@@ -13,11 +13,11 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonPurchase;
 import no.everyday.gmodstore_sdk.model.AddonPurchaseListResponse;
 import no.everyday.gmodstore_sdk.model.AddonPurchaseResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import no.everyday.gmodstore_sdk.model.NewAddonPurchase;
-import no.everyday.gmodstore_sdk.model.UpdateAddonPurchase;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -62,7 +62,7 @@ public class AddonPurchasesApiTest {
     @Test
     public void getAddonPurchaseTest() throws ApiException {
         Long addonId = null;
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         AddonPurchaseResponse response = api.getAddonPurchase(addonId, userId, with);
 
@@ -94,9 +94,9 @@ public class AddonPurchasesApiTest {
      */
     @Test
     public void updateAddonPurchaseTest() throws ApiException {
-        UpdateAddonPurchase body = null;
+        AddonPurchase body = null;
         Long addonId = null;
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         AddonPurchaseResponse response = api.updateAddonPurchase(body, addonId, userId, with);
 

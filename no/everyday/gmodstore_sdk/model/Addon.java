@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Addon
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class Addon {
   @SerializedName("id")
   private Integer id = null;
@@ -50,7 +50,7 @@ public class Addon {
   private String description = null;
 
   @SerializedName("requirements")
-  private List<String> requirements = new ArrayList<String>();
+  private List<String> requirements = null;
 
   @SerializedName("price")
   private AddonPrice price = null;
@@ -85,7 +85,7 @@ public class Addon {
    * Get id
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getId() {
     return id;
   }
@@ -103,7 +103,7 @@ public class Addon {
    * Get active
    * @return active
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Boolean isActive() {
     return active;
   }
@@ -121,7 +121,7 @@ public class Addon {
    * Get name
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -139,7 +139,7 @@ public class Addon {
    * Get shortDescription
    * @return shortDescription
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getShortDescription() {
     return shortDescription;
   }
@@ -157,7 +157,7 @@ public class Addon {
    * Get description
    * @return description
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getDescription() {
     return description;
   }
@@ -172,6 +172,9 @@ public class Addon {
   }
 
   public Addon addRequirementsItem(String requirementsItem) {
+    if (this.requirements == null) {
+      this.requirements = new ArrayList<String>();
+    }
     this.requirements.add(requirementsItem);
     return this;
   }
@@ -180,7 +183,7 @@ public class Addon {
    * Get requirements
    * @return requirements
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public List<String> getRequirements() {
     return requirements;
   }
@@ -198,7 +201,7 @@ public class Addon {
    * Get price
    * @return price
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public AddonPrice getPrice() {
     return price;
   }
@@ -216,7 +219,7 @@ public class Addon {
    * Get images
    * @return images
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public AddonImages getImages() {
     return images;
   }
@@ -225,76 +228,40 @@ public class Addon {
     this.images = images;
   }
 
-  public Addon slug(String slug) {
-    this.slug = slug;
-    return this;
-  }
-
    /**
    * Get slug
    * @return slug
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getSlug() {
     return slug;
-  }
-
-  public void setSlug(String slug) {
-    this.slug = slug;
-  }
-
-  public Addon route(String route) {
-    this.route = route;
-    return this;
   }
 
    /**
    * Get route
    * @return route
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getRoute() {
     return route;
-  }
-
-  public void setRoute(String route) {
-    this.route = route;
-  }
-
-  public Addon createdAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-    return this;
   }
 
    /**
    * Get createdAt
    * @return createdAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
-  }
-
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-  public Addon updatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
   }
 
    /**
    * Get updatedAt
    * @return updatedAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
-  }
-
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
   }
 
   public Addon latestVersion(AddonVersion latestVersion) {

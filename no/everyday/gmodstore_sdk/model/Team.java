@@ -27,7 +27,7 @@ import org.threeten.bp.OffsetDateTime;
  * Team
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class Team {
   @SerializedName("id")
   private Integer id = null;
@@ -51,10 +51,9 @@ public class Team {
 
    /**
    * Get id
-   * minimum: 1
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getId() {
     return id;
   }
@@ -72,7 +71,7 @@ public class Team {
    * Get name
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -90,7 +89,7 @@ public class Team {
    * Get createdAt
    * @return createdAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -108,7 +107,7 @@ public class Team {
    * Get updatedAt
    * @return updatedAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }

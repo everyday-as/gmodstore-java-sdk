@@ -25,7 +25,7 @@ import java.io.IOException;
  * PermissionGroup
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class PermissionGroup {
   @SerializedName("id")
   private Integer id = null;
@@ -43,10 +43,9 @@ public class PermissionGroup {
 
    /**
    * Get id
-   * minimum: 1
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getId() {
     return id;
   }
@@ -64,7 +63,7 @@ public class PermissionGroup {
    * Get title
    * @return title
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getTitle() {
     return title;
   }
@@ -80,10 +79,9 @@ public class PermissionGroup {
 
    /**
    * Get displayOrder
-   * minimum: 0
    * @return displayOrder
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getDisplayOrder() {
     return displayOrder;
   }

@@ -25,8 +25,8 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserTeamsApi apiInstance = new UserTeamsApi();
-String userId = "userId_example"; // String | Id of the user
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Team schema
+Long userId = 789L; // Long | Id of the user
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `Team`
 try {
     TeamListResponse result = apiInstance.listUserTeams(userId, with);
     System.out.println(result);
@@ -40,8 +40,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**| Id of the user |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the Team schema | [optional] [enum: primaryAuthor]
+ **userId** | **Long**| Id of the user |
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Team&#x60; | [optional] [enum: primaryAuthor]
 
 ### Return type
 

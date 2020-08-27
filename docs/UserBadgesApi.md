@@ -27,8 +27,8 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserBadgesApi apiInstance = new UserBadgesApi();
-NewUserBadge body = new NewUserBadge(); // NewUserBadge | 
-String userId = "userId_example"; // String | Id of the user
+UserBadge body = new UserBadge(); // UserBadge | 
+Long userId = 789L; // Long | Id of the user
 try {
     BadgeResponse result = apiInstance.createUserBadge(body, userId);
     System.out.println(result);
@@ -42,8 +42,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NewUserBadge**](NewUserBadge.md)|  |
- **userId** | **String**| Id of the user |
+ **body** | [**UserBadge**](UserBadge.md)|  |
+ **userId** | **Long**| Id of the user |
 
 ### Return type
 
@@ -77,7 +77,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserBadgesApi apiInstance = new UserBadgesApi();
-String userId = "userId_example"; // String | Id of the user
+Long userId = 789L; // Long | Id of the user
 Long badgeId = 789L; // Long | Id of the badge
 try {
     apiInstance.deleteUserBadge(userId, badgeId);
@@ -91,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**| Id of the user |
+ **userId** | **Long**| Id of the user |
  **badgeId** | **Long**| Id of the badge |
 
 ### Return type
@@ -126,7 +126,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserBadgesApi apiInstance = new UserBadgesApi();
-String userId = "userId_example"; // String | Id of the user
+Long userId = 789L; // Long | Id of the user
 try {
     BadgeListResponse result = apiInstance.listUserBadges(userId);
     System.out.println(result);
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**| Id of the user |
+ **userId** | **Long**| Id of the user |
 
 ### Return type
 

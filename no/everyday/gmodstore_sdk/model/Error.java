@@ -25,7 +25,7 @@ import java.io.IOException;
  * Error
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class Error {
   @SerializedName("message")
   private String message = null;
@@ -39,7 +39,7 @@ public class Error {
    * Get message
    * @return message
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getMessage() {
     return message;
   }

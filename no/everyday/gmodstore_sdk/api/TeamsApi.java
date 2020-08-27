@@ -57,7 +57,7 @@ public class TeamsApi {
     /**
      * Build call for getTeam
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -127,7 +127,7 @@ public class TeamsApi {
      * Fetch a single team
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @return TeamResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +140,7 @@ public class TeamsApi {
      * Fetch a single team
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @return ApiResponse&lt;TeamResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -154,7 +154,7 @@ public class TeamsApi {
      * Fetch a single team (asynchronously)
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

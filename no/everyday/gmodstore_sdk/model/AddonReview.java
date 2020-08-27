@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.User;
  * AddonReview
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class AddonReview {
   @SerializedName("id")
   private Integer id = null;
@@ -58,10 +58,9 @@ public class AddonReview {
 
    /**
    * Get id
-   * minimum: 1
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getId() {
     return id;
   }
@@ -79,7 +78,7 @@ public class AddonReview {
    * Get title
    * @return title
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getTitle() {
     return title;
   }
@@ -97,7 +96,7 @@ public class AddonReview {
    * Get version
    * @return version
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getVersion() {
     return version;
   }
@@ -115,7 +114,7 @@ public class AddonReview {
    * Get body
    * @return body
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getBody() {
     return body;
   }
@@ -131,11 +130,11 @@ public class AddonReview {
 
    /**
    * Get rating
-   * minimum: 0
+   * minimum: 1
    * maximum: 5
    * @return rating
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public BigDecimal getRating() {
     return rating;
   }

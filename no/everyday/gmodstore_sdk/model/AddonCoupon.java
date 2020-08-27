@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * AddonCoupon
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class AddonCoupon {
   @SerializedName("id")
   private Integer id = null;
@@ -54,11 +54,6 @@ public class AddonCoupon {
   @SerializedName("addon")
   private Addon addon = null;
 
-  public AddonCoupon id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
    /**
    * Get id
    * minimum: 1
@@ -67,10 +62,6 @@ public class AddonCoupon {
   @Schema(required = true, description = "")
   public Integer getId() {
     return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
   }
 
   public AddonCoupon code(String code) {
@@ -98,8 +89,8 @@ public class AddonCoupon {
 
    /**
    * Get percent
-   * minimum: 0
-   * maximum: 100
+   * minimum: 1
+   * maximum: 99
    * @return percent
   **/
   @Schema(required = true, description = "")
@@ -118,7 +109,7 @@ public class AddonCoupon {
 
    /**
    * Get maxUses
-   * minimum: 0
+   * minimum: 1
    * @return maxUses
   **/
   @Schema(required = true, description = "")
@@ -136,10 +127,10 @@ public class AddonCoupon {
   }
 
    /**
-   * Get expiresAt
+   * A future date less than 2 weeks from today
    * @return expiresAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "A future date less than 2 weeks from today")
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
@@ -148,40 +139,22 @@ public class AddonCoupon {
     this.expiresAt = expiresAt;
   }
 
-  public AddonCoupon createdAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
    /**
    * Get createdAt
    * @return createdAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
-  }
-
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-  public AddonCoupon updatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
   }
 
    /**
    * Get updatedAt
    * @return updatedAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
-  }
-
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
   }
 
   public AddonCoupon addon(Addon addon) {

@@ -25,8 +25,8 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserAddonsApi apiInstance = new UserAddonsApi();
-String userId = "userId_example"; // String | Id of the user
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
+Long userId = 789L; // Long | Id of the user
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `Addon`
 try {
     AddonListResponse result = apiInstance.listUserAddons(userId, with);
     System.out.println(result);
@@ -40,8 +40,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**| Id of the user |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the Addon schema | [optional] [enum: latest_version, team]
+ **userId** | **Long**| Id of the user |
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team]
 
 ### Return type
 

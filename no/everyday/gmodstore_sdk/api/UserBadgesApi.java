@@ -29,7 +29,7 @@ import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.BadgeListResponse;
 import no.everyday.gmodstore_sdk.model.BadgeResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
-import no.everyday.gmodstore_sdk.model.NewUserBadge;
+import no.everyday.gmodstore_sdk.model.UserBadge;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class UserBadgesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createUserBadgeCall(NewUserBadge body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createUserBadgeCall(UserBadge body, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -108,7 +108,7 @@ public class UserBadgesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createUserBadgeValidateBeforeCall(NewUserBadge body, String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createUserBadgeValidateBeforeCall(UserBadge body, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling createUserBadge(Async)");
@@ -135,7 +135,7 @@ public class UserBadgesApi {
      * @return BadgeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BadgeResponse createUserBadge(NewUserBadge body, String userId) throws ApiException {
+    public BadgeResponse createUserBadge(UserBadge body, Long userId) throws ApiException {
         ApiResponse<BadgeResponse> resp = createUserBadgeWithHttpInfo(body, userId);
         return resp.getData();
     }
@@ -148,7 +148,7 @@ public class UserBadgesApi {
      * @return ApiResponse&lt;BadgeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BadgeResponse> createUserBadgeWithHttpInfo(NewUserBadge body, String userId) throws ApiException {
+    public ApiResponse<BadgeResponse> createUserBadgeWithHttpInfo(UserBadge body, Long userId) throws ApiException {
         com.squareup.okhttp.Call call = createUserBadgeValidateBeforeCall(body, userId, null, null);
         Type localVarReturnType = new TypeToken<BadgeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -163,7 +163,7 @@ public class UserBadgesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createUserBadgeAsync(NewUserBadge body, String userId, final ApiCallback<BadgeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createUserBadgeAsync(UserBadge body, Long userId, final ApiCallback<BadgeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -198,7 +198,7 @@ public class UserBadgesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteUserBadgeCall(String userId, Long badgeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteUserBadgeCall(Long userId, Long badgeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -242,7 +242,7 @@ public class UserBadgesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteUserBadgeValidateBeforeCall(String userId, Long badgeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteUserBadgeValidateBeforeCall(Long userId, Long badgeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling deleteUserBadge(Async)");
@@ -268,7 +268,7 @@ public class UserBadgesApi {
      * @param badgeId Id of the badge (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteUserBadge(String userId, Long badgeId) throws ApiException {
+    public void deleteUserBadge(Long userId, Long badgeId) throws ApiException {
         deleteUserBadgeWithHttpInfo(userId, badgeId);
     }
 
@@ -280,7 +280,7 @@ public class UserBadgesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteUserBadgeWithHttpInfo(String userId, Long badgeId) throws ApiException {
+    public ApiResponse<Void> deleteUserBadgeWithHttpInfo(Long userId, Long badgeId) throws ApiException {
         com.squareup.okhttp.Call call = deleteUserBadgeValidateBeforeCall(userId, badgeId, null, null);
         return apiClient.execute(call);
     }
@@ -294,7 +294,7 @@ public class UserBadgesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteUserBadgeAsync(String userId, Long badgeId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteUserBadgeAsync(Long userId, Long badgeId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -327,7 +327,7 @@ public class UserBadgesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listUserBadgesCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserBadgesCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -370,7 +370,7 @@ public class UserBadgesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listUserBadgesValidateBeforeCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserBadgesValidateBeforeCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserBadges(Async)");
@@ -392,7 +392,7 @@ public class UserBadgesApi {
      * @return BadgeListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BadgeListResponse listUserBadges(String userId) throws ApiException {
+    public BadgeListResponse listUserBadges(Long userId) throws ApiException {
         ApiResponse<BadgeListResponse> resp = listUserBadgesWithHttpInfo(userId);
         return resp.getData();
     }
@@ -404,7 +404,7 @@ public class UserBadgesApi {
      * @return ApiResponse&lt;BadgeListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BadgeListResponse> listUserBadgesWithHttpInfo(String userId) throws ApiException {
+    public ApiResponse<BadgeListResponse> listUserBadgesWithHttpInfo(Long userId) throws ApiException {
         com.squareup.okhttp.Call call = listUserBadgesValidateBeforeCall(userId, null, null);
         Type localVarReturnType = new TypeToken<BadgeListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -418,7 +418,7 @@ public class UserBadgesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserBadgesAsync(String userId, final ApiCallback<BadgeListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserBadgesAsync(Long userId, final ApiCallback<BadgeListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

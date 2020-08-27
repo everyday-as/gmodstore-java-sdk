@@ -26,7 +26,7 @@ import no.everyday.gmodstore_sdk.model.User;
  * TeamUser
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class TeamUser {
   @SerializedName("team_id")
   private Integer teamId = null;
@@ -44,10 +44,9 @@ public class TeamUser {
 
    /**
    * Get teamId
-   * minimum: 1
    * @return teamId
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getTeamId() {
     return teamId;
   }
@@ -65,7 +64,7 @@ public class TeamUser {
    * Get primary
    * @return primary
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Boolean isPrimary() {
     return primary;
   }

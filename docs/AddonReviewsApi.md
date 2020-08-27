@@ -28,7 +28,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 AddonReviewsApi apiInstance = new AddonReviewsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long reviewId = 789L; // Long | Id of the review
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonReview schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonReview`
 try {
     AddonReviewResponse result = apiInstance.getAddonReview(addonId, reviewId, with);
     System.out.println(result);
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
  **reviewId** | **Long**| Id of the review |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonReview schema | [optional] [enum: addon, author]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional] [enum: addon, author]
 
 ### Return type
 
@@ -79,7 +79,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 AddonReviewsApi apiInstance = new AddonReviewsApi();
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonReview schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonReview`
 try {
     AddonReviewListResponse result = apiInstance.listAddonReviews(addonId, with);
     System.out.println(result);
@@ -94,7 +94,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonReview schema | [optional] [enum: addon, author]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional] [enum: addon, author]
 
 ### Return type
 

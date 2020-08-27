@@ -41,7 +41,7 @@ public class UserTeamsApiTest {
      */
     @Test
     public void listUserTeamsTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         TeamListResponse response = api.listUserTeams(userId, with);
 

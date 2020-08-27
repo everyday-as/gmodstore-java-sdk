@@ -57,13 +57,13 @@ public class UserPurchasesApi {
     /**
      * Build call for listUserPurchases
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listUserPurchasesCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserPurchasesCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -108,7 +108,7 @@ public class UserPurchasesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listUserPurchasesValidateBeforeCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserPurchasesValidateBeforeCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserPurchases(Async)");
@@ -127,11 +127,11 @@ public class UserPurchasesApi {
      * Fetch all purchases a user has made
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      * @return AddonPurchaseListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddonPurchaseListResponse listUserPurchases(String userId, List<String> with) throws ApiException {
+    public AddonPurchaseListResponse listUserPurchases(Long userId, List<String> with) throws ApiException {
         ApiResponse<AddonPurchaseListResponse> resp = listUserPurchasesWithHttpInfo(userId, with);
         return resp.getData();
     }
@@ -140,11 +140,11 @@ public class UserPurchasesApi {
      * Fetch all purchases a user has made
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      * @return ApiResponse&lt;AddonPurchaseListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddonPurchaseListResponse> listUserPurchasesWithHttpInfo(String userId, List<String> with) throws ApiException {
+    public ApiResponse<AddonPurchaseListResponse> listUserPurchasesWithHttpInfo(Long userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listUserPurchasesValidateBeforeCall(userId, with, null, null);
         Type localVarReturnType = new TypeToken<AddonPurchaseListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -154,12 +154,12 @@ public class UserPurchasesApi {
      * Fetch all purchases a user has made (asynchronously)
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserPurchasesAsync(String userId, List<String> with, final ApiCallback<AddonPurchaseListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserPurchasesAsync(Long userId, List<String> with, final ApiCallback<AddonPurchaseListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

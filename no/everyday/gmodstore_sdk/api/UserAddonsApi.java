@@ -57,13 +57,13 @@ public class UserAddonsApi {
     /**
      * Build call for listUserAddons
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listUserAddonsCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserAddonsCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -108,7 +108,7 @@ public class UserAddonsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listUserAddonsValidateBeforeCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserAddonsValidateBeforeCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserAddons(Async)");
@@ -127,11 +127,11 @@ public class UserAddonsApi {
      * Fetch all the addons authored / co-authored by a user
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return AddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddonListResponse listUserAddons(String userId, List<String> with) throws ApiException {
+    public AddonListResponse listUserAddons(Long userId, List<String> with) throws ApiException {
         ApiResponse<AddonListResponse> resp = listUserAddonsWithHttpInfo(userId, with);
         return resp.getData();
     }
@@ -140,11 +140,11 @@ public class UserAddonsApi {
      * Fetch all the addons authored / co-authored by a user
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return ApiResponse&lt;AddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddonListResponse> listUserAddonsWithHttpInfo(String userId, List<String> with) throws ApiException {
+    public ApiResponse<AddonListResponse> listUserAddonsWithHttpInfo(Long userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listUserAddonsValidateBeforeCall(userId, with, null, null);
         Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -154,12 +154,12 @@ public class UserAddonsApi {
      * Fetch all the addons authored / co-authored by a user (asynchronously)
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserAddonsAsync(String userId, List<String> with, final ApiCallback<AddonListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserAddonsAsync(Long userId, List<String> with, final ApiCallback<AddonListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

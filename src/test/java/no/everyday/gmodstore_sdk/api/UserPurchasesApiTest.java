@@ -41,7 +41,7 @@ public class UserPurchasesApiTest {
      */
     @Test
     public void listUserPurchasesTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         AddonPurchaseListResponse response = api.listUserPurchases(userId, with);
 

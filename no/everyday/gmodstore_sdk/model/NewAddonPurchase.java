@@ -25,12 +25,12 @@ import java.io.IOException;
  * NewAddonPurchase
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class NewAddonPurchase {
   @SerializedName("user_id")
-  private String userId = null;
+  private Long userId = null;
 
-  public NewAddonPurchase userId(String userId) {
+  public NewAddonPurchase userId(Long userId) {
     this.userId = userId;
     return this;
   }
@@ -40,11 +40,11 @@ public class NewAddonPurchase {
    * @return userId
   **/
   @Schema(required = true, description = "")
-  public String getUserId() {
+  public Long getUserId() {
     return userId;
   }
 
-  public void setUserId(String userId) {
+  public void setUserId(Long userId) {
     this.userId = userId;
   }
 

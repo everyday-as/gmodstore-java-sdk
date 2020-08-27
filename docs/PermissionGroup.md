@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**title** | **String** |  | 
-**displayOrder** | **Integer** |  | 
+**id** | **Integer** |  |  [optional]
+**title** | **String** |  |  [optional]
+**displayOrder** | **Integer** |  |  [optional]

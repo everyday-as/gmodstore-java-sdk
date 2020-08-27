@@ -29,9 +29,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonCouponsApi apiInstance = new AddonCouponsApi();
-NewAddonCoupon body = new NewAddonCoupon(); // NewAddonCoupon | 
+AddonCoupon body = new AddonCoupon(); // AddonCoupon | 
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
 try {
     AddonCouponResponse result = apiInstance.createAddonCoupon(body, addonId, with);
     System.out.println(result);
@@ -45,9 +45,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NewAddonCoupon**](NewAddonCoupon.md)|  |
+ **body** | [**AddonCoupon**](AddonCoupon.md)|  |
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonCoupon schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -132,7 +132,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 AddonCouponsApi apiInstance = new AddonCouponsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long couponId = 789L; // Long | Id of the coupon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
 try {
     AddonCouponResponse result = apiInstance.getAddonCoupon(addonId, couponId, with);
     System.out.println(result);
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
  **couponId** | **Long**| Id of the coupon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonCoupon schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -183,7 +183,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 AddonCouponsApi apiInstance = new AddonCouponsApi();
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
 try {
     AddonCouponListResponse result = apiInstance.listAddonCoupons(addonId, with);
     System.out.println(result);
@@ -198,7 +198,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonCoupon schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -232,10 +232,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonCouponsApi apiInstance = new AddonCouponsApi();
-UpdateAddonCoupon body = new UpdateAddonCoupon(); // UpdateAddonCoupon | 
+AddonCoupon body = new AddonCoupon(); // AddonCoupon | 
 Long addonId = 789L; // Long | Id of the addon
 Long couponId = 789L; // Long | Id of the coupon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
 try {
     AddonCouponResponse result = apiInstance.updateAddonCoupon(body, addonId, couponId, with);
     System.out.println(result);
@@ -249,10 +249,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAddonCoupon**](UpdateAddonCoupon.md)|  |
+ **body** | [**AddonCoupon**](AddonCoupon.md)|  |
  **addonId** | **Long**| Id of the addon |
  **couponId** | **Long**| Id of the coupon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonCoupon schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
 
 ### Return type
 

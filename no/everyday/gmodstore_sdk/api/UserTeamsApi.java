@@ -57,13 +57,13 @@ public class UserTeamsApi {
     /**
      * Build call for listUserTeams
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listUserTeamsCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserTeamsCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -108,7 +108,7 @@ public class UserTeamsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listUserTeamsValidateBeforeCall(String userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserTeamsValidateBeforeCall(Long userId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserTeams(Async)");
@@ -127,11 +127,11 @@ public class UserTeamsApi {
      * Fetch all the teams of a user
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @return TeamListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TeamListResponse listUserTeams(String userId, List<String> with) throws ApiException {
+    public TeamListResponse listUserTeams(Long userId, List<String> with) throws ApiException {
         ApiResponse<TeamListResponse> resp = listUserTeamsWithHttpInfo(userId, with);
         return resp.getData();
     }
@@ -140,11 +140,11 @@ public class UserTeamsApi {
      * Fetch all the teams of a user
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @return ApiResponse&lt;TeamListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TeamListResponse> listUserTeamsWithHttpInfo(String userId, List<String> with) throws ApiException {
+    public ApiResponse<TeamListResponse> listUserTeamsWithHttpInfo(Long userId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = listUserTeamsValidateBeforeCall(userId, with, null, null);
         Type localVarReturnType = new TypeToken<TeamListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -154,12 +154,12 @@ public class UserTeamsApi {
      * Fetch all the teams of a user (asynchronously)
      * 
      * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the Team schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserTeamsAsync(String userId, List<String> with, final ApiCallback<TeamListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserTeamsAsync(Long userId, List<String> with, final ApiCallback<TeamListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

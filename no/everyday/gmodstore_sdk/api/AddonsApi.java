@@ -58,7 +58,7 @@ public class AddonsApi {
     /**
      * Build call for getAddon
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -128,7 +128,7 @@ public class AddonsApi {
      * Fetch a single addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return AddonResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -141,7 +141,7 @@ public class AddonsApi {
      * Fetch a single addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return ApiResponse&lt;AddonResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -155,7 +155,7 @@ public class AddonsApi {
      * Fetch a single addon (asynchronously)
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -188,7 +188,7 @@ public class AddonsApi {
     }
     /**
      * Build call for listSelfAddons
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -252,7 +252,7 @@ public class AddonsApi {
     /**
      * Fetch all the addons that you have access to
      * 
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return AddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -264,7 +264,7 @@ public class AddonsApi {
     /**
      * Fetch all the addons that you have access to
      * 
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @return ApiResponse&lt;AddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -277,7 +277,7 @@ public class AddonsApi {
     /**
      * Fetch all the addons that you have access to (asynchronously)
      * 
-     * @param with The relations you want to fetch with the Addon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

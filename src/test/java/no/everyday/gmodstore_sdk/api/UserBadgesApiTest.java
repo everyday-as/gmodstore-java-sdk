@@ -16,7 +16,7 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.BadgeListResponse;
 import no.everyday.gmodstore_sdk.model.BadgeResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
-import no.everyday.gmodstore_sdk.model.NewUserBadge;
+import no.everyday.gmodstore_sdk.model.UserBadge;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,8 +43,8 @@ public class UserBadgesApiTest {
      */
     @Test
     public void createUserBadgeTest() throws ApiException {
-        NewUserBadge body = null;
-        String userId = null;
+        UserBadge body = null;
+        Long userId = null;
         BadgeResponse response = api.createUserBadge(body, userId);
 
         // TODO: test validations
@@ -59,7 +59,7 @@ public class UserBadgesApiTest {
      */
     @Test
     public void deleteUserBadgeTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         Long badgeId = null;
         api.deleteUserBadge(userId, badgeId);
 
@@ -75,7 +75,7 @@ public class UserBadgesApiTest {
      */
     @Test
     public void listUserBadgesTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         BadgeListResponse response = api.listUserBadges(userId);
 
         // TODO: test validations

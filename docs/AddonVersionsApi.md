@@ -32,9 +32,9 @@ AddonVersionsApi apiInstance = new AddonVersionsApi();
 String name = "name_example"; // String | 
 String changelog = "changelog_example"; // String | 
 File file = new File("file_example"); // File | 
-String releaseType = "releaseType_example"; // String | 
+AddonVersionReleaseType releaseType = new AddonVersionReleaseType(); // AddonVersionReleaseType | 
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonVersion`
 try {
     AddonVersionResponse result = apiInstance.createAddonVersion(name, changelog, file, releaseType, addonId, with);
     System.out.println(result);
@@ -51,9 +51,9 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **changelog** | **String**|  |
  **file** | **File**|  |
- **releaseType** | **String**|  | [enum: stable, beta, alpha, private, demo]
+ **releaseType** | [**AddonVersionReleaseType**](.md)|  |
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -139,7 +139,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonVersion`
 try {
     AddonVersionResponse result = apiInstance.getAddonVersion(addonId, versionId, with);
     System.out.println(result);
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
  **versionId** | **Long**| Id of the version |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -190,7 +190,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonVersion`
 try {
     AddonVersionListResponse result = apiInstance.listAddonVersions(addonId, with);
     System.out.println(result);
@@ -205,7 +205,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional] [enum: addon]
 
 ### Return type
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAddonVersion"></a>
 # **updateAddonVersion**
-> AddonVersionResponse updateAddonVersion(name, changelog, releaseType, addonId, versionId, with)
+> AddonVersionResponse updateAddonVersion(id, name, changelog, fileHash, fileSize, releaseType, createdAt, updatedAt, addon, addonId, versionId, with)
 
 Update a version of an addon
 
@@ -239,14 +239,20 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonVersionsApi apiInstance = new AddonVersionsApi();
+Integer id = 56; // Integer | 
 String name = "name_example"; // String | 
 String changelog = "changelog_example"; // String | 
-String releaseType = "releaseType_example"; // String | 
+String fileHash = "fileHash_example"; // String | 
+Integer fileSize = 56; // Integer | 
+AddonVersionReleaseType releaseType = new AddonVersionReleaseType(); // AddonVersionReleaseType | 
+OffsetDateTime createdAt = new OffsetDateTime(); // OffsetDateTime | 
+OffsetDateTime updatedAt = new OffsetDateTime(); // OffsetDateTime | 
+Addon addon = new Addon(); // Addon | 
 Long addonId = 789L; // Long | Id of the addon
 Long versionId = 789L; // Long | Id of the version
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonVersion schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonVersion`
 try {
-    AddonVersionResponse result = apiInstance.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
+    AddonVersionResponse result = apiInstance.updateAddonVersion(id, name, changelog, fileHash, fileSize, releaseType, createdAt, updatedAt, addon, addonId, versionId, with);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AddonVersionsApi#updateAddonVersion");
@@ -258,12 +264,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  |
  **name** | **String**|  |
  **changelog** | **String**|  |
- **releaseType** | **String**|  | [enum: stable, beta, alpha, private, demo]
+ **fileHash** | **String**|  |
+ **fileSize** | **Integer**|  |
+ **releaseType** | [**AddonVersionReleaseType**](.md)|  |
+ **createdAt** | **OffsetDateTime**|  |
+ **updatedAt** | **OffsetDateTime**|  |
+ **addon** | [**Addon**](.md)|  |
  **addonId** | **Long**| Id of the addon |
  **versionId** | **Long**| Id of the version |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonVersion schema | [optional] [enum: addon]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional] [enum: addon]
 
 ### Return type
 

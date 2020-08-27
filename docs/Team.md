@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**name** | **String** |  | 
-**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**id** | **Integer** |  |  [optional]
+**name** | **String** |  |  [optional]
+**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **primaryAuthor** | [**TeamUser**](TeamUser.md) |  |  [optional]

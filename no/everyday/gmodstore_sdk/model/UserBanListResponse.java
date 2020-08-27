@@ -23,24 +23,24 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import no.everyday.gmodstore_sdk.model.Ban;
+import no.everyday.gmodstore_sdk.model.UserBan;
 /**
- * BanListResponse
+ * UserBanListResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
-public class BanListResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
+public class UserBanListResponse {
   @SerializedName("data")
-  private List<Ban> data = null;
+  private List<UserBan> data = null;
 
-  public BanListResponse data(List<Ban> data) {
+  public UserBanListResponse data(List<UserBan> data) {
     this.data = data;
     return this;
   }
 
-  public BanListResponse addDataItem(Ban dataItem) {
+  public UserBanListResponse addDataItem(UserBan dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<Ban>();
+      this.data = new ArrayList<UserBan>();
     }
     this.data.add(dataItem);
     return this;
@@ -51,11 +51,11 @@ public class BanListResponse {
    * @return data
   **/
   @Schema(description = "")
-  public List<Ban> getData() {
+  public List<UserBan> getData() {
     return data;
   }
 
-  public void setData(List<Ban> data) {
+  public void setData(List<UserBan> data) {
     this.data = data;
   }
 
@@ -68,8 +68,8 @@ public class BanListResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BanListResponse banListResponse = (BanListResponse) o;
-    return Objects.equals(this.data, banListResponse.data);
+    UserBanListResponse userBanListResponse = (UserBanListResponse) o;
+    return Objects.equals(this.data, userBanListResponse.data);
   }
 
   @Override
@@ -81,7 +81,7 @@ public class BanListResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BanListResponse {\n");
+    sb.append("class UserBanListResponse {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

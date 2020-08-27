@@ -22,12 +22,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.Addon;
+import no.everyday.gmodstore_sdk.model.AddonVersionReleaseType;
 import org.threeten.bp.OffsetDateTime;
 /**
  * AddonVersion
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class AddonVersion {
   @SerializedName("id")
   private Integer id = null;
@@ -44,51 +45,8 @@ public class AddonVersion {
   @SerializedName("file_size")
   private Integer fileSize = null;
 
-  /**
-   * Gets or Sets releaseType
-   */
-  @JsonAdapter(ReleaseTypeEnum.Adapter.class)
-  public enum ReleaseTypeEnum {
-    STABLE("stable"),
-    BETA("beta"),
-    ALPHA("alpha"),
-    PRIVATE("private");
-
-    private String value;
-
-    ReleaseTypeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ReleaseTypeEnum fromValue(String text) {
-      for (ReleaseTypeEnum b : ReleaseTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ReleaseTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReleaseTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReleaseTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReleaseTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("release_type")
-  private ReleaseTypeEnum releaseType = null;
+  @SerializedName("release_type")
+  private AddonVersionReleaseType releaseType = null;
 
   @SerializedName("created_at")
   private OffsetDateTime createdAt = null;
@@ -99,23 +57,13 @@ public class AddonVersion {
   @SerializedName("addon")
   private Addon addon = null;
 
-  public AddonVersion id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
    /**
    * Get id
-   * minimum: 1
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getId() {
     return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
   }
 
   public AddonVersion name(String name) {
@@ -142,10 +90,10 @@ public class AddonVersion {
   }
 
    /**
-   * Get changelog
+   * You can pass in markdown here
    * @return changelog
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "You can pass in markdown here")
   public String getChangelog() {
     return changelog;
   }
@@ -154,44 +102,25 @@ public class AddonVersion {
     this.changelog = changelog;
   }
 
-  public AddonVersion fileHash(String fileHash) {
-    this.fileHash = fileHash;
-    return this;
-  }
-
    /**
    * Get fileHash
    * @return fileHash
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getFileHash() {
     return fileHash;
   }
 
-  public void setFileHash(String fileHash) {
-    this.fileHash = fileHash;
-  }
-
-  public AddonVersion fileSize(Integer fileSize) {
-    this.fileSize = fileSize;
-    return this;
-  }
-
    /**
    * Get fileSize
-   * minimum: 0
    * @return fileSize
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getFileSize() {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
-    this.fileSize = fileSize;
-  }
-
-  public AddonVersion releaseType(ReleaseTypeEnum releaseType) {
+  public AddonVersion releaseType(AddonVersionReleaseType releaseType) {
     this.releaseType = releaseType;
     return this;
   }
@@ -201,48 +130,30 @@ public class AddonVersion {
    * @return releaseType
   **/
   @Schema(description = "")
-  public ReleaseTypeEnum getReleaseType() {
+  public AddonVersionReleaseType getReleaseType() {
     return releaseType;
   }
 
-  public void setReleaseType(ReleaseTypeEnum releaseType) {
+  public void setReleaseType(AddonVersionReleaseType releaseType) {
     this.releaseType = releaseType;
-  }
-
-  public AddonVersion createdAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-    return this;
   }
 
    /**
    * Get createdAt
    * @return createdAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
-  }
-
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-  public AddonVersion updatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
   }
 
    /**
    * Get updatedAt
    * @return updatedAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
-  }
-
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
   }
 
   public AddonVersion addon(Addon addon) {

@@ -27,7 +27,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 AddonsApi apiInstance = new AddonsApi();
 Long addonId = 789L; // Long | Id of the addon
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `Addon`
 try {
     AddonResponse result = apiInstance.getAddon(addonId, with);
     System.out.println(result);
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the Addon schema | [optional] [enum: latest_version, team]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team]
 
 ### Return type
 
@@ -76,7 +76,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AddonsApi apiInstance = new AddonsApi();
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the Addon schema
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `Addon`
 try {
     AddonListResponse result = apiInstance.listSelfAddons(with);
     System.out.println(result);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the Addon schema | [optional] [enum: latest_version, team]
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team]
 
 ### Return type
 

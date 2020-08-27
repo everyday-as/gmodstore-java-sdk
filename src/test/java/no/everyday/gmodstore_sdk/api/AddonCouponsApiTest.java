@@ -13,11 +13,10 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.AddonCoupon;
 import no.everyday.gmodstore_sdk.model.AddonCouponListResponse;
 import no.everyday.gmodstore_sdk.model.AddonCouponResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
-import no.everyday.gmodstore_sdk.model.NewAddonCoupon;
-import no.everyday.gmodstore_sdk.model.UpdateAddonCoupon;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,7 +43,7 @@ public class AddonCouponsApiTest {
      */
     @Test
     public void createAddonCouponTest() throws ApiException {
-        NewAddonCoupon body = null;
+        AddonCoupon body = null;
         Long addonId = null;
         List<String> with = null;
         AddonCouponResponse response = api.createAddonCoupon(body, addonId, with);
@@ -110,7 +109,7 @@ public class AddonCouponsApiTest {
      */
     @Test
     public void updateAddonCouponTest() throws ApiException {
-        UpdateAddonCoupon body = null;
+        AddonCoupon body = null;
         Long addonId = null;
         Long couponId = null;
         List<String> with = null;

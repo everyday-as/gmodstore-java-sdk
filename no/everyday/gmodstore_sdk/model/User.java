@@ -21,17 +21,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import no.everyday.gmodstore_sdk.model.PermissionGroup;
+import no.everyday.gmodstore_sdk.model.UserBanProperties;
 /**
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class User {
   @SerializedName("id")
-  private String id = null;
+  private Long id = null;
 
   @SerializedName("name")
   private String name = null;
@@ -45,63 +44,13 @@ public class User {
   @SerializedName("slug")
   private String slug = null;
 
-  /**
-   * Gets or Sets banProperties
-   */
-  @JsonAdapter(BanPropertiesEnum.Adapter.class)
-  public enum BanPropertiesEnum {
-    EVERYTHING("everything"),
-    ADDON_CREATE("addon.create"),
-    ADDON_PURCHASE("addon.purchase"),
-    ADDON_DOWNLOAD("addon.download"),
-    ADDON_REVIEW("addon.review"),
-    ADDON_COMMENT("addon.comment"),
-    JOB_CREATE("job.create"),
-    JOB_APPLY("job.apply"),
-    JOB_REVIEW("job.review"),
-    JOB_COMMENT("job.comment"),
-    BAN_APPEAL("ban.appeal");
-
-    private String value;
-
-    BanPropertiesEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static BanPropertiesEnum fromValue(String text) {
-      for (BanPropertiesEnum b : BanPropertiesEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<BanPropertiesEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final BanPropertiesEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public BanPropertiesEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return BanPropertiesEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("ban_properties")
-  private List<BanPropertiesEnum> banProperties = new ArrayList<BanPropertiesEnum>();
+  @SerializedName("ban_properties")
+  private UserBanProperties banProperties = null;
 
   @SerializedName("group")
   private PermissionGroup group = null;
 
-  public User id(String id) {
+  public User id(Long id) {
     this.id = id;
     return this;
   }
@@ -110,12 +59,12 @@ public class User {
    * Get id
    * @return id
   **/
-  @Schema(required = true, description = "")
-  public String getId() {
+  @Schema(description = "")
+  public Long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -128,7 +77,7 @@ public class User {
    * Get name
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -146,7 +95,7 @@ public class User {
    * Get avatar
    * @return avatar
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getAvatar() {
     return avatar;
   }
@@ -182,7 +131,7 @@ public class User {
    * Get slug
    * @return slug
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getSlug() {
     return slug;
   }
@@ -191,13 +140,8 @@ public class User {
     this.slug = slug;
   }
 
-  public User banProperties(List<BanPropertiesEnum> banProperties) {
+  public User banProperties(UserBanProperties banProperties) {
     this.banProperties = banProperties;
-    return this;
-  }
-
-  public User addBanPropertiesItem(BanPropertiesEnum banPropertiesItem) {
-    this.banProperties.add(banPropertiesItem);
     return this;
   }
 
@@ -205,12 +149,12 @@ public class User {
    * Get banProperties
    * @return banProperties
   **/
-  @Schema(required = true, description = "")
-  public List<BanPropertiesEnum> getBanProperties() {
+  @Schema(description = "")
+  public UserBanProperties getBanProperties() {
     return banProperties;
   }
 
-  public void setBanProperties(List<BanPropertiesEnum> banProperties) {
+  public void setBanProperties(UserBanProperties banProperties) {
     this.banProperties = banProperties;
   }
 

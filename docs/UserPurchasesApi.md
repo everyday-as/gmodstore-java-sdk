@@ -25,8 +25,8 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 UserPurchasesApi apiInstance = new UserPurchasesApi();
-String userId = "userId_example"; // String | Id of the user
-List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonPurchase schema
+Long userId = 789L; // Long | Id of the user
+List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonPurchase`
 try {
     AddonPurchaseListResponse result = apiInstance.listUserPurchases(userId, with);
     System.out.println(result);
@@ -40,8 +40,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**| Id of the user |
- **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the AddonPurchase schema | [optional] [enum: addon, order_item, user]
+ **userId** | **Long**| Id of the user |
+ **with** | [**List&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional] [enum: addon, order_item, user]
 
 ### Return type
 

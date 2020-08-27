@@ -59,7 +59,7 @@ public class AddonReviewsApi {
      * Build call for getAddonReview
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -135,7 +135,7 @@ public class AddonReviewsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @return AddonReviewResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -149,7 +149,7 @@ public class AddonReviewsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @return ApiResponse&lt;AddonReviewResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -164,7 +164,7 @@ public class AddonReviewsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param reviewId Id of the review (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -198,7 +198,7 @@ public class AddonReviewsApi {
     /**
      * Build call for listAddonReviews
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -268,7 +268,7 @@ public class AddonReviewsApi {
      * Fetch all the reviews of an addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @return AddonReviewListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -281,7 +281,7 @@ public class AddonReviewsApi {
      * Fetch all the reviews of an addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @return ApiResponse&lt;AddonReviewListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -295,7 +295,7 @@ public class AddonReviewsApi {
      * Fetch all the reviews of an addon (asynchronously)
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonReview schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

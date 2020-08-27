@@ -41,7 +41,7 @@ public class UserAddonsApiTest {
      */
     @Test
     public void listUserAddonsTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         AddonListResponse response = api.listUserAddons(userId, with);
 

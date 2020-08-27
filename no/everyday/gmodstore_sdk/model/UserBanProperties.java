@@ -14,40 +14,14 @@ package no.everyday.gmodstore_sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
- * NewUserBadge
+ * UserBanProperties
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
-public class NewUserBadge {
-  @SerializedName("badge")
-  private String badge = null;
-
-  public NewUserBadge badge(String badge) {
-    this.badge = badge;
-    return this;
-  }
-
-   /**
-   * Get badge
-   * @return badge
-  **/
-  @Schema(required = true, description = "")
-  public String getBadge() {
-    return badge;
-  }
-
-  public void setBadge(String badge) {
-    this.badge = badge;
-  }
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
+public class UserBanProperties extends ArrayList<String> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -57,22 +31,20 @@ public class NewUserBadge {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NewUserBadge newUserBadge = (NewUserBadge) o;
-    return Objects.equals(this.badge, newUserBadge.badge);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(badge);
+    return Objects.hash(super.hashCode());
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NewUserBadge {\n");
-    
-    sb.append("    badge: ").append(toIndentedString(badge)).append("\n");
+    sb.append("class UserBanProperties {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

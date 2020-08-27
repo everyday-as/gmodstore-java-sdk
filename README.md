@@ -2,7 +2,7 @@
 
 GmodStore
 - API version: 1.0.1
-  - Build date: 2020-08-27T03:57:09.371857Z[Etc/UTC]
+  - Build date: 2020-08-27T06:17:08.566607Z[Etc/UTC]
 
 Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
 
@@ -86,9 +86,9 @@ public class AddonCouponsApiExample {
 
 
         AddonCouponsApi apiInstance = new AddonCouponsApi();
-        NewAddonCoupon body = new NewAddonCoupon(); // NewAddonCoupon | 
+        AddonCoupon body = new AddonCoupon(); // AddonCoupon | 
         Long addonId = 789L; // Long | Id of the addon
-        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
         try {
             AddonCouponResponse result = apiInstance.createAddonCoupon(body, addonId, with);
             System.out.println(result);
@@ -140,7 +140,7 @@ public class AddonCouponsApiExample {
         AddonCouponsApi apiInstance = new AddonCouponsApi();
         Long addonId = 789L; // Long | Id of the addon
         Long couponId = 789L; // Long | Id of the coupon
-        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
         try {
             AddonCouponResponse result = apiInstance.getAddonCoupon(addonId, couponId, with);
             System.out.println(result);
@@ -166,7 +166,7 @@ public class AddonCouponsApiExample {
 
         AddonCouponsApi apiInstance = new AddonCouponsApi();
         Long addonId = 789L; // Long | Id of the addon
-        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
         try {
             AddonCouponListResponse result = apiInstance.listAddonCoupons(addonId, with);
             System.out.println(result);
@@ -191,10 +191,10 @@ public class AddonCouponsApiExample {
 
 
         AddonCouponsApi apiInstance = new AddonCouponsApi();
-        UpdateAddonCoupon body = new UpdateAddonCoupon(); // UpdateAddonCoupon | 
+        AddonCoupon body = new AddonCoupon(); // AddonCoupon | 
         Long addonId = 789L; // Long | Id of the addon
         Long couponId = 789L; // Long | Id of the coupon
-        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the AddonCoupon schema
+        List<String> with = Arrays.asList("with_example"); // List<String> | The relations you want to fetch with the `AddonCoupon`
         try {
             AddonCouponResponse result = apiInstance.updateAddonCoupon(body, addonId, couponId, with);
             System.out.println(result);
@@ -271,18 +271,15 @@ Class | Method | HTTP request | Description
  - [AddonStatsViewsCurrent](docs/AddonStatsViewsCurrent.md)
  - [AddonVersion](docs/AddonVersion.md)
  - [AddonVersionListResponse](docs/AddonVersionListResponse.md)
+ - [AddonVersionReleaseType](docs/AddonVersionReleaseType.md)
  - [AddonVersionResponse](docs/AddonVersionResponse.md)
  - [BadgeListResponse](docs/BadgeListResponse.md)
  - [BadgeResponse](docs/BadgeResponse.md)
- - [Ban](docs/Ban.md)
- - [BanListResponse](docs/BanListResponse.md)
  - [Error](docs/Error.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [Money](docs/Money.md)
- - [NewAddonCoupon](docs/NewAddonCoupon.md)
  - [NewAddonPurchase](docs/NewAddonPurchase.md)
  - [NewAddonVersion](docs/NewAddonVersion.md)
- - [NewUserBadge](docs/NewUserBadge.md)
  - [OrderItem](docs/OrderItem.md)
  - [PermissionGroup](docs/PermissionGroup.md)
  - [Team](docs/Team.md)
@@ -290,11 +287,12 @@ Class | Method | HTTP request | Description
  - [TeamResponse](docs/TeamResponse.md)
  - [TeamUser](docs/TeamUser.md)
  - [TeamUserListResponse](docs/TeamUserListResponse.md)
- - [UpdateAddonCoupon](docs/UpdateAddonCoupon.md)
- - [UpdateAddonPurchase](docs/UpdateAddonPurchase.md)
- - [UpdateAddonVersion](docs/UpdateAddonVersion.md)
  - [User](docs/User.md)
+ - [UserBadge](docs/UserBadge.md)
  - [UserBadgeLegend](docs/UserBadgeLegend.md)
+ - [UserBan](docs/UserBan.md)
+ - [UserBanListResponse](docs/UserBanListResponse.md)
+ - [UserBanProperties](docs/UserBanProperties.md)
  - [UserResponse](docs/UserResponse.md)
 
 ## Documentation for Authorization

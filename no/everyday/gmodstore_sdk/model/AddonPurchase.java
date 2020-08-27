@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * AddonPurchase
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class AddonPurchase {
   @SerializedName("revoked")
   private Boolean revoked = null;
@@ -67,40 +67,22 @@ public class AddonPurchase {
     this.revoked = revoked;
   }
 
-  public AddonPurchase createdAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
    /**
    * Get createdAt
    * @return createdAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
-  }
-
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-  public AddonPurchase updatedAt(Integer updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
   }
 
    /**
    * Get updatedAt
    * @return updatedAt
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getUpdatedAt() {
     return updatedAt;
-  }
-
-  public void setUpdatedAt(Integer updatedAt) {
-    this.updatedAt = updatedAt;
   }
 
   public AddonPurchase addon(Addon addon) {

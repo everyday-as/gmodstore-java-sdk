@@ -1,6 +1,6 @@
-# UpdateAddonPurchase
+# UserBadge
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**revoked** | **Boolean** |  | 
+**badge** | **String** |  | 

@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.BanListResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
+import no.everyday.gmodstore_sdk.model.UserBanListResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -62,7 +62,7 @@ public class UserBansApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listUserBansCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listUserBansCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -105,7 +105,7 @@ public class UserBansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listUserBansValidateBeforeCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listUserBansValidateBeforeCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserBans(Async)");
@@ -124,11 +124,11 @@ public class UserBansApi {
      * Fetch all active bans associated with this user
      * 
      * @param userId Id of the user (required)
-     * @return BanListResponse
+     * @return UserBanListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BanListResponse listUserBans(String userId) throws ApiException {
-        ApiResponse<BanListResponse> resp = listUserBansWithHttpInfo(userId);
+    public UserBanListResponse listUserBans(Long userId) throws ApiException {
+        ApiResponse<UserBanListResponse> resp = listUserBansWithHttpInfo(userId);
         return resp.getData();
     }
 
@@ -136,12 +136,12 @@ public class UserBansApi {
      * Fetch all active bans associated with this user
      * 
      * @param userId Id of the user (required)
-     * @return ApiResponse&lt;BanListResponse&gt;
+     * @return ApiResponse&lt;UserBanListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BanListResponse> listUserBansWithHttpInfo(String userId) throws ApiException {
+    public ApiResponse<UserBanListResponse> listUserBansWithHttpInfo(Long userId) throws ApiException {
         com.squareup.okhttp.Call call = listUserBansValidateBeforeCall(userId, null, null);
-        Type localVarReturnType = new TypeToken<BanListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserBanListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -153,7 +153,7 @@ public class UserBansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listUserBansAsync(String userId, final ApiCallback<BanListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUserBansAsync(Long userId, final ApiCallback<UserBanListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,7 +175,7 @@ public class UserBansApi {
         }
 
         com.squareup.okhttp.Call call = listUserBansValidateBeforeCall(userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<BanListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserBanListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -57,7 +57,7 @@ public class TeamUsersApi {
     /**
      * Build call for listTeamUsers
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the TeamUser schema (optional)
+     * @param with The relations you want to fetch with the &#x60;TeamUser&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -127,7 +127,7 @@ public class TeamUsersApi {
      * Fetch all the users in the given team
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the TeamUser schema (optional)
+     * @param with The relations you want to fetch with the &#x60;TeamUser&#x60; (optional)
      * @return TeamUserListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +140,7 @@ public class TeamUsersApi {
      * Fetch all the users in the given team
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the TeamUser schema (optional)
+     * @param with The relations you want to fetch with the &#x60;TeamUser&#x60; (optional)
      * @return ApiResponse&lt;TeamUserListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -154,7 +154,7 @@ public class TeamUsersApi {
      * Fetch all the users in the given team (asynchronously)
      * 
      * @param teamId Id of the team (required)
-     * @param with The relations you want to fetch with the TeamUser schema (optional)
+     * @param with The relations you want to fetch with the &#x60;TeamUser&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

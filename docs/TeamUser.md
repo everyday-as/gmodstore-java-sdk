@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**teamId** | **Integer** |  | 
-**primary** | **Boolean** |  | 
+**teamId** | **Integer** |  |  [optional]
+**primary** | **Boolean** |  |  [optional]
 **user** | [**User**](User.md) |  |  [optional]

@@ -56,7 +56,7 @@ public class UsersApiTest {
      */
     @Test
     public void getUserTest() throws ApiException {
-        String userId = null;
+        Long userId = null;
         List<String> with = null;
         UserResponse response = api.getUser(userId, with);
 

@@ -22,30 +22,30 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * UpdateAddonPurchase
+ * UserBadge
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
-public class UpdateAddonPurchase {
-  @SerializedName("revoked")
-  private Boolean revoked = null;
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
+public class UserBadge {
+  @SerializedName("badge")
+  private String badge = null;
 
-  public UpdateAddonPurchase revoked(Boolean revoked) {
-    this.revoked = revoked;
+  public UserBadge badge(String badge) {
+    this.badge = badge;
     return this;
   }
 
    /**
-   * Get revoked
-   * @return revoked
+   * Get badge
+   * @return badge
   **/
   @Schema(required = true, description = "")
-  public Boolean isRevoked() {
-    return revoked;
+  public String getBadge() {
+    return badge;
   }
 
-  public void setRevoked(Boolean revoked) {
-    this.revoked = revoked;
+  public void setBadge(String badge) {
+    this.badge = badge;
   }
 
 
@@ -57,22 +57,22 @@ public class UpdateAddonPurchase {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateAddonPurchase updateAddonPurchase = (UpdateAddonPurchase) o;
-    return Objects.equals(this.revoked, updateAddonPurchase.revoked);
+    UserBadge userBadge = (UserBadge) o;
+    return Objects.equals(this.badge, userBadge.badge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(revoked);
+    return Objects.hash(badge);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateAddonPurchase {\n");
+    sb.append("class UserBadge {\n");
     
-    sb.append("    revoked: ").append(toIndentedString(revoked)).append("\n");
+    sb.append("    badge: ").append(toIndentedString(badge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

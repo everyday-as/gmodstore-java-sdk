@@ -13,11 +13,14 @@
 package no.everyday.gmodstore_sdk.api;
 
 import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.model.Addon;
 import no.everyday.gmodstore_sdk.model.AddonDownloadResponse;
 import no.everyday.gmodstore_sdk.model.AddonVersionListResponse;
+import no.everyday.gmodstore_sdk.model.AddonVersionReleaseType;
 import no.everyday.gmodstore_sdk.model.AddonVersionResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.io.File;
+import org.threeten.bp.OffsetDateTime;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,7 +50,7 @@ public class AddonVersionsApiTest {
         String name = null;
         String changelog = null;
         File file = null;
-        String releaseType = null;
+        AddonVersionReleaseType releaseType = null;
         Long addonId = null;
         List<String> with = null;
         AddonVersionResponse response = api.createAddonVersion(name, changelog, file, releaseType, addonId, with);
@@ -113,13 +116,19 @@ public class AddonVersionsApiTest {
      */
     @Test
     public void updateAddonVersionTest() throws ApiException {
+        Integer id = null;
         String name = null;
         String changelog = null;
-        String releaseType = null;
+        String fileHash = null;
+        Integer fileSize = null;
+        AddonVersionReleaseType releaseType = null;
+        OffsetDateTime createdAt = null;
+        OffsetDateTime updatedAt = null;
+        Addon addon = null;
         Long addonId = null;
         Long versionId = null;
         List<String> with = null;
-        AddonVersionResponse response = api.updateAddonVersion(name, changelog, releaseType, addonId, versionId, with);
+        AddonVersionResponse response = api.updateAddonVersion(id, name, changelog, fileHash, fileSize, releaseType, createdAt, updatedAt, addon, addonId, versionId, with);
 
         // TODO: test validations
     }

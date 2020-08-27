@@ -26,11 +26,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import no.everyday.gmodstore_sdk.model.AddonCoupon;
 import no.everyday.gmodstore_sdk.model.AddonCouponListResponse;
 import no.everyday.gmodstore_sdk.model.AddonCouponResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
-import no.everyday.gmodstore_sdk.model.NewAddonCoupon;
-import no.everyday.gmodstore_sdk.model.UpdateAddonCoupon;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -61,13 +60,13 @@ public class AddonCouponsApi {
      * Build call for createAddonCoupon
      * @param body  (required)
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createAddonCouponCall(NewAddonCoupon body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createAddonCouponCall(AddonCoupon body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -112,7 +111,7 @@ public class AddonCouponsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAddonCouponValidateBeforeCall(NewAddonCoupon body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createAddonCouponValidateBeforeCall(AddonCoupon body, Long addonId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling createAddonCoupon(Async)");
@@ -136,11 +135,11 @@ public class AddonCouponsApi {
      * 
      * @param body  (required)
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return AddonCouponResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddonCouponResponse createAddonCoupon(NewAddonCoupon body, Long addonId, List<String> with) throws ApiException {
+    public AddonCouponResponse createAddonCoupon(AddonCoupon body, Long addonId, List<String> with) throws ApiException {
         ApiResponse<AddonCouponResponse> resp = createAddonCouponWithHttpInfo(body, addonId, with);
         return resp.getData();
     }
@@ -150,11 +149,11 @@ public class AddonCouponsApi {
      * 
      * @param body  (required)
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return ApiResponse&lt;AddonCouponResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddonCouponResponse> createAddonCouponWithHttpInfo(NewAddonCoupon body, Long addonId, List<String> with) throws ApiException {
+    public ApiResponse<AddonCouponResponse> createAddonCouponWithHttpInfo(AddonCoupon body, Long addonId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = createAddonCouponValidateBeforeCall(body, addonId, with, null, null);
         Type localVarReturnType = new TypeToken<AddonCouponResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -165,12 +164,12 @@ public class AddonCouponsApi {
      * 
      * @param body  (required)
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAddonCouponAsync(NewAddonCoupon body, Long addonId, List<String> with, final ApiCallback<AddonCouponResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAddonCouponAsync(AddonCoupon body, Long addonId, List<String> with, final ApiCallback<AddonCouponResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -330,7 +329,7 @@ public class AddonCouponsApi {
      * Build call for getAddonCoupon
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -406,7 +405,7 @@ public class AddonCouponsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return AddonCouponResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -420,7 +419,7 @@ public class AddonCouponsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return ApiResponse&lt;AddonCouponResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -435,7 +434,7 @@ public class AddonCouponsApi {
      * 
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -469,7 +468,7 @@ public class AddonCouponsApi {
     /**
      * Build call for listAddonCoupons
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -539,7 +538,7 @@ public class AddonCouponsApi {
      * Fetch all the coupons for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return AddonCouponListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -552,7 +551,7 @@ public class AddonCouponsApi {
      * Fetch all the coupons for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return ApiResponse&lt;AddonCouponListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -566,7 +565,7 @@ public class AddonCouponsApi {
      * Fetch all the coupons for an addon (asynchronously)
      * 
      * @param addonId Id of the addon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -602,13 +601,13 @@ public class AddonCouponsApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAddonCouponCall(UpdateAddonCoupon body, Long addonId, Long couponId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAddonCouponCall(AddonCoupon body, Long addonId, Long couponId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -654,7 +653,7 @@ public class AddonCouponsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAddonCouponValidateBeforeCall(UpdateAddonCoupon body, Long addonId, Long couponId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAddonCouponValidateBeforeCall(AddonCoupon body, Long addonId, Long couponId, List<String> with, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling updateAddonCoupon(Async)");
@@ -683,11 +682,11 @@ public class AddonCouponsApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return AddonCouponResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddonCouponResponse updateAddonCoupon(UpdateAddonCoupon body, Long addonId, Long couponId, List<String> with) throws ApiException {
+    public AddonCouponResponse updateAddonCoupon(AddonCoupon body, Long addonId, Long couponId, List<String> with) throws ApiException {
         ApiResponse<AddonCouponResponse> resp = updateAddonCouponWithHttpInfo(body, addonId, couponId, with);
         return resp.getData();
     }
@@ -698,11 +697,11 @@ public class AddonCouponsApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @return ApiResponse&lt;AddonCouponResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddonCouponResponse> updateAddonCouponWithHttpInfo(UpdateAddonCoupon body, Long addonId, Long couponId, List<String> with) throws ApiException {
+    public ApiResponse<AddonCouponResponse> updateAddonCouponWithHttpInfo(AddonCoupon body, Long addonId, Long couponId, List<String> with) throws ApiException {
         com.squareup.okhttp.Call call = updateAddonCouponValidateBeforeCall(body, addonId, couponId, with, null, null);
         Type localVarReturnType = new TypeToken<AddonCouponResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -714,12 +713,12 @@ public class AddonCouponsApi {
      * @param body  (required)
      * @param addonId Id of the addon (required)
      * @param couponId Id of the coupon (required)
-     * @param with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAddonCouponAsync(UpdateAddonCoupon body, Long addonId, Long couponId, List<String> with, final ApiCallback<AddonCouponResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAddonCouponAsync(AddonCoupon body, Long addonId, Long couponId, List<String> with, final ApiCallback<AddonCouponResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

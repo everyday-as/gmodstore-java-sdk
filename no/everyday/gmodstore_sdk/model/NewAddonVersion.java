@@ -22,11 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.File;
 import java.io.IOException;
+import no.everyday.gmodstore_sdk.model.AddonVersionReleaseType;
 /**
  * NewAddonVersion
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T06:17:08.566607Z[Etc/UTC]")
 public class NewAddonVersion {
   @SerializedName("name")
   private String name = null;
@@ -37,52 +38,8 @@ public class NewAddonVersion {
   @SerializedName("file")
   private File file = null;
 
-  /**
-   * This can be a value of stable, beta, alpha, private or demo 
-   */
-  @JsonAdapter(ReleaseTypeEnum.Adapter.class)
-  public enum ReleaseTypeEnum {
-    STABLE("stable"),
-    BETA("beta"),
-    ALPHA("alpha"),
-    PRIVATE("private"),
-    DEMO("demo");
-
-    private String value;
-
-    ReleaseTypeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ReleaseTypeEnum fromValue(String text) {
-      for (ReleaseTypeEnum b : ReleaseTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ReleaseTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReleaseTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReleaseTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReleaseTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("release_type")
-  private ReleaseTypeEnum releaseType = null;
+  @SerializedName("release_type")
+  private AddonVersionReleaseType releaseType = null;
 
   public NewAddonVersion name(String name) {
     this.name = name;
@@ -108,10 +65,10 @@ public class NewAddonVersion {
   }
 
    /**
-   * You can pass in markdown here 
+   * You can pass in markdown here
    * @return changelog
   **/
-  @Schema(required = true, description = "You can pass in markdown here ")
+  @Schema(required = true, description = "You can pass in markdown here")
   public String getChangelog() {
     return changelog;
   }
@@ -138,21 +95,21 @@ public class NewAddonVersion {
     this.file = file;
   }
 
-  public NewAddonVersion releaseType(ReleaseTypeEnum releaseType) {
+  public NewAddonVersion releaseType(AddonVersionReleaseType releaseType) {
     this.releaseType = releaseType;
     return this;
   }
 
    /**
-   * This can be a value of stable, beta, alpha, private or demo 
+   * Get releaseType
    * @return releaseType
   **/
-  @Schema(description = "This can be a value of stable, beta, alpha, private or demo ")
-  public ReleaseTypeEnum getReleaseType() {
+  @Schema(description = "")
+  public AddonVersionReleaseType getReleaseType() {
     return releaseType;
   }
 
-  public void setReleaseType(ReleaseTypeEnum releaseType) {
+  public void setReleaseType(AddonVersionReleaseType releaseType) {
     this.releaseType = releaseType;
   }
 
