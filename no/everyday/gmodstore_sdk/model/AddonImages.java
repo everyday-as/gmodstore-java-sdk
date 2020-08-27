@@ -25,7 +25,7 @@ import java.io.IOException;
  * AddonImages
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:30:11.740426Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T02:38:35.293427Z[Etc/UTC]")
 public class AddonImages {
   @SerializedName("bigspot")
   private String bigspot = null;
