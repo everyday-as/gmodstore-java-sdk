@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.AddonStatsViewsCurrent;
 /**
  * AddonStatsViews
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:51:46.473028Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:57:18.640556Z[Etc/UTC]")
 public class AddonStatsViews {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
