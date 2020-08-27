@@ -25,7 +25,7 @@ import java.io.IOException;
  * PermissionGroup
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:37:31.992165Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:41:38.297171Z[Etc/UTC]")
 public class PermissionGroup {
   @SerializedName("id")
   private Integer id = null;
