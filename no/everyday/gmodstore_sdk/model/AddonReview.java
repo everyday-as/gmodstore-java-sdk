@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.User;
  * AddonReview
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:34:33.284228Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:37:05.881781Z[Etc/UTC]")
 public class AddonReview {
   @SerializedName("id")
   private Integer id = null;
