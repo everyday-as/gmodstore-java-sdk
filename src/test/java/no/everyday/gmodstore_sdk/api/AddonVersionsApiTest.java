@@ -16,7 +16,7 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.AddonDownloadResponse;
 import no.everyday.gmodstore_sdk.model.AddonVersionListResponse;
 import no.everyday.gmodstore_sdk.model.AddonVersionResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.io.File;
 import org.junit.Test;
 import org.junit.Ignore;

@@ -28,7 +28,7 @@ import java.io.IOException;
 
 import no.everyday.gmodstore_sdk.model.AddonCouponListResponse;
 import no.everyday.gmodstore_sdk.model.AddonCouponResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import no.everyday.gmodstore_sdk.model.NewAddonCoupon;
 import no.everyday.gmodstore_sdk.model.UpdateAddonCoupon;
 

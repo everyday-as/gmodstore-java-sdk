@@ -28,8 +28,7 @@ import java.io.IOException;
 
 import no.everyday.gmodstore_sdk.model.BadgeListResponse;
 import no.everyday.gmodstore_sdk.model.BadgeResponse;
-import no.everyday.gmodstore_sdk.model.Error;
-import no.everyday.gmodstore_sdk.model.InlineResponseDefault;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import no.everyday.gmodstore_sdk.model.NewUserBadge;
 
 import java.lang.reflect.Type;

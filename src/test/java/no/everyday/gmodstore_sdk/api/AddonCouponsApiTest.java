@@ -15,7 +15,7 @@ package no.everyday.gmodstore_sdk.api;
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.AddonCouponListResponse;
 import no.everyday.gmodstore_sdk.model.AddonCouponResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import no.everyday.gmodstore_sdk.model.NewAddonCoupon;
 import no.everyday.gmodstore_sdk.model.UpdateAddonCoupon;
 import org.junit.Test;

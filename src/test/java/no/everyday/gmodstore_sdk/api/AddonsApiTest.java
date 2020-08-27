@@ -15,7 +15,7 @@ package no.everyday.gmodstore_sdk.api;
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.model.AddonListResponse;
 import no.everyday.gmodstore_sdk.model.AddonResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 

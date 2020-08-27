@@ -28,7 +28,7 @@ import java.io.IOException;
 
 import no.everyday.gmodstore_sdk.model.AddonReviewListResponse;
 import no.everyday.gmodstore_sdk.model.AddonReviewResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

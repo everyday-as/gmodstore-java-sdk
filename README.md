@@ -2,7 +2,7 @@
 
 GmodStore
 - API version: 1.0.1
-  - Build date: 2020-08-27T03:49:40.602050Z[Etc/UTC]
+  - Build date: 2020-08-27T03:57:09.371857Z[Etc/UTC]
 
 Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
 
@@ -277,7 +277,7 @@ Class | Method | HTTP request | Description
  - [Ban](docs/Ban.md)
  - [BanListResponse](docs/BanListResponse.md)
  - [Error](docs/Error.md)
- - [InlineResponseDefault](docs/InlineResponseDefault.md)
+ - [ErrorResponse](docs/ErrorResponse.md)
  - [Money](docs/Money.md)
  - [NewAddonCoupon](docs/NewAddonCoupon.md)
  - [NewAddonPurchase](docs/NewAddonPurchase.md)

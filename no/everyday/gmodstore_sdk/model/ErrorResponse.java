@@ -23,15 +23,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.Error;
 /**
- * InlineResponseDefault
+ * ErrorResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:49:40.602050Z[Etc/UTC]")
-public class InlineResponseDefault {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-08-27T03:57:09.371857Z[Etc/UTC]")
+public class ErrorResponse {
   @SerializedName("data")
   private Error data = null;
 
-  public InlineResponseDefault data(Error data) {
+  public ErrorResponse data(Error data) {
     this.data = data;
     return this;
   }
@@ -58,8 +58,8 @@ public class InlineResponseDefault {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponseDefault inlineResponseDefault = (InlineResponseDefault) o;
-    return Objects.equals(this.data, inlineResponseDefault.data);
+    ErrorResponse errorResponse = (ErrorResponse) o;
+    return Objects.equals(this.data, errorResponse.data);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class InlineResponseDefault {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponseDefault {\n");
+    sb.append("class ErrorResponse {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

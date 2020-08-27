@@ -29,7 +29,7 @@ import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.AddonDownloadResponse;
 import no.everyday.gmodstore_sdk.model.AddonVersionListResponse;
 import no.everyday.gmodstore_sdk.model.AddonVersionResponse;
-import no.everyday.gmodstore_sdk.model.Error;
+import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.io.File;
 
 import java.lang.reflect.Type;
