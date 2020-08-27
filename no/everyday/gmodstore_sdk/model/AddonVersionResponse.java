@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.AddonVersion;
 /**
  * AddonVersionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:46:03.868123Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T18:47:16.295670Z[Etc/UTC]")
 public class AddonVersionResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
