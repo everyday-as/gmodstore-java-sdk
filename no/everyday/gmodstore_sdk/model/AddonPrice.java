@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.Money;
 /**
  * AddonPrice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-29T17:45:49.283183Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-29T19:45:37.501353Z[Etc/UTC]")
 public class AddonPrice {
   public static final String SERIALIZED_NAME_ORIGINAL = "original";
   @SerializedName(SERIALIZED_NAME_ORIGINAL)
