@@ -1,6 +1,6 @@
 /*
- * GmodStore
- * Welcome to the GmodStore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.
+ * GmodStore API
+ * Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
  *
  * The version of the OpenAPI document: 1.0.1
  * 
@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * AddonPurchase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T19:30:12.827041Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-29T15:52:39.056517Z[Etc/UTC]")
 public class AddonPurchase {
   public static final String SERIALIZED_NAME_REVOKED = "revoked";
   @SerializedName(SERIALIZED_NAME_REVOKED)
