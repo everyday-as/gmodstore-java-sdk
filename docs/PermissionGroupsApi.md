@@ -4,12 +4,12 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPermissionGroups**](PermissionGroupsApi.md#getPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
+[**listPermissionGroups**](PermissionGroupsApi.md#listPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
 
 
-<a name="getPermissionGroups"></a>
-# **getPermissionGroups**
-> PermissionGroupListResponse getPermissionGroups()
+<a name="listPermissionGroups"></a>
+# **listPermissionGroups**
+> PermissionGroupListResponse listPermissionGroups()
 
 Fetches all available permission groups
 
@@ -34,10 +34,10 @@ public class Example {
 
     PermissionGroupsApi apiInstance = new PermissionGroupsApi(defaultClient);
     try {
-      PermissionGroupListResponse result = apiInstance.getPermissionGroups();
+      PermissionGroupListResponse result = apiInstance.listPermissionGroups();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PermissionGroupsApi#getPermissionGroups");
+      System.err.println("Exception when calling PermissionGroupsApi#listPermissionGroups");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

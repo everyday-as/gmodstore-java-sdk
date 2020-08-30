@@ -2182,7 +2182,7 @@ paths:
       x-accepts: application/json
   /permission-groups:
     get:
-      operationId: getPermissionGroups
+      operationId: listPermissionGroups
       responses:
         "200":
           content:

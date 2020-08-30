@@ -56,7 +56,7 @@ public class PermissionGroupsApi {
     }
 
     /**
-     * Build call for getPermissionGroups
+     * Build call for listPermissionGroups
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -68,7 +68,7 @@ public class PermissionGroupsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupsCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPermissionGroupsCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -98,10 +98,10 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPermissionGroupsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPermissionGroupsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = getPermissionGroupsCall(_callback);
+        okhttp3.Call localVarCall = listPermissionGroupsCall(_callback);
         return localVarCall;
 
     }
@@ -119,8 +119,8 @@ public class PermissionGroupsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public PermissionGroupListResponse getPermissionGroups() throws ApiException {
-        ApiResponse<PermissionGroupListResponse> localVarResp = getPermissionGroupsWithHttpInfo();
+    public PermissionGroupListResponse listPermissionGroups() throws ApiException {
+        ApiResponse<PermissionGroupListResponse> localVarResp = listPermissionGroupsWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -137,8 +137,8 @@ public class PermissionGroupsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<PermissionGroupListResponse> getPermissionGroupsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getPermissionGroupsValidateBeforeCall(null);
+    public ApiResponse<PermissionGroupListResponse> listPermissionGroupsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listPermissionGroupsValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<PermissionGroupListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -157,9 +157,9 @@ public class PermissionGroupsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupsAsync(final ApiCallback<PermissionGroupListResponse> _callback) throws ApiException {
+    public okhttp3.Call listPermissionGroupsAsync(final ApiCallback<PermissionGroupListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPermissionGroupsValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listPermissionGroupsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<PermissionGroupListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
