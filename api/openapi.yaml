@@ -2180,6 +2180,55 @@ paths:
       tags:
       - User Badges
       x-accepts: application/json
+  /permission-groups:
+    get:
+      operationId: getPermissionGroups
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionGroupListResponse'
+          description: Successfully processed the request.
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too many requests
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+            X-RateLimit-Reset:
+              description: The UNIX timestamp at which your rate limit quota will
+                reset.
+              explode: false
+              schema:
+                format: int64
+                type: integer
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Something went wrong
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+      summary: Fetches all available permission groups
+      tags:
+      - Permission Groups
+      x-accepts: application/json
 components:
   headers:
     xRateLimit:
@@ -4408,6 +4457,20 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/UserBadgeLegend'
+    PermissionGroupListResponse:
+      example:
+        data:
+        - display_order: 2
+          id: 3
+          title: title
+        - display_order: 2
+          id: 3
+          title: title
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PermissionGroup'
+          type: array
     Addon_price:
       example:
         original:

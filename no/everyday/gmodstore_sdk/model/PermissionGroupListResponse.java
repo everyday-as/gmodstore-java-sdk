@@ -23,21 +23,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.AddonDownload;
+import java.util.ArrayList;
+import java.util.List;
+import no.everyday.gmodstore_sdk.model.PermissionGroup;
 
 /**
- * AddonDownloadResponse
+ * PermissionGroupListResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-30T18:08:34.625689Z[Etc/UTC]")
-public class AddonDownloadResponse {
+public class PermissionGroupListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private AddonDownload data;
+  private List<PermissionGroup> data = null;
 
 
-  public AddonDownloadResponse data(AddonDownload data) {
+  public PermissionGroupListResponse data(List<PermissionGroup> data) {
     
     this.data = data;
+    return this;
+  }
+
+  public PermissionGroupListResponse addDataItem(PermissionGroup dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<PermissionGroup>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -48,12 +58,12 @@ public class AddonDownloadResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AddonDownload getData() {
+  public List<PermissionGroup> getData() {
     return data;
   }
 
 
-  public void setData(AddonDownload data) {
+  public void setData(List<PermissionGroup> data) {
     this.data = data;
   }
 
@@ -66,8 +76,8 @@ public class AddonDownloadResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddonDownloadResponse addonDownloadResponse = (AddonDownloadResponse) o;
-    return Objects.equals(this.data, addonDownloadResponse.data);
+    PermissionGroupListResponse permissionGroupListResponse = (PermissionGroupListResponse) o;
+    return Objects.equals(this.data, permissionGroupListResponse.data);
   }
 
   @Override
@@ -79,7 +89,7 @@ public class AddonDownloadResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AddonDownloadResponse {\n");
+    sb.append("class PermissionGroupListResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

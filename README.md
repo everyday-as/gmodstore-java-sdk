@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.0.1
-  - Build date: 2020-08-29T19:45:37.501353Z[Etc/UTC]
+  - Build date: 2020-08-30T18:08:34.625689Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *AddonVersionsApi* | [**updateAddonVersion**](docs/AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 *AddonsApi* | [**getAddon**](docs/AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
+*PermissionGroupsApi* | [**getPermissionGroups**](docs/PermissionGroupsApi.md#getPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamUsersApi* | [**listTeamUsers**](docs/TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
 *TeamsApi* | [**getTeam**](docs/TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
 *UserAddonsApi* | [**listUserAddons**](docs/UserAddonsApi.md#listUserAddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
@@ -186,6 +187,7 @@ Class | Method | HTTP request | Description
  - [NewAddonVersion](docs/NewAddonVersion.md)
  - [OrderItem](docs/OrderItem.md)
  - [PermissionGroup](docs/PermissionGroup.md)
+ - [PermissionGroupListResponse](docs/PermissionGroupListResponse.md)
  - [Team](docs/Team.md)
  - [TeamListResponse](docs/TeamListResponse.md)
  - [TeamResponse](docs/TeamResponse.md)
