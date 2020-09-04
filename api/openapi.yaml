@@ -2154,7 +2154,7 @@ paths:
         name: badge_id
         required: true
         schema:
-          format: int64
+          format: string
           type: integer
         style: simple
       responses:
@@ -2312,7 +2312,7 @@ components:
       name: badge_id
       required: true
       schema:
-        format: int64
+        format: string
         type: integer
       style: simple
     AddonRelation:

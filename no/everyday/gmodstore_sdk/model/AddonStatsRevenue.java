@@ -29,7 +29,7 @@ import no.everyday.gmodstore_sdk.model.Money;
 /**
  * AddonStatsRevenue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-31T21:24:40.731564Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-04T19:31:34.449268Z[Etc/UTC]")
 public class AddonStatsRevenue {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
