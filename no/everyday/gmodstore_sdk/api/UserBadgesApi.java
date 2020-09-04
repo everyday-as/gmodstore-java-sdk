@@ -199,7 +199,7 @@ public class UserBadgesApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserBadgeCall(Long userId, Integer badgeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserBadgeCall(Long userId, String badgeId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -231,7 +231,7 @@ public class UserBadgesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserBadgeValidateBeforeCall(Long userId, Integer badgeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserBadgeValidateBeforeCall(Long userId, String badgeId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -262,7 +262,7 @@ public class UserBadgesApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public void deleteUserBadge(Long userId, Integer badgeId) throws ApiException {
+    public void deleteUserBadge(Long userId, String badgeId) throws ApiException {
         deleteUserBadgeWithHttpInfo(userId, badgeId);
     }
 
@@ -280,7 +280,7 @@ public class UserBadgesApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteUserBadgeWithHttpInfo(Long userId, Integer badgeId) throws ApiException {
+    public ApiResponse<Void> deleteUserBadgeWithHttpInfo(Long userId, String badgeId) throws ApiException {
         okhttp3.Call localVarCall = deleteUserBadgeValidateBeforeCall(userId, badgeId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -300,7 +300,7 @@ public class UserBadgesApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserBadgeAsync(Long userId, Integer badgeId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteUserBadgeAsync(Long userId, String badgeId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserBadgeValidateBeforeCall(userId, badgeId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

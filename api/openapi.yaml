@@ -2154,8 +2154,7 @@ paths:
         name: badge_id
         required: true
         schema:
-          format: string
-          type: integer
+          type: string
         style: simple
       responses:
         "204":
@@ -2312,8 +2311,7 @@ components:
       name: badge_id
       required: true
       schema:
-        format: string
-        type: integer
+        type: string
       style: simple
     AddonRelation:
       description: The relations you want to fetch with the `Addon`

@@ -105,7 +105,7 @@ public class Example {
 
     UserBadgesApi apiInstance = new UserBadgesApi(defaultClient);
     Long userId = 56L; // Long | Id of the user
-    Integer badgeId = 56; // Integer | Id of the badge
+    String badgeId = "badgeId_example"; // String | Id of the badge
     try {
       apiInstance.deleteUserBadge(userId, badgeId);
     } catch (ApiException e) {
@@ -124,7 +124,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Long**| Id of the user |
- **badgeId** | **Integer**| Id of the badge |
+ **badgeId** | **String**| Id of the badge |
 
 ### Return type
 
