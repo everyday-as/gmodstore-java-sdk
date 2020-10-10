@@ -28,7 +28,7 @@ import java.io.IOException;
  * **NOTE:** The url is valid for a single use within 24 hours **ONLY**!
  */
 @ApiModel(description = "**NOTE:** The url is valid for a single use within 24 hours **ONLY**!")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-04T19:38:32.609192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-10T12:17:38.852998Z[Etc/UTC]")
 public class AddonDownload {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
