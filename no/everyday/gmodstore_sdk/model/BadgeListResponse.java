@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.UserBadgeLegend;
 /**
  * BadgeListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-10T12:17:38.852998Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-10T12:41:45.113926Z[Etc/UTC]")
 public class BadgeListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
