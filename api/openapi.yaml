@@ -2748,7 +2748,7 @@ components:
       type: object
     AddonPurchase:
       example:
-        updated_at: 0
+        updated_at: 2000-01-23T04:56:07.000+00:00
         addon:
           short_description: short_description
           requirements:
@@ -2837,7 +2837,7 @@ components:
         updated_at:
           format: date-time
           readOnly: true
-          type: integer
+          type: string
         addon:
           $ref: '#/components/schemas/Addon'
         order_item:
@@ -3105,6 +3105,7 @@ components:
           type: string
         updated_at:
           format: date-time
+          readOnly: true
           type: string
         primaryAuthor:
           $ref: '#/components/schemas/TeamUser'
@@ -3734,7 +3735,7 @@ components:
     AddonPurchaseListResponse:
       example:
         data:
-        - updated_at: 0
+        - updated_at: 2000-01-23T04:56:07.000+00:00
           addon:
             short_description: short_description
             requirements:
@@ -3813,7 +3814,7 @@ components:
               display_order: 2
               id: 3
               title: title
-        - updated_at: 0
+        - updated_at: 2000-01-23T04:56:07.000+00:00
           addon:
             short_description: short_description
             requirements:
@@ -3900,7 +3901,7 @@ components:
     AddonPurchaseResponse:
       example:
         data:
-          updated_at: 0
+          updated_at: 2000-01-23T04:56:07.000+00:00
           addon:
             short_description: short_description
             requirements:

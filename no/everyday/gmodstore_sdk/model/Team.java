@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Team
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-10T13:06:30.028581Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-16T21:01:51.688466Z[Etc/UTC]")
 public class Team {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -121,12 +121,6 @@ public class Team {
   }
 
 
-  public Team updatedAt(OffsetDateTime updatedAt) {
-    
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
    /**
    * Get updatedAt
    * @return updatedAt
@@ -139,9 +133,6 @@ public class Team {
   }
 
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
-  }
 
 
   public Team primaryAuthor(TeamUser primaryAuthor) {

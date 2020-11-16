@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * AddonPurchase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-10T13:06:30.028581Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-16T21:01:51.688466Z[Etc/UTC]")
 public class AddonPurchase {
   public static final String SERIALIZED_NAME_REVOKED = "revoked";
   @SerializedName(SERIALIZED_NAME_REVOKED)
@@ -43,7 +43,7 @@ public class AddonPurchase {
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private Integer updatedAt;
+  private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_ADDON = "addon";
   @SerializedName(SERIALIZED_NAME_ADDON)
@@ -101,7 +101,7 @@ public class AddonPurchase {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getUpdatedAt() {
+  public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
