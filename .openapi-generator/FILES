@@ -5,6 +5,7 @@ no/everyday/gmodstore_sdk/api/AddonStatsApi.java
 no/everyday/gmodstore_sdk/api/AddonVersionsApi.java
 no/everyday/gmodstore_sdk/api/AddonsApi.java
 no/everyday/gmodstore_sdk/api/PermissionGroupsApi.java
+no/everyday/gmodstore_sdk/api/TeamAddonsApi.java
 no/everyday/gmodstore_sdk/api/TeamUsersApi.java
 no/everyday/gmodstore_sdk/api/TeamsApi.java
 no/everyday/gmodstore_sdk/api/UserAddonsApi.java
@@ -114,6 +115,7 @@ docs/PermissionGroup.md
 docs/PermissionGroupListResponse.md
 docs/PermissionGroupsApi.md
 docs/Team.md
+docs/TeamAddonsApi.md
 docs/TeamListResponse.md
 docs/TeamResponse.md
 docs/TeamUser.md
@@ -158,3 +160,4 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
+src/test/java/no/everyday/gmodstore_sdk/api/TeamAddonsApiTest.java

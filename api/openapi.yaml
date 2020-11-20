@@ -31,6 +31,7 @@ tags:
 - name: Addon Stats
 - name: Teams
 - name: Team Users
+- name: Team Addons
 - name: Users
 - name: User Addons
 - name: User Purchases
@@ -1601,6 +1602,65 @@ paths:
       summary: Fetch all the users in the given team
       tags:
       - Team Users
+      x-accepts: application/json
+  /teams/{team_id}/addons:
+    get:
+      operationId: listTeamAddons
+      parameters:
+      - description: Id of the team
+        explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamUserListResponse'
+          description: Successfully processed the request.
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too many requests
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+            X-RateLimit-Reset:
+              description: The UNIX timestamp at which your rate limit quota will
+                reset.
+              explode: false
+              schema:
+                format: int64
+                type: integer
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Something went wrong
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+      summary: Fetch all the addons in the given team
+      tags:
+      - Team Addons
       x-accepts: application/json
   /users/me:
     get:
