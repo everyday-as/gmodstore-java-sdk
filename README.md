@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.1.0
-  - Build date: 2020-11-20T18:06:33.247474Z[Etc/UTC]
+  - Build date: 2020-12-01T10:58:27.251778Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *AddonVersionsApi* | [**updateAddonVersion**](docs/AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 *AddonsApi* | [**getAddon**](docs/AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
+*AdventCalendarApi* | [**getAdventCalendarStats**](docs/AdventCalendarApi.md#getAdventCalendarStats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
 *PermissionGroupsApi* | [**listPermissionGroups**](docs/PermissionGroupsApi.md#listPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamAddonsApi* | [**listTeamAddons**](docs/TeamAddonsApi.md#listTeamAddons) | **GET** /teams/{team_id}/addons | Fetch all the addons in the given team
 *TeamUsersApi* | [**listTeamUsers**](docs/TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
@@ -179,6 +180,8 @@ Class | Method | HTTP request | Description
  - [AddonVersionListResponse](docs/AddonVersionListResponse.md)
  - [AddonVersionReleaseType](docs/AddonVersionReleaseType.md)
  - [AddonVersionResponse](docs/AddonVersionResponse.md)
+ - [AdventCalendarStats](docs/AdventCalendarStats.md)
+ - [AdventCalendarStatsResponse](docs/AdventCalendarStatsResponse.md)
  - [BadgeListResponse](docs/BadgeListResponse.md)
  - [BadgeResponse](docs/BadgeResponse.md)
  - [Error](docs/Error.md)

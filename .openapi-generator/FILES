@@ -4,6 +4,7 @@ no/everyday/gmodstore_sdk/api/AddonReviewsApi.java
 no/everyday/gmodstore_sdk/api/AddonStatsApi.java
 no/everyday/gmodstore_sdk/api/AddonVersionsApi.java
 no/everyday/gmodstore_sdk/api/AddonsApi.java
+no/everyday/gmodstore_sdk/api/AdventCalendarApi.java
 no/everyday/gmodstore_sdk/api/PermissionGroupsApi.java
 no/everyday/gmodstore_sdk/api/TeamAddonsApi.java
 no/everyday/gmodstore_sdk/api/TeamUsersApi.java
@@ -42,6 +43,8 @@ no/everyday/gmodstore_sdk/model/AddonVersion.java
 no/everyday/gmodstore_sdk/model/AddonVersionListResponse.java
 no/everyday/gmodstore_sdk/model/AddonVersionReleaseType.java
 no/everyday/gmodstore_sdk/model/AddonVersionResponse.java
+no/everyday/gmodstore_sdk/model/AdventCalendarStats.java
+no/everyday/gmodstore_sdk/model/AdventCalendarStatsResponse.java
 no/everyday/gmodstore_sdk/model/BadgeListResponse.java
 no/everyday/gmodstore_sdk/model/BadgeResponse.java
 no/everyday/gmodstore_sdk/model/Error.java
@@ -103,6 +106,9 @@ docs/AddonVersionReleaseType.md
 docs/AddonVersionResponse.md
 docs/AddonVersionsApi.md
 docs/AddonsApi.md
+docs/AdventCalendarApi.md
+docs/AdventCalendarStats.md
+docs/AdventCalendarStatsResponse.md
 docs/BadgeListResponse.md
 docs/BadgeResponse.md
 docs/Error.md
@@ -160,4 +166,6 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/api/TeamAddonsApiTest.java
+src/test/java/no/everyday/gmodstore_sdk/api/AdventCalendarApiTest.java
+src/test/java/no/everyday/gmodstore_sdk/model/AdventCalendarStatsResponseTest.java
+src/test/java/no/everyday/gmodstore_sdk/model/AdventCalendarStatsTest.java

@@ -23,31 +23,21 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import no.everyday.gmodstore_sdk.model.UserBadgeLegend;
+import no.everyday.gmodstore_sdk.model.AdventCalendarStats;
 
 /**
- * BadgeListResponse
+ * AdventCalendarStatsResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-01T10:58:27.251778Z[Etc/UTC]")
-public class BadgeListResponse {
+public class AdventCalendarStatsResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<UserBadgeLegend> data = null;
+  private AdventCalendarStats data;
 
 
-  public BadgeListResponse data(List<UserBadgeLegend> data) {
+  public AdventCalendarStatsResponse data(AdventCalendarStats data) {
     
     this.data = data;
-    return this;
-  }
-
-  public BadgeListResponse addDataItem(UserBadgeLegend dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<UserBadgeLegend>();
-    }
-    this.data.add(dataItem);
     return this;
   }
 
@@ -58,12 +48,12 @@ public class BadgeListResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<UserBadgeLegend> getData() {
+  public AdventCalendarStats getData() {
     return data;
   }
 
 
-  public void setData(List<UserBadgeLegend> data) {
+  public void setData(AdventCalendarStats data) {
     this.data = data;
   }
 
@@ -76,8 +66,8 @@ public class BadgeListResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BadgeListResponse badgeListResponse = (BadgeListResponse) o;
-    return Objects.equals(this.data, badgeListResponse.data);
+    AdventCalendarStatsResponse adventCalendarStatsResponse = (AdventCalendarStatsResponse) o;
+    return Objects.equals(this.data, adventCalendarStatsResponse.data);
   }
 
   @Override
@@ -89,7 +79,7 @@ public class BadgeListResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BadgeListResponse {\n");
+    sb.append("class AdventCalendarStatsResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -1459,6 +1459,55 @@ paths:
       tags:
       - Addon Versions
       x-accepts: application/json
+  /events/advent-calendar/stats:
+    get:
+      operationId: getAdventCalendarStats
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdventCalendarStatsResponse'
+          description: Successfully processed the request.
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too many requests
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+            X-RateLimit-Reset:
+              description: The UNIX timestamp at which your rate limit quota will
+                reset.
+              explode: false
+              schema:
+                format: int64
+                type: integer
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Something went wrong
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+      summary: Fetch statistics relating to the advent calendar event
+      tags:
+      - Advent Calendar
+      x-accepts: application/json
   /teams/{team_id}:
     get:
       operationId: getTeam
@@ -2805,6 +2854,19 @@ components:
         url:
           format: url
           type: string
+      type: object
+    AdventCalendarStats:
+      example:
+        coupons_awarded: 1
+        addons_awarded: 6
+        squares_opened: 0
+      properties:
+        squares_opened:
+          type: integer
+        addons_awarded:
+          type: integer
+        coupons_awarded:
+          type: integer
       type: object
     AddonPurchase:
       example:
@@ -4324,6 +4386,15 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonDownload'
+    AdventCalendarStatsResponse:
+      example:
+        data:
+          coupons_awarded: 1
+          addons_awarded: 6
+          squares_opened: 0
+      properties:
+        data:
+          $ref: '#/components/schemas/AdventCalendarStats'
     TeamResponse:
       example:
         data:
