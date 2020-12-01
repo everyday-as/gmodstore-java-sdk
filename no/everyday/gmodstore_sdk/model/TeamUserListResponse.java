@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.TeamUser;
 /**
  * TeamUserListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-01T10:58:27.251778Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-01T11:08:03.977191Z[Etc/UTC]")
 public class TeamUserListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

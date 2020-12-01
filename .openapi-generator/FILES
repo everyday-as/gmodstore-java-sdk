@@ -166,6 +166,3 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/api/AdventCalendarApiTest.java
-src/test/java/no/everyday/gmodstore_sdk/model/AdventCalendarStatsResponseTest.java
-src/test/java/no/everyday/gmodstore_sdk/model/AdventCalendarStatsTest.java
