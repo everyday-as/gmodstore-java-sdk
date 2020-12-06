@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
  **addonCoupon** | [**AddonCoupon**](AddonCoupon.md)|  |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon, bound_user]
 
 ### Return type
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
  **couponId** | **Long**| Id of the coupon |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon, bound_user]
 
 ### Return type
 
@@ -268,7 +268,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addonId** | **Long**| Id of the addon |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon, bound_user]
 
 ### Return type
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
  **addonId** | **Long**| Id of the addon |
  **couponId** | **Long**| Id of the coupon |
  **addonCoupon** | [**AddonCoupon**](AddonCoupon.md)|  |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional] [enum: addon, bound_user]
 
 ### Return type
 

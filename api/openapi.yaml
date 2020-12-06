@@ -257,6 +257,7 @@ paths:
           items:
             enum:
             - addon
+            - bound_user
             type: string
           type: array
           uniqueItems: true
@@ -328,6 +329,7 @@ paths:
           items:
             enum:
             - addon
+            - bound_user
             type: string
           type: array
           uniqueItems: true
@@ -475,6 +477,7 @@ paths:
           items:
             enum:
             - addon
+            - bound_user
             type: string
           type: array
           uniqueItems: true
@@ -555,6 +558,7 @@ paths:
           items:
             enum:
             - addon
+            - bound_user
             type: string
           type: array
           uniqueItems: true
@@ -2447,6 +2451,7 @@ components:
         items:
           enum:
           - addon
+          - bound_user
           type: string
         type: array
         uniqueItems: true
@@ -2768,7 +2773,23 @@ components:
           name: name
           id: 0
           slug: slug
+        bound_user_id: 5
         created_at: 2000-01-23T04:56:07.000+00:00
+        bound_user:
+          country_code: country_code
+          name: name
+          reputation: 7
+          id: 2
+          avatar: https://openapi-generator.tech
+          slug: slug
+          ban_properties:
+          - everything
+          - everything
+          team_reputation: 9
+          group:
+            display_order: 2
+            id: 3
+            title: title
         id: 1
         percent: 60.06907059408995
       properties:
@@ -2789,6 +2810,10 @@ components:
           description: A future date less than 2 weeks from today
           format: date-time
           type: string
+        bound_user_id:
+          format: int64
+          type: integer
+          writeOnly: true
         created_at:
           format: date-time
           readOnly: true
@@ -2799,6 +2824,8 @@ components:
           type: string
         addon:
           $ref: '#/components/schemas/Addon'
+        bound_user:
+          $ref: '#/components/schemas/User'
       required:
       - code
       - expires_at
@@ -3716,7 +3743,23 @@ components:
             name: name
             id: 0
             slug: slug
+          bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
+          bound_user:
+            country_code: country_code
+            name: name
+            reputation: 7
+            id: 2
+            avatar: https://openapi-generator.tech
+            slug: slug
+            ban_properties:
+            - everything
+            - everything
+            team_reputation: 9
+            group:
+              display_order: 2
+              id: 3
+              title: title
           id: 1
           percent: 60.06907059408995
         - code: code
@@ -3778,7 +3821,23 @@ components:
             name: name
             id: 0
             slug: slug
+          bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
+          bound_user:
+            country_code: country_code
+            name: name
+            reputation: 7
+            id: 2
+            avatar: https://openapi-generator.tech
+            slug: slug
+            ban_properties:
+            - everything
+            - everything
+            team_reputation: 9
+            group:
+              display_order: 2
+              id: 3
+              title: title
           id: 1
           percent: 60.06907059408995
       properties:
@@ -3848,7 +3907,23 @@ components:
             name: name
             id: 0
             slug: slug
+          bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
+          bound_user:
+            country_code: country_code
+            name: name
+            reputation: 7
+            id: 2
+            avatar: https://openapi-generator.tech
+            slug: slug
+            ban_properties:
+            - everything
+            - everything
+            team_reputation: 9
+            group:
+              display_order: 2
+              id: 3
+              title: title
           id: 1
           percent: 60.06907059408995
       properties:

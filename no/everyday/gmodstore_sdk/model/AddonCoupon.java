@@ -25,12 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 import no.everyday.gmodstore_sdk.model.Addon;
+import no.everyday.gmodstore_sdk.model.User;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * AddonCoupon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-01T11:08:03.977191Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-06T21:13:50.149483Z[Etc/UTC]")
 public class AddonCoupon {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -52,6 +53,10 @@ public class AddonCoupon {
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
   private OffsetDateTime expiresAt;
 
+  public static final String SERIALIZED_NAME_BOUND_USER_ID = "bound_user_id";
+  @SerializedName(SERIALIZED_NAME_BOUND_USER_ID)
+  private Long boundUserId;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
@@ -63,6 +68,10 @@ public class AddonCoupon {
   public static final String SERIALIZED_NAME_ADDON = "addon";
   @SerializedName(SERIALIZED_NAME_ADDON)
   private Addon addon;
+
+  public static final String SERIALIZED_NAME_BOUND_USER = "bound_user";
+  @SerializedName(SERIALIZED_NAME_BOUND_USER)
+  private User boundUser;
 
 
    /**
@@ -170,6 +179,29 @@ public class AddonCoupon {
   }
 
 
+  public AddonCoupon boundUserId(Long boundUserId) {
+    
+    this.boundUserId = boundUserId;
+    return this;
+  }
+
+   /**
+   * Get boundUserId
+   * @return boundUserId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Long getBoundUserId() {
+    return boundUserId;
+  }
+
+
+  public void setBoundUserId(Long boundUserId) {
+    this.boundUserId = boundUserId;
+  }
+
+
    /**
    * Get createdAt
    * @return createdAt
@@ -221,6 +253,29 @@ public class AddonCoupon {
   }
 
 
+  public AddonCoupon boundUser(User boundUser) {
+    
+    this.boundUser = boundUser;
+    return this;
+  }
+
+   /**
+   * Get boundUser
+   * @return boundUser
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public User getBoundUser() {
+    return boundUser;
+  }
+
+
+  public void setBoundUser(User boundUser) {
+    this.boundUser = boundUser;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -235,14 +290,16 @@ public class AddonCoupon {
         Objects.equals(this.percent, addonCoupon.percent) &&
         Objects.equals(this.maxUses, addonCoupon.maxUses) &&
         Objects.equals(this.expiresAt, addonCoupon.expiresAt) &&
+        Objects.equals(this.boundUserId, addonCoupon.boundUserId) &&
         Objects.equals(this.createdAt, addonCoupon.createdAt) &&
         Objects.equals(this.updatedAt, addonCoupon.updatedAt) &&
-        Objects.equals(this.addon, addonCoupon.addon);
+        Objects.equals(this.addon, addonCoupon.addon) &&
+        Objects.equals(this.boundUser, addonCoupon.boundUser);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, code, percent, maxUses, expiresAt, createdAt, updatedAt, addon);
+    return Objects.hash(id, code, percent, maxUses, expiresAt, boundUserId, createdAt, updatedAt, addon, boundUser);
   }
 
 
@@ -255,9 +312,11 @@ public class AddonCoupon {
     sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
     sb.append("    maxUses: ").append(toIndentedString(maxUses)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    boundUserId: ").append(toIndentedString(boundUserId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    addon: ").append(toIndentedString(addon)).append("\n");
+    sb.append("    boundUser: ").append(toIndentedString(boundUser)).append("\n");
     sb.append("}");
     return sb.toString();
   }
