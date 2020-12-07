@@ -2812,6 +2812,7 @@ components:
           type: string
         bound_user_id:
           format: int64
+          nullable: true
           type: integer
           writeOnly: true
         created_at:
@@ -3313,6 +3314,7 @@ components:
           format: uri
           type: string
         country_code:
+          nullable: true
           type: string
         slug:
           type: string
