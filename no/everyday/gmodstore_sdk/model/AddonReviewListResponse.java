@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.AddonReview;
 /**
  * AddonReviewListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T20:21:58.330625Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T20:23:07.039332Z[Etc/UTC]")
 public class AddonReviewListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
