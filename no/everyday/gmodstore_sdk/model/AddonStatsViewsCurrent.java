@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AddonStatsViewsCurrent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T20:23:07.039332Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-29T12:44:18.793408Z[Etc/UTC]")
 public class AddonStatsViewsCurrent {
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)

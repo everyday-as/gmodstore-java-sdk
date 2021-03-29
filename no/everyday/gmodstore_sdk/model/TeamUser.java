@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.User;
 /**
  * TeamUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T20:23:07.039332Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-29T12:44:18.793408Z[Etc/UTC]")
 public class TeamUser {
   public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
   @SerializedName(SERIALIZED_NAME_TEAM_ID)
@@ -37,6 +37,10 @@ public class TeamUser {
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
   private Boolean primary;
+
+  public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
+  @SerializedName(SERIALIZED_NAME_PERCENTAGE)
+  private Integer percentage;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -89,6 +93,29 @@ public class TeamUser {
   }
 
 
+  public TeamUser percentage(Integer percentage) {
+    
+    this.percentage = percentage;
+    return this;
+  }
+
+   /**
+   * Get percentage
+   * @return percentage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPercentage() {
+    return percentage;
+  }
+
+
+  public void setPercentage(Integer percentage) {
+    this.percentage = percentage;
+  }
+
+
   public TeamUser user(User user) {
     
     this.user = user;
@@ -123,12 +150,13 @@ public class TeamUser {
     TeamUser teamUser = (TeamUser) o;
     return Objects.equals(this.teamId, teamUser.teamId) &&
         Objects.equals(this.primary, teamUser.primary) &&
+        Objects.equals(this.percentage, teamUser.percentage) &&
         Objects.equals(this.user, teamUser.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(teamId, primary, user);
+    return Objects.hash(teamId, primary, percentage, user);
   }
 
 
@@ -138,6 +166,7 @@ public class TeamUser {
     sb.append("class TeamUser {\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
+    sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
