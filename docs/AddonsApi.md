@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="listSelfAddons"></a>
 # **listSelfAddons**
-> AddonListResponse listSelfAddons(with)
+> AddonListResponse1 listSelfAddons(with)
 
 Fetch all the addons that you have access to
 
@@ -105,7 +105,7 @@ public class Example {
     AddonsApi apiInstance = new AddonsApi(defaultClient);
     Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `Addon`
     try {
-      AddonListResponse result = apiInstance.listSelfAddons(with);
+      AddonListResponse1 result = apiInstance.listSelfAddons(with);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AddonsApi#listSelfAddons");
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddonListResponse**](AddonListResponse.md)
+[**AddonListResponse1**](AddonListResponse1.md)
 
 ### Authorization
 

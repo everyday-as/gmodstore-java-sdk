@@ -5,6 +5,7 @@ no/everyday/gmodstore_sdk/api/AddonStatsApi.java
 no/everyday/gmodstore_sdk/api/AddonVersionsApi.java
 no/everyday/gmodstore_sdk/api/AddonsApi.java
 no/everyday/gmodstore_sdk/api/AdventCalendarApi.java
+no/everyday/gmodstore_sdk/api/ApiKeyApi.java
 no/everyday/gmodstore_sdk/api/PermissionGroupsApi.java
 no/everyday/gmodstore_sdk/api/TeamAddonsApi.java
 no/everyday/gmodstore_sdk/api/TeamUsersApi.java
@@ -23,6 +24,7 @@ no/everyday/gmodstore_sdk/model/AddonDownload.java
 no/everyday/gmodstore_sdk/model/AddonDownloadResponse.java
 no/everyday/gmodstore_sdk/model/AddonImages.java
 no/everyday/gmodstore_sdk/model/AddonListResponse.java
+no/everyday/gmodstore_sdk/model/AddonListResponse1.java
 no/everyday/gmodstore_sdk/model/AddonPrice.java
 no/everyday/gmodstore_sdk/model/AddonPurchase.java
 no/everyday/gmodstore_sdk/model/AddonPurchaseListResponse.java
@@ -45,6 +47,7 @@ no/everyday/gmodstore_sdk/model/AddonVersionReleaseType.java
 no/everyday/gmodstore_sdk/model/AddonVersionResponse.java
 no/everyday/gmodstore_sdk/model/AdventCalendarStats.java
 no/everyday/gmodstore_sdk/model/AdventCalendarStatsResponse.java
+no/everyday/gmodstore_sdk/model/ApiKey.java
 no/everyday/gmodstore_sdk/model/BadgeListResponse.java
 no/everyday/gmodstore_sdk/model/BadgeResponse.java
 no/everyday/gmodstore_sdk/model/Error.java
@@ -81,6 +84,7 @@ docs/AddonDownload.md
 docs/AddonDownloadResponse.md
 docs/AddonImages.md
 docs/AddonListResponse.md
+docs/AddonListResponse1.md
 docs/AddonPrice.md
 docs/AddonPurchase.md
 docs/AddonPurchaseListResponse.md
@@ -109,6 +113,8 @@ docs/AddonsApi.md
 docs/AdventCalendarApi.md
 docs/AdventCalendarStats.md
 docs/AdventCalendarStatsResponse.md
+docs/ApiKey.md
+docs/ApiKeyApi.md
 docs/BadgeListResponse.md
 docs/BadgeResponse.md
 docs/Error.md
@@ -166,3 +172,6 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
+src/test/java/no/everyday/gmodstore_sdk/api/ApiKeyApiTest.java
+src/test/java/no/everyday/gmodstore_sdk/model/AddonListResponse1Test.java
+src/test/java/no/everyday/gmodstore_sdk/model/ApiKeyTest.java

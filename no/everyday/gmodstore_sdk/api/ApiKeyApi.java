@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.AddonListResponse1;
+import no.everyday.gmodstore_sdk.model.AddonListResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.util.Set;
 
@@ -37,14 +37,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class UserAddonsApi {
+public class ApiKeyApi {
     private ApiClient localVarApiClient;
 
-    public UserAddonsApi() {
+    public ApiKeyApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public UserAddonsApi(ApiClient apiClient) {
+    public ApiKeyApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -57,9 +57,8 @@ public class UserAddonsApi {
     }
 
     /**
-     * Build call for listUserAddons
-     * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * Build call for getCurrentApiKey
+     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -71,12 +70,11 @@ public class UserAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listUserAddonsCall(Long userId, Set<String> with, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCurrentApiKeyCall(Set<String> with, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/users/{user_id}/addons"
-            .replaceAll("\\{" + "user_id" + "\\}", localVarApiClient.escapeString(userId.toString()));
+        String localVarPath = "/me";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -106,25 +104,19 @@ public class UserAddonsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUserAddonsValidateBeforeCall(Long userId, Set<String> with, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'userId' is set
-        if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling listUserAddons(Async)");
-        }
+    private okhttp3.Call getCurrentApiKeyValidateBeforeCall(Set<String> with, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = listUserAddonsCall(userId, with, _callback);
+        okhttp3.Call localVarCall = getCurrentApiKeyCall(with, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      * 
-     * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
-     * @return AddonListResponse1
+     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @return AddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -134,17 +126,16 @@ public class UserAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public AddonListResponse1 listUserAddons(Long userId, Set<String> with) throws ApiException {
-        ApiResponse<AddonListResponse1> localVarResp = listUserAddonsWithHttpInfo(userId, with);
+    public AddonListResponse getCurrentApiKey(Set<String> with) throws ApiException {
+        ApiResponse<AddonListResponse> localVarResp = getCurrentApiKeyWithHttpInfo(with);
         return localVarResp.getData();
     }
 
     /**
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      * 
-     * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
-     * @return ApiResponse&lt;AddonListResponse1&gt;
+     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @return ApiResponse&lt;AddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -154,17 +145,16 @@ public class UserAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AddonListResponse1> listUserAddonsWithHttpInfo(Long userId, Set<String> with) throws ApiException {
-        okhttp3.Call localVarCall = listUserAddonsValidateBeforeCall(userId, with, null);
-        Type localVarReturnType = new TypeToken<AddonListResponse1>(){}.getType();
+    public ApiResponse<AddonListResponse> getCurrentApiKeyWithHttpInfo(Set<String> with) throws ApiException {
+        okhttp3.Call localVarCall = getCurrentApiKeyValidateBeforeCall(with, null);
+        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Fetch all the addons authored / co-authored by a user (asynchronously)
+     * Get meta information about the current API key (asynchronously)
      * 
-     * @param userId Id of the user (required)
-     * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -176,10 +166,10 @@ public class UserAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listUserAddonsAsync(Long userId, Set<String> with, final ApiCallback<AddonListResponse1> _callback) throws ApiException {
+    public okhttp3.Call getCurrentApiKeyAsync(Set<String> with, final ApiCallback<AddonListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listUserAddonsValidateBeforeCall(userId, with, _callback);
-        Type localVarReturnType = new TypeToken<AddonListResponse1>(){}.getType();
+        okhttp3.Call localVarCall = getCurrentApiKeyValidateBeforeCall(with, _callback);
+        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

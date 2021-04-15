@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.AddonListResponse;
+import no.everyday.gmodstore_sdk.model.AddonListResponse1;
 import no.everyday.gmodstore_sdk.model.AddonResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.util.Set;
@@ -244,7 +244,7 @@ public class AddonsApi {
      * Fetch all the addons that you have access to
      * 
      * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
-     * @return AddonListResponse
+     * @return AddonListResponse1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -254,8 +254,8 @@ public class AddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public AddonListResponse listSelfAddons(Set<String> with) throws ApiException {
-        ApiResponse<AddonListResponse> localVarResp = listSelfAddonsWithHttpInfo(with);
+    public AddonListResponse1 listSelfAddons(Set<String> with) throws ApiException {
+        ApiResponse<AddonListResponse1> localVarResp = listSelfAddonsWithHttpInfo(with);
         return localVarResp.getData();
     }
 
@@ -263,7 +263,7 @@ public class AddonsApi {
      * Fetch all the addons that you have access to
      * 
      * @param with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
-     * @return ApiResponse&lt;AddonListResponse&gt;
+     * @return ApiResponse&lt;AddonListResponse1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -273,9 +273,9 @@ public class AddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AddonListResponse> listSelfAddonsWithHttpInfo(Set<String> with) throws ApiException {
+    public ApiResponse<AddonListResponse1> listSelfAddonsWithHttpInfo(Set<String> with) throws ApiException {
         okhttp3.Call localVarCall = listSelfAddonsValidateBeforeCall(with, null);
-        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonListResponse1>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -294,10 +294,10 @@ public class AddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listSelfAddonsAsync(Set<String> with, final ApiCallback<AddonListResponse> _callback) throws ApiException {
+    public okhttp3.Call listSelfAddonsAsync(Set<String> with, final ApiCallback<AddonListResponse1> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSelfAddonsValidateBeforeCall(with, _callback);
-        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonListResponse1>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

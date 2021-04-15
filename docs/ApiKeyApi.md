@@ -1,17 +1,17 @@
-# UserAddonsApi
+# ApiKeyApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserAddons**](UserAddonsApi.md#listUserAddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
+[**getCurrentApiKey**](ApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
 
 
-<a name="listUserAddons"></a>
-# **listUserAddons**
-> AddonListResponse1 listUserAddons(userId, with)
+<a name="getCurrentApiKey"></a>
+# **getCurrentApiKey**
+> AddonListResponse getCurrentApiKey(with)
 
-Fetch all the addons authored / co-authored by a user
+Get meta information about the current API key
 
 ### Example
 ```java
@@ -21,7 +21,7 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.Configuration;
 import no.everyday.gmodstore_sdk.auth.*;
 import no.everyday.gmodstore_sdk.models.*;
-import no.everyday.gmodstore_sdk.api.UserAddonsApi;
+import no.everyday.gmodstore_sdk.api.ApiKeyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -32,14 +32,13 @@ public class Example {
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
     bearerAuth.setBearerToken("BEARER TOKEN");
 
-    UserAddonsApi apiInstance = new UserAddonsApi(defaultClient);
-    Long userId = 56L; // Long | Id of the user
-    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `Addon`
+    ApiKeyApi apiInstance = new ApiKeyApi(defaultClient);
+    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `User`
     try {
-      AddonListResponse1 result = apiInstance.listUserAddons(userId, with);
+      AddonListResponse result = apiInstance.getCurrentApiKey(with);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling UserAddonsApi#listUserAddons");
+      System.err.println("Exception when calling ApiKeyApi#getCurrentApiKey");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -53,12 +52,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Long**| Id of the user |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional] [enum: group]
 
 ### Return type
 
-[**AddonListResponse1**](AddonListResponse1.md)
+[**AddonListResponse**](AddonListResponse.md)
 
 ### Authorization
 

@@ -23,21 +23,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.Error;
+import java.util.ArrayList;
+import java.util.List;
+import no.everyday.gmodstore_sdk.model.Addon;
 
 /**
- * ErrorResponse
+ * AddonListResponse1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:02:11.492042Z[Etc/UTC]")
-public class ErrorResponse {
+public class AddonListResponse1 {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Error data;
+  private List<Addon> data = null;
 
 
-  public ErrorResponse data(Error data) {
+  public AddonListResponse1 data(List<Addon> data) {
     
     this.data = data;
+    return this;
+  }
+
+  public AddonListResponse1 addDataItem(Addon dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<Addon>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -48,12 +58,12 @@ public class ErrorResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Error getData() {
+  public List<Addon> getData() {
     return data;
   }
 
 
-  public void setData(Error data) {
+  public void setData(List<Addon> data) {
     this.data = data;
   }
 
@@ -66,8 +76,8 @@ public class ErrorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return Objects.equals(this.data, errorResponse.data);
+    AddonListResponse1 addonListResponse1 = (AddonListResponse1) o;
+    return Objects.equals(this.data, addonListResponse1.data);
   }
 
   @Override
@@ -79,7 +89,7 @@ public class ErrorResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorResponse {\n");
+    sb.append("class AddonListResponse1 {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

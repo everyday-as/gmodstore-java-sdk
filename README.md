@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.1.0
-  - Build date: 2021-03-29T12:44:18.793408Z[Etc/UTC]
+  - Build date: 2021-04-15T20:02:11.492042Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *AddonsApi* | [**getAddon**](docs/AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
 *AdventCalendarApi* | [**getAdventCalendarStats**](docs/AdventCalendarApi.md#getAdventCalendarStats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
+*ApiKeyApi* | [**getCurrentApiKey**](docs/ApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
 *PermissionGroupsApi* | [**listPermissionGroups**](docs/PermissionGroupsApi.md#listPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamAddonsApi* | [**listTeamAddons**](docs/TeamAddonsApi.md#listTeamAddons) | **GET** /teams/{team_id}/addons | Fetch all the addons in the given team
 *TeamUsersApi* | [**listTeamUsers**](docs/TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
@@ -160,6 +161,7 @@ Class | Method | HTTP request | Description
  - [AddonDownloadResponse](docs/AddonDownloadResponse.md)
  - [AddonImages](docs/AddonImages.md)
  - [AddonListResponse](docs/AddonListResponse.md)
+ - [AddonListResponse1](docs/AddonListResponse1.md)
  - [AddonPrice](docs/AddonPrice.md)
  - [AddonPurchase](docs/AddonPurchase.md)
  - [AddonPurchaseListResponse](docs/AddonPurchaseListResponse.md)
@@ -182,6 +184,7 @@ Class | Method | HTTP request | Description
  - [AddonVersionResponse](docs/AddonVersionResponse.md)
  - [AdventCalendarStats](docs/AdventCalendarStats.md)
  - [AdventCalendarStatsResponse](docs/AdventCalendarStatsResponse.md)
+ - [ApiKey](docs/ApiKey.md)
  - [BadgeListResponse](docs/BadgeListResponse.md)
  - [BadgeResponse](docs/BadgeResponse.md)
  - [Error](docs/Error.md)

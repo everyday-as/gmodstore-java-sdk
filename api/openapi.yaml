@@ -39,6 +39,69 @@ tags:
 - name: User Bans
 - name: User Badges
 paths:
+  /me:
+    get:
+      operationId: getCurrentApiKey
+      parameters:
+      - description: The relations you want to fetch with the `User`
+        explode: false
+        in: query
+        name: with
+        required: false
+        schema:
+          items:
+            enum:
+            - group
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddonListResponse'
+          description: Successfully processed the request.
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Too many requests
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+            X-RateLimit-Reset:
+              description: The UNIX timestamp at which your rate limit quota will
+                reset.
+              explode: false
+              schema:
+                format: int64
+                type: integer
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Something went wrong
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/xRateLimit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/xRateLimitRemaining'
+      summary: Get meta information about the current API key
+      tags:
+      - apiKey
+      x-accepts: application/json
   /addons:
     get:
       operationId: listSelfAddons
@@ -62,7 +125,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonListResponse'
+                $ref: '#/components/schemas/AddonListResponse_1'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -1882,7 +1945,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonListResponse'
+                $ref: '#/components/schemas/AddonListResponse_1'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -2617,6 +2680,48 @@ components:
             type: integer
           style: simple
   schemas:
+    ApiKey:
+      example:
+        permissions:
+        - addons.read
+        - addons.read
+        user:
+          country_code: country_code
+          name: name
+          reputation: 6
+          id: 0
+          avatar: https://openapi-generator.tech
+          slug: slug
+          ban_properties:
+          - everything
+          - everything
+          team_reputation: 1
+          group:
+            display_order: 5
+            id: 5
+            title: title
+      properties:
+        permissions:
+          items:
+            enum:
+            - addons.read
+            - addons.coupons.read
+            - addons.coupons.write
+            - addons.purchases.read
+            - addons.purchases.write
+            - addons.reviews.read
+            - teams.read
+            - users.read
+            - users.write
+            - addons.versions.read
+            - addons.versions.write
+            - addons.versions.download
+            type: string
+          type: array
+        user:
+          $ref: '#/components/schemas/User'
+      readOnly: true
+      type: object
     Addon:
       example:
         short_description: short_description
@@ -2638,17 +2743,17 @@ components:
             user:
               country_code: country_code
               name: name
-              reputation: 9
-              id: 7
+              reputation: 6
+              id: 0
               avatar: https://openapi-generator.tech
               slug: slug
               ban_properties:
               - everything
               - everything
-              team_reputation: 3
+              team_reputation: 1
               group:
-                display_order: 4
-                id: 2
+                display_order: 5
+                id: 5
                 title: title
             primary: true
           name: name
@@ -2739,17 +2844,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -2780,17 +2885,17 @@ components:
         bound_user:
           country_code: country_code
           name: name
-          reputation: 9
-          id: 7
+          reputation: 6
+          id: 0
           avatar: https://openapi-generator.tech
           slug: slug
           ban_properties:
           - everything
           - everything
-          team_reputation: 3
+          team_reputation: 1
           group:
-            display_order: 4
-            id: 2
+            display_order: 5
+            id: 5
             title: title
         id: 1
         percent: 60.06907059408995
@@ -2921,17 +3026,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -2968,17 +3073,17 @@ components:
         user:
           country_code: country_code
           name: name
-          reputation: 9
-          id: 7
+          reputation: 6
+          id: 0
           avatar: https://openapi-generator.tech
           slug: slug
           ban_properties:
           - everything
           - everything
-          team_reputation: 3
+          team_reputation: 1
           group:
-            display_order: 4
-            id: 2
+            display_order: 5
+            id: 5
             title: title
       properties:
         revoked:
@@ -3032,17 +3137,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -3071,17 +3176,17 @@ components:
         author:
           country_code: country_code
           name: name
-          reputation: 9
-          id: 7
+          reputation: 6
+          id: 0
           avatar: https://openapi-generator.tech
           slug: slug
           ban_properties:
           - everything
           - everything
-          team_reputation: 3
+          team_reputation: 1
           group:
-            display_order: 4
-            id: 2
+            display_order: 5
+            id: 5
             title: title
         rating: 3.4109824732281613
         id: 0
@@ -3184,8 +3289,8 @@ components:
       type: string
     PermissionGroup:
       example:
-        display_order: 4
-        id: 2
+        display_order: 5
+        id: 5
         title: title
       properties:
         id:
@@ -3234,17 +3339,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           primary: true
         name: name
@@ -3273,17 +3378,17 @@ components:
         user:
           country_code: country_code
           name: name
-          reputation: 9
-          id: 7
+          reputation: 6
+          id: 0
           avatar: https://openapi-generator.tech
           slug: slug
           ban_properties:
           - everything
           - everything
-          team_reputation: 3
+          team_reputation: 1
           group:
-            display_order: 4
-            id: 2
+            display_order: 5
+            id: 5
             title: title
         primary: true
       properties:
@@ -3300,17 +3405,17 @@ components:
       example:
         country_code: country_code
         name: name
-        reputation: 9
-        id: 7
+        reputation: 6
+        id: 0
         avatar: https://openapi-generator.tech
         slug: slug
         ban_properties:
         - everything
         - everything
-        team_reputation: 3
+        team_reputation: 1
         group:
-          display_order: 4
-          id: 2
+          display_order: 5
+          id: 5
           title: title
       properties:
         id:
@@ -3446,6 +3551,34 @@ components:
     AddonListResponse:
       example:
         data:
+          permissions:
+          - addons.read
+          - addons.read
+          user:
+            country_code: country_code
+            name: name
+            reputation: 6
+            id: 0
+            avatar: https://openapi-generator.tech
+            slug: slug
+            ban_properties:
+            - everything
+            - everything
+            team_reputation: 1
+            group:
+              display_order: 5
+              id: 5
+              title: title
+      properties:
+        data:
+          $ref: '#/components/schemas/ApiKey'
+    ErrorResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/Error'
+    AddonListResponse_1:
+      example:
+        data:
         - short_description: short_description
           requirements:
           - requirements
@@ -3465,17 +3598,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -3520,17 +3653,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -3561,10 +3694,6 @@ components:
           items:
             $ref: '#/components/schemas/Addon'
           type: array
-    ErrorResponse:
-      properties:
-        data:
-          $ref: '#/components/schemas/Error'
     AddonResponse:
       example:
         data:
@@ -3587,17 +3716,17 @@ components:
               user:
                 country_code: country_code
                 name: name
-                reputation: 9
-                id: 7
+                reputation: 6
+                id: 0
                 avatar: https://openapi-generator.tech
                 slug: slug
                 ban_properties:
                 - everything
                 - everything
-                team_reputation: 3
+                team_reputation: 1
                 group:
-                  display_order: 4
-                  id: 2
+                  display_order: 5
+                  id: 5
                   title: title
               primary: true
             name: name
@@ -3721,17 +3850,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -3762,17 +3891,17 @@ components:
           bound_user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           id: 1
           percent: 60.06907059408995
@@ -3800,17 +3929,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -3841,17 +3970,17 @@ components:
           bound_user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           id: 1
           percent: 60.06907059408995
@@ -3887,17 +4016,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -3928,17 +4057,17 @@ components:
           bound_user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           id: 1
           percent: 60.06907059408995
@@ -3969,17 +4098,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4016,17 +4145,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
         - updated_at: 2000-01-23T04:56:07.000+00:00
           addon:
@@ -4049,17 +4178,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4096,17 +4225,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
       properties:
         data:
@@ -4137,17 +4266,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4184,17 +4313,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
       properties:
         data:
@@ -4222,17 +4351,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4261,17 +4390,17 @@ components:
           author:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           rating: 3.4109824732281613
           id: 0
@@ -4298,17 +4427,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4337,17 +4466,17 @@ components:
           author:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           rating: 3.4109824732281613
           id: 0
@@ -4382,17 +4511,17 @@ components:
                 user:
                   country_code: country_code
                   name: name
-                  reputation: 9
-                  id: 7
+                  reputation: 6
+                  id: 0
                   avatar: https://openapi-generator.tech
                   slug: slug
                   ban_properties:
                   - everything
                   - everything
-                  team_reputation: 3
+                  team_reputation: 1
                   group:
-                    display_order: 4
-                    id: 2
+                    display_order: 5
+                    id: 5
                     title: title
                 primary: true
               name: name
@@ -4421,17 +4550,17 @@ components:
           author:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           rating: 3.4109824732281613
           id: 0
@@ -4502,17 +4631,17 @@ components:
             user:
               country_code: country_code
               name: name
-              reputation: 9
-              id: 7
+              reputation: 6
+              id: 0
               avatar: https://openapi-generator.tech
               slug: slug
               ban_properties:
               - everything
               - everything
-              team_reputation: 3
+              team_reputation: 1
               group:
-                display_order: 4
-                id: 2
+                display_order: 5
+                id: 5
                 title: title
             primary: true
           name: name
@@ -4529,17 +4658,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           primary: true
         - percentage: 2
@@ -4547,17 +4676,17 @@ components:
           user:
             country_code: country_code
             name: name
-            reputation: 9
-            id: 7
+            reputation: 6
+            id: 0
             avatar: https://openapi-generator.tech
             slug: slug
             ban_properties:
             - everything
             - everything
-            team_reputation: 3
+            team_reputation: 1
             group:
-              display_order: 4
-              id: 2
+              display_order: 5
+              id: 5
               title: title
           primary: true
       properties:
@@ -4570,17 +4699,17 @@ components:
         data:
           country_code: country_code
           name: name
-          reputation: 9
-          id: 7
+          reputation: 6
+          id: 0
           avatar: https://openapi-generator.tech
           slug: slug
           ban_properties:
           - everything
           - everything
-          team_reputation: 3
+          team_reputation: 1
           group:
-            display_order: 4
-            id: 2
+            display_order: 5
+            id: 5
             title: title
       properties:
         data:
@@ -4595,17 +4724,17 @@ components:
             user:
               country_code: country_code
               name: name
-              reputation: 9
-              id: 7
+              reputation: 6
+              id: 0
               avatar: https://openapi-generator.tech
               slug: slug
               ban_properties:
               - everything
               - everything
-              team_reputation: 3
+              team_reputation: 1
               group:
-                display_order: 4
-                id: 2
+                display_order: 5
+                id: 5
                 title: title
             primary: true
           name: name
@@ -4618,17 +4747,17 @@ components:
             user:
               country_code: country_code
               name: name
-              reputation: 9
-              id: 7
+              reputation: 6
+              id: 0
               avatar: https://openapi-generator.tech
               slug: slug
               ban_properties:
               - everything
               - everything
-              team_reputation: 3
+              team_reputation: 1
               group:
-                display_order: 4
-                id: 2
+                display_order: 5
+                id: 5
                 title: title
             primary: true
           name: name
@@ -4692,11 +4821,11 @@ components:
     PermissionGroupListResponse:
       example:
         data:
-        - display_order: 4
-          id: 2
+        - display_order: 5
+          id: 5
           title: title
-        - display_order: 4
-          id: 2
+        - display_order: 5
+          id: 5
           title: title
       properties:
         data:
