@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.User;
 /**
  * ApiKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:03:14.001768Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:05:39.818316Z[Etc/UTC]")
 public class ApiKey {
   /**
    * Gets or Sets permissions

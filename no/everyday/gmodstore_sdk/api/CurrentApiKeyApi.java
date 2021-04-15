@@ -58,7 +58,7 @@ public class CurrentApiKeyApi {
 
     /**
      * Build call for getCurrentApiKey
-     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -115,7 +115,7 @@ public class CurrentApiKeyApi {
     /**
      * Get meta information about the current API key
      * 
-     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      * @return AddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -134,7 +134,7 @@ public class CurrentApiKeyApi {
     /**
      * Get meta information about the current API key
      * 
-     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      * @return ApiResponse&lt;AddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -154,7 +154,7 @@ public class CurrentApiKeyApi {
     /**
      * Get meta information about the current API key (asynchronously)
      * 
-     * @param with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

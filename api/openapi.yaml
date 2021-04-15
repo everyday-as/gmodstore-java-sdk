@@ -44,7 +44,7 @@ paths:
     get:
       operationId: getCurrentApiKey
       parameters:
-      - description: The relations you want to fetch with the `User`
+      - description: The relations you want to fetch with the `ApiKey`
         explode: false
         in: query
         name: with
@@ -52,7 +52,7 @@ paths:
         schema:
           items:
             enum:
-            - group
+            - user
             type: string
           type: array
           uniqueItems: true
@@ -2490,6 +2490,20 @@ components:
       schema:
         type: string
       style: simple
+    ApiKeyRelation:
+      description: The relations you want to fetch with the `ApiKey`
+      explode: false
+      in: query
+      name: with
+      required: false
+      schema:
+        items:
+          enum:
+          - user
+          type: string
+        type: array
+        uniqueItems: true
+      style: form
     AddonRelation:
       description: The relations you want to fetch with the `Addon`
       explode: false

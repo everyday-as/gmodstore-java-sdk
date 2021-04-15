@@ -33,7 +33,7 @@ public class Example {
     bearerAuth.setBearerToken("BEARER TOKEN");
 
     CurrentApiKeyApi apiInstance = new CurrentApiKeyApi(defaultClient);
-    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `User`
+    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `ApiKey`
     try {
       AddonListResponse result = apiInstance.getCurrentApiKey(with);
       System.out.println(result);
@@ -52,7 +52,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional] [enum: group]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;ApiKey&#x60; | [optional] [enum: user]
 
 ### Return type
 

@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.UserBan;
 /**
  * UserBanListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:03:14.001768Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:05:39.818316Z[Etc/UTC]")
 public class UserBanListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

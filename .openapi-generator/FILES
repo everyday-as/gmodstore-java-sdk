@@ -172,4 +172,3 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/api/CurrentApiKeyApiTest.java
