@@ -5,7 +5,7 @@ no/everyday/gmodstore_sdk/api/AddonStatsApi.java
 no/everyday/gmodstore_sdk/api/AddonVersionsApi.java
 no/everyday/gmodstore_sdk/api/AddonsApi.java
 no/everyday/gmodstore_sdk/api/AdventCalendarApi.java
-no/everyday/gmodstore_sdk/api/ApiKeyApi.java
+no/everyday/gmodstore_sdk/api/CurrentApiKeyApi.java
 no/everyday/gmodstore_sdk/api/PermissionGroupsApi.java
 no/everyday/gmodstore_sdk/api/TeamAddonsApi.java
 no/everyday/gmodstore_sdk/api/TeamUsersApi.java
@@ -114,9 +114,9 @@ docs/AdventCalendarApi.md
 docs/AdventCalendarStats.md
 docs/AdventCalendarStatsResponse.md
 docs/ApiKey.md
-docs/ApiKeyApi.md
 docs/BadgeListResponse.md
 docs/BadgeResponse.md
+docs/CurrentApiKeyApi.md
 docs/Error.md
 docs/ErrorResponse.md
 docs/Money.md
@@ -172,6 +172,4 @@ no/everyday/gmodstore_sdk/auth/HttpBearerAuth.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/api/ApiKeyApiTest.java
-src/test/java/no/everyday/gmodstore_sdk/model/AddonListResponse1Test.java
-src/test/java/no/everyday/gmodstore_sdk/model/ApiKeyTest.java
+src/test/java/no/everyday/gmodstore_sdk/api/CurrentApiKeyApiTest.java

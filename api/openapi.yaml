@@ -38,6 +38,7 @@ tags:
 - name: User Teams
 - name: User Bans
 - name: User Badges
+- name: Current API Key
 paths:
   /me:
     get:
@@ -100,7 +101,7 @@ paths:
               $ref: '#/components/headers/xRateLimitRemaining'
       summary: Get meta information about the current API key
       tags:
-      - apiKey
+      - Current API Key
       x-accepts: application/json
   /addons:
     get:

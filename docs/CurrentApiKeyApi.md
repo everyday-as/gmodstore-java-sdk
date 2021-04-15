@@ -1,10 +1,10 @@
-# ApiKeyApi
+# CurrentApiKeyApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrentApiKey**](ApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
+[**getCurrentApiKey**](CurrentApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
 
 
 <a name="getCurrentApiKey"></a>
@@ -21,7 +21,7 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.Configuration;
 import no.everyday.gmodstore_sdk.auth.*;
 import no.everyday.gmodstore_sdk.models.*;
-import no.everyday.gmodstore_sdk.api.ApiKeyApi;
+import no.everyday.gmodstore_sdk.api.CurrentApiKeyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -32,13 +32,13 @@ public class Example {
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
     bearerAuth.setBearerToken("BEARER TOKEN");
 
-    ApiKeyApi apiInstance = new ApiKeyApi(defaultClient);
+    CurrentApiKeyApi apiInstance = new CurrentApiKeyApi(defaultClient);
     Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `User`
     try {
       AddonListResponse result = apiInstance.getCurrentApiKey(with);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApiKeyApi#getCurrentApiKey");
+      System.err.println("Exception when calling CurrentApiKeyApi#getCurrentApiKey");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
