@@ -2,18 +2,19 @@
 
 # AddonCoupon
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [readonly]
 **code** | **String** |  | 
-**percent** | [**BigDecimal**](BigDecimal.md) |  | 
+**percent** | **BigDecimal** |  | 
 **maxUses** | **Integer** |  | 
-**expiresAt** | [**OffsetDateTime**](OffsetDateTime.md) | A future date less than 2 weeks from today | 
+**expiresAt** | **OffsetDateTime** | A future date less than 2 weeks from today | 
 **boundUserId** | **Long** |  |  [optional]
-**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
-**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
+**createdAt** | **OffsetDateTime** |  |  [optional] [readonly]
+**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly]
 **addon** | [**Addon**](Addon.md) |  |  [optional]
 **boundUser** | [**User**](User.md) |  |  [optional]
 

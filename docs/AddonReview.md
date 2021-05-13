@@ -2,6 +2,7 @@
 
 # AddonReview
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,7 +11,7 @@ Name | Type | Description | Notes
 **title** | **String** |  |  [optional]
 **version** | **String** |  |  [optional]
 **body** | **String** |  |  [optional]
-**rating** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**rating** | **BigDecimal** |  |  [optional]
 **addon** | [**Addon**](Addon.md) |  |  [optional]
 **author** | [**User**](User.md) |  |  [optional]
 

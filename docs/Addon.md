@@ -2,6 +2,7 @@
 
 # Addon
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,8 +17,8 @@ Name | Type | Description | Notes
 **images** | [**AddonImages**](AddonImages.md) |  |  [optional]
 **slug** | **String** |  |  [optional] [readonly]
 **route** | **String** |  |  [optional] [readonly]
-**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
-**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
+**createdAt** | **OffsetDateTime** |  |  [optional] [readonly]
+**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly]
 **latestVersion** | [**AddonVersion**](AddonVersion.md) |  |  [optional]
 **team** | [**Team**](Team.md) |  |  [optional]
 

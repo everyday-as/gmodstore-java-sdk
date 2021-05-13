@@ -2,13 +2,14 @@
 
 # OrderItem
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**UUID**](UUID.md) |  |  [optional]
+**id** | **UUID** |  |  [optional]
 **price** | [**Money**](Money.md) |  |  [optional]
-**reversedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**reversedAt** | **OffsetDateTime** |  |  [optional]
 
 
 

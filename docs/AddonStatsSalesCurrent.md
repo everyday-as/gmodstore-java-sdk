@@ -2,6 +2,7 @@
 
 # AddonStatsSalesCurrent
 
+
 ## Properties
 
 Name | Type | Description | Notes

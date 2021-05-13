@@ -2,6 +2,7 @@
 
 # AddonVersion
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -11,9 +12,9 @@ Name | Type | Description | Notes
 **changelog** | **String** | You can pass in markdown here | 
 **fileHash** | **String** |  |  [optional] [readonly]
 **fileSize** | **Integer** |  |  [optional] [readonly]
-**releaseType** | [**AddonVersionReleaseType**](AddonVersionReleaseType.md) |  |  [optional]
-**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
-**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional] [readonly]
+**releaseType** | **AddonVersionReleaseType** |  |  [optional]
+**createdAt** | **OffsetDateTime** |  |  [optional] [readonly]
+**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly]
 **addon** | [**Addon**](Addon.md) |  |  [optional]
 
 

@@ -2,6 +2,7 @@
 
 # UserBadgeLegend
 
+
 ## Properties
 
 Name | Type | Description | Notes

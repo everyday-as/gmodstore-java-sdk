@@ -28,7 +28,7 @@ import java.io.IOException;
  * **NOTE:** The url is valid for a single use within 24 hours **ONLY**!
  */
 @ApiModel(description = "**NOTE:** The url is valid for a single use within 24 hours **ONLY**!")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-15T20:05:39.818316Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T19:37:25.472111Z[Etc/UTC]")
 public class AddonDownload {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -59,7 +59,7 @@ public class AddonDownload {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -75,7 +75,6 @@ public class AddonDownload {
     return Objects.hash(url);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -89,7 +88,7 @@ public class AddonDownload {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -3587,10 +3587,14 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/ApiKey'
+      title: AddonListResponse
+      type: object
     ErrorResponse:
       properties:
         data:
           $ref: '#/components/schemas/Error'
+      title: ErrorResponse
+      type: object
     AddonListResponse_1:
       example:
         data:
@@ -3709,6 +3713,8 @@ components:
           items:
             $ref: '#/components/schemas/Addon'
           type: array
+      title: AddonListResponse
+      type: object
     AddonResponse:
       example:
         data:
@@ -3770,6 +3776,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/Addon'
+      title: AddonResponse
+      type: object
     AddonStatsListResponse:
       example:
         data:
@@ -3838,6 +3846,8 @@ components:
           items:
             $ref: '#/components/schemas/AddonStats'
           type: array
+      title: AddonStatsListResponse
+      type: object
     AddonCouponListResponse:
       example:
         data:
@@ -4004,6 +4014,8 @@ components:
           items:
             $ref: '#/components/schemas/AddonCoupon'
           type: array
+      title: AddonCouponListResponse
+      type: object
     AddonCouponResponse:
       example:
         data:
@@ -4089,6 +4101,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonCoupon'
+      title: AddonCouponResponse
+      type: object
     AddonPurchaseListResponse:
       example:
         data:
@@ -4257,6 +4271,8 @@ components:
           items:
             $ref: '#/components/schemas/AddonPurchase'
           type: array
+      title: AddonPurchaseListResponse
+      type: object
     AddonPurchaseResponse:
       example:
         data:
@@ -4343,6 +4359,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonPurchase'
+      title: AddonPurchaseResponse
+      type: object
     AddonReviewListResponse:
       example:
         data:
@@ -4503,6 +4521,8 @@ components:
           items:
             $ref: '#/components/schemas/AddonReview'
           type: array
+      title: AddonReviewListResponse
+      type: object
     AddonReviewResponse:
       example:
         data:
@@ -4585,6 +4605,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonReview'
+      title: AddonReviewResponse
+      type: object
     AddonVersionListResponse:
       example:
         data:
@@ -4607,6 +4629,8 @@ components:
           items:
             $ref: '#/components/schemas/AddonVersion'
           type: array
+      title: AddonVersionListResponse
+      type: object
     AddonVersionResponse:
       example:
         data:
@@ -4620,6 +4644,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonVersion'
+      title: AddonVersionResponse
+      type: object
     AddonDownloadResponse:
       example:
         data:
@@ -4627,6 +4653,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AddonDownload'
+      title: AddonDownloadResponse
+      type: object
     AdventCalendarStatsResponse:
       example:
         data:
@@ -4636,6 +4664,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/AdventCalendarStats'
+      title: AdventCalendarStatsResponse
+      type: object
     TeamResponse:
       example:
         data:
@@ -4665,6 +4695,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/Team'
+      title: TeamResponse
+      type: object
     TeamUserListResponse:
       example:
         data:
@@ -4709,6 +4741,8 @@ components:
           items:
             $ref: '#/components/schemas/TeamUser'
           type: array
+      title: TeamUserListResponse
+      type: object
     UserResponse:
       example:
         data:
@@ -4729,6 +4763,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/User'
+      title: UserResponse
+      type: object
     TeamListResponse:
       example:
         data:
@@ -4783,6 +4819,8 @@ components:
           items:
             $ref: '#/components/schemas/Team'
           type: array
+      title: TeamListResponse
+      type: object
     UserBanListResponse:
       example:
         data:
@@ -4807,6 +4845,8 @@ components:
           items:
             $ref: '#/components/schemas/UserBan'
           type: array
+      title: UserBanListResponse
+      type: object
     BadgeListResponse:
       example:
         data:
@@ -4823,6 +4863,8 @@ components:
           items:
             $ref: '#/components/schemas/UserBadgeLegend'
           type: array
+      title: BadgeListResponse
+      type: object
     BadgeResponse:
       example:
         data:
@@ -4833,6 +4875,8 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/UserBadgeLegend'
+      title: BadgeResponse
+      type: object
     PermissionGroupListResponse:
       example:
         data:
@@ -4847,6 +4891,8 @@ components:
           items:
             $ref: '#/components/schemas/PermissionGroup'
           type: array
+      title: PermissionGroupListResponse
+      type: object
     Addon_price:
       example:
         original:
@@ -4860,6 +4906,7 @@ components:
           $ref: '#/components/schemas/Money'
         purchase:
           $ref: '#/components/schemas/Money'
+      type: object
     Addon_images:
       example:
         bigspot: https://openapi-generator.tech
@@ -4875,6 +4922,7 @@ components:
         listing_small:
           format: uri
           type: string
+      type: object
     AddonStats_revenue_current:
       example:
         month:
@@ -4888,6 +4936,7 @@ components:
           $ref: '#/components/schemas/Money'
         month:
           $ref: '#/components/schemas/Money'
+      type: object
     AddonStats_revenue:
       example:
         current:
@@ -4914,6 +4963,7 @@ components:
           $ref: '#/components/schemas/AddonStats_revenue_current'
         total:
           $ref: '#/components/schemas/Money'
+      type: object
     AddonStats_views_current:
       example:
         month: month
@@ -4925,6 +4975,7 @@ components:
         month:
           format: integer
           type: string
+      type: object
     AddonStats_views:
       example:
         current:
@@ -4938,6 +4989,7 @@ components:
           $ref: '#/components/schemas/AddonStats_views_current'
         previous:
           $ref: '#/components/schemas/AddonStats_views_current'
+      type: object
     AddonStats_sales_current:
       example:
         week: week
@@ -4953,6 +5005,7 @@ components:
         month:
           format: integer
           type: string
+      type: object
     AddonStats_sales:
       example:
         current:
@@ -4962,6 +5015,7 @@ components:
       properties:
         current:
           $ref: '#/components/schemas/AddonStats_sales_current'
+      type: object
   securitySchemes:
     bearerAuth:
       bearerFormat: API Key

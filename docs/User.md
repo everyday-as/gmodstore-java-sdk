@@ -2,13 +2,14 @@
 
 # User
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **name** | **String** |  |  [optional]
-**avatar** | [**URI**](URI.md) |  |  [optional]
+**avatar** | **URI** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
 **slug** | **String** |  |  [optional]
 **reputation** | **Long** |  |  [optional]

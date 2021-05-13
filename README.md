@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.1.0
-  - Build date: 2021-04-15T20:05:39.818316Z[Etc/UTC]
+  - Build date: 2021-05-13T19:37:25.472111Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -191,7 +191,6 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](docs/ErrorResponse.md)
  - [Money](docs/Money.md)
  - [NewAddonPurchase](docs/NewAddonPurchase.md)
- - [NewAddonVersion](docs/NewAddonVersion.md)
  - [OrderItem](docs/OrderItem.md)
  - [PermissionGroup](docs/PermissionGroup.md)
  - [PermissionGroupListResponse](docs/PermissionGroupListResponse.md)

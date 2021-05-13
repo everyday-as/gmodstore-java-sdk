@@ -2,6 +2,7 @@
 
 # AddonPurchaseResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

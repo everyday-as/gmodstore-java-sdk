@@ -2,6 +2,7 @@
 
 # UserBan
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,8 +11,8 @@ Name | Type | Description | Notes
 **reason** | **String** |  |  [optional]
 **unbanReason** | **String** |  |  [optional]
 **properties** | [**Set&lt;PropertiesEnum&gt;**](#Set&lt;PropertiesEnum&gt;) |  |  [optional]
-**start** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**end** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**start** | **OffsetDateTime** |  |  [optional]
+**end** | **OffsetDateTime** |  |  [optional]
 
 
 
