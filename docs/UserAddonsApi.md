@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listUserAddons"></a>
 # **listUserAddons**
-> AddonListResponse1 listUserAddons(userId, with)
+> AddonListResponse listUserAddons(userId, with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -36,7 +36,7 @@ public class Example {
     Long userId = 56L; // Long | Id of the user
     Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `Addon`
     try {
-      AddonListResponse1 result = apiInstance.listUserAddons(userId, with);
+      AddonListResponse result = apiInstance.listUserAddons(userId, with);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserAddonsApi#listUserAddons");
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddonListResponse1**](AddonListResponse1.md)
+[**AddonListResponse**](AddonListResponse.md)
 
 ### Authorization
 

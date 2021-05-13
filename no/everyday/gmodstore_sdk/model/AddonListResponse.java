@@ -23,21 +23,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.ApiKey;
+import java.util.ArrayList;
+import java.util.List;
+import no.everyday.gmodstore_sdk.model.Addon;
 
 /**
  * AddonListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T19:37:25.472111Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T19:49:26.354339Z[Etc/UTC]")
 public class AddonListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private ApiKey data;
+  private List<Addon> data = null;
 
 
-  public AddonListResponse data(ApiKey data) {
+  public AddonListResponse data(List<Addon> data) {
     
     this.data = data;
+    return this;
+  }
+
+  public AddonListResponse addDataItem(Addon dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<Addon>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -48,12 +58,12 @@ public class AddonListResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ApiKey getData() {
+  public List<Addon> getData() {
     return data;
   }
 
 
-  public void setData(ApiKey data) {
+  public void setData(List<Addon> data) {
     this.data = data;
   }
 

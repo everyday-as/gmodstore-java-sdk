@@ -1,13 +1,13 @@
 
 
-# AddonListResponse1
+# ApiKeyResponse
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List&lt;Addon&gt;**](Addon.md) |  |  [optional]
+**data** | [**ApiKey**](ApiKey.md) |  |  [optional]
 
 
 

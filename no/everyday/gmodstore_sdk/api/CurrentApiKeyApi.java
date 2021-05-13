@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.AddonListResponse;
+import no.everyday.gmodstore_sdk.model.ApiKeyResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 import java.util.Set;
 
@@ -117,7 +117,7 @@ public class CurrentApiKeyApi {
      * Get meta information about the current API key
      * 
      * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
-     * @return AddonListResponse
+     * @return ApiKeyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -127,8 +127,8 @@ public class CurrentApiKeyApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public AddonListResponse getCurrentApiKey(Set<String> with) throws ApiException {
-        ApiResponse<AddonListResponse> localVarResp = getCurrentApiKeyWithHttpInfo(with);
+    public ApiKeyResponse getCurrentApiKey(Set<String> with) throws ApiException {
+        ApiResponse<ApiKeyResponse> localVarResp = getCurrentApiKeyWithHttpInfo(with);
         return localVarResp.getData();
     }
 
@@ -136,7 +136,7 @@ public class CurrentApiKeyApi {
      * Get meta information about the current API key
      * 
      * @param with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
-     * @return ApiResponse&lt;AddonListResponse&gt;
+     * @return ApiResponse&lt;ApiKeyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -146,9 +146,9 @@ public class CurrentApiKeyApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AddonListResponse> getCurrentApiKeyWithHttpInfo(Set<String> with) throws ApiException {
+    public ApiResponse<ApiKeyResponse> getCurrentApiKeyWithHttpInfo(Set<String> with) throws ApiException {
         okhttp3.Call localVarCall = getCurrentApiKeyValidateBeforeCall(with, null);
-        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -167,10 +167,10 @@ public class CurrentApiKeyApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getCurrentApiKeyAsync(Set<String> with, final ApiCallback<AddonListResponse> _callback) throws ApiException {
+    public okhttp3.Call getCurrentApiKeyAsync(Set<String> with, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCurrentApiKeyValidateBeforeCall(with, _callback);
-        Type localVarReturnType = new TypeToken<AddonListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

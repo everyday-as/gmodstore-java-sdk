@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCurrentApiKey"></a>
 # **getCurrentApiKey**
-> AddonListResponse getCurrentApiKey(with)
+> ApiKeyResponse getCurrentApiKey(with)
 
 Get meta information about the current API key
 
@@ -35,7 +35,7 @@ public class Example {
     CurrentApiKeyApi apiInstance = new CurrentApiKeyApi(defaultClient);
     Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `ApiKey`
     try {
-      AddonListResponse result = apiInstance.getCurrentApiKey(with);
+      ApiKeyResponse result = apiInstance.getCurrentApiKey(with);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CurrentApiKeyApi#getCurrentApiKey");
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddonListResponse**](AddonListResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 

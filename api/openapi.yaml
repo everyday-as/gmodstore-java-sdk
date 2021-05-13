@@ -62,7 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonListResponse'
+                $ref: '#/components/schemas/ApiKeyResponse'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -126,7 +126,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonListResponse_1'
+                $ref: '#/components/schemas/AddonListResponse'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -1946,7 +1946,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonListResponse_1'
+                $ref: '#/components/schemas/AddonListResponse'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -3563,7 +3563,7 @@ components:
       required:
       - badge
       type: object
-    AddonListResponse:
+    ApiKeyResponse:
       example:
         data:
           permissions:
@@ -3587,7 +3587,7 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/ApiKey'
-      title: AddonListResponse
+      title: ApiKeyResponse
       type: object
     ErrorResponse:
       properties:
@@ -3595,7 +3595,7 @@ components:
           $ref: '#/components/schemas/Error'
       title: ErrorResponse
       type: object
-    AddonListResponse_1:
+    AddonListResponse:
       example:
         data:
         - short_description: short_description

@@ -23,19 +23,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.AdventCalendarStats;
+import no.everyday.gmodstore_sdk.model.ApiKey;
 
 /**
- * AdventCalendarStatsResponse
+ * ApiKeyResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T19:49:26.354339Z[Etc/UTC]")
-public class AdventCalendarStatsResponse {
+public class ApiKeyResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private AdventCalendarStats data;
+  private ApiKey data;
 
 
-  public AdventCalendarStatsResponse data(AdventCalendarStats data) {
+  public ApiKeyResponse data(ApiKey data) {
     
     this.data = data;
     return this;
@@ -48,12 +48,12 @@ public class AdventCalendarStatsResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AdventCalendarStats getData() {
+  public ApiKey getData() {
     return data;
   }
 
 
-  public void setData(AdventCalendarStats data) {
+  public void setData(ApiKey data) {
     this.data = data;
   }
 
@@ -66,8 +66,8 @@ public class AdventCalendarStatsResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AdventCalendarStatsResponse adventCalendarStatsResponse = (AdventCalendarStatsResponse) o;
-    return Objects.equals(this.data, adventCalendarStatsResponse.data);
+    ApiKeyResponse apiKeyResponse = (ApiKeyResponse) o;
+    return Objects.equals(this.data, apiKeyResponse.data);
   }
 
   @Override
@@ -78,7 +78,7 @@ public class AdventCalendarStatsResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AdventCalendarStatsResponse {\n");
+    sb.append("class ApiKeyResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

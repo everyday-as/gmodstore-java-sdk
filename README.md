@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.1.0
-  - Build date: 2021-05-13T19:37:25.472111Z[Etc/UTC]
+  - Build date: 2021-05-13T19:49:26.354339Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -161,7 +161,6 @@ Class | Method | HTTP request | Description
  - [AddonDownloadResponse](docs/AddonDownloadResponse.md)
  - [AddonImages](docs/AddonImages.md)
  - [AddonListResponse](docs/AddonListResponse.md)
- - [AddonListResponse1](docs/AddonListResponse1.md)
  - [AddonPrice](docs/AddonPrice.md)
  - [AddonPurchase](docs/AddonPurchase.md)
  - [AddonPurchaseListResponse](docs/AddonPurchaseListResponse.md)
@@ -185,6 +184,7 @@ Class | Method | HTTP request | Description
  - [AdventCalendarStats](docs/AdventCalendarStats.md)
  - [AdventCalendarStatsResponse](docs/AdventCalendarStatsResponse.md)
  - [ApiKey](docs/ApiKey.md)
+ - [ApiKeyResponse](docs/ApiKeyResponse.md)
  - [BadgeListResponse](docs/BadgeListResponse.md)
  - [BadgeResponse](docs/BadgeResponse.md)
  - [Error](docs/Error.md)
