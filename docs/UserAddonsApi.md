@@ -54,7 +54,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Long**| Id of the user |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team]
+ **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional] [enum: latest_version, team, stats]
 
 ### Return type
 

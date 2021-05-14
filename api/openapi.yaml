@@ -117,6 +117,7 @@ paths:
             enum:
             - latest_version
             - team
+            - stats
             type: string
           type: array
           uniqueItems: true
@@ -190,6 +191,7 @@ paths:
             enum:
             - latest_version
             - team
+            - stats
             type: string
           type: array
           uniqueItems: true
@@ -1937,6 +1939,7 @@ paths:
             enum:
             - latest_version
             - team
+            - stats
             type: string
           type: array
           uniqueItems: true
@@ -2515,6 +2518,7 @@ components:
           enum:
           - latest_version
           - team
+          - stats
           type: string
         type: array
         uniqueItems: true
@@ -2750,11 +2754,13 @@ components:
         active: true
         description: description
         created_at: 2000-01-23T04:56:07.000+00:00
+        purchases_count: 5
+        dependent_addon: 5
         team:
           updated_at: 2000-01-23T04:56:07.000+00:00
           primaryAuthor:
             percentage: 2
-            team_id: 5
+            team_id: 3
             user:
               country_code: country_code
               name: name
@@ -2773,8 +2779,10 @@ components:
             primary: true
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 5
+          id: 9
+        rating_count: 1
         route: route
+        requires_chromium: true
         updated_at: 2000-01-23T04:56:07.000+00:00
         latest_version:
           file_hash: file_hash
@@ -2782,8 +2790,40 @@ components:
           name: name
           changelog: changelog
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 6
-          file_size: 1
+          id: 2
+          file_size: 7
+        has_drm: true
+        stats:
+          revenue:
+            current:
+              month:
+                amount: amount
+                currency: currency
+              day:
+                amount: amount
+                currency: currency
+            total:
+              amount: amount
+              currency: currency
+            previous:
+              month:
+                amount: amount
+                currency: currency
+              day:
+                amount: amount
+                currency: currency
+          views:
+            current:
+              month: month
+              day: day
+            previous:
+              month: month
+              day: day
+          sales:
+            current:
+              week: week
+              month: month
+              day: day
         price:
           original:
             amount: amount
@@ -2791,8 +2831,10 @@ components:
           purchase:
             amount: amount
             currency: currency
+        rating_avg: rating_avg
         name: name
         id: 0
+        views: 6
         slug: slug
       properties:
         id:
@@ -2813,6 +2855,27 @@ components:
           $ref: '#/components/schemas/Addon_price'
         images:
           $ref: '#/components/schemas/Addon_images'
+        views:
+          readOnly: true
+          type: integer
+        rating_avg:
+          readOnly: true
+          type: string
+        rating_count:
+          readOnly: true
+          type: integer
+        purchases_count:
+          readOnly: true
+          type: integer
+        dependent_addon:
+          readOnly: true
+          type: integer
+        has_drm:
+          readOnly: true
+          type: boolean
+        requires_chromium:
+          readOnly: true
+          type: boolean
         slug:
           readOnly: true
           type: string
@@ -2831,6 +2894,8 @@ components:
           $ref: '#/components/schemas/AddonVersion'
         team:
           $ref: '#/components/schemas/Team'
+        stats:
+          $ref: '#/components/schemas/AddonStats'
       readOnly: true
       type: object
     AddonCoupon:
@@ -2851,11 +2916,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -2874,8 +2941,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -2883,8 +2952,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -2892,8 +2993,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
         bound_user_id: 5
         created_at: 2000-01-23T04:56:07.000+00:00
@@ -3033,11 +3136,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -3056,8 +3161,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -3065,8 +3172,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -3074,8 +3213,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
         order_item:
           reversed_at: 2000-01-23T04:56:07.000+00:00
@@ -3144,11 +3285,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -3167,8 +3310,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -3176,8 +3321,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -3185,8 +3362,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
         author:
           country_code: country_code
@@ -3233,8 +3412,8 @@ components:
         name: name
         changelog: changelog
         created_at: 2000-01-23T04:56:07.000+00:00
-        id: 6
-        file_size: 1
+        id: 2
+        file_size: 7
       properties:
         id:
           readOnly: true
@@ -3350,7 +3529,7 @@ components:
         updated_at: 2000-01-23T04:56:07.000+00:00
         primaryAuthor:
           percentage: 2
-          team_id: 5
+          team_id: 3
           user:
             country_code: country_code
             name: name
@@ -3369,7 +3548,7 @@ components:
           primary: true
         name: name
         created_at: 2000-01-23T04:56:07.000+00:00
-        id: 5
+        id: 9
       properties:
         id:
           type: integer
@@ -3389,7 +3568,7 @@ components:
     TeamUser:
       example:
         percentage: 2
-        team_id: 5
+        team_id: 3
         user:
           country_code: country_code
           name: name
@@ -3609,11 +3788,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -3632,8 +3813,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -3641,8 +3824,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -3650,8 +3865,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
         - short_description: short_description
           requirements:
@@ -3664,11 +3881,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -3687,8 +3906,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -3696,8 +3917,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -3705,8 +3958,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
       properties:
         data:
@@ -3729,11 +3984,13 @@ components:
           active: true
           description: description
           created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
           team:
             updated_at: 2000-01-23T04:56:07.000+00:00
             primaryAuthor:
               percentage: 2
-              team_id: 5
+              team_id: 3
               user:
                 country_code: country_code
                 name: name
@@ -3752,8 +4009,10 @@ components:
               primary: true
             name: name
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 5
+            id: 9
+          rating_count: 1
           route: route
+          requires_chromium: true
           updated_at: 2000-01-23T04:56:07.000+00:00
           latest_version:
             file_hash: file_hash
@@ -3761,8 +4020,40 @@ components:
             name: name
             changelog: changelog
             created_at: 2000-01-23T04:56:07.000+00:00
-            id: 6
-            file_size: 1
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
           price:
             original:
               amount: amount
@@ -3770,8 +4061,10 @@ components:
             purchase:
               amount: amount
               currency: currency
+          rating_avg: rating_avg
           name: name
           id: 0
+          views: 6
           slug: slug
       properties:
         data:
@@ -3867,11 +4160,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -3890,8 +4185,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -3899,8 +4196,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -3908,8 +4237,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -3946,11 +4277,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -3969,8 +4302,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -3978,8 +4313,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -3987,8 +4354,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -4035,11 +4404,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4058,8 +4429,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4067,8 +4440,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4076,8 +4481,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           bound_user_id: 5
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -4119,11 +4526,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4142,8 +4551,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4151,8 +4562,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4160,8 +4603,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           order_item:
             reversed_at: 2000-01-23T04:56:07.000+00:00
@@ -4199,11 +4644,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4222,8 +4669,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4231,8 +4680,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4240,8 +4721,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           order_item:
             reversed_at: 2000-01-23T04:56:07.000+00:00
@@ -4289,11 +4772,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4312,8 +4797,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4321,8 +4808,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4330,8 +4849,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           order_item:
             reversed_at: 2000-01-23T04:56:07.000+00:00
@@ -4376,11 +4897,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4399,8 +4922,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4408,8 +4933,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4417,8 +4974,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           author:
             country_code: country_code
@@ -4452,11 +5011,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4475,8 +5036,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4484,8 +5047,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4493,8 +5088,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           author:
             country_code: country_code
@@ -4538,11 +5135,13 @@ components:
             active: true
             description: description
             created_at: 2000-01-23T04:56:07.000+00:00
+            purchases_count: 5
+            dependent_addon: 5
             team:
               updated_at: 2000-01-23T04:56:07.000+00:00
               primaryAuthor:
                 percentage: 2
-                team_id: 5
+                team_id: 3
                 user:
                   country_code: country_code
                   name: name
@@ -4561,8 +5160,10 @@ components:
                 primary: true
               name: name
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 5
+              id: 9
+            rating_count: 1
             route: route
+            requires_chromium: true
             updated_at: 2000-01-23T04:56:07.000+00:00
             latest_version:
               file_hash: file_hash
@@ -4570,8 +5171,40 @@ components:
               name: name
               changelog: changelog
               created_at: 2000-01-23T04:56:07.000+00:00
-              id: 6
-              file_size: 1
+              id: 2
+              file_size: 7
+            has_drm: true
+            stats:
+              revenue:
+                current:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+                total:
+                  amount: amount
+                  currency: currency
+                previous:
+                  month:
+                    amount: amount
+                    currency: currency
+                  day:
+                    amount: amount
+                    currency: currency
+              views:
+                current:
+                  month: month
+                  day: day
+                previous:
+                  month: month
+                  day: day
+              sales:
+                current:
+                  week: week
+                  month: month
+                  day: day
             price:
               original:
                 amount: amount
@@ -4579,8 +5212,10 @@ components:
               purchase:
                 amount: amount
                 currency: currency
+            rating_avg: rating_avg
             name: name
             id: 0
+            views: 6
             slug: slug
           author:
             country_code: country_code
@@ -4615,15 +5250,15 @@ components:
           name: name
           changelog: changelog
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 6
-          file_size: 1
+          id: 2
+          file_size: 7
         - file_hash: file_hash
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           changelog: changelog
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 6
-          file_size: 1
+          id: 2
+          file_size: 7
       properties:
         data:
           items:
@@ -4639,8 +5274,8 @@ components:
           name: name
           changelog: changelog
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 6
-          file_size: 1
+          id: 2
+          file_size: 7
       properties:
         data:
           $ref: '#/components/schemas/AddonVersion'
@@ -4672,7 +5307,7 @@ components:
           updated_at: 2000-01-23T04:56:07.000+00:00
           primaryAuthor:
             percentage: 2
-            team_id: 5
+            team_id: 3
             user:
               country_code: country_code
               name: name
@@ -4691,7 +5326,7 @@ components:
             primary: true
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 5
+          id: 9
       properties:
         data:
           $ref: '#/components/schemas/Team'
@@ -4701,7 +5336,7 @@ components:
       example:
         data:
         - percentage: 2
-          team_id: 5
+          team_id: 3
           user:
             country_code: country_code
             name: name
@@ -4719,7 +5354,7 @@ components:
               title: title
           primary: true
         - percentage: 2
-          team_id: 5
+          team_id: 3
           user:
             country_code: country_code
             name: name
@@ -4771,7 +5406,7 @@ components:
         - updated_at: 2000-01-23T04:56:07.000+00:00
           primaryAuthor:
             percentage: 2
-            team_id: 5
+            team_id: 3
             user:
               country_code: country_code
               name: name
@@ -4790,11 +5425,11 @@ components:
             primary: true
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 5
+          id: 9
         - updated_at: 2000-01-23T04:56:07.000+00:00
           primaryAuthor:
             percentage: 2
-            team_id: 5
+            team_id: 3
             user:
               country_code: country_code
               name: name
@@ -4813,7 +5448,7 @@ components:
             primary: true
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
-          id: 5
+          id: 9
       properties:
         data:
           items:

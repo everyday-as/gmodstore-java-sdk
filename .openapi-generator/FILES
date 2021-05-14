@@ -170,4 +170,3 @@ no/everyday/gmodstore_sdk/model/UserResponse.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/model/ApiKeyResponseTest.java

@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import no.everyday.gmodstore_sdk.model.AddonImages;
 import no.everyday.gmodstore_sdk.model.AddonPrice;
+import no.everyday.gmodstore_sdk.model.AddonStats;
 import no.everyday.gmodstore_sdk.model.AddonVersion;
 import no.everyday.gmodstore_sdk.model.Team;
 import org.threeten.bp.OffsetDateTime;
@@ -34,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Addon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T19:49:26.354339Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T20:49:08.735310Z[Etc/UTC]")
 public class Addon {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,6 +69,34 @@ public class Addon {
   @SerializedName(SERIALIZED_NAME_IMAGES)
   private AddonImages images;
 
+  public static final String SERIALIZED_NAME_VIEWS = "views";
+  @SerializedName(SERIALIZED_NAME_VIEWS)
+  private Integer views;
+
+  public static final String SERIALIZED_NAME_RATING_AVG = "rating_avg";
+  @SerializedName(SERIALIZED_NAME_RATING_AVG)
+  private String ratingAvg;
+
+  public static final String SERIALIZED_NAME_RATING_COUNT = "rating_count";
+  @SerializedName(SERIALIZED_NAME_RATING_COUNT)
+  private Integer ratingCount;
+
+  public static final String SERIALIZED_NAME_PURCHASES_COUNT = "purchases_count";
+  @SerializedName(SERIALIZED_NAME_PURCHASES_COUNT)
+  private Integer purchasesCount;
+
+  public static final String SERIALIZED_NAME_DEPENDENT_ADDON = "dependent_addon";
+  @SerializedName(SERIALIZED_NAME_DEPENDENT_ADDON)
+  private Integer dependentAddon;
+
+  public static final String SERIALIZED_NAME_HAS_DRM = "has_drm";
+  @SerializedName(SERIALIZED_NAME_HAS_DRM)
+  private Boolean hasDrm;
+
+  public static final String SERIALIZED_NAME_REQUIRES_CHROMIUM = "requires_chromium";
+  @SerializedName(SERIALIZED_NAME_REQUIRES_CHROMIUM)
+  private Boolean requiresChromium;
+
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
   private String slug;
@@ -91,6 +120,10 @@ public class Addon {
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
   private Team team;
+
+  public static final String SERIALIZED_NAME_STATS = "stats";
+  @SerializedName(SERIALIZED_NAME_STATS)
+  private AddonStats stats;
 
 
   public Addon id(Integer id) {
@@ -286,6 +319,104 @@ public class Addon {
 
 
    /**
+   * Get views
+   * @return views
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getViews() {
+    return views;
+  }
+
+
+
+
+   /**
+   * Get ratingAvg
+   * @return ratingAvg
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getRatingAvg() {
+    return ratingAvg;
+  }
+
+
+
+
+   /**
+   * Get ratingCount
+   * @return ratingCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getRatingCount() {
+    return ratingCount;
+  }
+
+
+
+
+   /**
+   * Get purchasesCount
+   * @return purchasesCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchasesCount() {
+    return purchasesCount;
+  }
+
+
+
+
+   /**
+   * Get dependentAddon
+   * @return dependentAddon
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getDependentAddon() {
+    return dependentAddon;
+  }
+
+
+
+
+   /**
+   * Get hasDrm
+   * @return hasDrm
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getHasDrm() {
+    return hasDrm;
+  }
+
+
+
+
+   /**
+   * Get requiresChromium
+   * @return requiresChromium
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getRequiresChromium() {
+    return requiresChromium;
+  }
+
+
+
+
+   /**
    * Get slug
    * @return slug
   **/
@@ -387,6 +518,29 @@ public class Addon {
   }
 
 
+  public Addon stats(AddonStats stats) {
+    
+    this.stats = stats;
+    return this;
+  }
+
+   /**
+   * Get stats
+   * @return stats
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public AddonStats getStats() {
+    return stats;
+  }
+
+
+  public void setStats(AddonStats stats) {
+    this.stats = stats;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -404,17 +558,25 @@ public class Addon {
         Objects.equals(this.requirements, addon.requirements) &&
         Objects.equals(this.price, addon.price) &&
         Objects.equals(this.images, addon.images) &&
+        Objects.equals(this.views, addon.views) &&
+        Objects.equals(this.ratingAvg, addon.ratingAvg) &&
+        Objects.equals(this.ratingCount, addon.ratingCount) &&
+        Objects.equals(this.purchasesCount, addon.purchasesCount) &&
+        Objects.equals(this.dependentAddon, addon.dependentAddon) &&
+        Objects.equals(this.hasDrm, addon.hasDrm) &&
+        Objects.equals(this.requiresChromium, addon.requiresChromium) &&
         Objects.equals(this.slug, addon.slug) &&
         Objects.equals(this.route, addon.route) &&
         Objects.equals(this.createdAt, addon.createdAt) &&
         Objects.equals(this.updatedAt, addon.updatedAt) &&
         Objects.equals(this.latestVersion, addon.latestVersion) &&
-        Objects.equals(this.team, addon.team);
+        Objects.equals(this.team, addon.team) &&
+        Objects.equals(this.stats, addon.stats);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, active, name, shortDescription, description, requirements, price, images, slug, route, createdAt, updatedAt, latestVersion, team);
+    return Objects.hash(id, active, name, shortDescription, description, requirements, price, images, views, ratingAvg, ratingCount, purchasesCount, dependentAddon, hasDrm, requiresChromium, slug, route, createdAt, updatedAt, latestVersion, team, stats);
   }
 
   @Override
@@ -429,12 +591,20 @@ public class Addon {
     sb.append("    requirements: ").append(toIndentedString(requirements)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
+    sb.append("    views: ").append(toIndentedString(views)).append("\n");
+    sb.append("    ratingAvg: ").append(toIndentedString(ratingAvg)).append("\n");
+    sb.append("    ratingCount: ").append(toIndentedString(ratingCount)).append("\n");
+    sb.append("    purchasesCount: ").append(toIndentedString(purchasesCount)).append("\n");
+    sb.append("    dependentAddon: ").append(toIndentedString(dependentAddon)).append("\n");
+    sb.append("    hasDrm: ").append(toIndentedString(hasDrm)).append("\n");
+    sb.append("    requiresChromium: ").append(toIndentedString(requiresChromium)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    route: ").append(toIndentedString(route)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
+    sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
     sb.append("}");
     return sb.toString();
   }
