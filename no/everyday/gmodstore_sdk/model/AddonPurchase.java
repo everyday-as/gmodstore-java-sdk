@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * AddonPurchase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T20:49:08.735310Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T21:02:10.537629Z[Etc/UTC]")
 public class AddonPurchase {
   public static final String SERIALIZED_NAME_REVOKED = "revoked";
   @SerializedName(SERIALIZED_NAME_REVOKED)

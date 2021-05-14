@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.1.0
-  - Build date: 2021-05-14T20:49:08.735310Z[Etc/UTC]
+  - Build date: 2021-05-14T21:02:10.537629Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
