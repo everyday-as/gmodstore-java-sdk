@@ -26,12 +26,13 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import no.everyday.gmodstore_sdk.model.Addon;
 import no.everyday.gmodstore_sdk.model.User;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * AddonCoupon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T21:12:30.766821Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-05T17:54:30.339299Z[Etc/UTC]")
 public class AddonCoupon {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,6 +80,7 @@ public class AddonCoupon {
    * minimum: 1
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getId() {
@@ -98,6 +100,7 @@ public class AddonCoupon {
    * Get code
    * @return code
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public String getCode() {
@@ -122,6 +125,7 @@ public class AddonCoupon {
    * maximum: 99
    * @return percent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public BigDecimal getPercent() {
@@ -145,6 +149,7 @@ public class AddonCoupon {
    * minimum: 1
    * @return maxUses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getMaxUses() {
@@ -167,6 +172,7 @@ public class AddonCoupon {
    * A future date less than 2 weeks from today
    * @return expiresAt
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "A future date less than 2 weeks from today")
 
   public OffsetDateTime getExpiresAt() {
@@ -297,9 +303,22 @@ public class AddonCoupon {
         Objects.equals(this.boundUser, addonCoupon.boundUser);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(id, code, percent, maxUses, expiresAt, boundUserId, createdAt, updatedAt, addon, boundUser);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent()
+      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
+      : 31;
   }
 
   @Override

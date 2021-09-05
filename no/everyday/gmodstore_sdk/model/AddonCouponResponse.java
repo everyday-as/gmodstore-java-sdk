@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.AddonCoupon;
 /**
  * AddonCouponResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T21:12:30.766821Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-05T17:54:30.339299Z[Etc/UTC]")
 public class AddonCouponResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

@@ -30,12 +30,13 @@ import no.everyday.gmodstore_sdk.model.AddonPrice;
 import no.everyday.gmodstore_sdk.model.AddonStats;
 import no.everyday.gmodstore_sdk.model.AddonVersion;
 import no.everyday.gmodstore_sdk.model.Team;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * Addon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-14T21:12:30.766821Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-05T17:54:30.339299Z[Etc/UTC]")
 public class Addon {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -574,9 +575,22 @@ public class Addon {
         Objects.equals(this.stats, addon.stats);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(id, active, name, shortDescription, description, requirements, price, images, views, ratingAvg, ratingCount, purchasesCount, dependentAddon, hasDrm, requiresChromium, slug, route, createdAt, updatedAt, latestVersion, team, stats);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent()
+      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
+      : 31;
   }
 
   @Override
