@@ -28,11 +28,11 @@ import no.everyday.gmodstore_sdk.model.User;
 /**
  * TeamUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-05T17:54:30.339299Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-17T10:10:35.234725Z[Etc/UTC]")
 public class TeamUser {
   public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
   @SerializedName(SERIALIZED_NAME_TEAM_ID)
-  private Integer teamId;
+  private Long teamId;
 
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
@@ -47,7 +47,7 @@ public class TeamUser {
   private User user;
 
 
-  public TeamUser teamId(Integer teamId) {
+  public TeamUser teamId(Long teamId) {
     
     this.teamId = teamId;
     return this;
@@ -60,12 +60,12 @@ public class TeamUser {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getTeamId() {
+  public Long getTeamId() {
     return teamId;
   }
 
 
-  public void setTeamId(Integer teamId) {
+  public void setTeamId(Long teamId) {
     this.teamId = teamId;
   }
 

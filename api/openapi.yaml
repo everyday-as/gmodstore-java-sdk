@@ -2838,6 +2838,7 @@ components:
         slug: slug
       properties:
         id:
+          format: int64
           type: integer
         active:
           type: boolean
@@ -2868,6 +2869,7 @@ components:
           readOnly: true
           type: integer
         dependent_addon:
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -3020,6 +3022,7 @@ components:
         percent: 60.06907059408995
       properties:
         id:
+          format: int64
           minimum: 1
           readOnly: true
           type: integer
@@ -3390,6 +3393,7 @@ components:
         version: version
       properties:
         id:
+          format: int64
           type: integer
         title:
           type: string
@@ -3417,6 +3421,7 @@ components:
         file_size: 7
       properties:
         id:
+          format: int64
           readOnly: true
           type: integer
         name:
@@ -3489,6 +3494,7 @@ components:
         title: title
       properties:
         id:
+          format: int64
           type: integer
         title:
           type: string
@@ -3552,6 +3558,7 @@ components:
         id: 9
       properties:
         id:
+          format: int64
           type: integer
         name:
           type: string
@@ -3588,6 +3595,7 @@ components:
         primary: true
       properties:
         team_id:
+          format: int64
           type: integer
         primary:
           type: boolean

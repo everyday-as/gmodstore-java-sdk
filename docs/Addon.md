@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
+**id** | **Long** |  |  [optional]
 **active** | **Boolean** |  |  [optional]
 **name** | **String** |  |  [optional]
 **shortDescription** | **String** |  |  [optional]
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ratingAvg** | **String** |  |  [optional] [readonly]
 **ratingCount** | **Integer** |  |  [optional] [readonly]
 **purchasesCount** | **Integer** |  |  [optional] [readonly]
-**dependentAddon** | **Integer** |  |  [optional] [readonly]
+**dependentAddon** | **Long** |  |  [optional] [readonly]
 **hasDrm** | **Boolean** |  |  [optional] [readonly]
 **requiresChromium** | **Boolean** |  |  [optional] [readonly]
 **slug** | **String** |  |  [optional] [readonly]

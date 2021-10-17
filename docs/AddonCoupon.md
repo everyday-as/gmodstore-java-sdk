@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [readonly]
+**id** | **Long** |  |  [readonly]
 **code** | **String** |  | 
 **percent** | **BigDecimal** |  | 
 **maxUses** | **Integer** |  | 

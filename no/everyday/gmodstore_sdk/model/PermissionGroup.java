@@ -27,11 +27,11 @@ import java.io.IOException;
 /**
  * PermissionGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-05T17:54:30.339299Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-17T10:10:35.234725Z[Etc/UTC]")
 public class PermissionGroup {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -42,7 +42,7 @@ public class PermissionGroup {
   private Integer displayOrder;
 
 
-  public PermissionGroup id(Integer id) {
+  public PermissionGroup id(Long id) {
     
     this.id = id;
     return this;
@@ -55,12 +55,12 @@ public class PermissionGroup {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

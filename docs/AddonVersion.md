@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional] [readonly]
+**id** | **Long** |  |  [optional] [readonly]
 **name** | **String** |  | 
 **changelog** | **String** | You can pass in markdown here | 
 **fileHash** | **String** |  |  [optional] [readonly]
