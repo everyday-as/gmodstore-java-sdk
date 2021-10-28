@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * UserBan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-17T10:25:37.182699Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T17:06:00.934176Z[Etc/UTC]")
 public class UserBan {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)

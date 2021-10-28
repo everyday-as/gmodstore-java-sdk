@@ -30,7 +30,7 @@ import no.everyday.gmodstore_sdk.model.AddonStatsViews;
 /**
  * AddonStats
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-17T10:25:37.182699Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T17:06:00.934176Z[Etc/UTC]")
 public class AddonStats {
   public static final String SERIALIZED_NAME_REVENUE = "revenue";
   @SerializedName(SERIALIZED_NAME_REVENUE)

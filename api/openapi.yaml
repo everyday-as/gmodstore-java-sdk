@@ -5,7 +5,7 @@ info:
   title: GmodStore API
   version: 1.2.0
   x-logo:
-    url: https://media.gmodstore.com/_/assets/img/gmodstore.svg
+    url: https://media.gmodstore.com/_/assets/img/gmodstore/logo.svg
     backgroundColor: '#3097d1'
     href: https://www.gmodstore.com
 servers:
