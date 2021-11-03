@@ -5,7 +5,7 @@
     <artifactId>gmodstore-sdk</artifactId>
     <packaging>jar</packaging>
     <name>gmodstore-sdk</name>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
     <url>https://github.com/everyday-as/gmodstore-java-sdk</url>
     <description>The GmodStore API Java SDK</description>
     <scm>
