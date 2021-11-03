@@ -23,37 +23,48 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import no.everyday.gmodstore_sdk.model.TeamAddon;
 
 /**
- * Error
+ * TeamAddonListResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-03T15:34:03.666245Z[Etc/UTC]")
-public class Error {
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+public class TeamAddonListResponse {
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
+  private List<TeamAddon> data = null;
 
 
-  public Error message(String message) {
+  public TeamAddonListResponse data(List<TeamAddon> data) {
     
-    this.message = message;
+    this.data = data;
+    return this;
+  }
+
+  public TeamAddonListResponse addDataItem(TeamAddon dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<TeamAddon>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
    /**
-   * Get message
-   * @return message
+   * Get data
+   * @return data
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getMessage() {
-    return message;
+  public List<TeamAddon> getData() {
+    return data;
   }
 
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setData(List<TeamAddon> data) {
+    this.data = data;
   }
 
 
@@ -65,20 +76,20 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.message, error.message);
+    TeamAddonListResponse teamAddonListResponse = (TeamAddonListResponse) o;
+    return Objects.equals(this.data, teamAddonListResponse.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message);
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("class TeamAddonListResponse {\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -34,10 +34,10 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * Addon
+ * TeamAddon
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-03T15:34:03.666245Z[Etc/UTC]")
-public class Addon {
+public class TeamAddon {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Long id;
@@ -127,7 +127,7 @@ public class Addon {
   private AddonStats stats;
 
 
-  public Addon id(Long id) {
+  public TeamAddon id(Long id) {
     
     this.id = id;
     return this;
@@ -150,7 +150,7 @@ public class Addon {
   }
 
 
-  public Addon active(Boolean active) {
+  public TeamAddon active(Boolean active) {
     
     this.active = active;
     return this;
@@ -173,7 +173,7 @@ public class Addon {
   }
 
 
-  public Addon name(String name) {
+  public TeamAddon name(String name) {
     
     this.name = name;
     return this;
@@ -196,7 +196,7 @@ public class Addon {
   }
 
 
-  public Addon shortDescription(String shortDescription) {
+  public TeamAddon shortDescription(String shortDescription) {
     
     this.shortDescription = shortDescription;
     return this;
@@ -219,7 +219,7 @@ public class Addon {
   }
 
 
-  public Addon description(String description) {
+  public TeamAddon description(String description) {
     
     this.description = description;
     return this;
@@ -242,13 +242,13 @@ public class Addon {
   }
 
 
-  public Addon requirements(List<String> requirements) {
+  public TeamAddon requirements(List<String> requirements) {
     
     this.requirements = requirements;
     return this;
   }
 
-  public Addon addRequirementsItem(String requirementsItem) {
+  public TeamAddon addRequirementsItem(String requirementsItem) {
     if (this.requirements == null) {
       this.requirements = new ArrayList<String>();
     }
@@ -273,7 +273,7 @@ public class Addon {
   }
 
 
-  public Addon price(AddonPrice price) {
+  public TeamAddon price(AddonPrice price) {
     
     this.price = price;
     return this;
@@ -296,7 +296,7 @@ public class Addon {
   }
 
 
-  public Addon images(AddonImages images) {
+  public TeamAddon images(AddonImages images) {
     
     this.images = images;
     return this;
@@ -473,7 +473,7 @@ public class Addon {
 
 
 
-  public Addon latestVersion(AddonVersion latestVersion) {
+  public TeamAddon latestVersion(AddonVersion latestVersion) {
     
     this.latestVersion = latestVersion;
     return this;
@@ -496,7 +496,7 @@ public class Addon {
   }
 
 
-  public Addon team(Team team) {
+  public TeamAddon team(Team team) {
     
     this.team = team;
     return this;
@@ -519,7 +519,7 @@ public class Addon {
   }
 
 
-  public Addon stats(AddonStats stats) {
+  public TeamAddon stats(AddonStats stats) {
     
     this.stats = stats;
     return this;
@@ -550,29 +550,29 @@ public class Addon {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Addon addon = (Addon) o;
-    return Objects.equals(this.id, addon.id) &&
-        Objects.equals(this.active, addon.active) &&
-        Objects.equals(this.name, addon.name) &&
-        Objects.equals(this.shortDescription, addon.shortDescription) &&
-        Objects.equals(this.description, addon.description) &&
-        Objects.equals(this.requirements, addon.requirements) &&
-        Objects.equals(this.price, addon.price) &&
-        Objects.equals(this.images, addon.images) &&
-        Objects.equals(this.views, addon.views) &&
-        Objects.equals(this.ratingAvg, addon.ratingAvg) &&
-        Objects.equals(this.ratingCount, addon.ratingCount) &&
-        Objects.equals(this.purchasesCount, addon.purchasesCount) &&
-        Objects.equals(this.dependentAddon, addon.dependentAddon) &&
-        Objects.equals(this.hasDrm, addon.hasDrm) &&
-        Objects.equals(this.requiresChromium, addon.requiresChromium) &&
-        Objects.equals(this.slug, addon.slug) &&
-        Objects.equals(this.route, addon.route) &&
-        Objects.equals(this.createdAt, addon.createdAt) &&
-        Objects.equals(this.updatedAt, addon.updatedAt) &&
-        Objects.equals(this.latestVersion, addon.latestVersion) &&
-        Objects.equals(this.team, addon.team) &&
-        Objects.equals(this.stats, addon.stats);
+    TeamAddon teamAddon = (TeamAddon) o;
+    return Objects.equals(this.id, teamAddon.id) &&
+        Objects.equals(this.active, teamAddon.active) &&
+        Objects.equals(this.name, teamAddon.name) &&
+        Objects.equals(this.shortDescription, teamAddon.shortDescription) &&
+        Objects.equals(this.description, teamAddon.description) &&
+        Objects.equals(this.requirements, teamAddon.requirements) &&
+        Objects.equals(this.price, teamAddon.price) &&
+        Objects.equals(this.images, teamAddon.images) &&
+        Objects.equals(this.views, teamAddon.views) &&
+        Objects.equals(this.ratingAvg, teamAddon.ratingAvg) &&
+        Objects.equals(this.ratingCount, teamAddon.ratingCount) &&
+        Objects.equals(this.purchasesCount, teamAddon.purchasesCount) &&
+        Objects.equals(this.dependentAddon, teamAddon.dependentAddon) &&
+        Objects.equals(this.hasDrm, teamAddon.hasDrm) &&
+        Objects.equals(this.requiresChromium, teamAddon.requiresChromium) &&
+        Objects.equals(this.slug, teamAddon.slug) &&
+        Objects.equals(this.route, teamAddon.route) &&
+        Objects.equals(this.createdAt, teamAddon.createdAt) &&
+        Objects.equals(this.updatedAt, teamAddon.updatedAt) &&
+        Objects.equals(this.latestVersion, teamAddon.latestVersion) &&
+        Objects.equals(this.team, teamAddon.team) &&
+        Objects.equals(this.stats, teamAddon.stats);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -596,7 +596,7 @@ public class Addon {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Addon {\n");
+    sb.append("class TeamAddon {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

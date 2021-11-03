@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listTeamAddons"></a>
 # **listTeamAddons**
-> TeamUserListResponse listTeamAddons(teamId)
+> TeamAddonListResponse listTeamAddons(teamId)
 
 Fetch all the addons in the given team
 
@@ -35,7 +35,7 @@ public class Example {
     TeamAddonsApi apiInstance = new TeamAddonsApi(defaultClient);
     Long teamId = 56L; // Long | Id of the team
     try {
-      TeamUserListResponse result = apiInstance.listTeamAddons(teamId);
+      TeamAddonListResponse result = apiInstance.listTeamAddons(teamId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamAddonsApi#listTeamAddons");
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamUserListResponse**](TeamUserListResponse.md)
+[**TeamAddonListResponse**](TeamAddonListResponse.md)
 
 ### Authorization
 

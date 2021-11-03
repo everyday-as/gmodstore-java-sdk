@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
-import no.everyday.gmodstore_sdk.model.TeamUserListResponse;
+import no.everyday.gmodstore_sdk.model.TeamAddonListResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -118,7 +118,7 @@ public class TeamAddonsApi {
      * Fetch all the addons in the given team
      * 
      * @param teamId Id of the team (required)
-     * @return TeamUserListResponse
+     * @return TeamAddonListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -128,8 +128,8 @@ public class TeamAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public TeamUserListResponse listTeamAddons(Long teamId) throws ApiException {
-        ApiResponse<TeamUserListResponse> localVarResp = listTeamAddonsWithHttpInfo(teamId);
+    public TeamAddonListResponse listTeamAddons(Long teamId) throws ApiException {
+        ApiResponse<TeamAddonListResponse> localVarResp = listTeamAddonsWithHttpInfo(teamId);
         return localVarResp.getData();
     }
 
@@ -137,7 +137,7 @@ public class TeamAddonsApi {
      * Fetch all the addons in the given team
      * 
      * @param teamId Id of the team (required)
-     * @return ApiResponse&lt;TeamUserListResponse&gt;
+     * @return ApiResponse&lt;TeamAddonListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -147,9 +147,9 @@ public class TeamAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<TeamUserListResponse> listTeamAddonsWithHttpInfo(Long teamId) throws ApiException {
+    public ApiResponse<TeamAddonListResponse> listTeamAddonsWithHttpInfo(Long teamId) throws ApiException {
         okhttp3.Call localVarCall = listTeamAddonsValidateBeforeCall(teamId, null);
-        Type localVarReturnType = new TypeToken<TeamUserListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<TeamAddonListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -168,10 +168,10 @@ public class TeamAddonsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamAddonsAsync(Long teamId, final ApiCallback<TeamUserListResponse> _callback) throws ApiException {
+    public okhttp3.Call listTeamAddonsAsync(Long teamId, final ApiCallback<TeamAddonListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTeamAddonsValidateBeforeCall(teamId, _callback);
-        Type localVarReturnType = new TypeToken<TeamUserListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<TeamAddonListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

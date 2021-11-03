@@ -55,6 +55,8 @@ docs/PermissionGroup.md
 docs/PermissionGroupListResponse.md
 docs/PermissionGroupsApi.md
 docs/Team.md
+docs/TeamAddon.md
+docs/TeamAddonListResponse.md
 docs/TeamAddonsApi.md
 docs/TeamListResponse.md
 docs/TeamResponse.md
@@ -157,6 +159,8 @@ no/everyday/gmodstore_sdk/model/OrderItem.java
 no/everyday/gmodstore_sdk/model/PermissionGroup.java
 no/everyday/gmodstore_sdk/model/PermissionGroupListResponse.java
 no/everyday/gmodstore_sdk/model/Team.java
+no/everyday/gmodstore_sdk/model/TeamAddon.java
+no/everyday/gmodstore_sdk/model/TeamAddonListResponse.java
 no/everyday/gmodstore_sdk/model/TeamListResponse.java
 no/everyday/gmodstore_sdk/model/TeamResponse.java
 no/everyday/gmodstore_sdk/model/TeamUser.java
@@ -170,3 +174,5 @@ no/everyday/gmodstore_sdk/model/UserResponse.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
+src/test/java/no/everyday/gmodstore_sdk/model/TeamAddonListResponseTest.java
+src/test/java/no/everyday/gmodstore_sdk/model/TeamAddonTest.java

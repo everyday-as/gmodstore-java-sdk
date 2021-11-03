@@ -1740,7 +1740,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TeamUserListResponse'
+                $ref: '#/components/schemas/TeamAddonListResponse'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -2607,6 +2607,22 @@ components:
         items:
           enum:
           - user
+          type: string
+        type: array
+        uniqueItems: true
+      style: form
+    TeamAddonRelation:
+      description: The relations you want to fetch with the `TeamAddon`
+      explode: false
+      in: query
+      name: with
+      required: false
+      schema:
+        items:
+          enum:
+          - latest_version
+          - team
+          - stats
           type: string
         type: array
         uniqueItems: true
@@ -3603,6 +3619,166 @@ components:
           type: integer
         user:
           $ref: '#/components/schemas/User'
+      type: object
+    TeamAddon:
+      example:
+        short_description: short_description
+        requirements:
+        - requirements
+        - requirements
+        images:
+          bigspot: https://openapi-generator.tech
+          listing_small: https://openapi-generator.tech
+          listing: https://openapi-generator.tech
+        active: true
+        description: description
+        created_at: 2000-01-23T04:56:07.000+00:00
+        purchases_count: 5
+        dependent_addon: 5
+        team:
+          updated_at: 2000-01-23T04:56:07.000+00:00
+          primaryAuthor:
+            percentage: 2
+            team_id: 3
+            user:
+              country_code: country_code
+              name: name
+              reputation: 6
+              id: 0
+              avatar: https://openapi-generator.tech
+              slug: slug
+              ban_properties:
+              - everything
+              - everything
+              team_reputation: 1
+              group:
+                display_order: 5
+                id: 5
+                title: title
+            primary: true
+          name: name
+          created_at: 2000-01-23T04:56:07.000+00:00
+          id: 9
+        rating_count: 1
+        route: route
+        requires_chromium: true
+        updated_at: 2000-01-23T04:56:07.000+00:00
+        latest_version:
+          file_hash: file_hash
+          updated_at: 2000-01-23T04:56:07.000+00:00
+          name: name
+          changelog: changelog
+          created_at: 2000-01-23T04:56:07.000+00:00
+          id: 2
+          file_size: 7
+        has_drm: true
+        stats:
+          revenue:
+            current:
+              month:
+                amount: amount
+                currency: currency
+              day:
+                amount: amount
+                currency: currency
+            total:
+              amount: amount
+              currency: currency
+            previous:
+              month:
+                amount: amount
+                currency: currency
+              day:
+                amount: amount
+                currency: currency
+          views:
+            current:
+              month: month
+              day: day
+            previous:
+              month: month
+              day: day
+          sales:
+            current:
+              week: week
+              month: month
+              day: day
+        price:
+          original:
+            amount: amount
+            currency: currency
+          purchase:
+            amount: amount
+            currency: currency
+        rating_avg: rating_avg
+        name: name
+        id: 0
+        views: 6
+        slug: slug
+      properties:
+        id:
+          format: int64
+          type: integer
+        active:
+          type: boolean
+        name:
+          type: string
+        short_description:
+          type: string
+        description:
+          type: string
+        requirements:
+          items:
+            type: string
+          type: array
+        price:
+          $ref: '#/components/schemas/Addon_price'
+        images:
+          $ref: '#/components/schemas/Addon_images'
+        views:
+          readOnly: true
+          type: integer
+        rating_avg:
+          readOnly: true
+          type: string
+        rating_count:
+          readOnly: true
+          type: integer
+        purchases_count:
+          readOnly: true
+          type: integer
+        dependent_addon:
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        has_drm:
+          readOnly: true
+          type: boolean
+        requires_chromium:
+          readOnly: true
+          type: boolean
+        slug:
+          readOnly: true
+          type: string
+        route:
+          readOnly: true
+          type: string
+        created_at:
+          format: date-time
+          readOnly: true
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          type: string
+        latest_version:
+          $ref: '#/components/schemas/AddonVersion'
+        team:
+          $ref: '#/components/schemas/Team'
+        stats:
+          $ref: '#/components/schemas/AddonStats'
+      readOnly: true
       type: object
     User:
       example:
@@ -5386,6 +5562,202 @@ components:
             $ref: '#/components/schemas/TeamUser'
           type: array
       title: TeamUserListResponse
+      type: object
+    TeamAddonListResponse:
+      example:
+        data:
+        - short_description: short_description
+          requirements:
+          - requirements
+          - requirements
+          images:
+            bigspot: https://openapi-generator.tech
+            listing_small: https://openapi-generator.tech
+            listing: https://openapi-generator.tech
+          active: true
+          description: description
+          created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
+          team:
+            updated_at: 2000-01-23T04:56:07.000+00:00
+            primaryAuthor:
+              percentage: 2
+              team_id: 3
+              user:
+                country_code: country_code
+                name: name
+                reputation: 6
+                id: 0
+                avatar: https://openapi-generator.tech
+                slug: slug
+                ban_properties:
+                - everything
+                - everything
+                team_reputation: 1
+                group:
+                  display_order: 5
+                  id: 5
+                  title: title
+              primary: true
+            name: name
+            created_at: 2000-01-23T04:56:07.000+00:00
+            id: 9
+          rating_count: 1
+          route: route
+          requires_chromium: true
+          updated_at: 2000-01-23T04:56:07.000+00:00
+          latest_version:
+            file_hash: file_hash
+            updated_at: 2000-01-23T04:56:07.000+00:00
+            name: name
+            changelog: changelog
+            created_at: 2000-01-23T04:56:07.000+00:00
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
+          price:
+            original:
+              amount: amount
+              currency: currency
+            purchase:
+              amount: amount
+              currency: currency
+          rating_avg: rating_avg
+          name: name
+          id: 0
+          views: 6
+          slug: slug
+        - short_description: short_description
+          requirements:
+          - requirements
+          - requirements
+          images:
+            bigspot: https://openapi-generator.tech
+            listing_small: https://openapi-generator.tech
+            listing: https://openapi-generator.tech
+          active: true
+          description: description
+          created_at: 2000-01-23T04:56:07.000+00:00
+          purchases_count: 5
+          dependent_addon: 5
+          team:
+            updated_at: 2000-01-23T04:56:07.000+00:00
+            primaryAuthor:
+              percentage: 2
+              team_id: 3
+              user:
+                country_code: country_code
+                name: name
+                reputation: 6
+                id: 0
+                avatar: https://openapi-generator.tech
+                slug: slug
+                ban_properties:
+                - everything
+                - everything
+                team_reputation: 1
+                group:
+                  display_order: 5
+                  id: 5
+                  title: title
+              primary: true
+            name: name
+            created_at: 2000-01-23T04:56:07.000+00:00
+            id: 9
+          rating_count: 1
+          route: route
+          requires_chromium: true
+          updated_at: 2000-01-23T04:56:07.000+00:00
+          latest_version:
+            file_hash: file_hash
+            updated_at: 2000-01-23T04:56:07.000+00:00
+            name: name
+            changelog: changelog
+            created_at: 2000-01-23T04:56:07.000+00:00
+            id: 2
+            file_size: 7
+          has_drm: true
+          stats:
+            revenue:
+              current:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+              total:
+                amount: amount
+                currency: currency
+              previous:
+                month:
+                  amount: amount
+                  currency: currency
+                day:
+                  amount: amount
+                  currency: currency
+            views:
+              current:
+                month: month
+                day: day
+              previous:
+                month: month
+                day: day
+            sales:
+              current:
+                week: week
+                month: month
+                day: day
+          price:
+            original:
+              amount: amount
+              currency: currency
+            purchase:
+              amount: amount
+              currency: currency
+          rating_avg: rating_avg
+          name: name
+          id: 0
+          views: 6
+          slug: slug
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/TeamAddon'
+          type: array
+      title: TeamAddonListResponse
       type: object
     UserResponse:
       example:
