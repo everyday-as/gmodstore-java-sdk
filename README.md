@@ -2,7 +2,7 @@
 
 GmodStore API
 - API version: 1.2.0
-  - Build date: 2021-11-03T15:36:23.972862Z[Etc/UTC]
+  - Build date: 2021-12-05T20:30:11.971505Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>no.everyday</groupId>
   <artifactId>gmodstore-sdk</artifactId>
-  <version>1.4.3</version>
+  <version>1.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "no.everyday:gmodstore-sdk:1.4.3"
+compile "no.everyday:gmodstore-sdk:1.5.0"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/gmodstore-sdk-1.4.3.jar`
+* `target/gmodstore-sdk-1.5.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
