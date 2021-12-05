@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.User;
 /**
  * TeamUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-05T20:30:11.971505Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-05T20:33:59.260894Z[Etc/UTC]")
 public class TeamUser {
   public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
   @SerializedName(SERIALIZED_NAME_TEAM_ID)

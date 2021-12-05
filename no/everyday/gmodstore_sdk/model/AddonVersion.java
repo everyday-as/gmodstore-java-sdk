@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * AddonVersion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-05T20:30:11.971505Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-05T20:33:59.260894Z[Etc/UTC]")
 public class AddonVersion {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
