@@ -24,12 +24,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import no.everyday.gmodstore_sdk.model.AddonStatsRevenueCurrent;
-import no.everyday.gmodstore_sdk.model.Money;
 
 /**
  * AddonStatsRevenue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T21:08:52.646883Z[Etc/UTC]")
 public class AddonStatsRevenue {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
@@ -41,7 +40,7 @@ public class AddonStatsRevenue {
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
-  private Money total;
+  private String total;
 
 
   public AddonStatsRevenue current(AddonStatsRevenueCurrent current) {
@@ -90,12 +89,6 @@ public class AddonStatsRevenue {
   }
 
 
-  public AddonStatsRevenue total(Money total) {
-    
-    this.total = total;
-    return this;
-  }
-
    /**
    * Get total
    * @return total
@@ -103,14 +96,11 @@ public class AddonStatsRevenue {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Money getTotal() {
+  public String getTotal() {
     return total;
   }
 
 
-  public void setTotal(Money total) {
-    this.total = total;
-  }
 
 
   @Override

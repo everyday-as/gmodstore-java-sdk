@@ -7,9 +7,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day** | **Integer** |  |  [optional]
-**week** | **Integer** |  |  [optional]
-**month** | **Integer** |  |  [optional]
+**day** | **String** |  |  [optional]
+**week** | **String** |  |  [optional]
+**month** | **String** |  |  [optional]
 
 
 

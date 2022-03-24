@@ -2812,26 +2812,17 @@ components:
         stats:
           revenue:
             current:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
-            total:
-              amount: amount
-              currency: currency
+              month: month
+              day: day
+            total: total
             previous:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
+              month: month
+              day: day
           views:
             current:
               month: month
               day: day
+            total: total
             previous:
               month: month
               day: day
@@ -2840,6 +2831,7 @@ components:
               week: week
               month: month
               day: day
+            total: total
         price:
           original:
             amount: amount
@@ -2977,26 +2969,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -3005,6 +2988,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -3083,26 +3067,17 @@ components:
       example:
         revenue:
           current:
-            month:
-              amount: amount
-              currency: currency
-            day:
-              amount: amount
-              currency: currency
-          total:
-            amount: amount
-            currency: currency
+            month: month
+            day: day
+          total: total
           previous:
-            month:
-              amount: amount
-              currency: currency
-            day:
-              amount: amount
-              currency: currency
+            month: month
+            day: day
         views:
           current:
             month: month
             day: day
+          total: total
           previous:
             month: month
             day: day
@@ -3111,6 +3086,7 @@ components:
             week: week
             month: month
             day: day
+          total: total
       properties:
         revenue:
           $ref: '#/components/schemas/AddonStats_revenue'
@@ -3198,26 +3174,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -3226,6 +3193,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -3347,26 +3315,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -3375,6 +3334,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -3675,26 +3635,17 @@ components:
         stats:
           revenue:
             current:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
-            total:
-              amount: amount
-              currency: currency
+              month: month
+              day: day
+            total: total
             previous:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
+              month: month
+              day: day
           views:
             current:
               month: month
               day: day
+            total: total
             previous:
               month: month
               day: day
@@ -3703,6 +3654,7 @@ components:
               week: week
               month: month
               day: day
+            total: total
         price:
           original:
             amount: amount
@@ -4015,26 +3967,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -4043,6 +3986,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -4108,26 +4052,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -4136,6 +4071,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -4211,26 +4147,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -4239,6 +4166,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -4261,26 +4189,17 @@ components:
         data:
           revenue:
             current:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
-            total:
-              amount: amount
-              currency: currency
+              month: month
+              day: day
+            total: total
             previous:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
+              month: month
+              day: day
           views:
             current:
               month: month
               day: day
+            total: total
             previous:
               month: month
               day: day
@@ -4289,6 +4208,7 @@ components:
               week: week
               month: month
               day: day
+            total: total
       properties:
         data:
           $ref: '#/components/schemas/AddonStats'
@@ -4355,26 +4275,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4383,6 +4294,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -4472,26 +4384,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4500,6 +4403,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -4599,26 +4503,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4627,6 +4522,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -4721,26 +4617,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4749,6 +4636,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -4839,26 +4727,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4867,6 +4746,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -4967,26 +4847,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -4995,6 +4866,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -5092,26 +4964,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -5120,6 +4983,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -5206,26 +5070,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -5234,6 +5089,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -5330,26 +5186,17 @@ components:
             stats:
               revenue:
                 current:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
-                total:
-                  amount: amount
-                  currency: currency
+                  month: month
+                  day: day
+                total: total
                 previous:
-                  month:
-                    amount: amount
-                    currency: currency
-                  day:
-                    amount: amount
-                    currency: currency
+                  month: month
+                  day: day
               views:
                 current:
                   month: month
                   day: day
+                total: total
                 previous:
                   month: month
                   day: day
@@ -5358,6 +5205,7 @@ components:
                   week: week
                   month: month
                   day: day
+                total: total
             price:
               original:
                 amount: amount
@@ -5587,26 +5435,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -5615,6 +5454,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -5680,26 +5520,17 @@ components:
           stats:
             revenue:
               current:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
-              total:
-                amount: amount
-                currency: currency
+                month: month
+                day: day
+              total: total
               previous:
-                month:
-                  amount: amount
-                  currency: currency
-                day:
-                  amount: amount
-                  currency: currency
+                month: month
+                day: day
             views:
               current:
                 month: month
                 day: day
+              total: total
               previous:
                 month: month
                 day: day
@@ -5708,6 +5539,7 @@ components:
                 week: week
                 month: month
                 day: day
+              total: total
           price:
             original:
               amount: amount
@@ -5909,44 +5741,33 @@ components:
       type: object
     AddonStats_revenue_current:
       example:
-        month:
-          amount: amount
-          currency: currency
-        day:
-          amount: amount
-          currency: currency
+        month: month
+        day: day
       properties:
         day:
-          $ref: '#/components/schemas/Money'
+          readOnly: true
+          type: string
         month:
-          $ref: '#/components/schemas/Money'
+          readOnly: true
+          type: string
       type: object
     AddonStats_revenue:
       example:
         current:
-          month:
-            amount: amount
-            currency: currency
-          day:
-            amount: amount
-            currency: currency
-        total:
-          amount: amount
-          currency: currency
+          month: month
+          day: day
+        total: total
         previous:
-          month:
-            amount: amount
-            currency: currency
-          day:
-            amount: amount
-            currency: currency
+          month: month
+          day: day
       properties:
         current:
           $ref: '#/components/schemas/AddonStats_revenue_current'
         previous:
           $ref: '#/components/schemas/AddonStats_revenue_current'
         total:
-          $ref: '#/components/schemas/Money'
+          readOnly: true
+          type: string
       type: object
     AddonStats_views_current:
       example:
@@ -5954,10 +5775,8 @@ components:
         day: day
       properties:
         day:
-          format: integer
           type: string
         month:
-          format: integer
           type: string
       type: object
     AddonStats_views:
@@ -5965,6 +5784,7 @@ components:
         current:
           month: month
           day: day
+        total: total
         previous:
           month: month
           day: day
@@ -5973,6 +5793,8 @@ components:
           $ref: '#/components/schemas/AddonStats_views_current'
         previous:
           $ref: '#/components/schemas/AddonStats_views_current'
+        total:
+          type: string
       type: object
     AddonStats_sales_current:
       example:
@@ -5981,13 +5803,10 @@ components:
         day: day
       properties:
         day:
-          format: integer
           type: string
         week:
-          format: integer
           type: string
         month:
-          format: integer
           type: string
       type: object
     AddonStats_sales:
@@ -5996,9 +5815,12 @@ components:
           week: week
           month: month
           day: day
+        total: total
       properties:
         current:
           $ref: '#/components/schemas/AddonStats_sales_current'
+        total:
+          type: string
       type: object
   securitySchemes:
     bearerAuth:

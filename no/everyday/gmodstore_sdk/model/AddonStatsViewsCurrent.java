@@ -27,18 +27,18 @@ import java.io.IOException;
 /**
  * AddonStatsViewsCurrent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T21:08:52.646883Z[Etc/UTC]")
 public class AddonStatsViewsCurrent {
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)
-  private Integer day;
+  private String day;
 
   public static final String SERIALIZED_NAME_MONTH = "month";
   @SerializedName(SERIALIZED_NAME_MONTH)
-  private Integer month;
+  private String month;
 
 
-  public AddonStatsViewsCurrent day(Integer day) {
+  public AddonStatsViewsCurrent day(String day) {
     
     this.day = day;
     return this;
@@ -51,17 +51,17 @@ public class AddonStatsViewsCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getDay() {
+  public String getDay() {
     return day;
   }
 
 
-  public void setDay(Integer day) {
+  public void setDay(String day) {
     this.day = day;
   }
 
 
-  public AddonStatsViewsCurrent month(Integer month) {
+  public AddonStatsViewsCurrent month(String month) {
     
     this.month = month;
     return this;
@@ -74,12 +74,12 @@ public class AddonStatsViewsCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getMonth() {
+  public String getMonth() {
     return month;
   }
 
 
-  public void setMonth(Integer month) {
+  public void setMonth(String month) {
     this.month = month;
   }
 

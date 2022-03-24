@@ -27,22 +27,22 @@ import java.io.IOException;
 /**
  * AddonStatsSalesCurrent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T21:08:52.646883Z[Etc/UTC]")
 public class AddonStatsSalesCurrent {
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)
-  private Integer day;
+  private String day;
 
   public static final String SERIALIZED_NAME_WEEK = "week";
   @SerializedName(SERIALIZED_NAME_WEEK)
-  private Integer week;
+  private String week;
 
   public static final String SERIALIZED_NAME_MONTH = "month";
   @SerializedName(SERIALIZED_NAME_MONTH)
-  private Integer month;
+  private String month;
 
 
-  public AddonStatsSalesCurrent day(Integer day) {
+  public AddonStatsSalesCurrent day(String day) {
     
     this.day = day;
     return this;
@@ -55,17 +55,17 @@ public class AddonStatsSalesCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getDay() {
+  public String getDay() {
     return day;
   }
 
 
-  public void setDay(Integer day) {
+  public void setDay(String day) {
     this.day = day;
   }
 
 
-  public AddonStatsSalesCurrent week(Integer week) {
+  public AddonStatsSalesCurrent week(String week) {
     
     this.week = week;
     return this;
@@ -78,17 +78,17 @@ public class AddonStatsSalesCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getWeek() {
+  public String getWeek() {
     return week;
   }
 
 
-  public void setWeek(Integer week) {
+  public void setWeek(String week) {
     this.week = week;
   }
 
 
-  public AddonStatsSalesCurrent month(Integer month) {
+  public AddonStatsSalesCurrent month(String month) {
     
     this.month = month;
     return this;
@@ -101,12 +101,12 @@ public class AddonStatsSalesCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getMonth() {
+  public String getMonth() {
     return month;
   }
 
 
-  public void setMonth(Integer month) {
+  public void setMonth(String month) {
     this.month = month;
   }
 

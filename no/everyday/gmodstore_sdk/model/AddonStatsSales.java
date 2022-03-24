@@ -28,11 +28,15 @@ import no.everyday.gmodstore_sdk.model.AddonStatsSalesCurrent;
 /**
  * AddonStatsSales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T21:08:52.646883Z[Etc/UTC]")
 public class AddonStatsSales {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
   private AddonStatsSalesCurrent current;
+
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
+  private String total;
 
 
   public AddonStatsSales current(AddonStatsSalesCurrent current) {
@@ -58,6 +62,29 @@ public class AddonStatsSales {
   }
 
 
+  public AddonStatsSales total(String total) {
+    
+    this.total = total;
+    return this;
+  }
+
+   /**
+   * Get total
+   * @return total
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTotal() {
+    return total;
+  }
+
+
+  public void setTotal(String total) {
+    this.total = total;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -67,12 +94,13 @@ public class AddonStatsSales {
       return false;
     }
     AddonStatsSales addonStatsSales = (AddonStatsSales) o;
-    return Objects.equals(this.current, addonStatsSales.current);
+    return Objects.equals(this.current, addonStatsSales.current) &&
+        Objects.equals(this.total, addonStatsSales.total);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(current);
+    return Objects.hash(current, total);
   }
 
   @Override
@@ -80,6 +108,7 @@ public class AddonStatsSales {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddonStatsSales {\n");
     sb.append("    current: ").append(toIndentedString(current)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
     return sb.toString();
   }

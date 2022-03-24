@@ -23,27 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import no.everyday.gmodstore_sdk.model.Money;
 
 /**
  * AddonStatsRevenueCurrent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T21:08:52.646883Z[Etc/UTC]")
 public class AddonStatsRevenueCurrent {
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)
-  private Money day;
+  private String day;
 
   public static final String SERIALIZED_NAME_MONTH = "month";
   @SerializedName(SERIALIZED_NAME_MONTH)
-  private Money month;
+  private String month;
 
-
-  public AddonStatsRevenueCurrent day(Money day) {
-    
-    this.day = day;
-    return this;
-  }
 
    /**
    * Get day
@@ -52,21 +45,12 @@ public class AddonStatsRevenueCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Money getDay() {
+  public String getDay() {
     return day;
   }
 
 
-  public void setDay(Money day) {
-    this.day = day;
-  }
 
-
-  public AddonStatsRevenueCurrent month(Money month) {
-    
-    this.month = month;
-    return this;
-  }
 
    /**
    * Get month
@@ -75,14 +59,11 @@ public class AddonStatsRevenueCurrent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Money getMonth() {
+  public String getMonth() {
     return month;
   }
 
 
-  public void setMonth(Money month) {
-    this.month = month;
-  }
 
 
   @Override
