@@ -260,7 +260,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddonStatsListResponse'
+                $ref: '#/components/schemas/AddonStatsResponse'
           description: Successfully processed the request.
           headers:
             X-RateLimit-Limit:
@@ -4256,40 +4256,10 @@ components:
           $ref: '#/components/schemas/Addon'
       title: AddonResponse
       type: object
-    AddonStatsListResponse:
+    AddonStatsResponse:
       example:
         data:
-        - revenue:
-            current:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
-            total:
-              amount: amount
-              currency: currency
-            previous:
-              month:
-                amount: amount
-                currency: currency
-              day:
-                amount: amount
-                currency: currency
-          views:
-            current:
-              month: month
-              day: day
-            previous:
-              month: month
-              day: day
-          sales:
-            current:
-              week: week
-              month: month
-              day: day
-        - revenue:
+          revenue:
             current:
               month:
                 amount: amount
@@ -4321,10 +4291,8 @@ components:
               day: day
       properties:
         data:
-          items:
-            $ref: '#/components/schemas/AddonStats'
-          type: array
-      title: AddonStatsListResponse
+          $ref: '#/components/schemas/AddonStats'
+      title: AddonStatsResponse
       type: object
     AddonCouponListResponse:
       example:

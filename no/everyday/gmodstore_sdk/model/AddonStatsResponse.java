@@ -23,31 +23,21 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import no.everyday.gmodstore_sdk.model.AddonCoupon;
+import no.everyday.gmodstore_sdk.model.AddonStats;
 
 /**
- * AddonCouponListResponse
+ * AddonStatsResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-24T19:23:41.547397Z[Etc/UTC]")
-public class AddonCouponListResponse {
+public class AddonStatsResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<AddonCoupon> data = null;
+  private AddonStats data;
 
 
-  public AddonCouponListResponse data(List<AddonCoupon> data) {
+  public AddonStatsResponse data(AddonStats data) {
     
     this.data = data;
-    return this;
-  }
-
-  public AddonCouponListResponse addDataItem(AddonCoupon dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<AddonCoupon>();
-    }
-    this.data.add(dataItem);
     return this;
   }
 
@@ -58,12 +48,12 @@ public class AddonCouponListResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<AddonCoupon> getData() {
+  public AddonStats getData() {
     return data;
   }
 
 
-  public void setData(List<AddonCoupon> data) {
+  public void setData(AddonStats data) {
     this.data = data;
   }
 
@@ -76,8 +66,8 @@ public class AddonCouponListResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddonCouponListResponse addonCouponListResponse = (AddonCouponListResponse) o;
-    return Objects.equals(this.data, addonCouponListResponse.data);
+    AddonStatsResponse addonStatsResponse = (AddonStatsResponse) o;
+    return Objects.equals(this.data, addonStatsResponse.data);
   }
 
   @Override
@@ -88,7 +78,7 @@ public class AddonCouponListResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AddonCouponListResponse {\n");
+    sb.append("class AddonStatsResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

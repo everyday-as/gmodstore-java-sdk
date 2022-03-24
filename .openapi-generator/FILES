@@ -25,7 +25,7 @@ docs/AddonReviewResponse.md
 docs/AddonReviewsApi.md
 docs/AddonStats.md
 docs/AddonStatsApi.md
-docs/AddonStatsListResponse.md
+docs/AddonStatsResponse.md
 docs/AddonStatsRevenue.md
 docs/AddonStatsRevenueCurrent.md
 docs/AddonStatsSales.md
@@ -134,7 +134,7 @@ no/everyday/gmodstore_sdk/model/AddonReview.java
 no/everyday/gmodstore_sdk/model/AddonReviewListResponse.java
 no/everyday/gmodstore_sdk/model/AddonReviewResponse.java
 no/everyday/gmodstore_sdk/model/AddonStats.java
-no/everyday/gmodstore_sdk/model/AddonStatsListResponse.java
+no/everyday/gmodstore_sdk/model/AddonStatsResponse.java
 no/everyday/gmodstore_sdk/model/AddonStatsRevenue.java
 no/everyday/gmodstore_sdk/model/AddonStatsRevenueCurrent.java
 no/everyday/gmodstore_sdk/model/AddonStatsSales.java
@@ -174,3 +174,4 @@ no/everyday/gmodstore_sdk/model/UserResponse.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
+src/test/java/no/everyday/gmodstore_sdk/model/AddonStatsResponseTest.java

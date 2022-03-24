@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAddonStats"></a>
 # **getAddonStats**
-> AddonStatsListResponse getAddonStats(addonId)
+> AddonStatsResponse getAddonStats(addonId)
 
 Fetch all the stats for an addon
 
@@ -35,7 +35,7 @@ public class Example {
     AddonStatsApi apiInstance = new AddonStatsApi(defaultClient);
     Long addonId = 56L; // Long | Id of the addon
     try {
-      AddonStatsListResponse result = apiInstance.getAddonStats(addonId);
+      AddonStatsResponse result = apiInstance.getAddonStats(addonId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AddonStatsApi#getAddonStats");
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddonStatsListResponse**](AddonStatsListResponse.md)
+[**AddonStatsResponse**](AddonStatsResponse.md)
 
 ### Authorization
 

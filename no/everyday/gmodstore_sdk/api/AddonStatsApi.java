@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import no.everyday.gmodstore_sdk.model.AddonStatsListResponse;
+import no.everyday.gmodstore_sdk.model.AddonStatsResponse;
 import no.everyday.gmodstore_sdk.model.ErrorResponse;
 
 import java.lang.reflect.Type;
@@ -118,7 +118,7 @@ public class AddonStatsApi {
      * Fetch all the stats for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @return AddonStatsListResponse
+     * @return AddonStatsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -128,8 +128,8 @@ public class AddonStatsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public AddonStatsListResponse getAddonStats(Long addonId) throws ApiException {
-        ApiResponse<AddonStatsListResponse> localVarResp = getAddonStatsWithHttpInfo(addonId);
+    public AddonStatsResponse getAddonStats(Long addonId) throws ApiException {
+        ApiResponse<AddonStatsResponse> localVarResp = getAddonStatsWithHttpInfo(addonId);
         return localVarResp.getData();
     }
 
@@ -137,7 +137,7 @@ public class AddonStatsApi {
      * Fetch all the stats for an addon
      * 
      * @param addonId Id of the addon (required)
-     * @return ApiResponse&lt;AddonStatsListResponse&gt;
+     * @return ApiResponse&lt;AddonStatsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -147,9 +147,9 @@ public class AddonStatsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AddonStatsListResponse> getAddonStatsWithHttpInfo(Long addonId) throws ApiException {
+    public ApiResponse<AddonStatsResponse> getAddonStatsWithHttpInfo(Long addonId) throws ApiException {
         okhttp3.Call localVarCall = getAddonStatsValidateBeforeCall(addonId, null);
-        Type localVarReturnType = new TypeToken<AddonStatsListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonStatsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -168,10 +168,10 @@ public class AddonStatsApi {
         <tr><td> 0 </td><td> Something went wrong </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getAddonStatsAsync(Long addonId, final ApiCallback<AddonStatsListResponse> _callback) throws ApiException {
+    public okhttp3.Call getAddonStatsAsync(Long addonId, final ApiCallback<AddonStatsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAddonStatsValidateBeforeCall(addonId, _callback);
-        Type localVarReturnType = new TypeToken<AddonStatsListResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddonStatsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
