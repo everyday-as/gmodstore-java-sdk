@@ -7,10 +7,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**teamId** | **Long** |  |  [optional]
-**primary** | **Boolean** |  |  [optional]
+**teamId** | **UUID** |  | 
+**userId** | **UUID** |  | 
+**primary** | **Boolean** |  | 
 **percentage** | **Integer** |  |  [optional]
-**user** | [**User**](User.md) |  |  [optional]
+**access** | **String** |  |  [optional]
 
 
 

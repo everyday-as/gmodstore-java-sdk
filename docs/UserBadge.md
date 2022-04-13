@@ -7,7 +7,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**badge** | **String** |  | 
+**id** | **UUID** |  | 
+**name** | **String** |  | 
+**description** | **String** |  | 
+**extension** | **String** |  | 
 
 
 

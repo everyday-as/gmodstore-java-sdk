@@ -7,12 +7,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **Long** |  |  [optional]
+**id** | **UUID** |  | 
+**userId** | **UUID** |  | 
 **reason** | **String** |  |  [optional]
+**bannerId** | **UUID** |  |  [optional]
+**unbanId** | **UUID** |  |  [optional]
 **unbanReason** | **String** |  |  [optional]
-**properties** | [**Set&lt;PropertiesEnum&gt;**](#Set&lt;PropertiesEnum&gt;) |  |  [optional]
-**start** | **OffsetDateTime** |  |  [optional]
-**end** | **OffsetDateTime** |  |  [optional]
+**properties** | [**Set&lt;PropertiesEnum&gt;**](#Set&lt;PropertiesEnum&gt;) |  | 
+**start** | **OffsetDateTime** |  | 
+**end** | **OffsetDateTime** |  | 
 
 
 
@@ -30,6 +33,7 @@ JOB_CREATE | &quot;job.create&quot;
 JOB_APPLY | &quot;job.apply&quot;
 JOB_REVIEW | &quot;job.review&quot;
 JOB_COMMENT | &quot;job.comment&quot;
+FORUM_POST | &quot;forum.post&quot;
 BAN_APPEAL | &quot;ban.appeal&quot;
 
 

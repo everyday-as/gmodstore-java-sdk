@@ -1,17 +1,17 @@
 # UserTeamsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to *https://www.gmodstore.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserTeams**](UserTeamsApi.md#listUserTeams) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
+[**listUserTeams**](UserTeamsApi.md#listUserTeams) | **GET** /api/v3/users/{user}/teams | List all the specified user&#39;s teams
 
 
 <a name="listUserTeams"></a>
 # **listUserTeams**
-> TeamListResponse listUserTeams(userId, with)
+> Object listUserTeams(user, perPage, cursor)
 
-Fetch all the teams of a user
+List all the specified user&#39;s teams
 
 ### Example
 ```java
@@ -26,17 +26,18 @@ import no.everyday.gmodstore_sdk.api.UserTeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.gmodstore.com/v2");
+    defaultClient.setBasePath("https://www.gmodstore.com");
     
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: PersonalAccessToken
+    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
+    PersonalAccessToken.setBearerToken("BEARER TOKEN");
 
     UserTeamsApi apiInstance = new UserTeamsApi(defaultClient);
-    Long userId = 56L; // Long | Id of the user
-    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `Team`
+    String user = "user_example"; // String | 
+    Integer perPage = 24; // Integer | 
+    String cursor = "cursor_example"; // String | The cursor from which to return paginated results starting after
     try {
-      TeamListResponse result = apiInstance.listUserTeams(userId, with);
+      Object result = apiInstance.listUserTeams(user, perPage, cursor);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserTeamsApi#listUserTeams");
@@ -53,16 +54,17 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Long**| Id of the user |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;Team&#x60; | [optional] [enum: primaryAuthor]
+ **user** | **String**|  |
+ **perPage** | **Integer**|  | [optional] [default to 24]
+ **cursor** | **String**| The cursor from which to return paginated results starting after | [optional]
 
 ### Return type
 
-[**TeamListResponse**](TeamListResponse.md)
+**Object**
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[PersonalAccessToken](../README.md#PersonalAccessToken)
 
 ### HTTP request headers
 
@@ -72,7 +74,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
-**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
-**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**200** | Successful response containing a list of teams |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
 

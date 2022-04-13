@@ -1,18 +1,19 @@
 # UsersApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to *https://www.gmodstore.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSelfUser**](UsersApi.md#getSelfUser) | **GET** /users/me | Fetches the current user (API Key Owner)
-[**getUser**](UsersApi.md#getUser) | **GET** /users/{user_id} | Fetch a single user
+[**getMe**](UsersApi.md#getMe) | **GET** /api/v3/me | Fetch the current authenticated user and their access token
+[**getUser**](UsersApi.md#getUser) | **GET** /api/v3/users/{user} | Fetch the specified user
+[**getUsers**](UsersApi.md#getUsers) | **GET** /api/v3/users/batch | Fetch a batch of users by id
 
 
-<a name="getSelfUser"></a>
-# **getSelfUser**
-> UserResponse getSelfUser(with)
+<a name="getMe"></a>
+# **getMe**
+> GetMeResponse getMe()
 
-Fetches the current user (API Key Owner)
+Fetch the current authenticated user and their access token
 
 ### Example
 ```java
@@ -20,26 +21,20 @@ Fetches the current user (API Key Owner)
 import no.everyday.gmodstore_sdk.ApiClient;
 import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.Configuration;
-import no.everyday.gmodstore_sdk.auth.*;
 import no.everyday.gmodstore_sdk.models.*;
 import no.everyday.gmodstore_sdk.api.UsersApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.gmodstore.com/v2");
-    
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
+    defaultClient.setBasePath("https://www.gmodstore.com");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `User`
     try {
-      UserResponse result = apiInstance.getSelfUser(with);
+      GetMeResponse result = apiInstance.getMe();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling UsersApi#getSelfUser");
+      System.err.println("Exception when calling UsersApi#getMe");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -50,18 +45,15 @@ public class Example {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional] [enum: group]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**GetMeResponse**](GetMeResponse.md)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -71,15 +63,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
-**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
-**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**200** | Successful response containing the authenticated user and their access token |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
 
 <a name="getUser"></a>
 # **getUser**
-> UserResponse getUser(userId, with)
+> GetUserResponse getUser(user)
 
-Fetch a single user
+Fetch the specified user
 
 ### Example
 ```java
@@ -94,17 +88,16 @@ import no.everyday.gmodstore_sdk.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.gmodstore.com/v2");
+    defaultClient.setBasePath("https://www.gmodstore.com");
     
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: PersonalAccessToken
+    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
+    PersonalAccessToken.setBearerToken("BEARER TOKEN");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    Long userId = 56L; // Long | Id of the user
-    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `User`
+    String user = "user_example"; // String | 
     try {
-      UserResponse result = apiInstance.getUser(userId, with);
+      GetUserResponse result = apiInstance.getUser(user);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUser");
@@ -121,16 +114,15 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Long**| Id of the user |
- **with** | [**Set&lt;String&gt;**](String.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional] [enum: group]
+ **user** | **String**|  |
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**GetUserResponse**](GetUserResponse.md)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[PersonalAccessToken](../README.md#PersonalAccessToken)
 
 ### HTTP request headers
 
@@ -140,7 +132,78 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
-**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
-**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**200** | Successful response containing a single user |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+
+<a name="getUsers"></a>
+# **getUsers**
+> GetUsersResponse getUsers(ids)
+
+Fetch a batch of users by id
+
+### Example
+```java
+// Import classes:
+import no.everyday.gmodstore_sdk.ApiClient;
+import no.everyday.gmodstore_sdk.ApiException;
+import no.everyday.gmodstore_sdk.Configuration;
+import no.everyday.gmodstore_sdk.auth.*;
+import no.everyday.gmodstore_sdk.models.*;
+import no.everyday.gmodstore_sdk.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://www.gmodstore.com");
+    
+    // Configure HTTP bearer authorization: PersonalAccessToken
+    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
+    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    List<UUID> ids = Arrays.asList(); // List<UUID> | 
+    try {
+      GetUsersResponse result = apiInstance.getUsers(ids);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUsers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | [**List&lt;UUID&gt;**](UUID.md)|  |
+
+### Return type
+
+[**GetUsersResponse**](GetUsersResponse.md)
+
+### Authorization
+
+[PersonalAccessToken](../README.md#PersonalAccessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response containing the requested batch of users |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
 

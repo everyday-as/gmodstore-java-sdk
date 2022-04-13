@@ -7,11 +7,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**createdAt** | **OffsetDateTime** |  |  [optional]
-**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly]
-**primaryAuthor** | [**TeamUser**](TeamUser.md) |  |  [optional]
+**id** | **UUID** |  | 
+**name** | **String** |  | 
+**description** | **String** |  | 
+**settings** | **String** |  |  [optional]
+**createdAt** | **OffsetDateTime** |  | 
+**updatedAt** | **OffsetDateTime** |  | 
+**productsCount** | **Long** |  | 
+**usersCount** | **Long** |  | 
 
 
 

@@ -7,9 +7,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **UUID** |  |  [optional]
-**price** | [**Money**](Money.md) |  |  [optional]
-**reversedAt** | **OffsetDateTime** |  |  [optional]
+**id** | **UUID** |  | 
+**price** | [**Money**](Money.md) |  | 
+**reversedAt** | **OffsetDateTime** |  | 
 
 
 
