@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * UserBanFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-13T21:14:19.338654Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-14T01:48:11.419263Z[Etc/UTC]")
 public class UserBanFilter {
   public static final String SERIALIZED_NAME_BANNER_ID = "bannerId";
   @SerializedName(SERIALIZED_NAME_BANNER_ID)
