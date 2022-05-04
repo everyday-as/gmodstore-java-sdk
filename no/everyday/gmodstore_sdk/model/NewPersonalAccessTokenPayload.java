@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * NewPersonalAccessTokenPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-14T01:48:11.419263Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
 public class NewPersonalAccessTokenPayload {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -50,6 +50,10 @@ public class NewPersonalAccessTokenPayload {
     PERMISSION_GROUPS_READ("permission-groups:read"),
     
     PERMISSION_GROUPS_WRITE("permission-groups:write"),
+    
+    PERSONAL_ACCESS_TOKENS_READ("personal-access-tokens:read"),
+    
+    PERSONAL_ACCESS_TOKENS_WRITE("personal-access-tokens:write"),
     
     TEAMS_READ("teams:read"),
     

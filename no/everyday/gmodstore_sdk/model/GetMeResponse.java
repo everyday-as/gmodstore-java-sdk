@@ -23,37 +23,38 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import no.everyday.gmodstore_sdk.model.Me;
 
 /**
  * GetMeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-14T01:48:11.419263Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
 public class GetMeResponse {
-  public static final String SERIALIZED_NAME_ = "";
-  @SerializedName(SERIALIZED_NAME_)
-  private GetMeResponse ;
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
+  private Me data;
 
 
-  public GetMeResponse (GetMeResponse ) {
+  public GetMeResponse data(Me data) {
     
-    this. = ;
+    this.data = data;
     return this;
   }
 
    /**
-   * Get 
-   * @return 
+   * Get data
+   * @return data
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public GetMeResponse get() {
-    return ;
+  public Me getData() {
+    return data;
   }
 
 
-  public void set(GetMeResponse ) {
-    this. = ;
+  public void setData(Me data) {
+    this.data = data;
   }
 
 
@@ -66,19 +67,19 @@ public class GetMeResponse {
       return false;
     }
     GetMeResponse getMeResponse = (GetMeResponse) o;
-    return Objects.equals(this., getMeResponse.);
+    return Objects.equals(this.data, getMeResponse.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetMeResponse {\n");
-    sb.append("    : ").append(toIndentedString()).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

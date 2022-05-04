@@ -72,6 +72,7 @@ docs/Team.md
 docs/TeamUser.md
 docs/TeamUsersApi.md
 docs/TeamsApi.md
+docs/TwoFactorNonce.md
 docs/UpdatePermissionGroupPayload.md
 docs/UpdatePermissionGroupResponse.md
 docs/UpdatePersonalAccessTokenResponse.md
@@ -89,6 +90,7 @@ docs/UserBadgesApi.md
 docs/UserBan.md
 docs/UserBanFilter.md
 docs/UserBansApi.md
+docs/UserFilter.md
 docs/UserProductPurchasesApi.md
 docs/UserProductsApi.md
 docs/UserTeamsApi.md
@@ -191,6 +193,7 @@ no/everyday/gmodstore_sdk/model/ProductVersion.java
 no/everyday/gmodstore_sdk/model/ProductVersionFilter.java
 no/everyday/gmodstore_sdk/model/Team.java
 no/everyday/gmodstore_sdk/model/TeamUser.java
+no/everyday/gmodstore_sdk/model/TwoFactorNonce.java
 no/everyday/gmodstore_sdk/model/UpdatePermissionGroupPayload.java
 no/everyday/gmodstore_sdk/model/UpdatePermissionGroupResponse.java
 no/everyday/gmodstore_sdk/model/UpdatePersonalAccessTokenResponse.java
@@ -206,7 +209,10 @@ no/everyday/gmodstore_sdk/model/User.java
 no/everyday/gmodstore_sdk/model/UserBadge.java
 no/everyday/gmodstore_sdk/model/UserBan.java
 no/everyday/gmodstore_sdk/model/UserBanFilter.java
+no/everyday/gmodstore_sdk/model/UserFilter.java
 no/everyday/gmodstore_sdk/model/ValidationErrors.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
+src/test/java/no/everyday/gmodstore_sdk/model/TwoFactorNonceTest.java
+src/test/java/no/everyday/gmodstore_sdk/model/UserFilterTest.java

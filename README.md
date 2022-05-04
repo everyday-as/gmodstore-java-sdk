@@ -2,7 +2,7 @@
 
 gmodstore
 - API version: 3.0.0
-  - Build date: 2022-04-14T01:48:11.419263Z[Etc/UTC]
+  - Build date: 2022-05-04T05:42:04.718207Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getMe**](docs/UsersApi.md#getMe) | **GET** /api/v3/me | Fetch the current authenticated user and their access token
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /api/v3/users/{user} | Fetch the specified user
 *UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /api/v3/users/batch | Fetch a batch of users by id
+*UsersApi* | [**listUsers**](docs/UsersApi.md#listUsers) | **GET** /api/v3/users | List all users
 
 
 ## Documentation for Models
@@ -232,6 +233,7 @@ Class | Method | HTTP request | Description
  - [ProductVersionFilter](docs/ProductVersionFilter.md)
  - [Team](docs/Team.md)
  - [TeamUser](docs/TeamUser.md)
+ - [TwoFactorNonce](docs/TwoFactorNonce.md)
  - [UpdatePermissionGroupPayload](docs/UpdatePermissionGroupPayload.md)
  - [UpdatePermissionGroupResponse](docs/UpdatePermissionGroupResponse.md)
  - [UpdatePersonalAccessTokenResponse](docs/UpdatePersonalAccessTokenResponse.md)
@@ -247,6 +249,7 @@ Class | Method | HTTP request | Description
  - [UserBadge](docs/UserBadge.md)
  - [UserBan](docs/UserBan.md)
  - [UserBanFilter](docs/UserBanFilter.md)
+ - [UserFilter](docs/UserFilter.md)
  - [ValidationErrors](docs/ValidationErrors.md)
 
 

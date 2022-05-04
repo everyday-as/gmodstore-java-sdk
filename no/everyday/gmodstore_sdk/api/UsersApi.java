@@ -32,6 +32,7 @@ import no.everyday.gmodstore_sdk.model.GetMeResponse;
 import no.everyday.gmodstore_sdk.model.GetUserResponse;
 import no.everyday.gmodstore_sdk.model.GetUsersResponse;
 import java.util.UUID;
+import no.everyday.gmodstore_sdk.model.UserFilter;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -99,7 +100,7 @@ public class UsersApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "PersonalAccessToken" };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -179,6 +180,7 @@ public class UsersApi {
     /**
      * Build call for getUser
      * @param user  (required)
+     * @param filter Filter the results (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -192,7 +194,7 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserCall(String user, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserCall(String user, UserFilter filter, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -204,6 +206,10 @@ public class UsersApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -224,7 +230,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserValidateBeforeCall(String user, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserValidateBeforeCall(String user, UserFilter filter, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'user' is set
         if (user == null) {
@@ -232,7 +238,7 @@ public class UsersApi {
         }
         
 
-        okhttp3.Call localVarCall = getUserCall(user, _callback);
+        okhttp3.Call localVarCall = getUserCall(user, filter, _callback);
         return localVarCall;
 
     }
@@ -241,6 +247,7 @@ public class UsersApi {
      * Fetch the specified user
      * 
      * @param user  (required)
+     * @param filter Filter the results (optional)
      * @return GetUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -253,8 +260,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public GetUserResponse getUser(String user) throws ApiException {
-        ApiResponse<GetUserResponse> localVarResp = getUserWithHttpInfo(user);
+    public GetUserResponse getUser(String user, UserFilter filter) throws ApiException {
+        ApiResponse<GetUserResponse> localVarResp = getUserWithHttpInfo(user, filter);
         return localVarResp.getData();
     }
 
@@ -262,6 +269,7 @@ public class UsersApi {
      * Fetch the specified user
      * 
      * @param user  (required)
+     * @param filter Filter the results (optional)
      * @return ApiResponse&lt;GetUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -274,8 +282,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<GetUserResponse> getUserWithHttpInfo(String user) throws ApiException {
-        okhttp3.Call localVarCall = getUserValidateBeforeCall(user, null);
+    public ApiResponse<GetUserResponse> getUserWithHttpInfo(String user, UserFilter filter) throws ApiException {
+        okhttp3.Call localVarCall = getUserValidateBeforeCall(user, filter, null);
         Type localVarReturnType = new TypeToken<GetUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -284,6 +292,7 @@ public class UsersApi {
      * Fetch the specified user (asynchronously)
      * 
      * @param user  (required)
+     * @param filter Filter the results (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -297,9 +306,9 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserAsync(String user, final ApiCallback<GetUserResponse> _callback) throws ApiException {
+    public okhttp3.Call getUserAsync(String user, UserFilter filter, final ApiCallback<GetUserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getUserValidateBeforeCall(user, _callback);
+        okhttp3.Call localVarCall = getUserValidateBeforeCall(user, filter, _callback);
         Type localVarReturnType = new TypeToken<GetUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -307,6 +316,7 @@ public class UsersApi {
     /**
      * Build call for getUsers
      * @param ids  (required)
+     * @param filter Filter the results (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -320,7 +330,7 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getUsersCall(List<UUID> ids, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUsersCall(List<UUID> ids, UserFilter filter, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -336,6 +346,10 @@ public class UsersApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "ids[]", ids));
         }
 
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -355,7 +369,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUsersValidateBeforeCall(List<UUID> ids, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUsersValidateBeforeCall(List<UUID> ids, UserFilter filter, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'ids' is set
         if (ids == null) {
@@ -363,7 +377,7 @@ public class UsersApi {
         }
         
 
-        okhttp3.Call localVarCall = getUsersCall(ids, _callback);
+        okhttp3.Call localVarCall = getUsersCall(ids, filter, _callback);
         return localVarCall;
 
     }
@@ -372,6 +386,7 @@ public class UsersApi {
      * Fetch a batch of users by id
      * 
      * @param ids  (required)
+     * @param filter Filter the results (optional)
      * @return GetUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -384,8 +399,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public GetUsersResponse getUsers(List<UUID> ids) throws ApiException {
-        ApiResponse<GetUsersResponse> localVarResp = getUsersWithHttpInfo(ids);
+    public GetUsersResponse getUsers(List<UUID> ids, UserFilter filter) throws ApiException {
+        ApiResponse<GetUsersResponse> localVarResp = getUsersWithHttpInfo(ids, filter);
         return localVarResp.getData();
     }
 
@@ -393,6 +408,7 @@ public class UsersApi {
      * Fetch a batch of users by id
      * 
      * @param ids  (required)
+     * @param filter Filter the results (optional)
      * @return ApiResponse&lt;GetUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -405,8 +421,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<GetUsersResponse> getUsersWithHttpInfo(List<UUID> ids) throws ApiException {
-        okhttp3.Call localVarCall = getUsersValidateBeforeCall(ids, null);
+    public ApiResponse<GetUsersResponse> getUsersWithHttpInfo(List<UUID> ids, UserFilter filter) throws ApiException {
+        okhttp3.Call localVarCall = getUsersValidateBeforeCall(ids, filter, null);
         Type localVarReturnType = new TypeToken<GetUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -415,6 +431,7 @@ public class UsersApi {
      * Fetch a batch of users by id (asynchronously)
      * 
      * @param ids  (required)
+     * @param filter Filter the results (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -428,10 +445,152 @@ public class UsersApi {
         <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getUsersAsync(List<UUID> ids, final ApiCallback<GetUsersResponse> _callback) throws ApiException {
+    public okhttp3.Call getUsersAsync(List<UUID> ids, UserFilter filter, final ApiCallback<GetUsersResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getUsersValidateBeforeCall(ids, _callback);
+        okhttp3.Call localVarCall = getUsersValidateBeforeCall(ids, filter, _callback);
         Type localVarReturnType = new TypeToken<GetUsersResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listUsers
+     * @param perPage  (optional, default to 24)
+     * @param cursor The cursor from which to return paginated results starting after (optional)
+     * @param filter Filter the results (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response containing a list of users </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Improperly formatted request passed </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> The passed bearer token is missing or invalid </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUsersCall(Integer perPage, String cursor, UserFilter filter, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v3/users";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("perPage", perPage));
+        }
+
+        if (cursor != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("cursor", cursor));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "PersonalAccessToken" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listUsersValidateBeforeCall(Integer perPage, String cursor, UserFilter filter, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = listUsersCall(perPage, cursor, filter, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List all users
+     * 
+     * @param perPage  (optional, default to 24)
+     * @param cursor The cursor from which to return paginated results starting after (optional)
+     * @param filter Filter the results (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response containing a list of users </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Improperly formatted request passed </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> The passed bearer token is missing or invalid </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public Object listUsers(Integer perPage, String cursor, UserFilter filter) throws ApiException {
+        ApiResponse<Object> localVarResp = listUsersWithHttpInfo(perPage, cursor, filter);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List all users
+     * 
+     * @param perPage  (optional, default to 24)
+     * @param cursor The cursor from which to return paginated results starting after (optional)
+     * @param filter Filter the results (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response containing a list of users </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Improperly formatted request passed </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> The passed bearer token is missing or invalid </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> listUsersWithHttpInfo(Integer perPage, String cursor, UserFilter filter) throws ApiException {
+        okhttp3.Call localVarCall = listUsersValidateBeforeCall(perPage, cursor, filter, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List all users (asynchronously)
+     * 
+     * @param perPage  (optional, default to 24)
+     * @param cursor The cursor from which to return paginated results starting after (optional)
+     * @param filter Filter the results (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response containing a list of users </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Improperly formatted request passed </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> The passed bearer token is missing or invalid </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> The passed bearer token does not have the right scopes </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUsersAsync(Integer perPage, String cursor, UserFilter filter, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listUsersValidateBeforeCall(perPage, cursor, filter, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

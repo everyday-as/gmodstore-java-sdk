@@ -9,6 +9,10 @@
 
 * `PERMISSION_GROUPS_WRITE` (value: `"permission-groups:write"`)
 
+* `PERSONAL_ACCESS_TOKENS_READ` (value: `"personal-access-tokens:read"`)
+
+* `PERSONAL_ACCESS_TOKENS_WRITE` (value: `"personal-access-tokens:write"`)
+
 * `TEAMS_READ` (value: `"teams:read"`)
 
 * `TEAMS_WRITE` (value: `"teams:write"`)

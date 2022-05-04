@@ -20,7 +20,7 @@ servers:
 - description: The main GmodStore API endpoint
   url: https://www.gmodstore.com
 security:
-- ' PersonalAccessToken': []
+- PersonalAccessToken: []
 tags:
 - name: Personal Access Tokens
 - name: Products
@@ -239,6 +239,8 @@ paths:
                     enum:
                     - permission-groups:read
                     - permission-groups:write
+                    - personal-access-tokens:read
+                    - personal-access-tokens:write
                     - teams:read
                     - teams:write
                     - team-users:read
@@ -1984,7 +1986,7 @@ paths:
                   type: integer
                 code:
                   maxLength: 64
-                  pattern: /[aA-zZ_\-0-9]+/
+                  pattern: '[aA-zZ_\-0-9]+'
                   type: string
                 maxUses:
                   maximum: 100
@@ -2313,7 +2315,7 @@ paths:
                   type: integer
                 code:
                   maxLength: 64
-                  pattern: /[aA-zZ_\-0-9]+/
+                  pattern: '[aA-zZ_\-0-9]+'
                   type: string
                 maxUses:
                   maximum: 100
@@ -3973,6 +3975,14 @@ paths:
           maxItems: 100
           type: array
         style: form
+      - description: Filter the results
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserFilter'
+        style: form
       responses:
         "200":
           content:
@@ -4049,6 +4059,124 @@ paths:
       - Users
       x-internal: true
       x-accepts: application/json
+  /api/v3/users:
+    get:
+      operationId: listUsers
+      parameters:
+      - explode: true
+        in: query
+        name: perPage
+        required: false
+        schema:
+          default: 24
+          description: The number of items to return per page
+          maximum: 100
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
+      - description: The cursor from which to return paginated results starting after
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter the results
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserFilter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                allOf:
+                - properties:
+                    data:
+                      items:
+                        $ref: '#/components/schemas/User'
+                      type: array
+                  required:
+                  - data
+                  type: object
+                - $ref: '#/components/schemas/ConnectionPaginated'
+                title: ListUsersResponse
+          description: Successful response containing a list of users
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-Ratelimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-Ratelimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+        "400":
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Error'
+                - $ref: '#/components/schemas/ValidationErrors'
+          description: Improperly formatted request passed
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-Ratelimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-Ratelimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The passed bearer token is missing or invalid
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-Ratelimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-Ratelimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The passed bearer token does not have the right scopes
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-Ratelimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-Ratelimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The requested resource does not exist
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-Ratelimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-Ratelimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+      security:
+      - PersonalAccessToken:
+        - users:read
+      summary: List all users
+      tags:
+      - Users
+      x-internal: true
+      x-accepts: application/json
   /api/v3/users/{user}:
     get:
       operationId: getUser
@@ -4060,6 +4188,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Filter the results
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserFilter'
+        style: form
       responses:
         "200":
           content:
@@ -5140,6 +5276,11 @@ components:
       - message
       title: Error
       type: object
+    TwoFactorNonce:
+      properties:
+        token:
+          type: string
+      type: object
     ConnectionPaginated:
       properties:
         cursors:
@@ -5740,6 +5881,8 @@ components:
       enum:
       - permission-groups:read
       - permission-groups:write
+      - personal-access-tokens:read
+      - personal-access-tokens:write
       - teams:read
       - teams:write
       - team-users:read
@@ -5774,6 +5917,12 @@ components:
       properties:
         revoked:
           type: boolean
+        userId:
+          format: uuid
+          type: string
+        productId:
+          format: uuid
+          type: string
       title: ProductPurchaseFilter
       type: object
     ProductReviewFilter:
@@ -5797,6 +5946,13 @@ components:
           type: string
       title: ProductVersionFilter
       type: object
+    UserFilter:
+      properties:
+        steamId:
+          format: int64
+          type: integer
+      title: UserFilter
+      type: object
     UserBanFilter:
       properties:
         bannerId:
@@ -5804,7 +5960,7 @@ components:
           type: string
       title: UserBanFilter
       type: object
-    GetMeResponse_:
+    GetMeResponse:
       example:
         data:
           personalAccessToken:
@@ -5830,34 +5986,6 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/Me'
-      type: object
-    GetMeResponse:
-      example:
-        ? ""
-        : data:
-            personalAccessToken:
-              abilities:
-              - null
-              - null
-              createdAt: 2000-01-23T04:56:07.000+00:00
-              lastUsedAt: 2000-01-23T04:56:07.000+00:00
-              name: name
-              id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              expiresAt: 2000-01-23T04:56:07.000+00:00
-              updatedAt: 2000-01-23T04:56:07.000+00:00
-            user:
-              steamId: 0
-              createdAt: 2000-01-23T04:56:07.000+00:00
-              lastActionAt: 2000-01-23T04:56:07.000+00:00
-              name: name
-              teamsCount: 0
-              bio: bio
-              id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              avatar: https://openapi-generator.tech
-              email: email
-      properties:
-        ? ""
-        : $ref: '#/components/schemas/GetMeResponse_'
       required:
       - data
       title: GetMeResponse
@@ -5883,6 +6011,8 @@ components:
             enum:
             - permission-groups:read
             - permission-groups:write
+            - personal-access-tokens:read
+            - personal-access-tokens:write
             - teams:read
             - teams:write
             - team-users:read
@@ -6298,7 +6428,7 @@ components:
           type: integer
         code:
           maxLength: 64
-          pattern: /[aA-zZ_\-0-9]+/
+          pattern: '[aA-zZ_\-0-9]+'
           type: string
         maxUses:
           maximum: 100
@@ -6368,7 +6498,7 @@ components:
           type: integer
         code:
           maxLength: 64
-          pattern: /[aA-zZ_\-0-9]+/
+          pattern: '[aA-zZ_\-0-9]+'
           type: string
         maxUses:
           maximum: 100
@@ -6858,8 +6988,6 @@ components:
       type: object
   securitySchemes:
     PersonalAccessToken:
-      bearerFormat: Personal Access Token
-      in: header
       scheme: bearer
       type: http
 x-tagGroups:

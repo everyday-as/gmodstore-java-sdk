@@ -33,6 +33,10 @@ public enum PersonalAccessTokenScope {
   
   PERMISSION_GROUPS_WRITE("permission-groups:write"),
   
+  PERSONAL_ACCESS_TOKENS_READ("personal-access-tokens:read"),
+  
+  PERSONAL_ACCESS_TOKENS_WRITE("personal-access-tokens:write"),
+  
   TEAMS_READ("teams:read"),
   
   TEAMS_WRITE("teams:write"),

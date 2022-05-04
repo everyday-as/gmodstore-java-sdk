@@ -23,48 +23,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * ValidationErrors
+ * UserFilter
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
-public class ValidationErrors {
-  public static final String SERIALIZED_NAME_ERRORS = "errors";
-  @SerializedName(SERIALIZED_NAME_ERRORS)
-  private Map<String, List<String>> errors = null;
+public class UserFilter {
+  public static final String SERIALIZED_NAME_STEAM_ID = "steamId";
+  @SerializedName(SERIALIZED_NAME_STEAM_ID)
+  private Long steamId;
 
 
-  public ValidationErrors errors(Map<String, List<String>> errors) {
+  public UserFilter steamId(Long steamId) {
     
-    this.errors = errors;
-    return this;
-  }
-
-  public ValidationErrors putErrorsItem(String key, List<String> errorsItem) {
-    if (this.errors == null) {
-      this.errors = new HashMap<String, List<String>>();
-    }
-    this.errors.put(key, errorsItem);
+    this.steamId = steamId;
     return this;
   }
 
    /**
-   * Get errors
-   * @return errors
+   * Get steamId
+   * @return steamId
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Map<String, List<String>> getErrors() {
-    return errors;
+  public Long getSteamId() {
+    return steamId;
   }
 
 
-  public void setErrors(Map<String, List<String>> errors) {
-    this.errors = errors;
+  public void setSteamId(Long steamId) {
+    this.steamId = steamId;
   }
 
 
@@ -76,20 +65,20 @@ public class ValidationErrors {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ValidationErrors validationErrors = (ValidationErrors) o;
-    return Objects.equals(this.errors, validationErrors.errors);
+    UserFilter userFilter = (UserFilter) o;
+    return Objects.equals(this.steamId, userFilter.steamId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(steamId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ValidationErrors {\n");
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("class UserFilter {\n");
+    sb.append("    steamId: ").append(toIndentedString(steamId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

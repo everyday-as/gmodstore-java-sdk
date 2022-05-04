@@ -1,13 +1,13 @@
 
 
-# GetMeResponse
+# UserFilter
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Me**](Me.md) |  | 
+**steamId** | **Long** |  |  [optional]
 
 
 

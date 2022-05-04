@@ -23,48 +23,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * ValidationErrors
+ * TwoFactorNonce
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
-public class ValidationErrors {
-  public static final String SERIALIZED_NAME_ERRORS = "errors";
-  @SerializedName(SERIALIZED_NAME_ERRORS)
-  private Map<String, List<String>> errors = null;
+public class TwoFactorNonce {
+  public static final String SERIALIZED_NAME_TOKEN = "token";
+  @SerializedName(SERIALIZED_NAME_TOKEN)
+  private String token;
 
 
-  public ValidationErrors errors(Map<String, List<String>> errors) {
+  public TwoFactorNonce token(String token) {
     
-    this.errors = errors;
-    return this;
-  }
-
-  public ValidationErrors putErrorsItem(String key, List<String> errorsItem) {
-    if (this.errors == null) {
-      this.errors = new HashMap<String, List<String>>();
-    }
-    this.errors.put(key, errorsItem);
+    this.token = token;
     return this;
   }
 
    /**
-   * Get errors
-   * @return errors
+   * Get token
+   * @return token
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Map<String, List<String>> getErrors() {
-    return errors;
+  public String getToken() {
+    return token;
   }
 
 
-  public void setErrors(Map<String, List<String>> errors) {
-    this.errors = errors;
+  public void setToken(String token) {
+    this.token = token;
   }
 
 
@@ -76,20 +65,20 @@ public class ValidationErrors {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ValidationErrors validationErrors = (ValidationErrors) o;
-    return Objects.equals(this.errors, validationErrors.errors);
+    TwoFactorNonce twoFactorNonce = (TwoFactorNonce) o;
+    return Objects.equals(this.token, twoFactorNonce.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(token);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ValidationErrors {\n");
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("class TwoFactorNonce {\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,6 +19,8 @@ Name | Value
 ---- | -----
 PERMISSION_GROUPS_READ | &quot;permission-groups:read&quot;
 PERMISSION_GROUPS_WRITE | &quot;permission-groups:write&quot;
+PERSONAL_ACCESS_TOKENS_READ | &quot;personal-access-tokens:read&quot;
+PERSONAL_ACCESS_TOKENS_WRITE | &quot;personal-access-tokens:write&quot;
 TEAMS_READ | &quot;teams:read&quot;
 TEAMS_WRITE | &quot;teams:write&quot;
 TEAM_USERS_READ | &quot;team-users:read&quot;
