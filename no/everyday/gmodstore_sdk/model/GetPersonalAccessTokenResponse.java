@@ -28,7 +28,7 @@ import no.everyday.gmodstore_sdk.model.PersonalAccessToken;
 /**
  * GetPersonalAccessTokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:44:30.513692Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:48:59.186237Z[Etc/UTC]")
 public class GetPersonalAccessTokenResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
