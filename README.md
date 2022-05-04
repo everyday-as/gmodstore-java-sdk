@@ -2,7 +2,7 @@
 
 gmodstore
 - API version: 3.0.0
-  - Build date: 2022-05-04T05:54:00.031332Z[Etc/UTC]
+  - Build date: 2022-05-04T06:27:05.446126Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
 
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>no.everyday</groupId>
   <artifactId>gmodstore-sdk</artifactId>
-  <version>3.0.0</version>
+  <version>3.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -59,7 +59,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "no.everyday:gmodstore-sdk:3.0.0"
+compile "no.everyday:gmodstore-sdk:3.1.0"
 ```
 
 ### Others
@@ -72,7 +72,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/gmodstore-sdk-3.0.0.jar`
+* `target/gmodstore-sdk-3.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -87,7 +87,7 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.Configuration;
 import no.everyday.gmodstore_sdk.auth.*;
 import no.everyday.gmodstore_sdk.models.*;
-import no.everyday.gmodstore_sdk.api.DefaultApi;
+import no.everyday.gmodstore_sdk.api.PermissionGroupsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -98,14 +98,13 @@ public class Example {
     HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
     PersonalAccessToken.setBearerToken("BEARER TOKEN");
 
-    DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String product = "product_example"; // String | 
-    String version = "version_example"; // String | 
+    PermissionGroupsApi apiInstance = new PermissionGroupsApi(defaultClient);
+    NewPermissionGroupPayload newPermissionGroupPayload = new NewPermissionGroupPayload(); // NewPermissionGroupPayload | 
     try {
-      DeleteProductVersionResponse result = apiInstance.deleteProductVersion(product, version);
+      CreatePermissionGroupResponse result = apiInstance.createPermissionGroup(newPermissionGroupPayload);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#deleteProductVersion");
+      System.err.println("Exception when calling PermissionGroupsApi#createPermissionGroup");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -122,7 +121,6 @@ All URIs are relative to *https://www.gmodstore.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**deleteProductVersion**](docs/DefaultApi.md#deleteProductVersion) | **DELETE** /api/v3/products/{product}/versions/{version} | Delete the specified version for a product
 *PermissionGroupsApi* | [**createPermissionGroup**](docs/PermissionGroupsApi.md#createPermissionGroup) | **POST** /api/v3/permission-groups | Create a permission group
 *PermissionGroupsApi* | [**deletePermissionGroup**](docs/PermissionGroupsApi.md#deletePermissionGroup) | **DELETE** /api/v3/permission-groups/{permission_group} | Delete the specified permission group
 *PermissionGroupsApi* | [**getPermissionGroup**](docs/PermissionGroupsApi.md#getPermissionGroup) | **GET** /api/v3/permission-groups/{permission_group} | Show the specified permission group
@@ -145,6 +143,7 @@ Class | Method | HTTP request | Description
 *ProductReviewsApi* | [**getProductReview**](docs/ProductReviewsApi.md#getProductReview) | **GET** /api/v3/products/{product}/reviews/{review} | Show the specified review for a product
 *ProductReviewsApi* | [**listProductReviews**](docs/ProductReviewsApi.md#listProductReviews) | **GET** /api/v3/products/{product}/reviews | List all reviews for a product
 *ProductVersionsApi* | [**createProductVersion**](docs/ProductVersionsApi.md#createProductVersion) | **POST** /api/v3/products/{product}/versions | Create a version for a product
+*ProductVersionsApi* | [**deleteProductVersion**](docs/ProductVersionsApi.md#deleteProductVersion) | **DELETE** /api/v3/products/{product}/versions/{version} | Delete the specified version for a product
 *ProductVersionsApi* | [**getProductDownloadToken**](docs/ProductVersionsApi.md#getProductDownloadToken) | **POST** /api/v3/products/{product}/versions/{version}/download | Get a one time use url for downloading a product
 *ProductVersionsApi* | [**getProductVersion**](docs/ProductVersionsApi.md#getProductVersion) | **GET** /api/v3/products/{product}/versions/{version} | Show the specified version for a product
 *ProductVersionsApi* | [**listProductVersions**](docs/ProductVersionsApi.md#listProductVersions) | **GET** /api/v3/products/{product}/versions | List all versions for a product

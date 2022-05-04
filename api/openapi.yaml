@@ -3361,6 +3361,8 @@ paths:
       - PersonalAccessToken:
         - product-versions:write
       summary: Delete the specified version for a product
+      tags:
+      - Product Versions
       x-internal: true
       x-accepts: application/json
     get:

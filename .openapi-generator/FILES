@@ -13,7 +13,6 @@ docs/CreateProductPurchaseResponse.md
 docs/CreateProductVersionResponse.md
 docs/CreateTeamResponse.md
 docs/CreateUserBadgeResponse.md
-docs/DefaultApi.md
 docs/DeletePermissionGroupResponse.md
 docs/DeleteProductCouponResponse.md
 docs/DeleteProductVersionResponse.md
@@ -115,7 +114,6 @@ no/everyday/gmodstore_sdk/ProgressResponseBody.java
 no/everyday/gmodstore_sdk/ServerConfiguration.java
 no/everyday/gmodstore_sdk/ServerVariable.java
 no/everyday/gmodstore_sdk/StringUtil.java
-no/everyday/gmodstore_sdk/api/DefaultApi.java
 no/everyday/gmodstore_sdk/api/PermissionGroupsApi.java
 no/everyday/gmodstore_sdk/api/PersonalAccessTokensApi.java
 no/everyday/gmodstore_sdk/api/ProductCouponsApi.java
