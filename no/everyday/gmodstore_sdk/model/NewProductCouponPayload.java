@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * NewProductCouponPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:44:30.513692Z[Etc/UTC]")
 public class NewProductCouponPayload {
   public static final String SERIALIZED_NAME_PERCENT = "percent";
   @SerializedName(SERIALIZED_NAME_PERCENT)

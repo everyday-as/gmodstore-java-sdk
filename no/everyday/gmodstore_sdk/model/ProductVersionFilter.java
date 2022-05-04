@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProductVersionFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:44:30.513692Z[Etc/UTC]")
 public class ProductVersionFilter {
   /**
    * Gets or Sets releaseType

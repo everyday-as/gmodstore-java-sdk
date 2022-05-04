@@ -214,5 +214,3 @@ no/everyday/gmodstore_sdk/model/ValidationErrors.java
 pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
-src/test/java/no/everyday/gmodstore_sdk/model/TwoFactorNonceTest.java
-src/test/java/no/everyday/gmodstore_sdk/model/UserFilterTest.java

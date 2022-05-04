@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TwoFactorNonce
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:44:30.513692Z[Etc/UTC]")
 public class TwoFactorNonce {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)

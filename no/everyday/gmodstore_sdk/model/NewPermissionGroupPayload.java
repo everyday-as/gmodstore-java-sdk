@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewPermissionGroupPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:42:04.718207Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-04T05:44:30.513692Z[Etc/UTC]")
 public class NewPermissionGroupPayload {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
