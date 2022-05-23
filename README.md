@@ -1,18 +1,10 @@
 # gmodstore-sdk
 
-gmodstore
-- API version: 3.0.0
-  - Build date: 2022-05-04T06:27:05.446126Z[Etc/UTC]
+GmodStore API
+- API version: 1.2.0
+  - Build date: 2022-05-23T17:32:01.693920Z[Etc/UTC]
 
 Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.
-
-# Rate limits
-Every request you make to the GmodStore API will count against your rate limit, which at the time of writing this, is 60 requests / minute.
-An up-to-date value will always provided in the `X-RateLimit-Limit` header
-The number of requests you have remaining before you must wait is provided in the `X-RateLimit-Remaining` header.
-
-# API SDKs
-For a list of available API SDKs check the README here: https://github.com/everyday-as/gmodstore-api-docs#client-libraries
 
   For more information, please visit [https://docs.gmodstore.com](https://docs.gmodstore.com)
 
@@ -87,24 +79,26 @@ import no.everyday.gmodstore_sdk.ApiException;
 import no.everyday.gmodstore_sdk.Configuration;
 import no.everyday.gmodstore_sdk.auth.*;
 import no.everyday.gmodstore_sdk.models.*;
-import no.everyday.gmodstore_sdk.api.PermissionGroupsApi;
+import no.everyday.gmodstore_sdk.api.AddonCouponsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.gmodstore.com");
+    defaultClient.setBasePath("https://api.gmodstore.com/v2");
     
-    // Configure HTTP bearer authorization: PersonalAccessToken
-    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
 
-    PermissionGroupsApi apiInstance = new PermissionGroupsApi(defaultClient);
-    NewPermissionGroupPayload newPermissionGroupPayload = new NewPermissionGroupPayload(); // NewPermissionGroupPayload | 
+    AddonCouponsApi apiInstance = new AddonCouponsApi(defaultClient);
+    Long addonId = 56L; // Long | Id of the addon
+    AddonCoupon addonCoupon = new AddonCoupon(); // AddonCoupon | 
+    Set<String> with = Arrays.asList(); // Set<String> | The relations you want to fetch with the `AddonCoupon`
     try {
-      CreatePermissionGroupResponse result = apiInstance.createPermissionGroup(newPermissionGroupPayload);
+      AddonCouponResponse result = apiInstance.createAddonCoupon(addonId, addonCoupon, with);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PermissionGroupsApi#createPermissionGroup");
+      System.err.println("Exception when calling AddonCouponsApi#createAddonCoupon");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -117,145 +111,108 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://www.gmodstore.com*
+All URIs are relative to *https://api.gmodstore.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PermissionGroupsApi* | [**createPermissionGroup**](docs/PermissionGroupsApi.md#createPermissionGroup) | **POST** /api/v3/permission-groups | Create a permission group
-*PermissionGroupsApi* | [**deletePermissionGroup**](docs/PermissionGroupsApi.md#deletePermissionGroup) | **DELETE** /api/v3/permission-groups/{permission_group} | Delete the specified permission group
-*PermissionGroupsApi* | [**getPermissionGroup**](docs/PermissionGroupsApi.md#getPermissionGroup) | **GET** /api/v3/permission-groups/{permission_group} | Show the specified permission group
-*PermissionGroupsApi* | [**listPermissionGroups**](docs/PermissionGroupsApi.md#listPermissionGroups) | **GET** /api/v3/permission-groups | List all permission groups
-*PermissionGroupsApi* | [**updatePermissionGroup**](docs/PermissionGroupsApi.md#updatePermissionGroup) | **PUT** /api/v3/permission-groups/{permission_group} | Update the specified permission group
-*PersonalAccessTokensApi* | [**createPersonalAccessToken**](docs/PersonalAccessTokensApi.md#createPersonalAccessToken) | **POST** /api/v3/me/personal-access-tokens | Create a new personal access token for the current user
-*PersonalAccessTokensApi* | [**deletePersonalAccessToken**](docs/PersonalAccessTokensApi.md#deletePersonalAccessToken) | **DELETE** /api/v3/me/personal-access-tokens/{personal_access_token} | Delete the specified personal access token
-*PersonalAccessTokensApi* | [**getPersonalAccessToken**](docs/PersonalAccessTokensApi.md#getPersonalAccessToken) | **GET** /api/v3/me/personal-access-tokens/{personal_access_token} | Get a personal access token belonging to the current user
-*PersonalAccessTokensApi* | [**listPersonalAccessTokens**](docs/PersonalAccessTokensApi.md#listPersonalAccessTokens) | **GET** /api/v3/me/personal-access-tokens | List all the current user&#39;s personal access tokens
-*PersonalAccessTokensApi* | [**updatePersonalAccessToken**](docs/PersonalAccessTokensApi.md#updatePersonalAccessToken) | **PUT** /api/v3/me/personal-access-tokens/{personal_access_token} | Update a personal access token
-*ProductCouponsApi* | [**createProductCoupon**](docs/ProductCouponsApi.md#createProductCoupon) | **POST** /api/v3/products/{product}/coupons | Create a coupon for a product
-*ProductCouponsApi* | [**deleteProductCoupon**](docs/ProductCouponsApi.md#deleteProductCoupon) | **DELETE** /api/v3/products/{product}/coupons/{coupon} | Delete the specified coupon for a product
-*ProductCouponsApi* | [**getProductCoupon**](docs/ProductCouponsApi.md#getProductCoupon) | **GET** /api/v3/products/{product}/coupons/{coupon} | Show the specified coupon for a product
-*ProductCouponsApi* | [**listProductCoupons**](docs/ProductCouponsApi.md#listProductCoupons) | **GET** /api/v3/products/{product}/coupons | List all coupons for a product
-*ProductCouponsApi* | [**updateProductCoupon**](docs/ProductCouponsApi.md#updateProductCoupon) | **PUT** /api/v3/products/{product}/coupons/{coupon} | Update the specified coupon for a product
-*ProductPurchasesApi* | [**createProductPurchase**](docs/ProductPurchasesApi.md#createProductPurchase) | **POST** /api/v3/products/{product}/purchases | Create a purchase for a product
-*ProductPurchasesApi* | [**getProductPurchase**](docs/ProductPurchasesApi.md#getProductPurchase) | **GET** /api/v3/products/{product}/purchases/{purchase} | Show the specified purchase for a product
-*ProductPurchasesApi* | [**listProductPurchases**](docs/ProductPurchasesApi.md#listProductPurchases) | **GET** /api/v3/products/{product}/purchases | List all purchases for a product
-*ProductPurchasesApi* | [**updateProductPurchase**](docs/ProductPurchasesApi.md#updateProductPurchase) | **PUT** /api/v3/products/{product}/purchases/{purchase} | Update the specified purchase for a product
-*ProductReviewsApi* | [**getProductReview**](docs/ProductReviewsApi.md#getProductReview) | **GET** /api/v3/products/{product}/reviews/{review} | Show the specified review for a product
-*ProductReviewsApi* | [**listProductReviews**](docs/ProductReviewsApi.md#listProductReviews) | **GET** /api/v3/products/{product}/reviews | List all reviews for a product
-*ProductVersionsApi* | [**createProductVersion**](docs/ProductVersionsApi.md#createProductVersion) | **POST** /api/v3/products/{product}/versions | Create a version for a product
-*ProductVersionsApi* | [**deleteProductVersion**](docs/ProductVersionsApi.md#deleteProductVersion) | **DELETE** /api/v3/products/{product}/versions/{version} | Delete the specified version for a product
-*ProductVersionsApi* | [**getProductDownloadToken**](docs/ProductVersionsApi.md#getProductDownloadToken) | **POST** /api/v3/products/{product}/versions/{version}/download | Get a one time use url for downloading a product
-*ProductVersionsApi* | [**getProductVersion**](docs/ProductVersionsApi.md#getProductVersion) | **GET** /api/v3/products/{product}/versions/{version} | Show the specified version for a product
-*ProductVersionsApi* | [**listProductVersions**](docs/ProductVersionsApi.md#listProductVersions) | **GET** /api/v3/products/{product}/versions | List all versions for a product
-*ProductVersionsApi* | [**updateProductVersion**](docs/ProductVersionsApi.md#updateProductVersion) | **PUT** /api/v3/products/{product}/versions/{version} | Update the specified version for a product
-*ProductsApi* | [**getProduct**](docs/ProductsApi.md#getProduct) | **GET** /api/v3/products/{product} | Get the specified product
-*ProductsApi* | [**getProducts**](docs/ProductsApi.md#getProducts) | **GET** /api/v3/products/batch | Get a batch of products by id
-*ProductsApi* | [**listProducts**](docs/ProductsApi.md#listProducts) | **GET** /api/v3/teams/{team}/products | List all products for a team
-*ProductsApi* | [**updateProduct**](docs/ProductsApi.md#updateProduct) | **PUT** /api/v3/products/{product} | Update the specified product
-*TeamUsersApi* | [**listTeamUsers**](docs/TeamUsersApi.md#listTeamUsers) | **GET** /api/v3/teams/{team}/users | List all users in a team
-*TeamsApi* | [**createTeam**](docs/TeamsApi.md#createTeam) | **POST** /api/v3/teams | Create a new team
-*TeamsApi* | [**deleteTeam**](docs/TeamsApi.md#deleteTeam) | **DELETE** /api/v3/teams/{team} | Delete the specified team
-*TeamsApi* | [**getTeam**](docs/TeamsApi.md#getTeam) | **GET** /api/v3/teams/{team} | Fetch the specified team
-*TeamsApi* | [**getTeams**](docs/TeamsApi.md#getTeams) | **GET** /api/v3/teams/batch | Fetch a batch of teams by id
-*TeamsApi* | [**listTeams**](docs/TeamsApi.md#listTeams) | **GET** /api/v3/teams | List all teams
-*TeamsApi* | [**updateTeam**](docs/TeamsApi.md#updateTeam) | **PUT** /api/v3/teams/{team} | Update the specified team
-*UserBadgesApi* | [**createUserBadge**](docs/UserBadgesApi.md#createUserBadge) | **POST** /api/v3/users/{user}/badges | Attach a badge to a user
-*UserBadgesApi* | [**deleteUserBadge**](docs/UserBadgesApi.md#deleteUserBadge) | **DELETE** /api/v3/users/{user}/badges/{badge} | Detach a badge from a user
-*UserBadgesApi* | [**listUserBadges**](docs/UserBadgesApi.md#listUserBadges) | **GET** /api/v3/users/{user}/badges | List all the specified user&#39;s badges
-*UserBansApi* | [**listUserBans**](docs/UserBansApi.md#listUserBans) | **GET** /api/v3/users/{user}/bans | List all the specified user&#39;s bans
-*UserProductPurchasesApi* | [**listUserPurchases**](docs/UserProductPurchasesApi.md#listUserPurchases) | **GET** /api/v3/users/{user}/purchases | List all the specified user&#39;s purchases
-*UserProductsApi* | [**listUserProducts**](docs/UserProductsApi.md#listUserProducts) | **GET** /api/v3/users/{user}/products | List all the specified user&#39;s products
-*UserTeamsApi* | [**listUserTeams**](docs/UserTeamsApi.md#listUserTeams) | **GET** /api/v3/users/{user}/teams | List all the specified user&#39;s teams
-*UsersApi* | [**getMe**](docs/UsersApi.md#getMe) | **GET** /api/v3/me | Fetch the current authenticated user and their access token
-*UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /api/v3/users/{user} | Fetch the specified user
-*UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /api/v3/users/batch | Fetch a batch of users by id
-*UsersApi* | [**listUsers**](docs/UsersApi.md#listUsers) | **GET** /api/v3/users | List all users
+*AddonCouponsApi* | [**createAddonCoupon**](docs/AddonCouponsApi.md#createAddonCoupon) | **POST** /addons/{addon_id}/coupons | Create an addon coupon
+*AddonCouponsApi* | [**deleteAddonCoupon**](docs/AddonCouponsApi.md#deleteAddonCoupon) | **DELETE** /addons/{addon_id}/coupons/{coupon_id} | Destroy an addon&#39;s coupon
+*AddonCouponsApi* | [**getAddonCoupon**](docs/AddonCouponsApi.md#getAddonCoupon) | **GET** /addons/{addon_id}/coupons/{coupon_id} | Fetch an addon&#39;s coupon
+*AddonCouponsApi* | [**listAddonCoupons**](docs/AddonCouponsApi.md#listAddonCoupons) | **GET** /addons/{addon_id}/coupons | Fetch all the coupons for an addon
+*AddonCouponsApi* | [**updateAddonCoupon**](docs/AddonCouponsApi.md#updateAddonCoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#39;s coupon
+*AddonPurchasesApi* | [**createAddonPurchase**](docs/AddonPurchasesApi.md#createAddonPurchase) | **POST** /addons/{addon_id}/purchases | Create a purchase for an addon
+*AddonPurchasesApi* | [**getAddonPurchase**](docs/AddonPurchasesApi.md#getAddonPurchase) | **GET** /addons/{addon_id}/purchases/{user_id} | Get a purchase of an addon by user
+*AddonPurchasesApi* | [**listAddonPurchases**](docs/AddonPurchasesApi.md#listAddonPurchases) | **GET** /addons/{addon_id}/purchases | Fetch all purchases of an addon
+*AddonPurchasesApi* | [**updateAddonPurchase**](docs/AddonPurchasesApi.md#updateAddonPurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
+*AddonReviewsApi* | [**getAddonReview**](docs/AddonReviewsApi.md#getAddonReview) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
+*AddonReviewsApi* | [**listAddonReviews**](docs/AddonReviewsApi.md#listAddonReviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
+*AddonStatsApi* | [**getAddonStats**](docs/AddonStatsApi.md#getAddonStats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
+*AddonVersionsApi* | [**createAddonVersion**](docs/AddonVersionsApi.md#createAddonVersion) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
+*AddonVersionsApi* | [**downloadAddonVersion**](docs/AddonVersionsApi.md#downloadAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
+*AddonVersionsApi* | [**getAddonVersion**](docs/AddonVersionsApi.md#getAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
+*AddonVersionsApi* | [**listAddonVersions**](docs/AddonVersionsApi.md#listAddonVersions) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
+*AddonVersionsApi* | [**updateAddonVersion**](docs/AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
+*AddonsApi* | [**getAddon**](docs/AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
+*AddonsApi* | [**listSelfAddons**](docs/AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
+*AdventCalendarApi* | [**getAdventCalendarStats**](docs/AdventCalendarApi.md#getAdventCalendarStats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
+*CurrentApiKeyApi* | [**getCurrentApiKey**](docs/CurrentApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
+*PermissionGroupsApi* | [**listPermissionGroups**](docs/PermissionGroupsApi.md#listPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
+*TeamAddonsApi* | [**listTeamAddons**](docs/TeamAddonsApi.md#listTeamAddons) | **GET** /teams/{team_id}/addons | Fetch all the addons in the given team
+*TeamUsersApi* | [**listTeamUsers**](docs/TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
+*TeamsApi* | [**getTeam**](docs/TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
+*UserAddonsApi* | [**listUserAddons**](docs/UserAddonsApi.md#listUserAddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
+*UserBadgesApi* | [**createUserBadge**](docs/UserBadgesApi.md#createUserBadge) | **POST** /users/{user_id}/badges | Give a user a badge
+*UserBadgesApi* | [**deleteUserBadge**](docs/UserBadgesApi.md#deleteUserBadge) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#39;s badge
+*UserBadgesApi* | [**listUserBadges**](docs/UserBadgesApi.md#listUserBadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
+*UserBansApi* | [**listUserBans**](docs/UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+*UserPurchasesApi* | [**listUserPurchases**](docs/UserPurchasesApi.md#listUserPurchases) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
+*UserTeamsApi* | [**listUserTeams**](docs/UserTeamsApi.md#listUserTeams) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
+*UsersApi* | [**getSelfUser**](docs/UsersApi.md#getSelfUser) | **GET** /users/me | Fetches the current user (API Key Owner)
+*UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /users/{user_id} | Fetch a single user
 
 
 ## Documentation for Models
 
- - [ConnectionPaginated](docs/ConnectionPaginated.md)
- - [ConnectionPaginatedCursors](docs/ConnectionPaginatedCursors.md)
- - [ConnectionPaginatedMeta](docs/ConnectionPaginatedMeta.md)
- - [CreatePermissionGroupResponse](docs/CreatePermissionGroupResponse.md)
- - [CreateProductCouponResponse](docs/CreateProductCouponResponse.md)
- - [CreateProductPurchaseResponse](docs/CreateProductPurchaseResponse.md)
- - [CreateProductVersionResponse](docs/CreateProductVersionResponse.md)
- - [CreateTeamResponse](docs/CreateTeamResponse.md)
- - [CreateUserBadgeResponse](docs/CreateUserBadgeResponse.md)
- - [DeletePermissionGroupResponse](docs/DeletePermissionGroupResponse.md)
- - [DeleteProductCouponResponse](docs/DeleteProductCouponResponse.md)
- - [DeleteProductVersionResponse](docs/DeleteProductVersionResponse.md)
- - [DeleteTeamResponse](docs/DeleteTeamResponse.md)
- - [DeleteUserBadgeResponse](docs/DeleteUserBadgeResponse.md)
- - [DownloadProductVersionResponse](docs/DownloadProductVersionResponse.md)
- - [DownloadProductVersionResponseData](docs/DownloadProductVersionResponseData.md)
+ - [Addon](docs/Addon.md)
+ - [AddonCoupon](docs/AddonCoupon.md)
+ - [AddonCouponListResponse](docs/AddonCouponListResponse.md)
+ - [AddonCouponResponse](docs/AddonCouponResponse.md)
+ - [AddonDownload](docs/AddonDownload.md)
+ - [AddonDownloadResponse](docs/AddonDownloadResponse.md)
+ - [AddonImages](docs/AddonImages.md)
+ - [AddonListResponse](docs/AddonListResponse.md)
+ - [AddonPrice](docs/AddonPrice.md)
+ - [AddonPurchase](docs/AddonPurchase.md)
+ - [AddonPurchaseListResponse](docs/AddonPurchaseListResponse.md)
+ - [AddonPurchaseResponse](docs/AddonPurchaseResponse.md)
+ - [AddonResponse](docs/AddonResponse.md)
+ - [AddonReview](docs/AddonReview.md)
+ - [AddonReviewListResponse](docs/AddonReviewListResponse.md)
+ - [AddonReviewResponse](docs/AddonReviewResponse.md)
+ - [AddonStats](docs/AddonStats.md)
+ - [AddonStatsResponse](docs/AddonStatsResponse.md)
+ - [AddonStatsRevenue](docs/AddonStatsRevenue.md)
+ - [AddonStatsRevenueCurrent](docs/AddonStatsRevenueCurrent.md)
+ - [AddonStatsSales](docs/AddonStatsSales.md)
+ - [AddonStatsSalesCurrent](docs/AddonStatsSalesCurrent.md)
+ - [AddonStatsViews](docs/AddonStatsViews.md)
+ - [AddonStatsViewsCurrent](docs/AddonStatsViewsCurrent.md)
+ - [AddonVersion](docs/AddonVersion.md)
+ - [AddonVersionListResponse](docs/AddonVersionListResponse.md)
+ - [AddonVersionReleaseType](docs/AddonVersionReleaseType.md)
+ - [AddonVersionResponse](docs/AddonVersionResponse.md)
+ - [AdventCalendarStats](docs/AdventCalendarStats.md)
+ - [AdventCalendarStatsResponse](docs/AdventCalendarStatsResponse.md)
+ - [ApiKey](docs/ApiKey.md)
+ - [ApiKeyResponse](docs/ApiKeyResponse.md)
+ - [BadgeListResponse](docs/BadgeListResponse.md)
+ - [BadgeResponse](docs/BadgeResponse.md)
  - [Error](docs/Error.md)
- - [GetMeResponse](docs/GetMeResponse.md)
- - [GetPermissionGroupResponse](docs/GetPermissionGroupResponse.md)
- - [GetPersonalAccessTokenResponse](docs/GetPersonalAccessTokenResponse.md)
- - [GetProductCouponResponse](docs/GetProductCouponResponse.md)
- - [GetProductPurchaseResponse](docs/GetProductPurchaseResponse.md)
- - [GetProductResponse](docs/GetProductResponse.md)
- - [GetProductReviewResponse](docs/GetProductReviewResponse.md)
- - [GetProductVersionResponse](docs/GetProductVersionResponse.md)
- - [GetProductsResponse](docs/GetProductsResponse.md)
- - [GetTeamResponse](docs/GetTeamResponse.md)
- - [GetTeamsResponse](docs/GetTeamsResponse.md)
- - [GetUserResponse](docs/GetUserResponse.md)
- - [GetUsersResponse](docs/GetUsersResponse.md)
- - [InlineResponse201](docs/InlineResponse201.md)
- - [InlineResponse201Data](docs/InlineResponse201Data.md)
- - [Me](docs/Me.md)
+ - [ErrorResponse](docs/ErrorResponse.md)
  - [Money](docs/Money.md)
- - [NewPermissionGroupPayload](docs/NewPermissionGroupPayload.md)
- - [NewPersonalAccessTokenPayload](docs/NewPersonalAccessTokenPayload.md)
- - [NewProductCouponPayload](docs/NewProductCouponPayload.md)
- - [NewProductPurchasePayload](docs/NewProductPurchasePayload.md)
- - [NewTeamPayload](docs/NewTeamPayload.md)
- - [NewUserBadgePayload](docs/NewUserBadgePayload.md)
+ - [NewAddonPurchase](docs/NewAddonPurchase.md)
  - [OrderItem](docs/OrderItem.md)
  - [PermissionGroup](docs/PermissionGroup.md)
- - [PersonalAccessToken](docs/PersonalAccessToken.md)
- - [PersonalAccessTokenScope](docs/PersonalAccessTokenScope.md)
- - [Product](docs/Product.md)
- - [ProductCoupon](docs/ProductCoupon.md)
- - [ProductFilter](docs/ProductFilter.md)
- - [ProductImages](docs/ProductImages.md)
- - [ProductPrice](docs/ProductPrice.md)
- - [ProductPurchase](docs/ProductPurchase.md)
- - [ProductPurchaseFilter](docs/ProductPurchaseFilter.md)
- - [ProductReview](docs/ProductReview.md)
- - [ProductReviewFilter](docs/ProductReviewFilter.md)
- - [ProductReviewVotes](docs/ProductReviewVotes.md)
- - [ProductVersion](docs/ProductVersion.md)
- - [ProductVersionFilter](docs/ProductVersionFilter.md)
+ - [PermissionGroupListResponse](docs/PermissionGroupListResponse.md)
  - [Team](docs/Team.md)
+ - [TeamAddon](docs/TeamAddon.md)
+ - [TeamAddonListResponse](docs/TeamAddonListResponse.md)
+ - [TeamListResponse](docs/TeamListResponse.md)
+ - [TeamResponse](docs/TeamResponse.md)
  - [TeamUser](docs/TeamUser.md)
- - [TwoFactorNonce](docs/TwoFactorNonce.md)
- - [UpdatePermissionGroupPayload](docs/UpdatePermissionGroupPayload.md)
- - [UpdatePermissionGroupResponse](docs/UpdatePermissionGroupResponse.md)
- - [UpdatePersonalAccessTokenResponse](docs/UpdatePersonalAccessTokenResponse.md)
- - [UpdateProductCouponPayload](docs/UpdateProductCouponPayload.md)
- - [UpdateProductCouponResponse](docs/UpdateProductCouponResponse.md)
- - [UpdateProductPurchasePayload](docs/UpdateProductPurchasePayload.md)
- - [UpdateProductPurchaseResponse](docs/UpdateProductPurchaseResponse.md)
- - [UpdateProductVersionPayload](docs/UpdateProductVersionPayload.md)
- - [UpdateProductVersionResponse](docs/UpdateProductVersionResponse.md)
- - [UpdateTeamPayload](docs/UpdateTeamPayload.md)
- - [UpdateTeamResponse](docs/UpdateTeamResponse.md)
+ - [TeamUserListResponse](docs/TeamUserListResponse.md)
  - [User](docs/User.md)
  - [UserBadge](docs/UserBadge.md)
+ - [UserBadgeLegend](docs/UserBadgeLegend.md)
  - [UserBan](docs/UserBan.md)
- - [UserBanFilter](docs/UserBanFilter.md)
- - [UserFilter](docs/UserFilter.md)
- - [ValidationErrors](docs/ValidationErrors.md)
+ - [UserBanListResponse](docs/UserBanListResponse.md)
+ - [UserResponse](docs/UserResponse.md)
 
 
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### PersonalAccessToken
+### bearerAuth
 
 - **Type**: HTTP basic authentication
 

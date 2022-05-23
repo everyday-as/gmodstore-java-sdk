@@ -1,19 +1,19 @@
 # UserBadgesApi
 
-All URIs are relative to *https://www.gmodstore.com*
+All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUserBadge**](UserBadgesApi.md#createUserBadge) | **POST** /api/v3/users/{user}/badges | Attach a badge to a user
-[**deleteUserBadge**](UserBadgesApi.md#deleteUserBadge) | **DELETE** /api/v3/users/{user}/badges/{badge} | Detach a badge from a user
-[**listUserBadges**](UserBadgesApi.md#listUserBadges) | **GET** /api/v3/users/{user}/badges | List all the specified user&#39;s badges
+[**createUserBadge**](UserBadgesApi.md#createUserBadge) | **POST** /users/{user_id}/badges | Give a user a badge
+[**deleteUserBadge**](UserBadgesApi.md#deleteUserBadge) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#39;s badge
+[**listUserBadges**](UserBadgesApi.md#listUserBadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
 
 <a name="createUserBadge"></a>
 # **createUserBadge**
-> CreateUserBadgeResponse createUserBadge(user, newUserBadgePayload)
+> BadgeResponse createUserBadge(userId, userBadge)
 
-Attach a badge to a user
+Give a user a badge
 
 ### Example
 ```java
@@ -28,17 +28,17 @@ import no.everyday.gmodstore_sdk.api.UserBadgesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.gmodstore.com");
+    defaultClient.setBasePath("https://api.gmodstore.com/v2");
     
-    // Configure HTTP bearer authorization: PersonalAccessToken
-    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
 
     UserBadgesApi apiInstance = new UserBadgesApi(defaultClient);
-    String user = "user_example"; // String | 
-    NewUserBadgePayload newUserBadgePayload = new NewUserBadgePayload(); // NewUserBadgePayload | 
+    Long userId = 56L; // Long | Id of the user
+    UserBadge userBadge = new UserBadge(); // UserBadge | 
     try {
-      CreateUserBadgeResponse result = apiInstance.createUserBadge(user, newUserBadgePayload);
+      BadgeResponse result = apiInstance.createUserBadge(userId, userBadge);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserBadgesApi#createUserBadge");
@@ -55,16 +55,16 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **String**|  |
- **newUserBadgePayload** | [**NewUserBadgePayload**](NewUserBadgePayload.md)|  | [optional]
+ **userId** | **Long**| Id of the user |
+ **userBadge** | [**UserBadge**](UserBadge.md)|  |
 
 ### Return type
 
-[**CreateUserBadgeResponse**](CreateUserBadgeResponse.md)
+[**BadgeResponse**](BadgeResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../README.md#PersonalAccessToken)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -74,17 +74,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful response containing the newly created user badge |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**201** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
+**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
 
 <a name="deleteUserBadge"></a>
 # **deleteUserBadge**
-> DeleteUserBadgeResponse deleteUserBadge(user, badge)
+> deleteUserBadge(userId, badgeId)
 
-Detach a badge from a user
+Destroy a users&#39;s badge
 
 ### Example
 ```java
@@ -99,18 +97,17 @@ import no.everyday.gmodstore_sdk.api.UserBadgesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.gmodstore.com");
+    defaultClient.setBasePath("https://api.gmodstore.com/v2");
     
-    // Configure HTTP bearer authorization: PersonalAccessToken
-    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
 
     UserBadgesApi apiInstance = new UserBadgesApi(defaultClient);
-    String user = "user_example"; // String | 
-    String badge = "badge_example"; // String | 
+    Long userId = 56L; // Long | Id of the user
+    String badgeId = "badgeId_example"; // String | Id of the badge
     try {
-      DeleteUserBadgeResponse result = apiInstance.deleteUserBadge(user, badge);
-      System.out.println(result);
+      apiInstance.deleteUserBadge(userId, badgeId);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserBadgesApi#deleteUserBadge");
       System.err.println("Status code: " + e.getCode());
@@ -126,16 +123,16 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **String**|  |
- **badge** | **String**|  |
+ **userId** | **Long**| Id of the user |
+ **badgeId** | **String**| Id of the badge |
 
 ### Return type
 
-[**DeleteUserBadgeResponse**](DeleteUserBadgeResponse.md)
+null (empty response body)
 
 ### Authorization
 
-[PersonalAccessToken](../README.md#PersonalAccessToken)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -145,17 +142,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response containing the user badge that was just deleted |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**204** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
 
 <a name="listUserBadges"></a>
 # **listUserBadges**
-> Object listUserBadges(user, perPage, cursor)
+> BadgeListResponse listUserBadges(userId)
 
-List all the specified user&#39;s badges
+Fetch all the badges a user has
 
 ### Example
 ```java
@@ -170,18 +164,16 @@ import no.everyday.gmodstore_sdk.api.UserBadgesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.gmodstore.com");
+    defaultClient.setBasePath("https://api.gmodstore.com/v2");
     
-    // Configure HTTP bearer authorization: PersonalAccessToken
-    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
 
     UserBadgesApi apiInstance = new UserBadgesApi(defaultClient);
-    String user = "user_example"; // String | 
-    Integer perPage = 24; // Integer | 
-    String cursor = "cursor_example"; // String | The cursor from which to return paginated results starting after
+    Long userId = 56L; // Long | Id of the user
     try {
-      Object result = apiInstance.listUserBadges(user, perPage, cursor);
+      BadgeListResponse result = apiInstance.listUserBadges(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserBadgesApi#listUserBadges");
@@ -198,17 +190,15 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **String**|  |
- **perPage** | **Integer**|  | [optional] [default to 24]
- **cursor** | **String**| The cursor from which to return paginated results starting after | [optional]
+ **userId** | **Long**| Id of the user |
 
 ### Return type
 
-**Object**
+[**BadgeListResponse**](BadgeListResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../README.md#PersonalAccessToken)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -218,9 +208,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response containing a list of user badges |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**200** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
+**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
 

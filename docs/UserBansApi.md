@@ -1,17 +1,17 @@
 # UserBansApi
 
-All URIs are relative to *https://www.gmodstore.com*
+All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserBans**](UserBansApi.md#listUserBans) | **GET** /api/v3/users/{user}/bans | List all the specified user&#39;s bans
+[**listUserBans**](UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 
 <a name="listUserBans"></a>
 # **listUserBans**
-> Object listUserBans(user, perPage, cursor, filter)
+> UserBanListResponse listUserBans(userId)
 
-List all the specified user&#39;s bans
+Fetch all active bans associated with this user
 
 ### Example
 ```java
@@ -26,19 +26,16 @@ import no.everyday.gmodstore_sdk.api.UserBansApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://www.gmodstore.com");
+    defaultClient.setBasePath("https://api.gmodstore.com/v2");
     
-    // Configure HTTP bearer authorization: PersonalAccessToken
-    HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
-    PersonalAccessToken.setBearerToken("BEARER TOKEN");
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
 
     UserBansApi apiInstance = new UserBansApi(defaultClient);
-    String user = "user_example"; // String | 
-    Integer perPage = 24; // Integer | 
-    String cursor = "cursor_example"; // String | The cursor from which to return paginated results starting after
-    UserBanFilter filter = new UserBanFilter(); // UserBanFilter | Filter the results
+    Long userId = 56L; // Long | Id of the user
     try {
-      Object result = apiInstance.listUserBans(user, perPage, cursor, filter);
+      UserBanListResponse result = apiInstance.listUserBans(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserBansApi#listUserBans");
@@ -55,18 +52,15 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **String**|  |
- **perPage** | **Integer**|  | [optional] [default to 24]
- **cursor** | **String**| The cursor from which to return paginated results starting after | [optional]
- **filter** | [**UserBanFilter**](.md)| Filter the results | [optional]
+ **userId** | **Long**| Id of the user |
 
 ### Return type
 
-**Object**
+[**UserBanListResponse**](UserBanListResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../README.md#PersonalAccessToken)
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -76,9 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response containing a list of user bans |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**400** | Improperly formatted request passed |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**401** | The passed bearer token is missing or invalid |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**403** | The passed bearer token does not have the right scopes |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
-**404** | The requested resource does not exist |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset -  <br>  |
+**200** | Successfully processed the request. |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
+**429** | Too many requests |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * X-RateLimit-Reset - The UNIX timestamp at which your rate limit quota will reset. <br>  |
+**0** | Something went wrong |  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  |
 
